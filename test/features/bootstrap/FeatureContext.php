@@ -65,4 +65,66 @@ class FeatureContext extends DrupalContext
         }
        $linkObj->click();
    }
+   
+     /**
+     * Fills in hidden latitude and longitude values that are normally filled by clicking on the map.
+     *
+     * @Given /^I fill hidden longitude and latitude field with "(?P<arg1>([0-9]+\.[0-9]+))" and "(?P<arg2>([0-9]+\.[0-9]+))" for the "(?P<type>[^"]*)"$/
+     */
+    public function iFillHiddenLongitudeAndLatitudeFieldWithPoint($arg1, $arg2, $type)
+    {
+        switch ($type) {
+            case 'Site Visit':
+                # code...                
+                $this->getSession()->getPage()->find('css','input[name="field_place_lat_long[und][0][geom]"]')->setValue("POINT(" . $arg1 . " " . $arg2 . ")");
+                break;
+            case 'Human Interest Story':
+                # code...                
+                $this->getSession()->getPage()->find('css','input[name="field_place_lat_long[und][0][geom]"]')->setValue("POINT(" . $arg1 . " " . $arg2 . ")");
+                break;
+            case 'Roadside Observation':
+                # code...                
+                $this->getSession()->getPage()->find('css','input[name="field_ftritem_lat_long[und][0][geom]"]')->setValue("POINT(" . $arg1 . " " . $arg2 . ")");
+                break;
+            default:
+                # code...
+                break;
+        }
+    }
+    /**
+     * Clicks a link in a drop down menu
+     *
+     * @Given /^I click the link "(?P<name>[^"]*)" in the dropdown menu$/
+     */
+    public function iClickTheLinkInTheDropDown($name)
+    {
+        $this->getSession()->getPage()->clickLink($name);
+    }
+    /**
+     * Clicks a Quick Tab
+     *
+     * @Given /^I click the tab "(?P<name>[^"]*)"$/
+     */
+    public function iClickTheTab($name)
+    {
+        switch ($name) {
+            case 'Site Reports':
+                $link = $this->getSession()->getPage()->find('css', 'quicktabs-tab-fieldtrip_content_first-3');
+                $this->getSession()->getPage()->clickLink($link);
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+    }
+    /**
+     * Fills in question Options field with specified id|name|label|value.
+     *
+     * @When /^(?:|I )fill in question Options field "(?P<field_number>([0-9]+))" with "(?P<value>[^"]*)"$/
+     */
+    public function fillQuestionOptionsField($field_number, $value)
+    {
+        $this->getSession()->getPage()->fillField('questionnaire_question_options[und][' . --$field_number . '][value]', $value);
+    }
 }
