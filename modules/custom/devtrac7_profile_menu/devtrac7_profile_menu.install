@@ -147,38 +147,6 @@ function devtrac7_profile_menu_menu_default_menu_links() {
 watchdog('profile_menu_install', 'default menu links');
   $menu_links = array();
 
-  $menu_links['menu-my-profile_welcome'] = array(
-    'menu_name' => 'menu-my-profile',
-    'link_path' => 'user',
-    'router_path' => 'user',
-    'link_title' => 'Welcome, [current-user:field_user_firstname]',
-    'options' => array(
-      'menu_token_link_path' => 'user',
-      'menu_token_data' => array(
-        'user' => array(
-          'type' => 'user',
-          'plugin' => 'user_context',
-          'options' => array(),
-        ),
-      ),
-      'menu_token_options' => array(
-        'clear' => 0,
-      ),
-      'attributes' => array(
-        'title' => '',
-      ),
-      'alter' => FALSE,
-      'identifier' => 'menu-my-profile_welcome',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 1,
-    'expanded' => 0,
-    'weight' => -30,
-    'customized' => 1,
-  );
-
   $menu_links['menu-my-profile_edit-my-profile:user/%/edit'] = array(
     'menu_name' => 'menu-my-profile',
     'link_path' => 'user/%/edit',
@@ -213,7 +181,6 @@ watchdog('profile_menu_install', 'default menu links');
     'expanded' => 0,
     'weight' => -29,
     'customized' => 1,
-    'parent_identifier' => 'menu-my-profile_welcome',
   );
 
   $menu_links['menu-my-profile_my-current-field-trip:devtrac/mycurrentfieldtrip'] = array(
@@ -264,7 +231,6 @@ watchdog('profile_menu_install', 'default menu links');
     'expanded' => 0,
     'weight' => -27,
     'customized' => 1,
-    'parent_identifier' => 'menu-my-profile_welcome',
   );
 
   $menu_links['menu-my-profile_admin:admin'] = array(

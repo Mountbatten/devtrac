@@ -867,6 +867,11 @@ function devtrac7_solr_search_feature_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Indexed Node: Location Type */
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1']['id'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1']['table'] = 'search_api_index_devtrac_solr_site_visits_index';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -913,6 +918,34 @@ function devtrac7_solr_search_feature_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
   $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'map_popup_view_mode';
+  /* Field: Taxonomy term: Term Icon */
+  $handler->display->display_options['fields']['field_term_icon']['id'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['table'] = 'entity_taxonomy_term';
+  $handler->display->display_options['fields']['field_term_icon']['field'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['relationship'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['field_term_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_term_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_icon']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_term_icon']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_term_icon']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'map_icon',
+    'image_link' => '',
+  );
+  /* Field: Taxonomy term: Term Icon */
+  $handler->display->display_options['fields']['field_term_icon_1']['id'] = 'field_term_icon_1';
+  $handler->display->display_options['fields']['field_term_icon_1']['table'] = 'entity_taxonomy_term';
+  $handler->display->display_options['fields']['field_term_icon_1']['field'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon_1']['relationship'] = 'taxonomy_vocabulary_1';
+  $handler->display->display_options['fields']['field_term_icon_1']['label'] = '';
+  $handler->display->display_options['fields']['field_term_icon_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_icon_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_term_icon_1']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_term_icon_1']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'map_icon_bw',
+    'image_link' => '',
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Custom: Bounding box */
   $handler->display->display_options['arguments']['bbox_argument']['id'] = 'bbox_argument';

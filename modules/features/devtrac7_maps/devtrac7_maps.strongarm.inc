@@ -68,48 +68,6 @@ function devtrac7_maps_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'geocoder_wfs_geofield';
-  $strongarm->value = 'Devtrac:the_geom';
-  $export['geocoder_wfs_geofield'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'geocoder_wfs_layer';
-  $strongarm->value = 'devtrac_wfs_search';
-  $export['geocoder_wfs_layer'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'geocoder_wfs_namespace';
-  $strongarm->value = 'Devtrac';
-  $export['geocoder_wfs_namespace'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'geocoder_wfs_queryfield';
-  $strongarm->value = 'name';
-  $export['geocoder_wfs_queryfield'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'geocoder_wfs_resultfields';
-  $strongarm->value = 'gml:name,Devtrac:placetype,Devtrac:district';
-  $export['geocoder_wfs_resultfields'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'geocoder_wfs_url';
-  $strongarm->value = 'http://maps1.devtrac.org/wfs';
-  $export['geocoder_wfs_url'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'geonames_cache';
   $strongarm->value = '1';
   $export['geonames_cache'] = $strongarm;
@@ -174,7 +132,7 @@ function devtrac7_maps_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'openlayers_default_map';
-  $strongarm->value = 'default';
+  $strongarm->value = 'geocoder_map';
   $export['openlayers_default_map'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -191,11 +149,11 @@ function devtrac7_maps_strongarm() {
   $strongarm->value = array(
     'mapquest_nominatim' => 'mapquest_nominatim',
     'geonames' => 'geonames',
-    'wfs' => 'wfs',
-    'google' => 0,
     'bing' => 0,
-    'yandex' => 0,
+    'google' => 0,
     'yahoo' => 0,
+    'yandex' => 0,
+    'wfs' => 0,
   );
   $export['openlayers_geosearch_geocoders'] = $strongarm;
 
@@ -247,34 +205,6 @@ function devtrac7_maps_strongarm() {
   $strongarm->name = 'openlayers_geosearch_test';
   $strongarm->value = 1;
   $export['openlayers_geosearch_test'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'openlayers_geosearch_wfs_description';
-  $strongarm->value = 'Clinics, Waterpoints and Healh Centres from the WHO in 2005. Contains all black & white Icons.';
-  $export['openlayers_geosearch_wfs_description'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'openlayers_geosearch_wfs_layer';
-  $strongarm->value = 'HealthUnits';
-  $export['openlayers_geosearch_wfs_layer'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'openlayers_geosearch_wfs_namespace';
-  $strongarm->value = 'Devtrac';
-  $export['openlayers_geosearch_wfs_namespace'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'openlayers_geosearch_wfs_title';
-  $strongarm->value = 'WHO';
-  $export['openlayers_geosearch_wfs_title'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

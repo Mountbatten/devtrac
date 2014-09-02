@@ -33,8 +33,11 @@ function devtrac7_solr_search_location_feature_facetapi_default_facet_settings()
     'facet_missing' => '0',
     'flatten' => 0,
     'query_type' => 'term',
-    'default_true' => '1',
+    'default_true' => TRUE,
     'facet_search_ids' => array(),
+    'individual_parent' => 0,
+    'limit_active_items' => 0,
+    'exclude' => 0,
   );
   $export['search_api@devtrac_solr_locations_index::search_api_aggregation_1'] = $facet;
 
@@ -263,7 +266,7 @@ function devtrac7_solr_search_location_feature_facetapi_default_facet_settings()
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_textfield',
+    'widget' => 'facetapi_textfield_widget',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
@@ -328,6 +331,8 @@ function devtrac7_solr_search_location_feature_facetapi_default_facet_settings()
       'format' => '1',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
   );
   $export['search_api@devtrac_solr_locations_index:block:search_api_aggregation_1'] = $facet;
 

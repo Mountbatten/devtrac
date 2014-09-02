@@ -1457,6 +1457,34 @@ function iati_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Term Icon */
+  $handler->display->display_options['fields']['field_term_icon']['id'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['table'] = 'field_data_field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['field'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['relationship'] = 'taxonomy_vocabulary_6_tid';
+  $handler->display->display_options['fields']['field_term_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_term_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_icon']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_term_icon']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_term_icon']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'map_icon',
+    'image_link' => '',
+  );
+  /* Field: Taxonomy term: Term Icon */
+  $handler->display->display_options['fields']['field_term_icon_1']['id'] = 'field_term_icon_1';
+  $handler->display->display_options['fields']['field_term_icon_1']['table'] = 'field_data_field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon_1']['field'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon_1']['relationship'] = 'taxonomy_vocabulary_6_tid';
+  $handler->display->display_options['fields']['field_term_icon_1']['label'] = '';
+  $handler->display->display_options['fields']['field_term_icon_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_icon_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_term_icon_1']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_term_icon_1']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'map_icon_bw',
+    'image_link' => '',
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';

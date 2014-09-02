@@ -16,6 +16,12 @@ function devtrac7_users2_user_default_roles() {
 //    'weight' => 0,
 //  );
 
+  // Exported role: devtrac admin.
+  $roles['devtrac admin'] = array(
+    'name' => 'devtrac admin',
+    'weight' => 0,
+  );
+
   // Exported role: editor.
   $roles['editor'] = array(
     'name' => 'editor',
@@ -28,9 +34,9 @@ function devtrac7_users2_user_default_roles() {
     'weight' => 0,
   );
 
-  // Exported role: usaid editor.
-  $roles['usaid editor'] = array(
-    'name' => 'usaid editor',
+  // Exported role: iati manager.
+  $roles['iati manager'] = array(
+    'name' => 'iati manager',
     'weight' => 0,
   );
 

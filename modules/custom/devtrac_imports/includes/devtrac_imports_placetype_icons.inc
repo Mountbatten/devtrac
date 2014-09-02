@@ -36,7 +36,7 @@ class DevtracImportsPlacetypeIcons extends XMLMigration   {
 
     // The source images are in a local directory - specify the parent.
     $this->addFieldMapping('source_dir')
-         ->defaultValue(drupal_get_path('theme', 'devtrac7_theme') . '/mapicons');
+         ->defaultValue(drupal_get_path('theme', 'devtrac7_theme') . '/icons/locationtypes');
     // The 'value' of the media destination is mapped to the source field
     // representing the media itself - in this case, a filename relative to
     // source_dir.
@@ -48,6 +48,8 @@ class DevtracImportsPlacetypeIcons extends XMLMigration   {
 
     $this->addFieldMapping('uid')
          ->defaultValue(1);
+    $this->addFieldMapping('field_migrate_example_image:alt', 'name');
+    $this->addFieldMapping('field_migrate_example_image:title', 'name');
 
     $this->addUnmigratedDestinations(array('field_image_description:format',
       'field_image_description:language', 'destination_dir', 'destination_file',
@@ -69,7 +71,7 @@ class DevtracImportsPlacetypeIcons extends XMLMigration   {
     $fieldmappings = $this->getFieldMappings();
     $source_dir = $fieldmappings['source_dir']->getDefaultvalue();
     $file_full_path = DRUPAL_ROOT . '/' . $source_dir . '/' . $row->filename;
-    //watchdog("~~~~~~devtrac_imports", $file_full_path);
+    watchdog("~~~~~~devtrac_imports", $file_full_path);
     if(!file_exists($file_full_path)) {
       return FALSE;
     }

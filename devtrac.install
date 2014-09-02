@@ -207,7 +207,7 @@ function devtrac_install() {
       'type' => 'page',
       'name' => st('Basic page'),
       'base' => 'node_content',
-      'description' => st("Use <em>basic pages</em> for your static content, such as an 'About us' page."),
+      'description' => st('A <em>page</em>, similar in form to a <em>story</em>, is a simple method for creating and displaying information that rarely changes, such as an"About us" section of a website. By default, a <em>page</em> entry does not allow visitor comments and is not featured on the site\'s initial home page.'),
       'custom' => 1,
       'modified' => 1,
       'locked' => 0,
@@ -230,17 +230,17 @@ function devtrac_install() {
   }
 
   // Default "Basic page" to not be promoted and have comments disabled.
-  variable_set('node_options_page', array('status'));
-  variable_set('comment_page', COMMENT_NODE_HIDDEN);
+  variable_set('node_options_page', array('status', 'revision'));
+  variable_set('comment_page', COMMENT_NODE_CLOSED);
 
   // Don't display date and author information for "Basic page" nodes by default.
-  variable_set('node_submitted_page', FALSE);
+  variable_set('node_submitted_page', 0);
 
   // Enable user picture support and set the default to a square thumbnail option.
   variable_set('user_pictures', '1');
-  variable_set('user_picture_dimensions', '1024x1024');
-  variable_set('user_picture_file_size', '800');
-  variable_set('user_picture_style', 'thumbnail');
+  variable_set('user_picture_dimensions', '1000x1000');
+  variable_set('user_picture_file_size', '1024');
+  variable_set('user_picture_style', 'user_profile_img');
 
   // Allow visitor account creation with administrative approval.
   variable_set('user_register', USER_REGISTER_ADMINISTRATORS_ONLY);
@@ -386,7 +386,7 @@ function devtrac_install() {
   variable_set('node_admin_theme', '0');
 
   // Set the default theme.
-  $default_theme = 'devtrac7_theme';
+  $default_theme = 'devtrac_classic';
   theme_enable(array($default_theme));
   variable_set('theme_default', $default_theme);
 }
@@ -395,13 +395,6 @@ function devtrac_install() {
  * Implements hook_install_tasks().
  */
 function devtrac_install_tasks(&$install_state) {
-  if (!variable_get('install_profile', FALSE) && $install_state['database_tables_exist']) {
-    $profile = drupal_get_profile();
-    if (isset($profile) && !empty($profile)) {
-      variable_set('install_profile', $profile);
-    }
-  }
-
   // Increase maximum function nesting level to prevent install errors.
   // $max_nesting_level = ini_get('xdebug.max_nesting_level');
   // if ($max_nesting_level > 0 && $max_nesting_level <= '200') {
@@ -409,11 +402,19 @@ function devtrac_install_tasks(&$install_state) {
   // }
 
   // Remove any status messages that might have been set. They are unneeded.
-  //  drupal_get_messages('status', TRUE);
+  drupal_get_messages('status', TRUE);
 
   $tasks = array();
   $current_task = variable_get('install_task', 'done');
 
+  $tasks['devtrac_date_format_form'] = array(
+    'display_name' => st('Configure Date Format'),
+    'type' => 'form',
+  );
+  $tasks['devtrac_username_geonames_form'] = array(
+    'display_name' => st('Configure Geonames Data'),
+    'type' => 'form',
+  );
   $statistics_is_piwik = !empty($install_state['parameters']['stats']) && $install_state['parameters']['stats'] == 'piwik';
   $statistics_is_googleanalytics = !empty($install_state['parameters']['stats']) && $install_state['parameters']['stats'] == 'googleanalytics';
   $tasks['devtrac_install_statistics_select_form'] = array(
@@ -440,16 +441,9 @@ function devtrac_install_tasks(&$install_state) {
     'display' => FALSE,
     'type' => 'normal',
   );
-  $tasks['devtrac_date_format_form'] = array(
-    'display_name' => st('Configure Date Format'),
-    'type' => 'form',
-  );
-  $tasks['devtrac_username_geonames_form'] = array(
-    'display_name' => st('Configure Geonames Data'),
-    'type' => 'form',
-  );
   $tasks['devtrac_enable_custom_currentsearch'] = array(
     'display_name' => st('Enable Custom Current Search Blocks'),
+    'display' => FALSE,
     'type' => 'normal',
   );
   return $tasks;
@@ -459,6 +453,26 @@ function devtrac_install_tasks(&$install_state) {
  * Implements hook_install_tasks_alter().
  */
 function devtrac_install_tasks_alter(&$tasks, $install_state) {
+  $tasks['install_finished']['function'] = 'devtrac_install_finished';
+  $tasks['install_select_profile']['display'] = FALSE;
+  $tasks['install_select_locale']['display'] = FALSE;
+  $tasks['install_select_locale']['run'] = INSTALL_TASK_SKIP;
+
+  // The "Welcome" screen needs to come after the first two steps
+  // (profile and language selection), despite the fact that they are disabled.
+  // We will implement language choice when there is something to choose from
+  $new_task['devtrac_install_welcome'] = array(
+    'display' => TRUE,
+    'display_name' => st('Welcome'),
+    'type' => 'form',
+    'run' => isset($install_state['parameters']['welcome']) ? INSTALL_TASK_SKIP : INSTALL_TASK_RUN_IF_REACHED,
+  );
+  $old_tasks = $tasks;
+  $tasks = array_slice($old_tasks, 0, 2) + $new_task + array_slice($old_tasks, 2);
+
+  // Set the installation theme.
+  _devtrac_set_theme('devtrac_classic');
+
   // The Solr congiguration screen needs to come after the database
   // setup, enabling the system module and after the full bootstrap.
   $solr_task['devtrac_solr_configure_form'] = array(
@@ -467,6 +481,78 @@ function devtrac_install_tasks_alter(&$tasks, $install_state) {
   );
   $old_tasks = $tasks;
   $tasks = array_slice($old_tasks, 0, 8) + $solr_task + array_slice($old_tasks, 8);
+}
+
+/**
+ * Force-set a theme at any point during the execution of the request.
+ *
+ * Drupal doesn't give us the option to set the theme during the installation
+ * process and forces enable the maintenance theme too early in the request
+ * for us to modify it in a clean way.
+ * 
+ * Copied from Commerce Kickstart
+ */
+function _devtrac_set_theme($target_theme) {
+  if ($GLOBALS['theme'] != $target_theme) {
+    unset($GLOBALS['theme']);
+
+    drupal_static_reset();
+    $GLOBALS['conf']['maintenance_theme'] = $target_theme;
+    _drupal_maintenance_theme();
+  }
+}
+
+/**
+ * Task callback: shows the welcome screen.
+ */
+function devtrac_install_welcome($form, &$form_state, &$install_state) {
+  drupal_set_title(st('Privacy Policy Summary'));
+  $message = '<p>' . st('Thank you for choosing Devtrac, a product offered by Mountbatten.') . '</p>';
+  $eula = '<p>' . st('While we have a rather long, boring Privacy Policy just like any other technology company, here is a short summary of some key items we feel are important:') . '</p>';
+  $items = array();
+  $dfp_link = l("Google's DoubleClick for Publishers (\"DFP\")", "http://www.google.com/dfp/info/sb/index.html", array('attributes' => array('target' => '_blank')));
+  $items[] = st("The Devtrac Installer collects some data about your progress and sends it to one of our servers.");
+  $items[] = st('We use this to improve the user experience of Devtrac and make it even easier to install.');
+  $items[] = st('The server to which we post the data belongs to Mountbatten and we do not share your data with any corporation.');
+  $items[] = st('Devtrac and Mountbattten do not collect any personally identifiable information.');
+  $items[] = st('During your installation, you can choose to use your own statistics platform alongside Devtrac.');
+  $eula .= theme('item_list', array('items' => $items));
+  $eula_link = l('Privacy Policy and User Agreement', 'http://www.mountbatten.net/privacy/devtrac', array('attributes' => array('target' => '_blank')));
+  $eula .= '<p>' . st('That is it for the main points. The full !policy can be viewed on our website.  Thank you again for choosing Devtrac!', array('!policy' => $eula_link)) . '</p>';
+  $form = array();
+  $form['welcome_message'] = array(
+    '#markup' => $message,
+  );
+  $form['eula'] = array(
+    '#prefix' => '<div id="eula-installation-welcome">',
+    '#markup' => $eula,
+  );
+  $form['eula-accept'] = array(
+    '#title' => st('I agree to the Privacy Policy and User Agreement'),
+    '#type' => 'checkbox',
+    '#suffix' => '</div>',
+  );
+  $form['actions'] = array(
+    '#type' => 'actions',
+  );
+  $form['actions']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => st("Install Devtrac"),
+    '#states' => array(
+      'disabled' => array(
+        ':input[name="eula-accept"]' => array('checked' => FALSE),
+      ),
+    ),
+    '#weight' => 10,
+  );
+  return $form;
+}
+
+function devtrac_install_welcome_submit($form, &$form_state) {
+  global $install_state;
+
+  $install_state['parameters']['welcome'] = 'done';
+  $install_state['parameters']['locale'] = 'en';
 }
 
 /**
@@ -637,7 +723,7 @@ function devtrac_install_additional_modules(&$install_state) {
 
   $operations = array();
   // Enable and set as default the correct theme.
-  $theme = 'devtrac7_theme';
+  $theme = 'devtrac_classic';
   $operations[] = array('_devtrac_enable_theme', array($theme));
   // Enable the selected modules.
   foreach ($modules_sorted as $module => $weight) {
@@ -659,7 +745,8 @@ function devtrac_install_additional_modules(&$install_state) {
 function devtrac_import_codelists() {
   $batch = devtrac_imports_batch();
   // Remove any status messages that might have been set.
-  drupal_get_messages('status', TRUE);
+  // Migrate adds its messages under the wrong type, see #1659150.
+  drupal_get_messages('ok', TRUE);
   return $batch;
 }
 
@@ -711,6 +798,9 @@ function devtrac_initialize_taxonomy_access() {
       case 'authenticated user':
         $authenticated_global_defaults[0] = _taxonomy_access_format_grant_record(0, $rid, $view_and_list, TRUE);
         break;
+      case 'devtrac admin':
+        $admin_global_defaults[0] = _taxonomy_access_format_grant_record(0, $rid, $list, TRUE);
+        break;
       case 'editor':
         $editor_global_defaults[0] = _taxonomy_access_format_grant_record(0, $rid, $list, TRUE);
         break;
@@ -731,6 +821,9 @@ function devtrac_initialize_taxonomy_access() {
         case 'authenticated user':
           $authenticated_vocabulary_defaults[$vid] = _taxonomy_access_format_grant_record($vid, $rid, $deny, TRUE);
           break;
+        case 'devtrac admin':
+          $admin_vocabulary_defaults[$vid] = _taxonomy_access_format_grant_record($vid, $rid, $create_and_list, TRUE);
+          break;
         case 'editor':
           $editor_vocabulary_defaults[$vid] = _taxonomy_access_format_grant_record($vid, $rid, $create_and_list, TRUE);
           break;
@@ -745,24 +838,27 @@ function devtrac_initialize_taxonomy_access() {
   // Initialize term settings for different roles.
   foreach ($roles as $rid => $role_name) {
     foreach ($vocabularies as $vid => $vocabulary) {
+      if ($vocabulary->machine_name == 'taxonomy_vocabulary_6') {
+        continue;
+      }
       $terms = taxonomy_get_tree($vid, 0, NULL, TRUE);
       foreach ($terms as $term) {
         switch ($role_name) {
+          case 'devtrac admin':
+            $children = taxonomy_get_children($term->tid);
+            if (!empty($children)) {
+              $admin_term_defaults[$term->tid] = _taxonomy_access_format_grant_record($term->tid, $rid, $list);
+            }
+            break;
           case 'editor':
             $children = taxonomy_get_children($term->tid);
-            if (empty($children)) {
-              // $editor_term_defaults[$term->tid] = _taxonomy_access_format_grant_record($term->tid, $rid, $create_and_list);
-            }
-            else {
+            if (!empty($children)) {
               $editor_term_defaults[$term->tid] = _taxonomy_access_format_grant_record($term->tid, $rid, $list);
             }
             break;
           case 'field worker':
             $children = taxonomy_get_children($term->tid);
-            if (empty($children)) {
-              // $worker_term_defaults[$term->tid] = _taxonomy_access_format_grant_record($term->tid, $rid, $create_and_list);
-            }
-            else {
+            if (!empty($children)) {
               $worker_term_defaults[$term->tid] = _taxonomy_access_format_grant_record($term->tid, $rid, $list);
             }
             break;
@@ -779,6 +875,9 @@ function devtrac_initialize_taxonomy_access() {
   if (!empty($authenticated_global_defaults)) {
     taxonomy_access_set_default_grants($authenticated_global_defaults);
   }
+  if (!empty($admin_global_defaults)) {
+    taxonomy_access_set_default_grants($admin_global_defaults);
+  }
   if (!empty($editor_global_defaults)) {
     taxonomy_access_set_default_grants($editor_global_defaults);
   }
@@ -793,6 +892,9 @@ function devtrac_initialize_taxonomy_access() {
   if (!empty($authenticated_vocabulary_defaults)) {
     taxonomy_access_set_default_grants($authenticated_vocabulary_defaults);
   }
+  if (!empty($admin_vocabulary_defaults)) {
+    taxonomy_access_set_default_grants($admin_vocabulary_defaults);
+  }
   if (!empty($editor_vocabulary_defaults)) {
     taxonomy_access_set_default_grants($editor_vocabulary_defaults);
   }
@@ -801,6 +903,9 @@ function devtrac_initialize_taxonomy_access() {
   }
 
   // Process term grants.
+  if (!empty($admin_term_defaults)) {
+    taxonomy_access_set_term_grants($admin_term_defaults);
+  }
   if (!empty($editor_term_defaults)) {
     taxonomy_access_set_term_grants($editor_term_defaults);
   }
@@ -829,9 +934,9 @@ function devtrac_solr_configure_form() {
   $form['solr']['host'] = array(
     '#type' => 'textfield',
     '#title' => t('Host'),
-    '#default_value' => 'solro2.mountbatten.net',
+    '#default_value' => 'localhost',
     '#maxlength' => 64,
-    '#description' => t('Add hostname or IP address of ur solr server', array('@overview' => url('admin/structure/block'))),
+    '#description' => t('Add hostname or IP address of your solr server.'),
     '#required' => FALSE,
     '#weight' => -20,
   );
@@ -840,16 +945,16 @@ function devtrac_solr_configure_form() {
     '#title' => t('Port'),
     '#default_value' => '8080',
     '#maxlength' => 64,
-    '#description' => t('Port Number'),
+    '#description' => t('Port number where your solr server can be reached. 8080 is the default for a solr installation in Tomcat.'),
     '#required' => FALSE,
     '#weight' => -19,
   );
   $form['solr']['path'] = array(
     '#type' => 'textfield',
     '#title' => t('Path'),
-    '#default_value' => '/solr4/devtracd7',
+    '#default_value' => '/solr',
     '#maxlength' => 64,
-    '#description' => t('Path to your solr Instance', array('@overview' => url('admin/structure/block'))),
+    '#description' => t('Path to your solr instance.'),
     '#required' => FALSE,
     '#weight' => -18,
   );
@@ -905,8 +1010,6 @@ function devtrac_solr_configure_form_submit($form, &$form_state) {
 function devtrac_date_format_form() {
   module_load_include('inc', 'system', 'system.admin');
   $date_time_settings = system_date_time_settings();
-  // Remove any status messages that might have been set.
-  drupal_get_messages('status', TRUE);
   return $date_time_settings;
 }
 
@@ -984,3 +1087,69 @@ function devtrac_enable_custom_currentsearch() {
     current_search_set_block_searcher($block, $searcher);
   }
 }
+
+/**
+ * Custom installation task; perform final steps and redirect the user to the new site if there are no errors.
+ *
+ * @param $install_state
+ *   An array of information about the current installation state.
+ *
+ * @return
+ *   A message informing the user about errors if there was some.
+ */
+function devtrac_install_finished(&$install_state) {
+  drupal_set_title(st('@drupal installation complete', array('@drupal' => drupal_install_profile_distribution_name())), PASS_THROUGH);
+  $messages = drupal_set_message();
+
+  // Remember the profile which was used.
+  variable_set('install_profile', drupal_get_profile());
+  variable_set('install_task', 'done');
+
+  // Flush all caches to ensure that any full bootstraps during the installer
+  // do not leave stale cached data, and that any content types or other items
+  // registered by the install profile are registered correctly.
+  drupal_flush_all_caches();
+
+  // Install profiles are always loaded last
+  db_update('system')
+    ->fields(array('weight' => 1000))
+    ->condition('type', 'module')
+    ->condition('name', drupal_get_profile())
+    ->execute();
+
+  // Cache a fully-built schema.
+  drupal_get_schema(NULL, TRUE);
+
+  // Run cron to populate update status tables (if available) so that users
+  // will be warned if they've installed an out of date Drupal version.
+  // Will also trigger indexing of profile-supplied content or feeds.
+//  drupal_cron_run();
+
+  if (isset($messages['error'])) {
+    $output = '<p>' . (isset($messages['error']) ? st('Review the messages above before visiting <a href="@url">your new site</a>.', array('@url' => url(''))) : st('<a href="@url">Visit your new site</a>.', array('@url' => url('')))) . '</p>';
+    return $output;
+  }
+  else {
+    // Since any module can add a drupal_set_message, this can bug the user
+    // when we redirect him to the front page. For a better user experience,
+    // remove all the message that are only "notifications" message.
+    drupal_get_messages('status', TRUE);
+    drupal_get_messages('completed', TRUE);
+    // Migrate adds its messages under the wrong type, see #1659150.
+    drupal_get_messages('ok', TRUE);
+
+    // If we don't install drupal using Drush, redirect the user to the front
+    // page.
+    if (!drupal_is_cli()) {
+//      if (module_exists('overlay')) {
+//        // Special case when no clean urls.
+//        $fragment = empty($GLOBALS['conf']['clean_url']) ? urlencode('?q=') : '';
+//        drupal_goto('', array('fragment' => 'overlay=' . $fragment));
+//      }
+//      else {
+        drupal_goto('');
+//      }
+    }
+  }
+}
+

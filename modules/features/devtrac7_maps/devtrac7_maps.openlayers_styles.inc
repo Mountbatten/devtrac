@@ -92,7 +92,7 @@ function devtrac7_maps_openlayers_styles() {
   $openlayers_styles->title = 'Devtrac Placetype Active Style';
   $openlayers_styles->description = 'Placetype Black and White';
   $openlayers_styles->data = array(
-    'externalGraphic' => 'sites/default/files/styles/map_icon_bw/public/${taxonomy_vocabulary_1}_c.png',
+    'externalGraphic' => '${field_term_icon_1}',
     'pointRadius' => 12,
     'fillColor' => '#EE9900',
     'strokeColor' => '#EE9900',
@@ -113,7 +113,7 @@ function devtrac7_maps_openlayers_styles() {
   $openlayers_styles->title = 'Devtrac Placetype Default Style';
   $openlayers_styles->description = 'The style to render placetypes with. Must have a [tid] field to show the taxonomy image';
   $openlayers_styles->data = array(
-    'externalGraphic' => 'sites/default/files/styles/map_icon/public/${taxonomy_vocabulary_1}_c.png',
+    'externalGraphic' => '${field_term_icon}',
     'pointRadius' => 12,
     'fillColor' => '#EE9900',
     'strokeColor' => '#EE9900',
@@ -134,7 +134,7 @@ function devtrac7_maps_openlayers_styles() {
   $openlayers_styles->title = 'Devtrac Placetype Selected Style';
   $openlayers_styles->description = 'Placetype Black and White';
   $openlayers_styles->data = array(
-    'externalGraphic' => 'sites/default/files/styles/map_icon_bw/public/${taxonomy_vocabulary_1}_c.png',
+    'externalGraphic' => '${field_term_icon_1}',
     'pointRadius' => 12,
     'fillColor' => '#EE9900',
     'strokeColor' => '#EE9900',

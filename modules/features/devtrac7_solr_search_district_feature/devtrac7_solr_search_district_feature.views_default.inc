@@ -60,7 +60,7 @@ function devtrac7_solr_search_district_feature_views_default_views() {
   $handler->display->display_options['fields']['name']['table'] = 'search_api_index_devtrac_solr_district_index';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['link_to_entity'] = 1;
-  /* Field: Indexed Taxonomy term: UNICEF Category */
+  /* Field: Indexed Taxonomy term: Tags */
   $handler->display->display_options['fields']['field_district_category']['id'] = 'field_district_category';
   $handler->display->display_options['fields']['field_district_category']['table'] = 'search_api_index_devtrac_solr_district_index';
   $handler->display->display_options['fields']['field_district_category']['field'] = 'field_district_category';
@@ -139,7 +139,7 @@ function devtrac7_solr_search_district_feature_views_default_views() {
   $handler->display->display_options['fields']['name']['table'] = 'search_api_index_devtrac_solr_district_index';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['link_to_entity'] = 1;
-  /* Field: Indexed Taxonomy term: UNICEF Category */
+  /* Field: Indexed Taxonomy term: Tags */
   $handler->display->display_options['fields']['field_district_category']['id'] = 'field_district_category';
   $handler->display->display_options['fields']['field_district_category']['table'] = 'search_api_index_devtrac_solr_district_index';
   $handler->display->display_options['fields']['field_district_category']['field'] = 'field_district_category';
@@ -248,7 +248,7 @@ function devtrac7_solr_search_district_feature_views_default_views() {
   $handler->display->display_options['fields']['name']['table'] = 'search_api_index_devtrac_solr_district_index';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['link_to_entity'] = 1;
-  /* Field: Indexed Taxonomy term: UNICEF Category */
+  /* Field: Indexed Taxonomy term: Tags */
   $handler->display->display_options['fields']['field_district_category']['id'] = 'field_district_category';
   $handler->display->display_options['fields']['field_district_category']['table'] = 'search_api_index_devtrac_solr_district_index';
   $handler->display->display_options['fields']['field_district_category']['field'] = 'field_district_category';
@@ -400,7 +400,7 @@ function devtrac7_solr_search_district_feature_views_default_views() {
   $handler->display->display_options['fields']['name']['table'] = 'search_api_index_devtrac_solr_district_index';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['link_to_entity'] = 1;
-  /* Field: Indexed Taxonomy term: UNICEF Category */
+  /* Field: Indexed Taxonomy term: Tags */
   $handler->display->display_options['fields']['field_district_category']['id'] = 'field_district_category';
   $handler->display->display_options['fields']['field_district_category']['table'] = 'search_api_index_devtrac_solr_district_index';
   $handler->display->display_options['fields']['field_district_category']['field'] = 'field_district_category';
@@ -459,7 +459,7 @@ function devtrac7_solr_search_district_feature_views_default_views() {
   $handler->display->display_options['fields']['name']['table'] = 'search_api_index_devtrac_solr_district_index';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['link_to_entity'] = 1;
-  /* Field: Indexed Taxonomy term: UNICEF Category */
+  /* Field: Indexed Taxonomy term: Tags */
   $handler->display->display_options['fields']['field_district_category']['id'] = 'field_district_category';
   $handler->display->display_options['fields']['field_district_category']['table'] = 'search_api_index_devtrac_solr_district_index';
   $handler->display->display_options['fields']['field_district_category']['field'] = 'field_district_category';

@@ -11,7 +11,7 @@
  * Implements of hook_menu()
  */
 function devtrac_mapbox_menu(){
-  $items['admin/devtrac'] = array(
+  $items['admin/config/devtrac'] = array(
       'title' => t("Devtrac"),
       'description' => t("Devtrac Settings."),
       'position' => 'right',
@@ -21,7 +21,7 @@ function devtrac_mapbox_menu(){
       'file' => 'system.admin.inc',
       'file path' => drupal_get_path('module', 'system'),
   );
-  $items['admin/devtrac/mapbox'] = array(
+  $items['admin/config/devtrac/mapbox'] = array(
       'title' => t('Mapbox'),
       'description' => t('Devtrac Mapbox Settings.'),
       'page callback' => 'drupal_get_form',

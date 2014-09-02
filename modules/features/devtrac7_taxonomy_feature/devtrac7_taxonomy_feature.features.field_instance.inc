@@ -95,7 +95,7 @@ function devtrac7_taxonomy_feature_field_default_field_instances() {
     ),
     'entity_type' => 'taxonomy_term',
     'field_name' => 'field_district_category',
-    'label' => 'UNICEF Category',
+    'label' => 'Tags',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -666,7 +666,6 @@ function devtrac7_taxonomy_feature_field_default_field_instances() {
   t('OSM Type');
   t('SVG Data');
   t('Term Icon');
-  t('UNICEF Category');
   t('Wikipedia');
 
   return $field_instances;

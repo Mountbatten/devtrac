@@ -36,28 +36,6 @@ function devtrac7_menu_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
-  // Exported menu link: main-menu_activities:activities
-  $menu_links['main-menu_activities:activities'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'activities',
-    'router_path' => 'activities',
-    'link_title' => 'Activities',
-    'options' => array(
-      'identifier' => 'main-menu_activities:activities',
-      'attributes' => array(
-        'class' => array(
-          0 => 'purl_search_api_noreset',
-        ),
-      ),
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -46,
-    'customized' => 1,
-  );
   // Exported menu link: main-menu_contact:contact
   $menu_links['main-menu_contact:contact'] = array(
     'menu_name' => 'main-menu',
@@ -75,14 +53,14 @@ function devtrac7_menu_menu_default_menu_links() {
     'weight' => -41,
     'customized' => 1,
   );
-  // Exported menu link: main-menu_districts:districts
-  $menu_links['main-menu_adminunits:adminunits'] = array(
+  // Exported menu link: main-menu_admin-units:adminunits
+  $menu_links['main-menu_admin-units:adminunits'] = array(
     'menu_name' => 'main-menu',
     'link_path' => 'adminunits',
     'router_path' => 'adminunits',
     'link_title' => 'Admin Units',
     'options' => array(
-      'identifier' => 'main-menu_adminunits:adminunits',
+      'identifier' => 'main-menu_admin-units:adminunits',
       'attributes' => array(
         'class' => array(
           0 => 'purl_search_api_noreset',
@@ -145,28 +123,6 @@ function devtrac7_menu_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -43,
-    'customized' => 1,
-  );
-  // Exported menu link: main-menu_organisations:organisations
-  $menu_links['main-menu_organisations:organisations'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'organisations',
-    'router_path' => 'organisations',
-    'link_title' => 'Organisations',
-    'options' => array(
-      'identifier' => 'main-menu_organisations:organisations',
-      'attributes' => array(
-        'class' => array(
-          0 => 'purl_search_api_noreset',
-        ),
-      ),
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -47,
     'customized' => 1,
   );
   // Exported menu link: main-menu_sign-in:user/login
@@ -305,13 +261,11 @@ function devtrac7_menu_menu_default_menu_links() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Action Items');
-  t('Activities');
   t('Contact');
   t('Contact Us');
   t('Districts');
   t('Field trips');
   t('Locations');
-  t('Organisations');
   t('Sign in');
   t('Sign out');
   t('Site Reports');

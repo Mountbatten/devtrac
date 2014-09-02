@@ -1,6 +1,7 @@
 Feature: Login Devtrac Behat Test
   Background: In order to login, i have to be on home/index page
 
+  @api
   Scenario: Devtac behatActual login
     Given I am on "/user"
     When I fill in name with "admin"

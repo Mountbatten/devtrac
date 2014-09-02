@@ -49,11 +49,7 @@ Feature: Devtrac Behat Create Site Report Test
     And I press the "Save" button
     Then I should see "ERROR"
 
-
-
- 
-
- @api
+  @api
   Scenario: Devtrac Behat create Roadside observation Field report
     Given I am logged in as a user with the "field worker" role
     And I am on "/node/add/fieldtrip"

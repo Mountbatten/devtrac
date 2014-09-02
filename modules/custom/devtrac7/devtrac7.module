@@ -163,7 +163,7 @@ function devtrac7_menu_alter(&$items) {
   $items['node/%node/editsubmission/%submissiontoedit']['weight'] = 3;
   // The weight of the item in the menu_router table
   // overrides the weight in the menu_link table.
-  $items['user']['weight'] = -48;
+  $items['user']['weight'] = -30;
 }
 
 /**
@@ -172,10 +172,7 @@ function devtrac7_menu_alter(&$items) {
 function devtrac7_menu_link_alter(&$item) {
   if ($item['link_path'] == 'user') {
     $item['menu_name'] = 'menu-my-profile';
-    $item['link_title'] = 'Home';
-    if (user_is_logged_in()) {
-      'Welcome, [current-user:field_user_firstname]';
-    }
+    $item['link_title'] = 'Welcome, [current-user:field_user_firstname]';
     $item['hidden'] = 0;
     $options = array(
       'menu_token_link_path' => 'user',
@@ -195,7 +192,7 @@ function devtrac7_menu_link_alter(&$item) {
       'alter' => TRUE,
     );
     $item['options'] = $options;
-    $item['weigth'] = -48;
+    $item['weigth'] = -30;
   }
   if ($item['link_path'] == 'user/%/edit') {
     $item['menu_name'] = 'menu-my-profile';
@@ -213,18 +210,6 @@ function devtrac7_menu_link_alter(&$item) {
     // and the code in function _menu_navigation_links_rebuild() in includes/menu.inc
     $item['customized'] = 1;
     $item['weigth'] = -50;
-  }
-}
-
-/**
- * Implements hook_translated_menu_link_alter().
- */
-function devtrac7_translated_menu_link_alter(&$item, $map) {
-  if ($item['link_path'] == 'user') {
-    $item['link_title'] = 'Home';
-    if (user_is_logged_in()) {
-      'Welcome, [current-user:field_user_firstname]';
-    }
   }
 }
 
@@ -1894,49 +1879,36 @@ function devtrac7_addplacetofieldtrip_access($fieldtripnid) {
             && node_access('update', $fieldtrip)); // Overlaps with the former conditions, but it won't hurt to check for it
 }
 
-
-/*
- *  implements hook_getcontext
- */
-function devtrac7_getcontext($nid) {
-  $sitevisit = node_load($nid);
-  if (isset($sitevisit->field_ftritem_place['und'][0]['target_id'])) {
-    $placenid = $sitevisit->field_ftritem_place['und'][0]['target_id'];
-    if (is_numeric($placenid)) {
-      return $placenid;
-    }
-  }
-  return FALSE;
-}
-
 /*
  *  Implements hook_questionnaire_getquestions().
  */
 function devtrac7_questionnaire_getquestions($contexts) {
   $result = array();
   
-  foreach ($contexts['node'] as $place) {
-    if (isset($place->taxonomy_vocabulary_1['und'][0]['tid']) && (!is_null($place->taxonomy_vocabulary_1['und'][0]['tid']))) {
-      $placetype = $place->taxonomy_vocabulary_1['und'][0]['tid'];
-      $placetypes = taxonomy_get_parents_all($placetype);
-      foreach ($placetypes as $placetype) {
-        $query = db_select('node', 'n');
-        $query->join('field_data_taxonomy_vocabulary_1', 'p', 'n.nid = p.entity_id');
-        $query->join('draggableviews_structure', 'd', 'n.nid = d.entity_id');
-        $query->fields('n', array('nid'));
-        $query->fields('d', array('weight'));
-        $query->condition('p.taxonomy_vocabulary_1_tid', $placetype->tid)
-          ->condition('p.bundle', 'questionnaire_question')
-          ->condition('n.status', 1)
-          ->orderBy('d.weight', 'ASC');
-        $qresult = $query->execute();
-        foreach($qresult as $question) {
-            $result[$question->nid] = array(
-                    'node' => node_load($question->nid),
-                    'context_type' => 'node',
-                    'context_id' => $place->nid,
-                    'questionnaire_id' => $place->nid,
-                  );
+  if (isset($contexts['node'])) {
+    foreach ($contexts['node'] as $place) {
+      if (isset($place->taxonomy_vocabulary_1['und'][0]['tid']) && (!is_null($place->taxonomy_vocabulary_1['und'][0]['tid']))) {
+        $placetype = $place->taxonomy_vocabulary_1['und'][0]['tid'];
+        $placetypes = taxonomy_get_parents_all($placetype);
+        foreach ($placetypes as $placetype) {
+          $query = db_select('node', 'n');
+          $query->join('field_data_taxonomy_vocabulary_1', 'p', 'n.nid = p.entity_id');
+          $query->join('draggableviews_structure', 'd', 'n.nid = d.entity_id');
+          $query->fields('n', array('nid'));
+          $query->fields('d', array('weight'));
+          $query->condition('p.taxonomy_vocabulary_1_tid', $placetype->tid)
+            ->condition('p.bundle', 'questionnaire_question')
+            ->condition('n.status', 1)
+            ->orderBy('d.weight', 'ASC');
+          $qresult = $query->execute();
+          foreach($qresult as $question) {
+              $result[$question->nid] = array(
+                      'node' => node_load($question->nid),
+                      'context_type' => 'node',
+                      'context_id' => $place->nid,
+                      'questionnaire_id' => $place->nid,
+                    );
+          }
         }
       }
     }
@@ -2229,30 +2201,49 @@ function devtrac7_is_unfiltered_front_page() {
 }
 
 /**
- * Implements hook_user_login()
- * @param unknown_type $edit
- * @param unknown_type $account
+ * Implements hook_form_alter().
  */
-function devtrac7_user_login(&$edit, $account) {
+function devtrac7_form_user_login_alter(&$form, &$form_state, $form_id) {
   global $install_state;
   // If the Devtrac profile installer is still running,
   // bail out and don't redirect to the user profile page.
   if (!isset($install_state)) {
-    // If there is some data missing on the user profile page,
-    // redirect to the user profile page and have the user supply it.
-    if (!isset($account->field_user_surname['und'][0]['value']) ||
-        !isset($account->field_user_aboutme['und'][0]['value']) ||
-        !isset($account->field_user_firstname['und'][0]['value']) ||
-        !isset($account->taxonomy_vocabulary_4['und']) ||
-        !isset($account->field_user_superior['und'][0]['target_id']) ||
-        !isset($account->taxonomy_vocabulary_5['und']) ||
-        !isset($account->mail) ||
-        !isset($account->name)
-    ) {
-      drupal_set_message("Please finish filling in you full profile by filling in all mandatory fields.");
-      drupal_goto('user/'.$account->uid.'/edit');
+    $form['#submit'][] = 'devtrac7_user_login_submit';
+  }
+}
+
+/**
+ * Sets shutdown function to perform redirects later.
+ */
+function devtrac7_user_login_submit(&$form, &$form_state) {
+  if (isset($form_state['uid'])) {
+    global $base_url;
+    $destination = check_plain(filter_xss($base_url . '/user/' . $form_state['uid'] . '/edit'));
+    if (valid_url($destination, TRUE)) {
+      global $user;
+      // If there is some data missing on the user profile page,
+      // redirect to the user profile page and have the user supply it.
+      if (!isset($user->field_user_surname['und'][0]['value']) ||
+          !isset($user->field_user_aboutme['und'][0]['value']) ||
+          !isset($user->field_user_firstname['und'][0]['value']) ||
+          !isset($user->taxonomy_vocabulary_4['und']) ||
+          !isset($user->field_user_superior['und'][0]['target_id']) ||
+          !isset($user->taxonomy_vocabulary_5['und']) ||
+          !isset($user->mail) ||
+          !isset($user->name)
+      ) {
+        drupal_set_message("Please finish filling in you full profile by filling in all mandatory fields.");
+        drupal_register_shutdown_function('devtrac7_perform_redirect', $destination);
+      }
     }
   }
+}
+
+/**
+ * Perform redirects.
+ */
+function devtrac7_perform_redirect($destination) {
+  drupal_goto($destination, array('external' => TRUE));
 }
 
 /**

@@ -72,6 +72,7 @@ function devtrac_imports_batch($operation="import") {
 			'DevtracImportsSectors0',
 			'DevtracImportsSectors1',
 			'DevtracImportsSiteReportType',
+			'DevtracImportsPlacetypeIcons',
 			'DevtracImportsPlacetype0',
 			'DevtracImportsPlacetype1',
 			'DevtracImportsPlacetype2',

@@ -151,8 +151,9 @@ function devtrac7_solr_search_questions_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['path'] = 'statistics/answers?f[0]=questionnaire_answer_question:[nid]';
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'statistics/answers?f[0]=question:[nid]';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_entity'] = 0;
   $handler->display->display_options['path'] = 'statistics';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Statistics';

@@ -13,19 +13,20 @@ function devtrac7_site_configuration_feature_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'autoassignrole_auto_active';
+  $strongarm->name = 'autoassignrole_admin_active';
   $strongarm->value = '1';
-  $export['autoassignrole_auto_active'] = $strongarm;
+  $export['autoassignrole_admin_active'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'autoassignrole_auto_roles';
   $strongarm->value = array(
-    4 => '4',
+    5 => '5',
     3 => 0,
-    5 => 0,
+    4 => 0,
     6 => 0,
+    7 => 0,
   );
   $export['autoassignrole_auto_roles'] = $strongarm;
 
@@ -133,56 +134,56 @@ function devtrac7_site_configuration_feature_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mapit_flag';
-  $strongarm->value = '128';
+  $strongarm->value = 'field_svg_data';
   $export['mapit_flag'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mapit_geofield';
-  $strongarm->value = '64';
+  $strongarm->value = 'field_district_geo';
   $export['mapit_geofield'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mapit_longname';
-  $strongarm->value = '127';
+  $strongarm->value = 'field_long_name';
   $export['mapit_longname'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mapit_osm_id';
-  $strongarm->value = '122';
+  $strongarm->value = 'field_osm_id';
   $export['mapit_osm_id'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mapit_osm_rel';
-  $strongarm->value = '123';
+  $strongarm->value = 'field_osm_relation_id';
   $export['mapit_osm_rel'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mapit_osm_type';
-  $strongarm->value = '124';
+  $strongarm->value = 'field_osm_type';
   $export['mapit_osm_type'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mapit_vocabulary';
-  $strongarm->value = '6';
+  $strongarm->value = 'iati_custom_admin_unit';
   $export['mapit_vocabulary'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mapit_wikipedia';
-  $strongarm->value = '90';
+  $strongarm->value = 'field_wikipedia';
   $export['mapit_wikipedia'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1080,6 +1081,28 @@ user/*/*';
   $strongarm->name = 'preprocess_js';
   $strongarm->value = 0;
   $export['preprocess_js'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'purl_method_views_modes_key';
+  $strongarm->value = 'display';
+  $export['purl_method_views_modes_key'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'purl_types';
+  $strongarm->value = array(
+    'querystring' => 'querystring',
+    'path' => 0,
+    'pair' => 0,
+    'subdomain' => 0,
+    'domain' => 0,
+    'extension' => 0,
+    'useragent' => 0,
+  );
+  $export['purl_types'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

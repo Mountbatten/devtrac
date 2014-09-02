@@ -22,10 +22,7 @@ function devtrac7_users2_field_default_field_bases() {
     ),
     'foreign keys' => array(
       'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
+        'columns' => array(),
       ),
     ),
     'indexes' => array(
@@ -183,10 +180,7 @@ function devtrac7_users2_field_default_field_bases() {
     ),
     'foreign keys' => array(
       'users' => array(
-        'columns' => array(
-          'target_id' => 'uid',
-        ),
-        'table' => 'users',
+        'columns' => array(),
       ),
     ),
     'indexes' => array(

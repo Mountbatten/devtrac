@@ -16,7 +16,6 @@ dependencies[] = taxonomy
 dependencies[] = views
 dependencies[] = views_infinite_scroll
 dependencies[] = views_slideshow
-; dependencies[] = views_two_column_table
 dependencies[] = virtual_field
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0

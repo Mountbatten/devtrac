@@ -85,6 +85,8 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
       'format' => '1',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
   );
   $export['search_api@answers:block:created'] = $facet;
 
@@ -235,6 +237,8 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
       'format' => '1',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
   );
   $export['search_api@answers:block:taxonomy_vocabulary_1'] = $facet;
 
@@ -352,6 +356,8 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
     'inaccessible' => 1,
     'show_minimum_items' => 2,
     'yfacet' => '',
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
   );
   $export['search_api@answers:block:taxonomy_vocabulary_6'] = $facet;
 
@@ -415,9 +421,33 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
         'status' => 0,
         'weight' => '-50',
       ),
+      'exclude_items' => array(
+        'status' => 0,
+        'weight' => '-49',
+      ),
       'graph_combo_filter' => array(
         'status' => 1,
         'weight' => '-49',
+      ),
+      'exclude_inaccessible_items' => array(
+        'status' => 0,
+        'weight' => '-48',
+      ),
+      'rewrite_items' => array(
+        'status' => 0,
+        'weight' => '-47',
+      ),
+      'narrow_results' => array(
+        'status' => 0,
+        'weight' => '-46',
+      ),
+      'show_if_minimum_items' => array(
+        'status' => 0,
+        'weight' => '-45',
+      ),
+      'deepest_level_items' => array(
+        'status' => 0,
+        'weight' => '-44',
       ),
     ),
     'active_sorts' => array(
@@ -455,7 +485,7 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
     'graphs_combobackground_colour' => '#fff',
     'graphs_comboseries_colours' => '#ffccff,#7d57a3,#f5cd81,#ffe8c2,#ececec',
     'graphs_comboshowlegend' => 1,
-    'yfacet' => 'questionnaire_answer_text',
+    'yfacet' => 'answertext',
     'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
@@ -485,6 +515,12 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
       'format' => '1',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'exclude' => '',
+    'regex' => 0,
+    'inaccessible' => 0,
+    'show_minimum_items' => 2,
   );
   $export['search_api@answers:devtrac7_graph_combo:created'] = $facet;
 
@@ -508,9 +544,33 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
         'status' => 0,
         'weight' => '-49',
       ),
+      'exclude_items' => array(
+        'status' => 0,
+        'weight' => '-48',
+      ),
       'graph_combo_filter' => array(
         'status' => 1,
         'weight' => '-48',
+      ),
+      'exclude_inaccessible_items' => array(
+        'status' => 0,
+        'weight' => '-47',
+      ),
+      'rewrite_items' => array(
+        'status' => 0,
+        'weight' => '-46',
+      ),
+      'narrow_results' => array(
+        'status' => 0,
+        'weight' => '-45',
+      ),
+      'show_if_minimum_items' => array(
+        'status' => 0,
+        'weight' => '-44',
+      ),
+      'deepest_level_items' => array(
+        'status' => 0,
+        'weight' => '-43',
       ),
     ),
     'active_sorts' => array(
@@ -548,7 +608,7 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
     'graphs_combobackground_colour' => '#fff',
     'graphs_comboseries_colours' => '#ffccff,#7d57a3,#f5cd81,#ffe8c2,#ececec',
     'graphs_comboshowlegend' => 1,
-    'yfacet' => 'questionnaire_answer_text',
+    'yfacet' => 'answertext',
     'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
@@ -566,7 +626,7 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
     'graphsseries_colours' => '',
     'graphsshowlegend' => 1,
     'tagcloud_levels' => '6',
-    'swatch_field' => '',
+    'swatch_field' => 'field_term_icon',
     'swatch_imagestyle' => 'devtrac_oecd_icons_bw',
     'swatch_showtext' => 0,
     'swatch_shownoimage' => 1,
@@ -578,6 +638,12 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
       'format' => '1',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'exclude' => '',
+    'regex' => 0,
+    'inaccessible' => 0,
+    'show_minimum_items' => 2,
   );
   $export['search_api@answers:devtrac7_graph_combo:taxonomy_vocabulary_1'] = $facet;
 
@@ -665,7 +731,7 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
     'graphs_combobackground_colour' => '#fff',
     'graphs_comboseries_colours' => '#ffccff,#7d57a3,#f5cd81,#ffe8c2,#ececec',
     'graphs_comboshowlegend' => 1,
-    'yfacet' => 'questionnaire_answer_text',
+    'yfacet' => 'answertext',
     'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
@@ -683,7 +749,7 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
     'graphsseries_colours' => '',
     'graphsshowlegend' => 1,
     'tagcloud_levels' => '6',
-    'swatch_field' => '',
+    'swatch_field' => 'field_term_icon',
     'swatch_imagestyle' => 'devtrac_oecd_icons_bw',
     'swatch_showtext' => 0,
     'swatch_shownoimage' => 1,
@@ -699,6 +765,8 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
     'regex' => 0,
     'inaccessible' => 1,
     'show_minimum_items' => 2,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
   );
   $export['search_api@answers:devtrac7_graph_combo:taxonomy_vocabulary_6'] = $facet;
 
@@ -718,9 +786,33 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
         'status' => 0,
         'weight' => '-50',
       ),
+      'exclude_items' => array(
+        'status' => 0,
+        'weight' => '-49',
+      ),
       'graph_combo_filter' => array(
         'status' => 1,
         'weight' => '-49',
+      ),
+      'exclude_inaccessible_items' => array(
+        'status' => 0,
+        'weight' => '-48',
+      ),
+      'rewrite_items' => array(
+        'status' => 0,
+        'weight' => '-47',
+      ),
+      'narrow_results' => array(
+        'status' => 0,
+        'weight' => '-46',
+      ),
+      'show_if_minimum_items' => array(
+        'status' => 0,
+        'weight' => '-45',
+      ),
+      'deepest_level_items' => array(
+        'status' => 0,
+        'weight' => '-44',
       ),
     ),
     'active_sorts' => array(
@@ -728,17 +820,20 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
       'active' => 0,
       'count' => 0,
       'display' => 0,
+      'natural' => 0,
     ),
     'sort_weight' => array(
       'active' => '-50',
       'count' => '-49',
       'display' => '-48',
+      'natural' => '0',
       'indexed' => '0',
     ),
     'sort_order' => array(
       'active' => '3',
       'count' => '3',
       'display' => '4',
+      'natural' => '4',
       'indexed' => '4',
     ),
     'empty_behavior' => 'none',
@@ -755,7 +850,7 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
     'graphs_combobackground_colour' => '#fff',
     'graphs_comboseries_colours' => '#ffccff,#7d57a3,#f5cd81,#ffe8c2,#ececec',
     'graphs_comboshowlegend' => 1,
-    'yfacet' => 'questionnaire_answer_number',
+    'yfacet' => 'answernumber',
     'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
@@ -785,6 +880,12 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
       'format' => '1',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'exclude' => '',
+    'regex' => 0,
+    'inaccessible' => 0,
+    'show_minimum_items' => 2,
   );
   $export['search_api@answers:devtrac7_graph_combo_3:created'] = $facet;
 
@@ -808,9 +909,33 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
         'status' => 0,
         'weight' => '-49',
       ),
+      'exclude_items' => array(
+        'status' => 0,
+        'weight' => '-48',
+      ),
       'graph_combo_filter' => array(
         'status' => 1,
         'weight' => '-48',
+      ),
+      'exclude_inaccessible_items' => array(
+        'status' => 0,
+        'weight' => '-47',
+      ),
+      'rewrite_items' => array(
+        'status' => 0,
+        'weight' => '-46',
+      ),
+      'narrow_results' => array(
+        'status' => 0,
+        'weight' => '-45',
+      ),
+      'show_if_minimum_items' => array(
+        'status' => 0,
+        'weight' => '-44',
+      ),
+      'deepest_level_items' => array(
+        'status' => 0,
+        'weight' => '-43',
       ),
     ),
     'active_sorts' => array(
@@ -848,7 +973,7 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
     'graphs_combobackground_colour' => '#fff',
     'graphs_comboseries_colours' => '',
     'graphs_comboshowlegend' => 1,
-    'yfacet' => 'questionnaire_answer_number',
+    'yfacet' => 'answernumber',
     'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
@@ -866,7 +991,7 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
     'graphsseries_colours' => '',
     'graphsshowlegend' => 1,
     'tagcloud_levels' => '6',
-    'swatch_field' => '',
+    'swatch_field' => 'field_term_icon',
     'swatch_imagestyle' => 'devtrac_oecd_icons_bw',
     'swatch_showtext' => 0,
     'swatch_shownoimage' => 1,
@@ -878,6 +1003,12 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
       'format' => '1',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'exclude' => '',
+    'regex' => 0,
+    'inaccessible' => 0,
+    'show_minimum_items' => 2,
   );
   $export['search_api@answers:devtrac7_graph_combo_3:taxonomy_vocabulary_1'] = $facet;
 
@@ -905,13 +1036,13 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
         'status' => 0,
         'weight' => '-48',
       ),
-      'graph_combo_filter' => array(
-        'status' => 1,
-        'weight' => '-46',
-      ),
       'exclude_inaccessible_items' => array(
         'status' => 1,
         'weight' => '-47',
+      ),
+      'graph_combo_filter' => array(
+        'status' => 1,
+        'weight' => '-46',
       ),
       'rewrite_items' => array(
         'status' => 0,
@@ -965,7 +1096,7 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
     'graphs_combobackground_colour' => '#fff',
     'graphs_comboseries_colours' => '',
     'graphs_comboshowlegend' => 1,
-    'yfacet' => 'questionnaire_answer_number',
+    'yfacet' => 'answernumber',
     'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
@@ -983,7 +1114,7 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
     'graphsseries_colours' => '',
     'graphsshowlegend' => 1,
     'tagcloud_levels' => '6',
-    'swatch_field' => '',
+    'swatch_field' => 'field_term_icon',
     'swatch_imagestyle' => 'devtrac_oecd_icons_bw',
     'swatch_showtext' => 0,
     'swatch_shownoimage' => 1,
@@ -999,6 +1130,8 @@ function devtrac7_solr_search_answers_feature_facetapi_default_facet_settings() 
     'regex' => 0,
     'inaccessible' => 1,
     'show_minimum_items' => 2,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
   );
   $export['search_api@answers:devtrac7_graph_combo_3:taxonomy_vocabulary_6'] = $facet;
 

@@ -36,8 +36,7 @@ class DevtracImportsSectorIcons extends XMLMigration {
 
     // The source images are in a local directory - specify the parent.
     $this->addFieldMapping('source_dir')
-         ->defaultValue(drupal_get_path('module', 'devtrac_imports') . '/images/oecdicons_png');
-    // The 'value' of the media destination is mapped to the source field
+         ->defaultValue(drupal_get_path('theme', 'devtrac7_theme') . '/icons/sectors');    // The 'value' of the media destination is mapped to the source field
     // representing the media itself - in this case, a filename relative to
     // source_dir.
     $this->addFieldMapping('value', 'filename');
@@ -48,7 +47,9 @@ class DevtracImportsSectorIcons extends XMLMigration {
 
     $this->addFieldMapping('uid')
          ->defaultValue(1);
-
+    $this->addFieldMapping('field_migrate_example_image:alt', 'code');
+    $this->addFieldMapping('field_migrate_example_image:title', 'code');
+    
     $this->addUnmigratedDestinations(array('field_image_description:format',
       'field_image_description:language', 'destination_dir', 'destination_file',
       'file_replace', 'preserve_files', 'timestamp'));

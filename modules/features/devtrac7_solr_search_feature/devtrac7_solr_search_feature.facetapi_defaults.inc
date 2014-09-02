@@ -965,7 +965,7 @@ function devtrac7_solr_search_feature_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_textfield',
+    'widget' => 'facetapi_textfield_widget',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
@@ -1030,6 +1030,8 @@ function devtrac7_solr_search_feature_facetapi_default_facet_settings() {
       'format' => '1',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
   );
   $export['search_api@devtrac_solr_site_visits_index:block:search_api_aggregation_1'] = $facet;
 
@@ -2136,7 +2138,7 @@ function devtrac7_solr_search_feature_facetapi_default_facet_settings() {
       'format' => '1',
     ),
     'submit_realm' => 'Save and go back to realm settings',
-    'exclude' => 'Uganda,UNICEF',
+    'exclude' => '',
     'regex' => 0,
     'show_minimum_items' => 2,
     'inaccessible' => 1,

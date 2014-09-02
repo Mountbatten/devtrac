@@ -1,0 +1,6435 @@
+
+/*=============================================================================
+ * General Sytles
+ * ==========================================================================*/
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  font-size: 0.8em !important;
+}
+
+html body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  font-size: 14px !important;
+}
+
+html body h1,
+html body h2,
+html body h3,
+html body h4,
+html body h5,
+html body h6 {
+  font-family: inherit;
+  color: #333333;
+}
+
+html p {
+  color: #333333;
+}
+
+html a:link,
+html a:visited {
+  color: #A52A2A;
+  text-decoration: none;
+}
+
+html a:hover {
+  color: #333333;
+  text-decoration: underline;
+}
+
+html table {
+    font-size: 0.9em;
+    line-height: 10px;
+    border: none;
+}
+
+/*=============================================================================
+ * Header Sytles
+ * ==========================================================================*/
+
+ header.section-header {
+  /*height: 89px;*/
+ }
+
+/*======================= Branding Wrapper Styles ===========================*/
+
+.zone-branding-wrapper {
+  background-color: #FFFFFF;
+  border-bottom: 5px solid #EA0001;
+  padding-top: 0px;
+}
+
+/*============================ Branding Styles ==============================*/
+
+#region-branding {
+  width: 265px;
+  float: left;
+  margin-right: 0;
+}
+
+.region-branding-inner {
+  width: inherit;
+}
+
+.logo-img  {
+  margin-top: 5px;
+}
+
+.site-name-slogan {
+  clear: both;
+}
+
+.site-slogan {
+  color: #989898;
+  font-size: 0.9em;
+}
+
+/*=============================== Nav Styles ================================*/
+
+.grid-8.region-menu {
+  float: right;
+}
+
+.region-menu .block-nice-menus h2.block-title {
+  display: none;
+}
+
+.region-menu .block-nice-menus .nice-menu {
+  text-transform: uppercase;   
+  display: block;
+  float: right;
+  position: relative;
+  z-index: 10;
+}
+
+.region-menu .block-nice-menus .nice-menu li {
+  background: none;
+  border-style: none;
+  padding: 10px 0;
+}
+
+.region-menu .block-nice-menus .nice-menu a {
+  color: #333333;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+ul.nice-menu-down li.menuparent ,
+ul.nice-menu-down li.menuparent:hover {
+  background: none;
+}
+
+.region-menu .block-nice-menus .nice-menu a.active {
+  color: #EA0001;
+  background: none;
+}
+
+#zone-branding .region-menu .block-nice-menus .nice-menu .active-trail a {
+  color: #EA0001;
+}
+
+.region-menu .block-nice-menus .nice-menu a:hover {
+  color: #EA0001;
+  text-decoration: none;
+  -webkit-transition: color 0.5s ease-in;
+  -moz-transition: color 0.5s ease-in;
+  -o-transition: color 0.5s ease-in;
+  transition: color 0.5s ease-in;
+}
+
+ul.nice-menu-down li.menuparent > a ,
+ul.nice-menu-down li.menuparent.over > a:hover {
+  background-image: url(../images/icon-collapsible-close.png) !important;
+  background-repeat: no-repeat !important;
+  background-position: 95% 65% !important;
+  background-size: 10px 10px !important;
+  padding-right: 35px !important;
+}
+
+#zone-branding ul.nice-menu-down li.menuparent > a, 
+#zone-branding ul.nice-menu-down li.menuparent.over > a:hover {
+  background-image: url(../images/icon-collapsible-close-dark.png) !important;
+  background-repeat: no-repeat !important;
+  background-position: 95% 65% !important;
+  background-size: 10px 10px !important;
+  padding-right: 35px !important;
+}
+
+#zone-branding ul.nice-menu li.menuparent {
+  position: relative;
+}
+
+#zone-branding ul.nice-menu li.menuparent ul {
+  background: #FFFFFF;
+  top: 44px;
+  left:-94px;
+  position: absolute;
+  border: thin solid #CCCCCC;
+}
+
+.region-menu .block-nice-menus .nice-menu li ul.morelinks li {
+  padding: 0px;
+}
+
+.region-menu .block-nice-menus .nice-menu li.submenu {
+  position: relative;
+  z-index: 5000;
+}
+
+.region-menu .block-nice-menus .nice-menu li.submenu:hover {
+  border: thin solid #CCC;
+  border-bottom: thin solid #FFFFFF;
+}
+
+.region-menu .block-nice-menus .nice-menu li.submenu:hover > a {
+    padding: 4px 9px;
+}
+
+.region-menu .block-nice-menus .nice-menu li.submenu ul {
+  position: absolute;
+  width: 140px;
+  top: 43px;
+  left: -84px;
+  background: #FFFFFF;
+  border: thin solid #CCC;
+  display: none;
+}
+
+.region-menu .block-nice-menus .nice-menu li.submenu:hover ul {
+  display: block;
+}
+
+.zone-header #region-my-items-menu,
+.zone-header #region-my-tool-menu {
+  margin: 0 !important;
+  z-index: 2;
+}
+
+.zone-header #region-my-items-menu {
+  width: 250px;
+  float: left;
+}
+.zone-header #region-my-items-menu h3 {
+  color: #EB8005;
+  background: #111111;
+  height: 27px;
+  border-right: 5px solid ;
+  padding-left: 15px;
+  padding-right: 20px;
+  width: 250px;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0px;
+}
+
+/*======================== Header Wrapper Styles ============================*/
+
+.zone-header-wrapper {
+  background-color: #3E3E3E;
+  color: #FFFFFF;
+  height: 27px;
+  padding-right: 20px;
+  padding-left: 0px;
+}
+
+.zone-header .block-title {
+  display: none;
+}
+
+.zone-header .region-my-items-menu ,
+.zone-header .region-my-tool-menu {
+  width: auto !important;
+}
+
+.zone-header .region-my-tool-menu {
+  float: right;
+  height: 27px;
+}
+
+.zone-header .region-my-tool-menu .region-my-tool-menu-inner {
+  width: 100%;
+}
+
+
+.zone-header .region-my-tool-menu .region-my-tool-menu-inner #block-nice-menus-2 ,
+.zone-header .region-my-tool-menu .region-my-tool-menu-inner #block-search-api-saved-searches-devtrac-solr-action-items-index ,
+.zone-header .region-my-tool-menu .region-my-tool-menu-inner #block-views-modes-modes ,
+.zone-header .region-my-tool-menu .region-my-tool-menu-inner #block-delta-blocks-feed-icons {
+  display: inline-block;
+  float: right;
+  height: 27px
+}
+
+/*--------------------------- Nice Menu Styles ------------------------------*/
+
+.zone-header #block-devtrac7-mymenu-my-menu-block {
+  padding-left: 5px;
+  float: left;
+}
+
+.zone-header a {
+  height: 15px;
+}
+
+.zone-header #block-nice-menus-2 {
+  border-left: thin solid #555555;
+  padding-left: 5px;
+}
+
+.zone-header .nice-menu li {
+  background: none;
+  border: none;
+} 
+
+.zone-header ul.nice-menu li a {
+  font-size: 13px;
+  color: #ECECEC;
+  padding: 6px 5px;
+}
+
+.zone-header ul.nice-menu li a:hover ,
+.zone-header ul.nice-menu li.over a {
+  background: #222222;
+  text-decoration: none;
+}
+
+.zone-header ul.nice-menu-down li.menuparent ul {
+  background-color: #222222;
+  top: 27px;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.zone-header #region-my-tool-menu ul.nice-menu-down li.menuparent ul {
+  left: auto;
+  right: 0;
+
+}
+
+#zone-header .region-my-items-menu .block-current-search {
+  float: left;
+}
+
+/*-------------------------- View Modes Styles ------------------------------*/
+
+#view-modes.links {
+  display: inline-block;
+  height: 27px;
+  float: right;
+  margin: 0 5px;
+}
+
+#view-modes.links li {
+  display: inline-block;
+  width: 27px;
+  height: 27px;
+  margin: 0 1px;
+}
+
+#view-modes.links li.active {
+  background: none;
+}
+
+#view-modes.links li a {
+  color: transparent;
+  display: inline-block;
+  width: 27px;
+  height: 27px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+#view-modes.links li a.active:hover ,
+#view-modes.links li a.active ,
+#view-modes.links li a.views-modes-active.active {
+  background-color: #222222;
+}
+
+#view-modes.links li a[original-title=Map] ,
+#view-modes.links li a[original-title=map] {
+  background: url(../images/map-icon.png) no-repeat 50% 50%;
+  background-size: 16px 16px;
+}
+
+#view-modes.links li a[original-title="Activities List"] ,
+#view-modes.links li a[original-title="activities list"] ,
+#view-modes.links li a[original-title=List] ,
+#view-modes.links li a[original-title=list] {
+  background: url(../images/list-icon.png) no-repeat 50% 50%;
+  background-size: 16px auto;
+}
+
+#view-modes.links li a[original-title="Answer Graphs"] ,
+#view-modes.links li a[original-title="answer graphs"] ,
+#view-modes.links li a[original-title=Graphs] ,
+#view-modes.links li a[original-title=graphs] {
+  background: url(../images/graph-icon.png) no-repeat 50% 50%;
+  background-size: 16px 16px;
+}
+
+#view-modes.links li.tagcloud {
+  display: none;
+}
+
+/*--------------------------- Feed Icon Styles ------------------------------*/
+
+#block-delta-blocks-feed-icons .content {
+  margin: 0px 5px;
+  padding-left: 5px;
+  border-left: thin solid #555555;
+  height: 27px;
+}
+
+#block-delta-blocks-feed-icons a.feed-icon {
+  color: transparent;
+  display: inline-block;
+  width: 27px;
+  height: 27px;
+  padding: 0;
+  margin: 0 1px;
+  overflow: hidden;
+}
+
+#block-delta-blocks-feed-icons a.feed-icon:hover {
+  background-color: #222222;
+}
+
+#block-delta-blocks-feed-icons a.feed-icon.kml-icon {
+  background: url(../images/kml-icon.png) no-repeat 50% 50%;
+  background-size: 16px 16px;
+}
+
+#block-delta-blocks-feed-icons a.feed-icon.rss-icon {
+  background: url(../images/rss-icon.png) no-repeat 50% 50%;
+  background-size: 16px 16px;
+}
+
+#block-delta-blocks-feed-icons a.feed-icon.csv-icon {
+  background: url(../images/csv-icon.png) no-repeat 50% 50%;
+  background-size: auto 16px;
+}
+
+#block-delta-blocks-feed-icons a.feed-icon img {
+  display: none;
+}
+
+/*----------------------- Collapsiblock Icon Styles -------------------------*/
+
+.block.collapsiblock-processed {}
+
+.zone-header .block-pane  {
+  width: 27px;
+  height: 27px;
+  position: relative;
+  margin: 0;
+  float: right;
+}
+
+.zone-header .block-pane h2 {
+  display: block;
+}
+
+.zone-header .block-pane .block-inner ,
+.zone-header .block-pane h2.block-title ,
+.zone-header .block-pane h2.block-title a {
+  display: inline-block;
+  width: 27px;
+  height: 27px;
+}
+
+.zone-header .block-pane h2.block-title:hover ,
+.zone-header .block-pane h2.block-title {
+  background-color: #222222;
+}
+
+.zone-header .block-pane h2.block-title {
+  background-color: transparent;
+}
+
+.zone-header .block-pane h2.block-title a {
+  background: url(../images/info-icon.png) 50% 50% no-repeat;
+  background-size: 21px 21px;
+}
+
+.zone-header .block-search-api-saved-searches h2.block-title.collapsiblock a {
+  background: url(../images/email-icon.png) no-repeat 50% 50%;
+  background-size: 16px auto;
+}
+
+.zone-header .block-pane .content {
+  position: absolute;
+  width: 300px;
+  z-index: 99999;
+  background-color: black;
+  opacity: 80%;
+/*  background: url(../images/alpha-black-bg.png);*/
+  color: #FFFFFF;
+  font-size: 0.9em;
+  top: 27px;
+}
+
+.zone-header .block-pane .content[style="display: block;"] {
+  padding: 0;
+}
+
+.zone-header .block-pane .content ul {
+  margin: 10px;
+}
+
+.zone-header .block-pane .content ul li {
+  list-style: none;
+  margin-bottom: 5px;
+  padding: 5px;
+  padding-left: 30px; 
+}
+
+.zone-header .block-pane .content ul li.health {
+  background: url('../images/about-health-icon.png') no-repeat 0% 50%;
+  background-size: 20px 20px;
+}
+
+.zone-header .block-pane .content ul li.schools {
+  background: url('../images/about-educ-icon.png') no-repeat 0% 50%;
+  background-size: 20px 20px;
+}
+
+.zone-header .block-pane .content ul li.water {
+  background: url('../images/about-water-icon.png') no-repeat 0% 50%;
+  background-size: 20px 20px;
+}
+
+.zone-header .block-pane .content h4 {
+  color: #FFFFFF;
+  margin: 0;
+  padding: 10px 10px 5px 10px;
+  font-weight: normal;
+  line-height: 10px;
+}
+
+.zone-header .block-pane .content p {
+  color: #FFFFFF;
+  padding: 10px;
+  font-size: 1.0em;
+}
+
+.zone-header .block-pane .content {
+  right: 0;
+}
+
+/*=========================== Breadcrumbs Styles ============================*/
+
+.zone-breadcrumbsx {
+  border-bottom: 1px solid #ededed;
+  margin-bottom: 5px;
+}
+
+.block-delta-blocks-breadcrumb {
+  padding: 5px;
+}
+
+.breadcrumb-prefix {
+  padding-right: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  float: left;
+}
+
+ul.breadcrumb {
+  font-size: 0.9em;
+  display: inline-block;
+  margin: 0;
+}
+
+ul.breadcrumb li:after {
+  color: #EA0001;
+  content: "»";
+  padding: 0 0 0 4px;
+}
+
+ul.breadcrumb li.last:after {
+  content: "";
+}
+
+ul.breadcrumb a, 
+ul.breadcrumb a:link {
+  color: #989898;
+  text-decoration: none;
+}
+
+ul.breadcrumb a:hover {
+  color: #ea0001;
+  text-decoration: none;
+}
+
+/*=============================================================================
+ * Content Styles
+ * ==========================================================================*/
+
+ /*============================== User Home =================================*/
+
+ .page-user .zone-preface .region-content {
+  min-height: 185px;
+ }
+
+.ds-1col.user-profile.view-mode-full {
+  background-color: #555555;
+  position: relative;
+  padding-left: 170px;
+  margin-top: 65px;
+  min-height: 35px;
+  border-bottom: 2px solid #EA0001;
+}
+
+.ds-1col.user-profile.view-mode-full .field {
+  display: inline-block;
+  padding: 5px;
+  padding-right: 25px;
+  color: #FFFFFF;
+}
+
+.ds-1col.user-profile.view-mode-full .field .field-label {
+  font-weight: normal;
+  color: #BBBBBB;
+  padding-right: 5px;
+}
+
+.ds-1col.user-profile.view-mode-full .field-name-field-fieldtrip-button {
+  display: none;
+}
+
+.username-title-wrapper {
+  color: #333333;
+  position: absolute;
+  display: inline-block;
+  top: -40px;
+  font-size: 2.3em;
+}
+
+.ds-1col.user-profile.view-mode-full .field a {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.ds-1col.user-profile.view-mode-full .field a:hover {
+  text-decoration: none;
+}
+
+.username-title-wrapper .field .field-items {
+  margin-bottom: 0;
+  line-height: 20px;
+}
+
+.ds-1col.user-profile.view-mode-full .field-name-field-user-firstname ,
+.ds-1col.user-profile.view-mode-full .field-name-field-user-surname ,
+.ds-1col.user-profile.view-mode-full .field-name-field-user-title {
+  color: #333333;
+  padding: 0 5px;
+  float: left;
+  font-weight: normal;
+}
+
+.ds-1col.user-profile.view-mode-full .field-name-field-user-title {
+  font-size: 20px;
+}
+
+.ds-1col.user-profile.view-mode-full .field-name-field-user-title .field-label {
+  display: none;
+}
+
+.ds-1col.user-profile.view-mode-full .field-name-field-user-title .field-items {
+  border-left: thin solid #333333;
+  padding-left: 15px;
+}
+
+.ds-1col.user-profile.view-mode-full .field-name-ds-user-picture {
+  position: absolute;
+  left: 10px;
+  top: -60px;
+  background: #FFFFFF;
+  padding: 3px;
+}
+
+.ds-1col.user-profile.view-mode-full .field-name-ds-user-picture .field-items {
+  background-color: #EEEEEE;
+  border: 5px solid #555555;
+  border-radius: 5px;
+}
+
+.ds-1col.user-profile.view-mode-full .field-name-ds-user-picture .field-items img {
+  width: 130px;
+  height: auto;
+  margin: 0;
+}
+
+.ds-1col.user-profile.view-mode-full .field-name-field-term-icon {
+  padding: 0 1px;
+}
+
+/*============================== Aside Styles ===============================*/
+
+.zone-content-wrapper aside.region-sidebar-first {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+  width: 285px;
+  float: left;
+  background: url(../images/alpha-black-bg.png);
+  z-index: 2;
+}
+
+.region-sidebar-first .region-sidebar-first-inner p {
+  color: #ECECEC;
+}
+
+.region-sidebar-first .region-sidebar-first-inner {
+  padding-left: 0;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  color: #ECECEC;
+}
+
+.region-sidebar-first .region-sidebar-first-inner ul li {
+  margin: 0;
+  border-bottom: thin solid #DDDDDD;
+  padding-left: 20px;
+}
+
+.region-sidebar-first .region-sidebar-first-inner ul li a.active ,
+.region-sidebar-first .region-sidebar-first-inner ul li a:hover {
+  background-color: #111111;
+}
+
+.region-sidebar-first .region-sidebar-first-inner .book-block-menu > ul.menu > li {
+  padding-left: 0;
+}
+
+.region-sidebar-first .region-sidebar-first-inner ul li li ul {
+  border-top: none;
+}
+
+.region-sidebar-first .region-sidebar-first-inner ul li li li {
+  padding-left: 20px;
+  border-bottom: none;
+}
+
+.region-sidebar-first .region-sidebar-first-inner p a {
+  color: #EEEEEE;
+  text-decoration: underline;
+}
+
+.region-sidebar-first .region-sidebar-first-inner p a:hover {
+  color: #FFFFFF;
+}
+
+#block-system-main .view-modes-list .view-modes-graphs {
+  width: 80%;
+  float: left;
+}
+
+.view-modes-list h1,
+#block-system-main .view-modes-graphs  h1.title {
+  /*visibility: hidden;*/
+}
+.region-sidebar-first .region-sidebar-first-inner .block-current-search {
+
+}
+
+.region-sidebar-first .region-sidebar-first-inner .block-current-search h3 {
+  font-size: 1.3em;
+  color: #FFFFFF;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  background-color: #000000;
+  opacity: 0.8;
+}
+
+.region-sidebar-first .region-sidebar-first-inner .block-facetapi.collapsiblock-processed h2.block-title {
+  font-size: 1.0em;
+}
+
+.region-sidebar-first .region-sidebar-first-inner .current-search-item.current-search-item-active {
+  background-color: #000000;
+  opacity: 0.8;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.region-sidebar-first .region-sidebar-first-inner .current-search-item.current-search-item-active a {
+  color: #EEEEEE;
+}
+
+
+
+/*======================= Current search block ================================*/
+
+.region-sidebar-first .region-sidebar-first-inner  .block-current-search {
+  background: #000000;
+  opacity: 0.9;
+  color: #FFFFFF;
+  padding: 10px;
+  border-top: thin solid #999999;
+  border-bottom: thin solid #999999;
+  margin-top: 5px;
+}
+
+.region-content .current-search-item .item-list {
+  margin: 0;
+  display: inline-block;
+}
+
+.region-sidebar-first .region-sidebar-first-inner .block-current-search .current-search-item {
+  /*padding: 5px 10px;*/
+  display: inline-block;
+}
+
+.region-sidebar-first .region-sidebar-first-inner .block-current-search .current-search-item ul ,
+.region-sidebar-first .region-sidebar-first-inner .block-current-search .current-search-item ul li {
+  display: inline-block;
+}
+
+.region-sidebar-first .region-sidebar-first-inner .block-current-search .current-search-item ul {
+  margin: 0;
+}
+
+.region-sidebar-first .region-sidebar-first-inner .block-current-search .current-search-item ul li {
+  margin: 2px;
+}
+
+.region-sidebar-first .region-sidebar-first-inner .block-current-search .current-search-item ul li a {
+  display: inline-block;
+  background: #777777;
+  padding: 3px 5px;
+  border-radius: 3px;
+  color: #FFFFFF;
+  font-size: 0.8em;
+}
+
+.region-sidebar-first .region-sidebar-first-inner .block-current-search .current-search-item ul li a:hover {
+  text-decoration: none;
+  background: #555555;
+}
+
+/*=========================================================================================*/
+
+.region-sidebar-first form#views-exposed-form-devtrac-solr-view-districts-map ,
+.region-sidebar-first .block-facetapi form.facetapi-fulltextsearch-form ,
+.region-sidebar-first .block-api form.api-search-form {
+  border: 2px solid #151515;
+  margin: 5px 10px;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+}
+
+.region-sidebar-first .block-api form.api-search-form label {
+  display: none;
+}
+
+.region-sidebar-first form#views-exposed-form-devtrac-solr-view-districts-map .views-exposed-widgets {
+  margin: 0;
+}
+
+.region-sidebar-first form#views-exposed-form-devtrac-solr-view-districts-map input#edit-search-api-views-fulltext ,
+.region-sidebar-first .block-facetapi form.facetapi-fulltextsearch-form input[type="textfield"] ,
+.region-sidebar-first .block-api form.api-search-form input[type="textfield"] {
+  display: inline-block !important;
+  width: 155px !important;
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: 0 0 0 transparent !important;
+  border-radius: 2px !important;
+  padding: 5px 5px !important;
+  height: auto !important;
+}
+
+.region-sidebar-first form#views-exposed-form-devtrac-solr-view-districts-map input#edit-search-api-views-fulltext {
+  width: 172px !important;
+}
+
+.region-sidebar-first .block-api form.api-search-form input.api-search-keywords {
+  width: 217px;
+  border: none !important;
+  background-position: 100% 6px;
+}
+
+.region-sidebar-first form#views-exposed-form-devtrac-solr-view-districts-map .views-exposed-widget.views-submit-button ,
+.region-sidebar-first form#views-exposed-form-devtrac-solr-view-districts-map #edit-search-api-views-fulltext-wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+.region-sidebar-first form#views-exposed-form-devtrac-solr-view-districts-map .views-exposed-widget.views-submit-button ,
+.region-sidebar-first .block-facetapi form.facetapi-fulltextsearch-form #edit-actions {
+  margin: 0 !important;
+  display: inline-block !important;
+  float: right !important;
+}
+
+.region-sidebar-first form#views-exposed-form-devtrac-solr-view-districts-map input[type="submit"] ,
+.region-sidebar-first .block-facetapi form.facetapi-fulltextsearch-form input[type="submit"] ,
+.region-sidebar-first .block-api form.api-search-form input[type="submit"] {
+  padding: 3px 8px !important;
+  margin: 0 !important;
+  height: 26px !important;
+  width: 30px !important;
+  background: #151515 url(../images/search-icon.png) no-repeat 50% 50% !important;
+  background-size: 16px 16px !important;
+  color: transparent !important;
+  border-radius: 0 !important;
+  border: none !important;
+  text-shadow: 0 0 0 transparent !important;
+}
+
+.region-sidebar-first .block-api form.api-search-form input[type="submit"] {
+
+}
+
+.region-sidebar-first form#views-exposed-form-devtrac-solr-view-districts-map input[type="submit"]:hover ,
+.region-sidebar-first .block-facetapi form.facetapi-fulltextsearch-form input[type="submit"]:hover ,
+.region-sidebar-first .block-api form.api-search-form input[type="submit"]:hover {
+  padding: 3px 8px !important;
+  margin: 0 !important;
+  height: 26px !important;
+  width: 30px !important;
+  background: #151515 url(../images/search-icon.png) no-repeat 50% 50% !important;
+  color: transparent !important;
+  border-radius: 0 !important;
+}
+
+.region-sidebar-first .block-api form.api-search-form label[for="edit-search"] ,
+.region-sidebar-first .block-api form.api-search-form .description ,
+.region-sidebar-first .block-api.block-api-navigation .block-title {
+  display: none;
+}
+
+/*========================== Main Content Styles ============================*/
+
+.section-content {
+  
+}
+
+.zone-content-wrapper .grid-9.region-content {
+  width: 100%;
+  height: 100%;
+  float: left;
+  margin-left: -285px;
+  margin-right: 0;
+  z-index: 1;
+}
+
+.zone-content-wrapper .grid-9.region-content .region-content-inner {
+  margin: 0;
+  margin-left: 285px;
+  padding: 0;
+}
+
+.zone-content-wrapper .grid-9.region-content .region-content-inner .view-empty p {
+  font-size: 1.2em;
+  color: #555555;
+  text-align: center;
+  width: 500px;
+  padding: 100px 20px 20px 20px;
+  margin: 100px auto 200px auto;
+  background: #CCCCCC url(../images/search-results-bg.png) no-repeat 50% 20px;
+  background-size: 70px auto;
+}
+
+.zone-content-wrapper .grid-9.region-content h1.title ,
+.zone-content-wrapper .grid-12.region-content h1.title {
+  font-size: 2.0em;
+  font-weight: normal;
+  margin: 0;
+  padding: 30px 0px 10px 20px;
+}
+
+.zone-content-wrapper .grid-9.region-content article#node-page-47 {
+  padding: 0px 20px 20px 20px;
+}
+
+.zone-content-wrapper .grid-9.region-content .block-main {
+  margin-top: 0;
+}
+
+.zone-content-wrapper .block-main q ,
+.zone-content-wrapper .block-main blockquote {
+  margin: 10px;
+  padding: 10px;
+  background-color: #DDDDDD;
+  font-size: 1.8em;
+  font-weight: normal;
+  border-radius: 0.5em;
+}
+
+code, kbd, pre, samp {
+  font-family: monospace,serif;
+} 
+ 
+code {
+  font-size: 0.9em;
+} 
+ 
+pre {
+  white-space: pre-wrap;
+  background-color: #CCC; 
+  border-top-color: #8c8c8c;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+pre,
+code {
+  font-family: consolas, courier, monospace;
+  font-size: 1em;
+  line-height: 1.2em;
+  white-space: pre; 
+  background-color: #eee; /* any colour's okay, 
+  so long as it's different to the page-background  
+  (for ease of recognition) and contrast to the text */
+  color: #000; /* likewise the background-color comment */
+  border: 1px solid #666;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  border-radius: 1em; /* just in case */
+  padding: 1em;
+  margin: 1.2em 1em;
+  width: 80%; /* or whatever you prefer */
+  white-space: normal;
+}
+
+
+.zone-content-wrapper .grid-9.region-content .block-main h3 ,
+.zone-content-wrapper .grid-9.region-content .block-main h4 ,
+.zone-content-wrapper .grid-9.region-content .block-main dl ,
+.zone-content-wrapper .grid-9.region-content .block-main ul ,
+.zone-content-wrapper .grid-9.region-content .block-main p ,
+.zone-content-wrapper .grid-9.region-content .block-main article ,
+.zone-content-wrapper .grid-12.region-content .block-main h3 ,
+.zone-content-wrapper .grid-12.region-content .block-main h4 ,
+.zone-content-wrapper .grid-12.region-content .block-main dl ,
+.zone-content-wrapper .grid-12.region-content .block-main ul ,
+.zone-content-wrapper .grid-12.region-content .block-main p ,
+.zone-content-wrapper .grid-12.region-content .block-main article {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.zone-content-wrapper .grid-9.region-content .block-main article footer ,
+.zone-content-wrapper .grid-12.region-content .block-main article footer {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.zone-content-wrapper .grid-9.region-content .block-main article p ,
+.zone-content-wrapper .grid-12.region-content .block-main article p {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.zone-content-wrapper .region-content .block-main article ul.links.inline li a {
+  background-color: #777777;
+  background-image: none;
+  color: #FFFFFF;
+  border-radius: 3px;
+  font-weight: normal;
+  text-shadow: 0 0 0 transparent;
+  padding: 5px 10px;
+  font-size: 13px;
+  border: none;
+}
+
+.zone-content-wrapper .region-content .block-main article ul.links.inline li a:hover {
+  background-color: #333333;
+}
+
+.view-api-listings.view-id-api_listings form {
+  margin: 0 20px;
+}
+
+.view-api-listings.view-id-api_listings form input[type="submit"] {
+  margin-top: 20px !important;
+  height: 28px !important;
+  width: 30px !important;
+  background: #151515 url(../images/search-icon.png) no-repeat 50% 50% !important;
+  background-size: 16px 16px !important;
+  color: transparent !important;
+  border: none !important;
+  text-shadow: 0 0 0 transparent !important;
+}
+
+.view-api-listings.view-id-api_listings form input[type="submit"]:hover {
+  margin-top: 20px !important;
+  height: 28px !important;
+  width: 30px !important;
+  background: #151515 url(../images/search-icon.png) no-repeat 50% 50% !important;
+  color: transparent !important;
+  border: none !important;
+  text-shadow: 0 0 0 transparent !important;
+}
+
+#api-search-form ,
+#api-project-form {
+  border: 2px solid #151515;
+  margin: 0px 20px 10px 20px;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  width: 250px;
+  height: 26px;
+}
+
+#api-project-form .form-type-textfield.form-item-search ,
+#api-project-form .form-type-textfield.form-item-project {
+    margin: 0;
+}
+
+#api-search-form label ,
+#api-project-form label ,
+#api-search-form .description {
+  display: none;
+}
+
+#api-search-form input#edit-search ,
+#api-project-form input#edit-project {
+  width: 217px;
+  border: none !important;
+  background-position: 100% 6px;
+  display:inline-block;
+  float:left
+}
+
+#api-search-form input[type="submit"] ,
+#api-project-form input[type="submit"] {
+  padding: 3px 8px !important;
+  margin: 0 !important;
+  height: 26px !important;
+  width: 30px !important;
+  background: #151515 url(../images/search-icon.png) no-repeat 50% 50% !important;
+  background-size: 16px 16px !important;
+  color: transparent !important;
+  border-radius: 0 !important;
+  border: none !important;
+  text-shadow: 0 0 0 transparent !important;
+  display:inline-block;
+  float:right;
+}
+
+#api-search-form input[type="submit"]:hover ,
+#api-project-form input[type="submit"]:hover {
+  padding: 3px 8px !important;
+  margin: 0 !important;
+  height: 26px !important;
+  width: 30px !important;
+  background: #151515 url(../images/search-icon.png) no-repeat 50% 50% !important;
+  color: transparent !important;
+  border-radius: 0 !important;
+}
+
+.zone-content-wrapper .grid-9.region-content .block-main ul {
+  list-style-position: inside;
+}
+
+.zone-content-wrapper .grid-9.region-content .block-main .api-project-links ul {
+  overflow: auto;
+  margin-bottom: 20px;
+}
+
+.zone-content-wrapper .grid-9.region-content .block-main .api-project-links ul li {
+  width: 30%;
+  float: left;
+}
+
+.zone-content-wrapper .grid-9.region-content .block-main ul li > div {
+  display: inline-block;
+}
+
+.zone-content-wrapper .grid-9.region-content table.views-table {
+  font-size: 0.9em;
+  line-height: 15px;
+  border: thin solid #CCC;
+}
+
+.zone-content-wrapper .grid-9.region-content table.views-table thead tr th {
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 10px 10px;
+}
+
+.zone-content-wrapper .grid-9.region-content table.views-table tbody tr {
+  border: none;
+}
+
+.zone-content-wrapper .grid-9.region-content table.views-table tbody tr.odd {
+  background: #FFFFFF;
+}
+
+.zone-content-wrapper .grid-9.region-content table.views-table tbody tr.even {
+  background: #FFE5E5;
+}
+
+.zone-content-wrapper .grid-9.region-content table.views-table tbody tr:hover {
+  background: #DCDCDC;
+}
+
+.zone-content-wrapper .grid-9.region-content table.views-table tbody tr td {
+  vertical-align: top;
+  padding: 5px 10px;
+  background: none;
+}
+
+.zone-content-wrapper .grid-9.region-content table.views-table tbody tr td.views-field.views-field-virtual-field {
+  position: relative;
+  width: 115px;
+}
+
+.zone-content-wrapper .grid-9.region-content table.views-table tbody tr td.views-field.views-field-virtual-field .ctools-dropbutton {
+  position: absolute;
+}
+
+.zone-content-wrapper .grid-9.region-content table.views-table tbody tr td .view-mode-sector_code_icon {
+  display: inline-block;
+}
+
+.zone-content-wrapper .grid-9.region-content .item-list ul.pager {
+  display: none;
+}
+
+#views_infinite_scroll-ajax-loader img {
+  padding: 10px;
+}
+
+/*-------------------------------- Graph View Mode --------------------------*/
+
+.zone-content-wrapper .grid-9.region-content section.block-quicktabs .quicktabs-wrapper {
+  padding: 10px 20px;
+}
+
+.zone-content-wrapper .grid-9.region-content section.block-quicktabs .quicktabs-wrapper .item-list ul.quicktabs-tabs {
+  margin-top: 2px;
+}
+
+.zone-content-wrapper .grid-9.region-content section.block-quicktabs .quicktabs-wrapper .quicktabs-tabpage {
+  padding: 0px;
+  margin: 5px;
+}
+
+.zone-content-wrapper .grid-9.region-content section.block-quicktabs .quicktabs-wrapper .quicktabs-tabpage .quicktabs-wrapper {
+  padding: 0px;
+}
+
+/*--------------------------- Statistics List View Mode ---------------------*/
+
+.grid-9.region-content .view-devtrac-solr-view-questions.view-id-devtrac_solr_view_questions {
+  padding: 10px 20px;
+  border: thin solid #CCCCCC;
+}
+
+.grid-9.region-content .view-devtrac-solr-view-questions.view-id-devtrac_solr_view_questions .view-grouping {
+  border-bottom: thin solid #AAAAAA;
+  padding-top: 20px;
+}
+
+.grid-9.region-content .view-devtrac-solr-view-questions.view-id-devtrac_solr_view_questions .view-grouping .view-grouping-header h2 {
+  font-size: 2.0em;
+  font-weight: normal;
+}
+
+.grid-9.region-content .view-devtrac-solr-view-questions.view-id-devtrac_solr_view_questions .view-grouping .view-grouping-content {
+  
+}
+
+.grid-9.region-content .view-devtrac-solr-view-questions.view-id-devtrac_solr_view_questions .view-grouping .view-grouping-content h3 {
+  font-weight: normal;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.grid-9.region-content .view-devtrac-solr-view-questions.view-id-devtrac_solr_view_questions .view-grouping .view-grouping-content table {
+  line-height: 20px;
+  font-size: 13px;
+  width: 100%;
+}
+
+.grid-9.region-content .view-devtrac-solr-view-questions.view-id-devtrac_solr_view_questions .view-grouping .view-grouping-content table tr ,
+.grid-9.region-content .view-devtrac-solr-view-questions.view-id-devtrac_solr_view_questions .view-grouping .view-grouping-content table tr:hover {
+  /*background: none !important;*/
+  /*background-color: transparent !important;*/
+}
+
+.grid-9.region-content .view-devtrac-solr-view-questions.view-id-devtrac_solr_view_questions .view-grouping .view-grouping-content table td {
+  width: 50%;
+  vertical-align: top;
+}
+
+.grid-9.region-content .view-devtrac-solr-view-questions.view-id-devtrac_solr_view_questions .view-grouping .view-grouping-content table td.col-1 {
+  padding-left: 0;
+}
+
+/********************** Zone Preface Wrapper Styles **************************/
+
+.zone-preface-wrapper {
+  margin-bottom: 10px;
+}
+
+.zone-preface {
+  
+}
+
+/*------------------------ Region Preface Styles (User New) ----------------------------*/
+
+
+.page-user .zone-preface .grid-4.region {
+  background: #EEEEEE;
+  border-radius: 2px;
+  min-height: 200px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.page-user .zone-preface .grid-4.region .region-inner {
+  padding: 10px 15px;
+}
+
+.page-user .zone-preface .grid-4.region h3 ,
+.page-user .zone-preface .grid-4.region h2.block-title {
+  font-weight: normal;
+  font-size: 1.5em;
+  padding-bottom: 5px;
+  text-transform: capitalize;
+}
+
+.page-user .zone-preface .grid-4.region p {
+  font-size: 13px;
+}
+
+.page-user .zone-preface .grid-4.region .content {
+
+}
+
+.page-user .zone-preface .region-user-first table {
+  margin: 0;
+}
+
+.page-user .zone-preface .region-user-first tr {
+  border: none;
+}
+
+.page-user .zone-preface .region-user-first tr td {
+  padding: 5px 0;
+}
+
+.page-user .zone-preface .region-user-first tr td.views-field-name a {
+  padding-top: 0;
+  padding-bottom: 0;
+  color: #333333;
+}
+
+.page-user .zone-preface .region-user-first tr td.views-field-title {
+  width: 40px;
+}
+
+.page-user .zone-preface .region-user-first tr td.views-field-title a {
+  color: #FFFFFF;
+  display: inline-block;
+  background-color: #777777;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  border-radius: 3px;
+  width: 30px;
+}
+
+.page-user .zone-preface .region-user-first tr td.views-field-title a:hover {
+  text-decoration: none;
+  background-color: #333333;
+}
+
+.page-user .zone-preface .region-user-first .view-empty p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.page-user .zone-preface .region-preface-second {
+  
+}
+
+.page-user .zone-preface .region-preface-second .devtrac7-progress-bar {
+  margin: 0;
+  position: static;
+}
+
+.page-user .zone-preface .region-preface-second .devtrac7-progress-bar .devtrac7progressbar {
+  height: 10px;
+  position: static;
+  margin: 5px 0;
+  background: transparent;
+  background-color: #FFFFFF;
+  border-radius: 0px;
+  padding: 2px;
+  clear: both;
+}
+
+.page-user .zone-preface .region-preface-second .devtrac7-progress-bar .devtrac7progressbar .ui-progressbar-value {
+  background-image: none;
+  border-radius: 0px;
+  border: none;
+  height: 12px;
+}
+
+.page-user .zone-preface .region-preface-second .devtrac7-progress-bar .devtrac7progressbar-total .ui-progressbar-value {
+  background-color: #4D7AFF;
+}
+
+.page-user .zone-preface .region-preface-second .devtrac7-progress-bar .devtrac7progressbar-required .ui-progressbar-value {
+  background-color: #EA0001;
+}
+
+.page-user .zone-preface .region-preface-second .devtrac7-progress-bar .devtrac7progressbar-req-of-tot {
+  padding: 0;
+  border: none;
+}
+
+.page-user .zone-preface .region-preface-second .devtrac7-progress-bar .devtrac7progressbar-req-of-tot .ui-progressbar-value {
+  border-right: thin solid #EA0001;
+}
+
+.page-user .zone-preface .region-preface-second .devtrac7-progress-bar .devtrac7progressbar-required-descr , 
+.page-user .zone-preface .region-preface-second .devtrac7-progress-bar .devtrac7progressbar-optional-descr {
+  font-size: 0.9em;
+  text-transform: capitalize;
+  position: static;
+  clear: both;
+}
+
+.page-user .zone-preface .grid-4.region-preface-third {
+  background-color: #777777;
+}
+
+.page-user .zone-preface .grid-4.region-preface-third h3 ,
+.page-user .zone-preface .grid-4.region-preface-third p {
+  color: #FFFFFF;
+}
+
+
+/*------------------------ Region Preface Styles ----------------------------*/
+
+.region-content {
+  height: 280px;
+}
+
+.region-content .region-inner {
+  margin-right: 10px;
+  font-size: 0.9em;
+}
+
+.region-content h3.hiddentitle-done-processed {
+  margin-bottom: 5px;
+}
+
+.region-content .region-content h3,
+.region-content h5.field-content {
+  font-size: 1.2em;
+  text-transform: capitalize;
+}
+
+.region-content .hiddentitle > h3 {
+  background-color: #FAFAFA;
+  font-size: 1.0em;
+  position: absolute;
+  top: 0px;
+  padding: 5px;
+  z-index: 20;
+  border: thin solid #CCCCCC;
+  box-shadow: 0px 2px 5px #555555;
+}
+
+.region-inner .field-name-field-fieldtrip-button .field-label {
+  display: none;
+}
+
+.field-name-field-fieldtrip-button.field-type-devtrac7-progress-field.field-label-hidden {
+  position: relative;
+  width: 120px;
+}
+
+.field-name-field-fieldtrip-button.field-type-devtrac7-progress-field.field-label-hidden ,
+.field-name-field-fieldtrip-button.field-type-devtrac7-progress-field.field-label-inline {
+  /*margin-top: 15px;*/
+  position: relative;
+  width: 110px;
+}
+
+.field-name-field-fieldtrip-button.field-type-devtrac7-progress-field.field-label-hidden .ctools-dropbutton ,
+.field-name-field-fieldtrip-button.field-type-devtrac7-progress-field.field-label-inline .ctools-dropbutton {
+  position: absolute;
+}
+
+.field-name-taxonomy-vocabulary-7.field-type-taxonomy-term-reference.field-label-inline ,
+.field-name-field-fieldtrip-status.field-type-list-text.field-label-inline {
+  /*margin-top: 40px;*/
+}
+
+.region-content .field-label {
+  font-weight: bold;
+}
+
+.region-content .field-items {
+  margin-bottom: 5px;  
+}
+
+.region-content .block-oecd-sector-code-block-3 {
+  margin-top: 10px;
+}
+
+.region-content .block-oecd-sector-code-block-3 .block-title {
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.block-system .view-mode-full .field-label {
+  color: #000;
+  float: left;
+}
+
+.field-name-taxonomy-vocabulary-6.field-type-taxonomy-term-reference .field-items {
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+.field-name-taxonomy-vocabulary-6.field-type-taxonomy-term-reference .field-item {
+  float: left;
+  padding: 0px;
+  padding-left: 5px;
+}
+
+.zone-preface .region-content .block-system .node-unpublished {
+  background: #EEEEEE;
+  min-height: 260px;
+  padding: 10px;
+  text-shadow: 1px 1px 1px #FFFFFF;
+}
+
+.region-content .node-unpublished h3 {
+  background: #EEEEEE;
+}
+
+.region-content .node-unpublished .hiddentitle > h3 {
+  top: 10px;
+  width: 350px;
+}
+
+.region-content .block-system .node-unpublished a {
+  color: #A54444;
+}
+
+.region-content .block-system .node-unpublished .field-label {
+  color: #666666;
+}
+
+.region-content .block-system .field-name-field-fieldtrip-start-end-date .field-label {
+  display: none;
+}
+
+.region-content .block-system .field-name-field-fieldtrip-start-end-date .field-item span {
+  display: inline;
+}
+
+.region-content .user-profile {
+  padding: 10px;
+}
+
+.region-content .user-profile .field-label ,
+.region-content .user-profile .field-items {
+
+}
+
+.region-content .field-name-ds-user-picture {
+  float: left;
+}
+
+.region-content .field-name-ds-user-picture img {
+  border: 1px solid #ECECEC;
+  margin-right: 5px;
+}
+
+.region-content .field-name-taxonomy-vocabulary-4 ,
+.region-content .field-name-taxonomy-vocabulary-5 ,
+.region-content .field-name-field-user-superior {
+  clear: right;
+}
+
+.region-content .field-name-field-user-title {
+
+}
+
+.region-content .field-name-field-user-title .field-items {
+
+}
+
+.region-content .field-name-field-user-aboutme {
+
+}
+
+.region-content .field-name-taxonomy-vocabulary-8 .field-item,
+.region-content .view-mode-sector_code_icon {
+  display: inline-block;
+}
+
+.region-content .field-name-field-wikipedia.field-type-link-field.field-label-hidden a {
+  background: url(../images/wiki-icon.png) no-repeat 0px 50%;
+  background-size: 16px auto;
+  padding-left: 21px;
+  font-style: italic;
+}
+
+/*--------------------- Region Preface Second Styles ------------------------*/
+
+/*.zone-preface .region-preface-second {
+  margin-left: 5px; 
+  margin-right: 5px
+}
+*/
+.region-preface-second section {
+  margin-bottom: 5px;
+  font-size: 100%;
+}
+
+.region-preface-second section .view-dvtrc-user {
+  margin-bottom: 0;
+  border-top: thin solid #CCCCCC;
+  font-size: 100%;
+}
+
+.region-preface-second section .overview-link-wrapper:hover {
+  background: #EEEEEE;
+}
+
+.region-preface-second section table.views-table {
+  margin: 0;
+  border: none;
+  font-size: 14.4px;
+}
+
+.region-preface-second section table.views-table td {
+  padding: 7px 5px;
+}
+
+.region-preface-second section table.views-table td.views-field-title {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.region-preface-second-inner .view-empty p,
+.region-preface-second-inner .view-empty {
+  margin-bottom: 0;
+  padding: 0px 5px;
+  color: #FFB050;
+}
+
+.region-preface-second section .view-dvtrc-field-trip table.views-table.cols-2 thead {
+  display: none;
+}
+
+.region-preface-second section .view-dvtrc-field-trip table.views-table.cols-2 td {
+  vertical-align: top;
+}
+
+.region-preface-second section .view-dvtrc-field-trip table.views-table.cols-2 .ctools-dropbutton {
+  float: right;
+}
+
+.region-preface-second .view-display-id-block_11 .devtrac7-progress-bar {
+  margin: 10px 5px 0px 5px;
+}
+
+.view-display-id-block_11 .devtrac7-progress-bar .devtrac7progressbar-required-descr, 
+.view-display-id-block_11 .devtrac7-progress-bar .devtrac7progressbar-optional-descr {
+  font-size: 0.9em;
+  top: auto;
+  text-transform: capitalize;
+  position: absolute;
+}
+
+.view-display-id-block_11 .devtrac7-progress-bar .devtrac7progressbar-required-descr {
+  left: 10px;
+}
+
+.view-display-id-block_11 .devtrac7-progress-bar .devtrac7progressbar-optional-descr {
+  right: 10px;
+}
+
+.devtrac7progressbar-required .ui-widget-header {
+  background-image: url("../images/progress_red.png");
+  background-color: #EA0001;
+}
+
+.devtrac7-progress-field-not-finished.devtrac7-progress-field-required a:after {
+  color: #EA0001;
+  content: "*";
+  line-height: 0;
+}
+
+.devtrac7progressbar-total .ui-widget-header {
+  background-image: url("../images/progress_orange.png");
+}
+
+.devtrac7progressbar-total {
+  background-image: url("../images/progress_bg.gif");
+}
+
+#region-preface-second .openlayers-views-map .olControlZoomPanel {
+  right: 40px;
+  top: 10px;
+}
+
+#region-preface-second section.block-quicktabs {
+  padding: 0px;
+}
+
+#region-preface-second section.block-quicktabs li {
+  display: inline-block;
+  padding: 0;
+}
+
+#region-preface-second section.block-quicktabs li.first a {
+  background-image: url("../images/map-icon.png");
+}
+
+#region-preface-second section.block-quicktabs li.last a {
+  background-image: url("../images/list-icon.png");
+}
+
+#region-preface-second section.block-quicktabs li.active.first a {
+  background-image: url("../images/map-icon-dark.png");
+}
+
+#region-preface-second section.block-quicktabs li.active.last a {
+  background-image: url("../images/list-icon-dark.png");
+}
+
+#region-preface-second section.block-quicktabs li a {
+  /*
+  background-repeat: no-repeat;
+  background-size: 16px auto;
+  background-position: 10px 50%;
+  padding-left: 30px;
+*/
+  background-repeat: no-repeat;
+  background-size: 16px auto;
+  background-position: 50% 50%;
+  color: transparent;
+  width: 20px;
+  display: inline-block;
+}
+
+#region-preface-second section.block-quicktabs .quicktabs-wrapper .quicktabs_main .quicktabs-tabpage {
+  height: 240px;
+  margin: 5px 5px;
+  overflow: auto;
+}
+
+#region-preface-second section.block-quicktabs #context-block-quicktabs-organisation_map_list ,
+#region-preface-second section.block-quicktabs #context-block-quicktabs-tabpage-activities_map_list-1 ,
+#region-preface-second section.block-quicktabs #quicktabs-tabpage-organisation_map_list-1 {
+  height: 230px;
+  margin: 10px;
+  overflow: auto;
+}
+
+#region-preface-second section.block-quicktabs #quicktabs-container-activities_map_list ,
+#region-preface-second section.block-quicktabs #quicktabs-container-activities_map_list-1 ,
+#region-preface-second section.block-quicktabs #quicktabs-container-organisation_map_list ,
+#region-preface-second section.block-quicktabs #quicktabs-container-organisation_map_list-1 {
+  padding: 0;
+}
+
+#region-preface-second .openlayers-popupbox ,
+#region-preface-second .openlayers-popupbox.popup {
+  right: auto;
+  left: 10px;
+  top: 10px;
+}
+
+#region-preface-second .openlayers-popupbox.popup .popup-content {
+  padding: 10px;
+}
+
+#region-preface-second .openlayers-popupbox.popup .popup-content a {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+#region-preface-second #block-views-dvtrc-field-trip-block-10 table td.views-field-virtual-field {
+  position: relative;
+}
+
+#region-preface-second #block-views-dvtrc-field-trip-block-10 .ctools-dropbutton {
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+
+/*--------------------- Region Preface Third Styles -------------------------*/
+
+
+.zone-preface .region-preface-third .region-inner {
+  padding: 0px 10px;
+}
+
+.zone-preface .region-preface-third .views-label {
+  font-weight: bold;
+}
+
+.zone-preface .region-preface-third .field-content {
+  margin-top: 10px;
+}
+
+.zone-preface .region-preface-third h3.field-content {
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+
+.zone-preface .region-preface-third .region-inner h2 ,
+.zone-preface .region-preface-third .region-inner h3 {
+  font-weight: normal;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.zone-preface .region-preface-third .region-inner h2 {
+  font-size: 1.5em;
+}
+
+.zone-preface .region-preface-third .region-inner h3 {
+  font-size: 1.8em;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.zone-preface .region-preface-third .region-inner span.views-field.views-field-title {
+  padding: 1px 8px;
+  color: #FFFFFF;
+  background-color: #777777;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+
+/********************** Zone Content Wrapper Styles **************************/
+
+.zone-content-wrapper {
+  /*padding-top: 10px*/
+}
+
+/*------------------- Region Preface First Nitro Styles ---------------------*/
+
+/*.page-user .grid-8.region-preface-first {
+  width: 790px;
+  margin-left: 0;
+  margin-right: 10px;
+}*/
+
+/*--------------------- Region Preface First Styles -------------------------*/
+
+.region-preface-first {
+  padding-bottom: 20px;
+}
+
+.region-preface-first-inner {
+  /*margin-right: 5px;
+  padding: 1px;*/
+}
+
+/*.region-preface-first .block-title {
+  background: #ECECEC url("../images/table_headerbkgd.gif") repeat-x;
+  margin: 0px;
+  padding: 6px 10px;
+  font-weight: normal;
+}*/
+
+.region-preface-first section.block-quicktabs {
+  padding: 0px;
+}
+
+.region-preface-first section.block-quicktabs .quicktabs-wrapper .quicktabs_main .quicktabs-tabpage {
+  margin: 10px 5px;
+}
+
+.region-preface-first section.block-quicktabs .quicktabs-wrapper .quicktabs_main {
+  min-height: 276px;
+}
+
+.region-preface-first section.block-quicktabs .quicktabs-wrapper .quicktabs_main .quicktabs_main {
+  min-height: 246px;
+}
+
+.region-preface-first .quicktabs-tabpage .content {
+  font-size: 0.9em;
+}
+
+.region-preface-first .quicktabs-tabpage .content ul li {
+  margin: 0;
+}
+
+.region-preface-first .quicktabs-tabpage .views-field-field-ftritem-images {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  padding: 5px;
+  border: thin solid #CCCCCC;
+}
+
+.region-preface-first .block-dvtrc-field-trip-block-5 li.devtrac7_progress_field_fieldtrip_rejectable-0-13942 ,
+.region-preface-first .block-dvtrc-field-trip-block-5 li.devtrac7_progress_field_fieldtrip_approvable-0-13942 {
+  display: inline-block;
+}
+
+.region-preface-first table.views-table {
+  border: none;
+}
+
+.region-preface-first table.views-table th {
+  border: none;
+  padding: 10px 5px;
+  background-color: #777777;
+  vertical-align: middle;
+  /*white-space: nowrap;*/
+  color: #FFFFFF;
+}
+
+.region-preface-first table.views-table th a {
+  color: #FFFFFF;
+  padding-right: 13px;
+  display: inline-block;
+}
+
+.region-preface-first table.views-table th a.active img {
+  width: 10px;
+  height: auto;
+}
+
+.region-preface-first table.views-table tbody {
+  line-height: 1.3em; 
+}
+
+.region-preface-first table.views-table tbody tr {
+  background: none;
+  border: none;
+}
+
+.region-preface-first table.views-table tbody tr.odd {
+}
+
+.region-preface-first table.views-table tbody tr.even {
+  background: #DDDDDD;
+}
+
+.region-preface-first table.views-table tbody tr.overdue {
+  background-color: #ffcccc;
+  border-bottom: 3px solid #ea0001;
+}
+
+.region-preface-first table.views-table tbody tr:hover {
+  background: #BBBBBB;
+}
+
+.region-preface-first table.views-table tbody tr td ,
+.region-preface-first table.views-table tbody tr:hover td, 
+.region-preface-first table.views-table tbody tr.even:hover td.active, 
+.region-preface-first table.views-table tbody tr.odd:hover td.active {
+  padding: 5px;
+  vertical-align: top;
+  background-color: transparent;
+  border: none;
+}
+
+.region-preface-first table.views-table tbody td .date-display-single {
+  white-space: nowrap;
+}
+
+.region-preface-first table.views-table tbody td.active {
+  white-space: nowrap;
+}
+
+.region-preface-first table.views-table tbody td.views-field .view-devtrac-activities .views-row {
+display: inline-block;
+}
+
+
+
+.view-dvtrc-field-trip.view-id-dvtrc_field_trip.view-display-id-block_8 .item-list {
+  text-align: center;
+}
+
+.region-preface-first-inner .view-dvtrc-locations {
+  padding: 10px;
+}
+
+.region-preface-first-inner .view-dvtrc-locations .views-label.views-label-view,
+.region-preface-first-inner .view-dvtrc-locations .views-field-nothing-1 {
+  font-size: 1.4em;
+}
+
+.region-preface-first-inner .view-dvtrc-locations .views-field-nothing-1 {
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.region-preface-first-inner .view-dvtrc-locations .views-field-title {
+  font-size: 1.2em;
+}
+
+.region-preface-first-inner .view-dvtrc-site-visits span.views-label {
+  display: none;
+}
+
+.region-preface-first-inner .view-dvtrc-site-visits {
+  /*padding-top: 10px;*/
+}
+
+.region-preface-first-inner .view-dvtrc-site-visits .date-display-single {
+  font-style: italic;
+  color: #666666;
+  padding-top: 10px;
+  font-size: 0.9em;
+}
+
+.region-preface-first-inner .view-dvtrc-locations .dv-seeall {
+  font-style: italic;
+  font-size: 11px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.region-preface-first-inner .view-dvtrc-locations .views-label-taxonomy-vocabulary-1 {
+  display: none;
+}
+
+.region-preface-first-inner .view-dvtrc-locations .views-label-field-place-phone {
+  float: left;
+  padding-right: 5px;
+}
+
+.region-preface-first-inner .view-content ul li.devtrac7-progress-field-not-finished {
+  list-style-position: inside;
+  list-style-image: url(../images/bullet.png);
+  color: #A52A2A;
+  background-color: #EEEEEE;
+  margin-bottom: 5px;
+  padding-left: 5px;
+  border-radius: 10px;
+}
+
+.region-preface-first-inner .view-content ul li.devtrac7-progress-field-not-finished.devtrac7-progress-field-required {
+  background-color: rgb(252, 237, 217);
+}
+
+.region-preface-first-inner .view-content ul li.devtrac7-progress-field-not-finished a {
+  display: block;
+}
+
+.region-preface-first-inner .view-content ul li.devtrac7-progress-field-not-finished.devtrac7-progress-field-required a {
+  font-weight: bold;
+}
+
+.region-preface-first-inner .view-content ul li.devtrac7-progress-field-level-0 {
+  margin-left: 0px;
+}
+
+.region-preface-first-inner .view-content ul li.devtrac7-progress-field-level-1 {
+  margin-left: 20px;
+}
+
+.region-preface-first-inner .view-content ul li.devtrac7-progress-field-level-2 {
+  margin-left: 40px;
+}
+
+.quicktabs-tabpage .block-views-dvtrc-user-block-6 td.views-field-name ,
+.quicktabs-tabpage .block-views-dvtrc-user-block-6 td.views-field-access {
+  white-space: nowrap;
+}
+
+#comments.comment-wrapper{
+  margin-top: 0px;
+}
+
+.comment-wrapper h2.title {
+  background: #ECECEC url("../images/table_headerbkgd.gif") repeat-x;
+  margin-bottom: 0px;
+  border-bottom: thin solid;
+  font-weight: normal;
+  padding: 5px 10px;
+  font-size: 1.4em
+}
+
+.comment-wrapper article.comment {
+
+}
+
+.comment-wrapper article.comment .odd ,
+.comment-wrapper article.comment .even {
+  padding: 10px;
+}
+
+.comment-wrapper article.comment > .odd {
+
+}
+
+.comment-wrapper article.comment > .even {
+  background: #EEEEEE;
+}
+
+.comment-wrapper article.comment header {
+  display: none;
+}
+
+.comment-wrapper article.comment .user-picture {
+  width: 100px;
+  height: 100px;
+  background: #DDD;
+  float: left;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.comment-wrapper article.comment .user-picture img {
+  width: 100px;
+  height: 100px;
+}
+
+.comment-wrapper article.comment .comment-submitted-main {
+  width: auto;
+}
+
+.comment-wrapper article.comment .comment-submitted-main footer {
+  font-style: italic;
+  font-size: 12px;
+}
+
+.comment-wrapper article.comment .comment-submitted-main time {
+  color: #FDB225;
+}
+
+.comment-wrapper article.comment .comment-submitted-main > div {
+  
+}
+
+.comment-wrapper article.comment .field-type-taxonomy-term-reference {
+  position: relative;
+  left: 105px;
+  width: 680px;
+}
+
+.comment-wrapper article.comment nav.comment-links {
+  display: block;
+}
+
+.comment-wrapper article.comment nav.comment-links ul.links {
+  float: right;
+  margin: 0;
+}
+
+.comment-wrapper article.comment .comment-links ul li {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.comment-wrapper article.comment .comment-links ul li a {
+  border: none;
+  border-right: thin solid #000000;
+  box-shadow: none;
+  color: #A52A2A;
+  padding: 0px 10px;
+  text-transform: capitalize;
+  font-weight: normal;
+  background: none;
+  border-radius: 0px;
+}
+
+.comment-wrapper article.comment .comment-links ul li a:hover {
+  text-decoration: underline;
+}
+
+.comment-wrapper article.comment .comment-links ul li.last a {
+  border-right: none;
+}
+
+.comment-wrapper .title.comment-form {
+  border: none;
+}
+
+.comment-wrapper .comment-form {
+  background-color: #ECECEC;
+  padding: 10px;
+}
+
+html .block-commentblock .form-item {
+  float: left;
+  width: 100%;
+}
+
+/*--------------------- Region Sidebar Second Nitro Styles ------------------------*/
+
+.page-user .grid-4.region-sidebar-second {
+  /*width: 390px;
+  margin-left: 0;
+  margin-right: 0;*/
+  background-color: #777777;
+  border-radius: 2px;
+}
+
+.page-user .grid-4.region-sidebar-second .region-inner.region-sidebar-second-inner {
+  padding: 10px;
+}
+
+
+/*--------------------- Region Sidebar Second Styles ------------------------*/
+
+.region-sidebar-second {
+  margin: 0; 
+  margin-bottom: 20px; 
+  /*background-color: #000;*/
+  color: #fff;
+}
+
+.region-sidebar-second .region-sidebar-second-inner {
+  
+}
+
+.views-slideshow-cycle-main-frame-row-item .views-field .field-content img {
+  /*width: 100%;*/
+}
+
+.views-slideshow-cycle-main-frame-row-item .views-field .field-content img {
+  width: 380px;
+  height: 320px;
+}
+
+.views-slideshow-cycle-main-frame-row-item .views-field-field-ftritem-images-3 {
+  background: url("../images/download_btn.png") no-repeat 50% 50%;
+  position: absolute;
+  right: 0px;
+  padding: 7px 5px;
+  height: 13px;
+  width: 13px;
+}
+
+.views-slideshow-cycle-main-frame-row-item .views-field .field-content img.file-icon { 
+  width: inherit;
+  height: auto;
+  opacity: 0;
+  filter: alpha(opacity=100); /*  For IE8 and earlier*/
+}
+
+.views-field-field-ftritem-images-2 {
+  padding: 5px;
+}
+
+.views-slideshow-controls-bottom {
+  padding: 0px 5px;
+}
+
+.views-slideshow-pager-fields {
+  /*display: block; */
+}
+
+.views-slideshow-pager-field-item {
+  /*display: block; */
+  float: left;
+}
+
+.views-slideshow-pager-field-item .views-content-field-ftritem-images img {
+  margin: 0px 5px 10px 5px;
+  cursor: pointer;
+}
+
+/*=============================================================================
+ * Footer Styles
+ * ==========================================================================*/
+
+.zone-footer-wrapper {
+  background-image: url("../images/footer_bkgd.gif");
+  border-top: 5px solid #EA0001;
+  font-size: 0.65em;
+  line-height: 12px;
+  /*padding-bottom: 10px;*/
+  padding-top: 2px;
+}
+
+.zone-footer-wrapper p {
+  margin-bottom: 2px;
+}
+
+.section-footer .zone-footer .menu {
+  padding-top: 5px !important;
+}
+
+.section-footer .zone-footer .menu li {
+  padding: 0px !important;
+  margin: 0px;
+}
+
+.section-footer .zone-footer .menu a {
+  text-transform: uppercase;
+  border-right: thin solid #CCCCCC;
+  padding: 0px 10px;
+}
+
+.section-footer .zone-footer .menu li.first a {
+  border-right: none;
+}
+
+.grid-6.region-footer-first,
+.grid-6.region-footer-second {
+  width: auto;
+}
+
+.grid-6.region-footer-first {
+  float: left;
+}
+
+.grid-6.region-footer-second {
+  float: right;
+}
+
+/*=============================================================================
+ * Form Styles
+ * ==========================================================================*/
+
+/*-------------------------- Global Form Styles -----------------------------*/
+
+#user-profile-form .form-item,
+.node-form .form-item {
+  /*background: #DDDDDD;*/
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px 0;
+}
+
+.node-form .form-item select ,
+.node-form .form-item input {
+  border: 2px solid #BBB;
+  border-radius: 2px;
+  padding: 5px 5px;
+  height: auto;
+}
+
+.form-item.form-type-checkboxes.form-item-roles {
+  overflow: hidden;
+}
+
+#user-profile-form fieldset.collapsible {
+  width: 100%;
+  clear: both;
+}
+
+.form-type-textfield.form-item-search-api-views-fulltext input[type="text"],
+#edit-field-user-superior-und-0-target-id,
+.node-form .form-item input.form-autocomplete {
+  background-position: 99% 7px;
+}
+
+/*----------------------- Global Form Button Styles -------------------------*/
+
+input[type="reset"] , 
+input[type="submit"] , 
+input[type="button"] ,
+input.form-submit.ajax-processed {
+  padding: 5px 10px !important;
+  margin: 10px 5px !important;
+  background: #777 !important;
+  border: none !important;
+  border-radius: 3px !important;
+  font-size: 1.2em !important;
+  font-weight: normal !important;
+  color: #FFFFFF !important;
+  text-shadow: none !important;
+  transition: background-color 0.3s !important;
+  -webkit-transition: background-color 0.3s !important;
+}
+
+input[type="reset"]:hover , 
+input[type="submit"]:hover , 
+input[type="button"]:hover ,
+input.form-submit.ajax-processed:hover {
+  background: #333333 !important;
+  padding: 5px 10px !important;
+  color: #FFFFFF !important;
+}
+
+/*---------------------- Global Form Textfeld Styles ------------------------*/
+
+textarea ,
+input[type="date"] , 
+input[type="datetime"] , 
+input[type="datetime-local"] , 
+input[type="email"] , 
+input[type="month"] , 
+input[type="number"] , 
+input[type="password"] , 
+input[type="search"] , 
+input[type="tel"] , 
+input[type="text"] , 
+input[type="time"] , 
+input[type="url"] , 
+input[type="week"] {
+  border: 2px solid #BBBBBB !important;
+  border-radius: 2px !important;
+  padding: 5px 5px !important;
+  height: auto !important;
+}
+
+input[type="file"] {
+  padding: 0 !important;
+  margin: 10px 5px 10px 0px !important;
+  background: #777777 !important;
+  border-color: #777777 !important;
+  border-radius: 3px !important;
+  font-size: 1.2em !important;
+  font-weight: normal !important;
+  color: #FFFFFF !important;
+  text-shadow: none !important;
+}
+
+.node-form .form-item .description {
+  
+}
+
+.region-content-inner .helpinject-link {
+  display: none;
+}
+
+.form-item .helpinject-link,
+#edit-picture a.helpinject-link,
+#edit-field-user-aboutme a.helpinject-link,
+#edit-contact a.helpinject-link {
+  display: none;
+}
+
+.page-node-add .vertical-tabs, .page-node-edit .vertical-tabs {
+  display: none;
+}
+
+/*------------------------- Specific Form Styles ----------------------------*/
+
+.field-type-field-collection input.form-submit.ajax-processed[value='Remove'] {
+  float: right;
+  margin-right: 5px;
+}
+
+.block-dvtrc-field-trip-block-5 a.devtrac7-progress-field-style-button {
+  padding: 5px 10px !important;
+  margin: 10px 5px !important;
+  display: inline-block;
+  background: #777;
+  border: none;
+  border-radius: 3px;
+  /*font-size: 1.2em;*/
+  font-weight: normal;
+  color: #FFF;
+  text-shadow: none;
+  transition: background-color 0.3s;
+  -webkit-transition: background-color 0.3s;
+}
+
+.block-dvtrc-field-trip-block-5 a.devtrac7-progress-field-style-button:after {
+  content: "" !important;
+}
+
+.block-dvtrc-field-trip-block-5 a.devtrac7-progress-field-style-button:hover {
+  background: #333;
+  padding: 5px 10px !important;
+  color: #FFF;
+  text-decoration: none;
+}
+
+.region-inner input:focus, 
+.region-inner input:active, 
+.region-inner select:focus, 
+.region-inner select:active, 
+.region-inner textarea:focus, 
+.region-inner textarea:active,
+.region-preface-first-inner nav.comment-links li a:hover {
+  box-shadow: 0px 0px 2px #989898;
+  margin-left: 0;
+}
+
+.node-form .text-format-wrapper {
+  /*background: #DDDDDD;*/
+}
+
+.section-content .grid-12.region-content {
+  height: 100%;
+}
+
+#edit-field-user-aboutme,
+#block-openlayers-plus-blockswitcher,
+#edit-field-iati-activity-planned-date,
+#edit-field-iati-activity-actual-date,
+#edit-field-ftritem-images,
+#edit-field-ftritem-date-visited,
+#edit-field-fieldtrip-start-end-date,
+.node-form .text-format-wrapper,
+#edit-field-actionitem-due-date,
+#edit-field-place-lat-long ,
+body.page-node .field-widget-text-textarea.form-wrapper {
+  background: #DDDDDD;
+}
+
+#edit-field-iati-activity-planned-date,
+#edit-field-iati-activity-actual-date,
+#edit-field-ftritem-images,
+#edit-field-ftritem-date-visited,
+#edit-field-fieldtrip-start-end-date {
+  /*padding-top: 10px;*/
+}
+
+#edit-field-iati-activity-actual-date,
+#edit-field-ftritem-images {
+  margin-top: 5px;
+}
+
+.field-type-image span.fieldset-legend ,
+.field-type-date span.fieldset-legend {
+  /*margin: 10px;*/
+}
+
+#edit-field-fieldtrip-start-end-date-und-0-value2 label,
+#edit-field-fieldtrip-start-end-date-und-0-value label,
+#edit-field-ftritem-date-visited-und-0-value label {
+  display: block;
+  font-weight: normal;
+  font-size: 1.0em;
+  padding-bottom: 5px;
+}
+
+.form-item.form-type-password.form-item-pass-pass1.password-parent ,
+.form-item.form-type-password.form-item-pass-pass2.confirm-parent {
+  padding: 0 !important;
+}
+
+.text-format-wrapper .description,
+#edit-field-place-lat-long .description {
+  padding: 10px;
+  padding-bottom: 5px;
+}
+
+#edit-field-place-lat-long  .openlayers-container.openlayers-container-map- {
+  border: thin solid #CCCCCC;
+}
+
+.node-form .form-wrapper.devtrac-geosearch-layerswitcher {
+  background: #ECECEC;
+  margin: 5px 0px;
+}
+
+.node-form .form-wrapper.devtrac-geosearch-layerswitcher .block-inner .block-title ,
+.node-form .form-wrapper.devtrac-geosearch-layerswitcher .block-inner .layers-title {
+  padding: 10px;
+  color: #333333;
+  font-weight: normal;
+}
+
+.node-form .form-wrapper.devtrac-geosearch-layerswitcher .block-inner .block-title {
+  font-size: 1.1em;
+}
+
+.node-form .form-wrapper.devtrac-geosearch-layerswitcher .block-inner .layers-title {
+  font-size: 1.0em;
+  margin-bottom: 0;
+}
+
+.node-form .form-wrapper.devtrac-geosearch-layerswitcher .layers.base {
+  margin-bottom: 10px;
+}
+
+#openlayers_geosearch_search-form-results_block {
+    background-color: rgb(0, 0, 0);
+}
+
+.block-openlayers-geosearch-search-form {
+  background: #DDDDDD;
+  padding: 0 10px 0 10px;
+  margin-bottom: 10px;
+}
+
+.form-item.form-type-textfield.form-item-field-place-website-und-0-url,
+.node-form .field-type-date fieldset.form-wrapper {
+  min-width: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+
+#edit-field-iati-activity-description-und-0-format {
+  padding: 5px 0px;
+}
+
+#edit-field-actionitem-due-date legend {
+  padding-top: 10px;
+}
+
+#edit-field-actionitem-due-date .form-item {
+  padding: 0px;
+  padding-bottom: 10px;
+  /*padding-left: 5px;*/
+  margin: 0;
+}
+
+#field-actionitem-responsible-add-more-wrapper table#field-actionitem-responsible-values {
+  border: none;
+}
+
+#field-actionitem-responsible-add-more-wrapper table#field-actionitem-responsible-values tbody tr {
+  border: 1px solid #CCCCCC;
+}
+
+#field-actionitem-responsible-add-more-wrapper table#field-actionitem-responsible-values tbody tr td {
+  padding: 0px;
+}
+
+#field-actionitem-responsible-add-more-wrapper table#field-actionitem-responsible-values tbody tr .field-multiple-drag ,
+#field-actionitem-responsible-add-more-wrapper table#field-actionitem-responsible-values tbody tr td .form-item {
+  padding: 0px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin: 0;
+}
+
+#field-actionitem-responsible-add-more-wrapper table#field-actionitem-responsible-values tbody tr td .form-item {
+  padding-right: 5px;
+}
+
+#field-actionitem-responsible-add-more-wrapper table#field-actionitem-responsible-values tbody tr .field-multiple-drag a {
+  margin: 0;
+}
+
+.field-multiple-table th.field-label {
+  background: none;
+}
+
+.node-form  .form-item label {
+  font-weight: normal;
+  font-size: 1.0em;
+  padding-bottom: 5px;
+}
+
+#field-place-contact-info-values tbody tr {
+  margin: 0;
+}
+
+table.tabledrag-processed thead tr {
+  border: none;
+}
+
+table.tabledrag-processed tbody tr.draggable {
+  border: thin solid #CCC;
+}
+
+.form-item tr.draggable,
+.form-item tr.draggable td,
+.form-item tr.draggable td.active {
+  background-color: transparent;
+}
+
+table.tabledrag-processed tbody tr.draggable td label {
+  /*display: none;*/
+}
+
+#node_place_form_group_place_id {
+  display: none;
+}
+
+.chosen-container .chosen-results li.disabled-result {
+  color: #777777;
+}
+
+/*---------------------------- CKEditor Styles ------------------------------*/
+
+a.ckeditor_links {
+  padding-left: 10px;
+}
+
+#field-actionitem-followuptask-add-more-wrapper .description {
+  padding: 10px;
+  padding-top: 0;
+}
+
+.form-wrapper ul {
+  margin-bottom: 0px;
+  padding-left: 20px;
+}
+
+/*----------------------------- Chosen Styles -------------------------------*/
+
+.chosen-container-multi ul.chosen-choices {
+  border: thin solid #AAAAAA;
+}
+
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+  height: auto;
+  padding: 2px;
+}
+
+/*----------------------- Hidden Form Fields Styles -------------------------*/
+
+#ftritem-node-form #edit-taxonomy-vocabulary-1 ,
+#ftritem-node-form #edit-taxonomy-vocabulary-7 ,
+#actionitem-node-form #edit-taxonomy-vocabulary-6 ,
+.container-inline-date .description,
+.date-no-float .form-item label ,
+.form-item .tabledrag-toggle-weight-wrapper,
+.node-place-form #edit-taxonomy-vocabulary-2 {
+  display: none;
+}
+ 
+/*=============================================================================
+ * Add Place Form Styles
+ * ==========================================================================*/
+
+.page-node-addplaceform-ajax-nojs .region-inner.region-content-inner {
+  /*width: 80%;
+  margin: 20px auto !important;*/
+}
+
+.page-node-addplaceform-ajax-nojs .zone-content.container-12 .grid-12.region-content > .region-content-inner {
+  width: 80%;
+  margin: 20px auto;
+}
+ 
+ 
+/*=============================================================================
+ * Map Search Popup Styles
+ * ==========================================================================*/
+
+#colorbox #cboxTitle {
+  bottom: 50%;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+#colorbox .layers .wms-no-results {
+  font-size: 1.2em;
+  color: #555555;
+  text-align: center;
+  width: 500px;
+  padding: 100px 20px 20px 20px;
+  margin: 100px auto 200px auto;
+  background: #CCCCCC url(../images/search-results-bg.png) no-repeat 50% 20px;
+  background-size: 70px auto;
+}
+
+/*=============================================================================
+ * Login Popup Styles
+ * ==========================================================================*/
+
+#cboxLoadedContent {
+  margin-bottom: 0;
+}
+
+#colorbox #cboxClose {
+  background: url("../images/closer.png") no-repeat scroll 0 0 transparent;
+  height: 16px;
+  right: 0;
+  top: 0;
+  width: 16px;
+}
+
+#cboxLoadedContent form#user-login {
+  background: url(../../../files/devtrac_logo.jpg) no-repeat 0 10px;
+  padding-top: 40px;
+}
+
+#cboxLoadedContent form#user-login label {
+  font-weight: normal;
+}
+
+#cboxLoadedContent form#user-login input[type="text"] ,
+#cboxLoadedContent form#user-login input[type="password"] {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#cboxLoadedContent form#user-login input[type="text"]:focus ,
+#cboxLoadedContent form#user-login input[type="password"]:focus {
+  outline: none;
+}
+
+#cboxLoadedContent form#user-login input#submit {
+  float: right;
+}
+
+#cboxLoadedContent form#user-login .item-list li {
+  margin-left: 0;
+}
+
+/*=====================================================================================
+ * OpenLayers Plus Popup Styles
+ * ==================================================================================*/
+/*===================popup=======================*/
+
+.openlayers-popupbox {
+  background: url(../images/alpha-black-bg.png);
+  border: 1px solid #dedede;
+  color: #fff;
+  display: inline;
+  float: right;
+  font-family: sans-serif;
+  font-size: 100%;
+  opacity: 1.0;
+  position: absolute;
+  right: 70px;
+  top: 24px;
+  width: 300px;
+  z-index: 1015;
+}
+
+.openlayers-popupbox h2.popup-title {
+  color: #FFFFFF;
+  font-family: sans-serif;
+  font-weight: normal;
+  letter-spacing: normal;
+  background: url(../images/alpha-black-bg.png);
+  font-size: 1.0em;
+  margin: 0px;
+  padding: 5px 30px 5px 10px;
+  text-transform: uppercase;
+}
+
+.openlayers-popupbox h2.popup-title a {
+  color: #FFFFFF;
+}
+
+.openlayers-popupbox h2.popup-title a:hover {
+  text-decoration: underline;
+}
+
+.openlayers-popupbox a.popup-close {
+  background: url(../images/closer.png) no-repeat;
+  color: transparent;
+  height: 13px;
+  width: 14px;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  float: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.openlayers-popupbox a.popup-close:hover {
+  color: transparent;
+}
+
+.openlayers-popupbox .popup-content {
+  background-image: none;
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 0.9em;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.openlayers-popupbox .popup-content .field-type-image ,
+.openlayers-popupbox .popup-content .field-type-date ,
+.openlayers-popupbox .popup-content .field-type-text-long ,
+.openlayers-popupbox .popup-content .field-type-ds {
+  padding: 5px 10px;
+}
+
+.openlayers-popupbox .popup-content .field-type-image {
+  float: left;
+}
+
+.openlayers-popupbox .popup-content .field-type-date {
+  font-style: italic;
+  padding-bottom: 10px;
+}
+
+.openlayers-popupbox .popup-content .field-type-ds {
+  background: url(../images/popup-read-more.png) no-repeat 120px top;
+  overflow: hidden;
+  padding-right: 20px;
+}
+
+.openlayers-popupbox .popup-content .field-type-ds a {
+  float: right;
+  color: #FFFFFF;
+}
+
+.openlayers-popupbox .popup-content .field-type-ds a:hover {
+  text-decoration: underline;
+}
+
+.openlayers-popupbox .popup-pager ul li span {
+  text-align: center;
+}
+
+.openlayers-popupbox div.title_item-list {
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  padding: 8px 5% 2px;
+}
+
+
+.openlayers-popupbox div.title_item-list ul {
+  list-style-image: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.openlayers-popupbox div.title_item-list ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.openlayers-popupbox a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.openlayers-popupbox .popup-content ul {
+  list-style-image: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.openlayers-popupbox .popup-content ul li {
+  margin: 0;
+  padding: 0;
+}
+
+
+.openlayers-popupbox .popup-pager {
+  color: #444;
+  display: none;
+  display: block;
+  font-family: sans-serif;
+  font-size: 0.6em;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  width: 100%;
+}
+
+.openlayers-popupbox .popup-pager ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.openlayers-popupbox .popup-pager ul li {
+  float: left;
+  height: 20px;
+  list-style-image: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 33%;
+}
+
+.openlayers-popupbox .popup-pager ul li.pages {
+  font-size: 10px;
+  text-align: center;
+  width: 33%;
+}
+
+.openlayers-popupbox .popup-pager ul li a {
+  color: transparent;
+  height: 9px;
+  margin-bottom: 10px;
+  width: 14px;
+}
+
+.openlayers-popupbox .popup-pager ul li a.prev {
+  background: url(../images/pagerPrev.png) no-repeat;
+  float: left;
+  margin-left: 10px;
+}
+
+.openlayers-popupbox .popup-pager ul li a.next {
+  background: url(../images/pagerNext.png) no-repeat;
+  float: right;
+  margin-right: 10px;
+}
+ 
+/*=====================================================================================
+ * Openlayers Geosearch Results Tabs Style
+ * ==================================================================================*/
+
+#openlayersgeosearchtabs {
+  border-radius: 0px;
+  border: none;
+  padding: 0;
+}
+
+#openlayersgeosearchtabs ul.ui-tabs-nav {
+  border: none;
+  border-bottom: thin solid #000000;
+  background: #989898;
+  border-radius: 0px;
+}
+
+#openlayersgeosearchtabs ul.ui-tabs-nav li {
+  border-radius: 0px;
+  background: none;
+  border: none;
+  float: right;
+  padding: 0;
+  margin: 0 3px;
+}
+
+#openlayersgeosearchtabs ul.ui-tabs-nav li:hover {
+  border-radius: 0px;
+  background: none;
+  border: none;
+  float: right;
+  padding: 0;
+}
+
+#openlayersgeosearchtabs ul.ui-tabs-nav li a ,
+#openlayersgeosearchtabs ul.ui-tabs-nav li a:hover ,
+#openlayersgeosearchtabs ul.ui-tabs-nav li:hover a,
+#openlayersgeosearchtabs ul.ui-tabs-nav li.ui-state-hover a {
+  background: none repeat scroll 0 0 #ECECEC;
+  border: 1px solid #000000;
+  border-radius: 0px;
+  color: #000000;
+  display: block;
+  font-family: Arial;
+  height: 18px;
+  padding: 2px 12px 1px;
+  outline: 0 none;
+  vertical-align: baseline;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+#openlayersgeosearchtabs ul.ui-tabs-nav li.ui-state-active a {
+  background-color: #000000;
+  background-image: none;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+#openlayersgeosearchtabs .ui-widget-content {
+  background: #ffffff;
+  padding-top: 3px;
+  padding-bottom: 10px;
+  padding-left: 3px;
+  padding-right: 3px;
+  font-size: 12px;
+}
+
+#openlayersgeosearchtabs .ui-widget-content table {
+  width: inherit;
+}
+
+#openlayersgeosearchtabs .ui-widget-content table {
+  width: inherit;
+}
+
+#openlayersgeosearchtabs .ui-widget-content table tr:hover {
+  background: #ECECEC;
+}
+
+#edit-field-fieldtrip-button {
+  display: none;
+}
+
+/*===============================================================================
+ * Block switcher styling
+ * ============================================================================*/
+
+.devtrac-geosearch-layerswitcher #block-openlayers-plus-blockswitcher h2.block-title {
+  /*color: #000000;
+  background: none;
+  padding-left: 0;*/
+}
+ 
+.devtrac-geosearch-layerswitcher #block-openlayers-plus-blockswitcher h2.layers-title {
+  /*font-size: 13px;
+  margin: 5px 0px 0px 10px;*/
+}
+ 
+.devtrac-geosearch-layerswitcher #block-openlayers-plus-blockswitcher .form-item {
+  width: 30%;
+  margin: 5px;
+}
+ 
+.devtrac-geosearch-layerswitcher #block-openlayers-plus-blockswitcher .form-item input {
+  margin-right: 5px;
+}
+ 
+.devtrac-geosearch-layerswitcher #block-openlayers-plus-blockswitcher .layers .radio {
+  background-color: transparent;
+}
+ 
+ 
+
+
+
+
+
+
+
+
+/*=====================================================================================
+ * FINAL STYLES
+ * Devtrac Nov 2013
+ * ==================================================================================*/
+ 
+/*=====================================================================================
+ * Comment Form
+ * ==================================================================================*/
+ 
+ form.comment-form .form-disabled {
+  display: none;
+ }
+
+/*=====================================================================================
+ * Action Item Report Buttons
+ * ==================================================================================*/
+
+td.views-field-virtual-field-1 {
+  white-space: nowrap;
+}
+
+td.views-field-virtual-field-1 li {
+  list-style: none;
+}
+
+td.views-field-virtual-field-1 li a {
+  text-decoration: none !important;
+  color: #000000;
+}
+
+td.views-field-virtual-field-1 li a:hover {
+  color: #EA0001;
+}
+
+
+/*=====================================================================================
+ * Footable Styles
+ * ==================================================================================*/
+
+table.tablet.breakpoint.footable-loaded td.footable-first-column {
+  padding-left: 40px;
+  background: url(../images/icon-expand.png) no-repeat 10px 50%;
+  background-size: auto 16px;
+}
+
+table.tablet.breakpoint.footable-loaded tr.footable-detail-show td.footable-first-column {
+  padding-left: 40px;
+  background: url(../images/icon-collapse.png) no-repeat 10px 50%;
+  background-size: auto 16px;
+}
+
+table.tablet.breakpoint.footable-loaded tr.footable-row-detail td.footable-row-detail-cell {
+  padding-left: 40px;
+}
+
+table.tablet.breakpoint.footable-loaded tr.footable-row-detail td.footable-row-detail-cell .footable-row-detail-name ,
+table.tablet.breakpoint.footable-loaded tr.footable-row-detail td.footable-row-detail-cell .footable-row-detail-value {
+  display: inline-block;
+  padding-left: 5px;
+}
+
+/*=====================================================================================
+ * Pager Styles
+ * ==================================================================================*/
+
+.item-list ul.pager {
+  height: 22px;
+  /*background-color: #CCCCCC;*/
+  border: none;
+  border-radius: 0;
+}
+
+.item-list ul.pager li {
+
+}
+
+.item-list ul.pager li.pager-current ,
+.item-list ul.pager li.pager-previous ,
+.item-list ul.pager li.pager-next {
+  margin-right: 2px;
+  /*position: static;*/
+  display: inline-block;
+}
+
+.item-list ul.pager li.pager-previous {
+
+}
+
+.item-list ul.pager li.pager-next {
+
+}
+
+.item-list ul.pager li.pager-current {
+  position: relative;
+  background: #A52A2A;
+  font-weight: normal;
+  left: 45%;
+}
+
+.item-list ul.pager li a ,
+.item-list ul.pager li a:hover {
+  font-weight: normal;
+  color: #FFFFFF;
+  white-space: nowrap;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 0;
+  width: auto;
+}
+
+.item-list ul.pager li a {
+  background: #777777;
+}
+
+.item-list ul.pager li a:hover {
+  background: #333333;
+}
+
+/*=====================================================================================
+ * Progress Bar
+ * ==================================================================================*/
+
+.devtrac7-progress-bar {
+  position: relative;
+  margin-top: 10px;
+}
+
+.devtrac7progressbar {
+  height: 10px;
+}
+
+.devtrac7-progress-bar .devtrac7progressbar-total {
+  position: relative;
+  top: 0px;
+}
+
+.devtrac7-progress-bar .devtrac7progressbar-required {
+  position: relative;
+  top: -12px;
+}
+
+.devtrac7-progress-bar .devtrac7progressbar-req-of-tot {
+  position: relative;
+  top: -24px;
+}
+
+.devtrac7-progress-bar .devtrac7progressbar-optional-descr ,
+.devtrac7-progress-bar .devtrac7progressbar-required-descr {
+  position: absolute;
+  top: 12px;
+}
+
+.devtrac7-progress-bar .devtrac7progressbar-optional-descr {
+  right: 5px;
+}
+
+.devtrac7-progress-bar .devtrac7progressbar-required-descr {
+  left: 5px;  
+}
+
+/*======================== Table Progress Bar Styles ========================*/
+
+table .devtrac7progressbar-total {
+  top: 0px;
+}
+
+table .devtrac7progressbar-required {
+  top: -12px;
+}
+
+table .devtrac7progressbar-req-of-tot {
+  top: -24px;
+}
+
+table .devtrac7-progress-bar {
+  margin-top: 0px;
+}
+
+table .devtrac7progressbar-optional-descr , 
+table .devtrac7progressbar-required-descr {
+  display: none;
+}
+
+/*=====================================================================================
+ * Ctools Dropdown and Button Styles
+ * ==================================================================================*/
+
+.ctools-button ,
+.ctools-dropbutton {
+    background-color: #ececec;
+    background-image: url("../images/button_bkgd.gif");
+    background-repeat: repeat-x;
+    font-size: 11px;
+    color: #ececec;
+}
+
+.ctools-dropbutton .ctools-link {
+  background: url("../images/button_border.gif") no-repeat scroll 0 0;
+  padding-left: 0.2em;  
+}
+
+.ctools-dropbutton .ctools-link a.ctools-twisty.ctools-text {
+  color: #000000;
+}
+
+.ctools-button .ctools-content ,
+.ctools-dropbutton .ctools-content {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.ctools-content ul ,
+.ctools-button-processed .ctools-content ul {
+  margin-bottom: 0;
+}
+
+.ctools-dropbutton-processed .ctools-content ul {
+  padding-left: 0;
+  padding: 1px 0 0;
+}
+
+.ctools-dropbutton-processed .ctools-content ul li {
+  display: block;
+}
+
+.ctools-button-processed .ctools-content ul li a:hover ,
+.ctools-dropbutton-processed .ctools-content ul li a:hover {
+  color: #EA0001;
+  text-decoration: none;
+}
+
+.ctools-button .ctools-button a,
+.ctools-button .ctools-content a:link,
+.ctools-button .ctools-content a:visited,
+.ctools-dropbutton .ctools-dropbutton a, 
+.ctools-dropbutton .ctools-content a:link,
+.ctools-dropbutton .ctools-content a:visited {
+  color: #000000;
+  white-space: nowrap;
+  display: block;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/*===================================================================================*\
+ * FacetAPI General Styles
+\*===================================================================================*/
+
+
+
+
+
+
+/*===================================================================================*\
+ * Collapsible Link Styles
+\*===================================================================================*/
+
+html.js fieldset.collapsible .fieldset-legend {
+  padding: 0;
+  margin: 10px 5px;
+}
+
+html.js fieldset.collapsible .fieldset-legend a {
+  background-color: #777777;
+  color: #FFFFFF;
+  border-radius: 3px;
+  padding: 5px 10px;
+  padding-right: 25px;
+  background-position: 95% 50%;
+  background-image: url(../images/icon-collapsible-open.png);
+  background-repeat: no-repeat;
+  background-size: 12px auto;
+  font-size: 1.2em;
+  transition: background-color 0.3s;
+  -webkit-transition: background-color 0.3s;
+}
+
+html.js fieldset.collapsible.collapsed .fieldset-legend a {
+  background-position: 95% 50%;
+  background-image: url(../images/icon-collapsible-close.png);
+  background-repeat: no-repeat;
+  background-size: 12px auto;
+}
+
+html.js fieldset.collapsible .fieldset-legend a:hover {
+  background-color: #333333;
+  text-decoration: none;
+}
+
+/*=====================================================================================
+ * OpenLayers Plus Block Panel
+ * ==================================================================================*/
+
+.ext_wrapper {
+  background: none;
+  background: url(../images/alpha-black-bg.png);
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100% !important;
+}
+
+.ext_wrapper .extruder-content {
+  background: none;
+  border-right: none !important;
+}
+
+#Extruderolblockpanel {
+  font-size: 0.85em;
+  background: none;
+  text-shadow: none;
+  color: #FFF;
+}
+
+#Extruderolblockpanel a {
+  /*color: #CCC;*/
+}
+
+#Extruderolblockpanel .flapLabel {
+  display: none;
+}
+
+#Extruderolblockpanel.olControlblockpanel.extruder .flap {
+  top: 50px;
+  padding: 0;
+  margin: -0;
+  background: url(../images/flapTabSprite.png) no-repeat;
+  background-position: 0 -60px;
+  width: 30px;
+  height: 60px;
+  position: absolute;
+  right: -30px;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+#Extruderolblockpanel.olControlblockpanel.extruder .flap:hover {
+  cursor: pointer;
+}
+
+#Extruderolblockpanel.olControlblockpanel.extruder.isOpened .flap {
+  background-position: 0 0;
+}
+
+#Extruderolblockpanel .text  {
+  background: none;
+  height: 100%;
+  padding-left: 0;
+  padding-top: 0;
+}
+
+#Extruderolblockpanel h3.hiddentitle-done-processed {
+  font-weight: bold;
+  background: #000000;
+  opacity: 0.9;
+  padding: 10px 5px 10px 15px;
+  /*border-bottom: thin solid #999;*/
+  font-size: 1.3em;
+  color: #EEEEEE;
+  margin-bottom: 5px;
+}
+
+#Extruderolblockpanel .current-search-item.current-search-item-active {
+  background: #000000;
+  opacity: 0.9;
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 3px;
+}
+#Extruderolblockpanel .current-search-item.current-search-item-active ul li {
+  margin: 5px;
+}
+
+#Extruderolblockpanel .block-facetapi ul.facetapi-facetapi-links {
+  width: 250px;
+}
+
+#Extruderolblockpanel .block-facetapi li span ,
+#Extruderolblockpanel .block-facetapi li span.counter_number ,
+#Extruderolblockpanel .block-facetapi li span.placetype_match_to_counter_number {
+  display: inline;
+  /*font-size: 0.85em;*/
+  padding-right: 5px;
+  font-weight: normal;
+}
+
+.facetapi-facet.facetapi-active a {
+  display: block;
+  background: url(../images/remove-icon.png) no-repeat 99% 50%;
+  font-style: italic;
+}
+
+/*========================= fulltextsearch ==================================*/
+
+#Extruderolblockpanel .block-facetapi form.facetapi-fulltextsearch-form {
+  border: 2px solid #151515;
+  margin: 5px 10px;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+}
+
+#Extruderolblockpanel .block-facetapi form.facetapi-fulltextsearch-form input[type="textfield"] {
+  display: inline-block;
+  width: 175px;
+  padding: 5px 5px;
+  margin: 0;
+  border: none;
+  box-shadow: 0 0 0 transparent;
+}
+
+#Extruderolblockpanel .block-facetapi form.facetapi-fulltextsearch-form #edit-actions {
+  margin: 0;
+  display: inline-block;
+  float: right;
+}
+
+#Extruderolblockpanel .block-facetapi form.facetapi-fulltextsearch-form input[type="submit"] {
+  padding: 3px 8px !important;
+  margin: 0 !important;
+  height: 26px !important;
+  width: 30px !important;
+  background: #151515 url(../images/search-icon.png) no-repeat 50% 50% !important;
+  background-size: 16px 16px !important;
+  color: transparent !important;
+  border-radius: 0 !important;
+  border: none;
+  text-shadow: 0 0 0 transparent !important;
+}
+
+#Extruderolblockpanel .block-facetapi form.facetapi-fulltextsearch-form input[type="submit"]:hover {
+  padding: 3px 8px !important;
+  margin: 0 !important;
+  height: 26px !important;
+  width: 30px !important;
+  background: #151515 url(../images/search-icon.png) no-repeat 50% 50% !important;
+  color: transparent !important;
+  border-radius: 0 !important;
+  text-shadow: 0 0 0 transparent !important;
+}
+
+/*===================== fulltextsearch outside ==============================*/
+
+#OpenLayers_Map_2_OpenLayers_ViewPort .block-facetapi.outside {
+  z-index: 2000;
+  width: 295px;
+  top: 20px;
+  left: 30px;
+  background: url(../images/alpha-black-bg.png);
+  color: #FFFFFF;
+  padding: 5px;
+  position: absolute;
+}
+
+#OpenLayers_Map_2_OpenLayers_ViewPort .block-facetapi.outside h2.block-title {
+  color: #FFFFFF;
+  font-weight: normal;
+  font-size: 1.0em;
+  padding-left: 10px;
+}
+
+#OpenLayers_Map_2_OpenLayers_ViewPort .block-facetapi.outside  form.facetapi-fulltextsearch-form {
+  border: 2px solid #151515;
+  margin: 5px 10px;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  width: 270px;
+}
+
+#OpenLayers_Map_2_OpenLayers_ViewPort .block-facetapi.outside  form.facetapi-fulltextsearch-form input[type="textfield"] {
+  display: inline-block;
+  width: 225px;
+  padding: 5px 5px;
+  margin: 0;
+  border: none;
+  box-shadow: 0 0 0 transparent;
+}
+
+#OpenLayers_Map_2_OpenLayers_ViewPort .block-facetapi.outside  form.facetapi-fulltextsearch-form #edit-actions {
+  margin: 0;
+  display: inline-block;
+  float: right;
+}
+
+#OpenLayers_Map_2_OpenLayers_ViewPort .block-facetapi.outside  form.facetapi-fulltextsearch-form input[type="submit"] {
+  padding: 3px 8px !important;
+  margin: 0 !important;
+  height: 26px !important;
+  width: 30px !important;
+  background: #151515 url(../images/search-icon.png) no-repeat 50% 50% !important;
+  background-size: 16px 16px !important;
+  color: transparent !important;
+  border-radius: 0 !important;
+  border: none !important;
+  text-shadow: 0 0 0 transparent !important;
+}
+
+#OpenLayers_Map_2_OpenLayers_ViewPort .block-facetapi.outside  form.facetapi-fulltextsearch-form input[type="submit"]:hover {
+  padding: 3px 8px !important;
+  margin: 0 !important;
+  height: 26px !important;
+  width: 30px !important;
+  background: #151515 url(../images/search-icon.png) no-repeat 50% 50% !important;
+  color: transparent !important;
+  border-radius: 0 !important;
+  text-shadow: 0 0 0 transparent !important;
+}
+
+#OpenLayers_Map_2_OpenLayers_ViewPort h3.hiddentitle-done-processed {
+  font-weight: bold;
+  background: #000000;
+  opacity: 0.9;
+  padding: 5px 5px 5px 15px;
+  font-size: 1.3em;
+  color: #EEEEEE;
+  margin-bottom: 5px;
+}
+
+#OpenLayers_Map_2_OpenLayers_ViewPort .current-search-item.current-search-item-text {
+  position: relative;
+}
+
+#block-current-search-devtrac7-sitevisits-standard .current-search-item.current-search-item-active a {
+  color: #FFFFFF; 
+}
+
+/*=======================facetapi-search-api-swatches================================*/
+
+#Extruderolblockpanel .block-current-search {
+  background: #000000;
+  opacity: 0.9;
+  color: #FFFFFF;
+  padding: 10px;
+  border-top: thin solid #999999;
+  border-bottom: thin solid #999999;
+  margin-top: 5px;
+}
+
+.region-content .current-search-item .item-list {
+  margin: 0;
+  display: inline-block;
+}
+
+#Extruderolblockpanel .block-current-search .current-search-item {
+  /*padding: 5px 10px;*/
+  display: inline-block;
+}
+
+#Extruderolblockpanel .block-current-search .current-search-item h4.current-search-group-title {
+  color: #FFFFFF;
+  font-size: 1.0em;
+  font-weight: normal;
+  padding-right: 5px;
+  /*display: none;*/
+}
+
+#Extruderolblockpanel .block-current-search .current-search-item ul ,
+#Extruderolblockpanel .block-current-search .current-search-item ul li {
+  display: inline-block;
+}
+
+#Extruderolblockpanel .block-current-search .current-search-item ul {
+  margin: 0;
+}
+
+#Extruderolblockpanel .block-current-search .current-search-item ul li {
+  margin: 2px;
+}
+
+
+
+#Extruderolblockpanel .block-current-search .current-search-item ul li a {
+  display: inline-block;
+  background: #777777;
+  padding: 3px 5px;
+  border-radius: 3px;
+  color: #FFFFFF;
+}
+
+
+#Extruderolblockpanel .block-current-search .current-search-item ul li a:hover {
+  text-decoration: none;
+  background: #555555;
+}
+
+/*=======================facetapi-search-api-swatches================================*/
+
+#Extruderolblockpanel .block-devtrac7-realms {
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+#Extruderolblockpanel .block-devtrac7-realms h2.block-title {
+  background: #000000 url(../images/collapse-icon.png) no-repeat 95% 50%;
+  font-weight: normal;
+  opacity: 0.9;
+  padding: 5px 5px 5px 15px;
+  border-top: thin solid #999;
+  border-bottom: thin solid #999;
+  font-size: 1.2em;
+  color: #EEEEEE;
+}
+
+#Extruderolblockpanel .block-devtrac7-realms h2.block-title a:hover ,
+#Extruderolblockpanel .block-devtrac7-realms h2.block-title:hover a:hover {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+#Extruderolblockpanel .block-devtrac7-realms h2.block-title.collapsiblockCollapsed {
+  background: #000000 url(../images/collapse-icon-2.png) no-repeat 95% 50%;
+}
+
+#Extruderolblockpanel .block-devtrac7-realms ul.facetapi-facetapi-links li.collapsed  {
+  padding: 5px 10px 5px 0px;
+  margin: 0;
+  clear: both;
+  width: 220px;
+  border: none;
+  padding-left: 20px;
+  font-size: 1.0em;
+  border-bottom: thin solid #CCC;
+}
+
+#Extruderolblockpanel .block-devtrac7-realms ul.facetapi-facetapi-links li.collapsed a:hover  {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+#Extruderolblockpanel .block-devtrac7-realms ul.facetapi-facetapi-links li.collapsed span {
+  padding-left: 5px;
+}
+
+#Extruderolblockpanel .block-devtrac7-realms ul.facetapi-facetapi-links li.collapsed span.counter_number {
+  font-weight: normal;
+}
+
+
+
+/*=====================================================================================
+ * General Openlayers Styles
+ * ==================================================================================*/
+
+.olControlNoSelect .olButton:hover {
+  cursor: pointer;
+}
+
+/*=====================================================================================
+ * Openlayers Zoom Panel Styles
+ * ==================================================================================*/
+
+.openlayers-views-map .olControlZoomPanel {
+  left: auto !important;
+  right: 20px;
+  top: 20px;
+}
+
+.olControlZoomPanel .olControlZoomInItemInactive ,
+.olControlZoomPanel .olControlZoomOutItemInactive {
+  width: 30px;
+  height: 30px;
+  background: url(../images/map-controls-sprite.png) no-repeat !important;
+}
+
+.olControlZoomPanel .olControlZoomInItemInactive {
+  background-position: 0 0 !important;
+}
+
+.olControlZoomPanel .olControlZoomOutItemInactive {
+  background-position: 0 -30px !important;
+}
+
+/*===========================================================================*\
+  Openlayers Control Panel Styles
+\*===========================================================================*/
+
+.olControlPanel.olControlNoSelect {
+  width: 40px;
+  background: none;
+}
+
+.olControlPanel.olControlNoSelect.top.right {
+  top: 120px;
+  right: 20px;
+}
+
+.olControlPanel.olControlNoSelect .olControlMaptextItemActive.olButton ,
+.olControlPanel.olControlNoSelect .olControlMaptextItemInactive.olButton {
+  width: 30px;
+  height: 30px;
+  background: none;
+  background: url(../images/map-controls-icon-sprite.png) no-repeat;
+  border-radius: 0;
+  border: none;
+}
+
+.olControlPanel.olControlNoSelect .olButton[original-title="Layers"] {
+  background-position: 0 -30px !important;
+}
+
+.olControlPanel.olControlNoSelect .olButton[original-title='Search Map'] {
+  background-position: 0 0px !important;
+}
+
+.olControlPanel.olControlNoSelect .olButton[original-title='Site reports'] ,
+.olControlPanel.olControlNoSelect .olButton[original-title='About DevTrac'] {
+  background-position: 0 -120px !important;
+}
+
+.olControlPanel.olControlNoSelect .olButton[original-title='Legend'] {
+  background-position: 0 -60px !important;
+}
+
+.olControlPanel.olControlNoSelect .olControlMaptextItemInactive.olButton:hover {
+  border: none;
+}
+
+.olControlScaleLine.olControlNoSelect {
+  top: auto;
+  bottom: 18px;
+  right: 20px;
+}
+.olControlPermalinkPlus.olControlNoSelect {
+  margin: 5px;
+  width: 30px;
+  height: 30px;
+  background: url(../images/link-icon.png) no-repeat 50% 50%;
+  background-size: 30px 30px;
+  right: 20px;
+  top: 280px;
+}
+
+.olControlPermalinkPlus.olControlNoSelect a {
+  width: 30px;
+  height: 30px;
+  color: transparent;
+  display: block;
+}
+
+div.olControlAttribution {
+  right: 20px;
+  bottom: 0px;
+}
+
+/*===========================================================================*\
+  Openlayers Control Control Maptext Styles
+\*===========================================================================*/
+
+.olMapViewport .olControlMaptext {
+  background: none;
+  background: url(../images/alpha-black-bg.png);
+  color: #FFFFFF;
+  font-family: sans-serif;
+  font-size: 0.9em;
+  border-radius: 0;
+  width: 300px;
+  z-index: 1020 !important;
+}
+
+.olMapViewport .olControlMaptext.bottom.right {
+  bottom: auto;
+  top: 25px;
+  right: 70px;
+  height: auto;
+  max-height: 75%;
+}
+
+.olMapViewport .olControlMaptext h2.popup-title {
+  border-bottom: none;
+  background: none;
+  background: #000;
+  opacity: 0.8;
+  font-size: 1.0em;
+  margin: 0px;
+  padding: 5px;
+  padding-right: 20px;
+  display: block;
+  text-transform: uppercase;
+}
+
+.olMapViewport .olControlMaptext a ,
+.olMapViewport .olControlMaptext p {
+  color: #FFFFFF;
+}
+
+.olMapViewport .olControlMaptext .olPopupCloseBox {
+  background: url(../images/closer.png) no-repeat left bottom;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+/*=================================== Popup =================================*/
+
+.olMapViewport .olControlMaptext .node-ftritem.node-unpublished.contextual-links-region.view-mode-map_popup {
+  background: none;
+}
+
+/*.olMapViewport .olControlMaptext .field-name-field-wikipedia.field-type-link-field.field-label-hidden ,
+.olMapViewport .olControlMaptext #olplusmaptextpopup_content .taxonomy-term-description ,
+.olMapViewport .olControlMaptext .field-name-taxonomy-vocabulary-1.field-type-taxonomy-term-reference.field-label-inline ,
+.olMapViewport .olControlMaptext .field-name-taxonomy-vocabulary-6.field-type-taxonomy-term-reference.field-label-inline ,
+.olMapViewport .olControlMaptext .field-name-field-ftritem-images.field-type-image.field-label-hidden ,
+.olMapViewport .olControlMaptext .field-name-field-ftritem-date-visited.field-type-date.field-label-above ,
+.olMapViewport .olControlMaptext .field-name-field-ftritem-public-summary.field-type-text-long.field-label-hidden {
+  padding: 5px 10px;
+}*/
+
+.olMapViewport .olControlMaptext .field {
+  padding: 5px 10px;
+}
+
+.olMapViewport .olControlMaptext .field-name-field-wikipedia.field-type-link-field.field-label-hidden a {
+  background: url(../images/wiki-icon.png) no-repeat 0px 50%;
+  background-size: 16px auto;
+  padding-left: 21px;
+  font-style: italic;
+}
+
+.olMapViewport .olControlMaptext .field-name-field-ftritem-images.field-type-image.field-label-hidden {
+  float: left;
+}
+
+.olMapViewport .olControlMaptext .field-name-field-ftritem-images.field-type-image.field-label-hidden .field-items {
+  margin-bottom: 0;
+}
+
+.olMapViewport .olControlMaptext .field-name-field-ftritem-images.field-type-image.field-label-hidden img {
+  width: 100px;
+  height: auto;
+}
+
+.olMapViewport .olControlMaptext #olplusmaptextpopup_content .taxonomy-term-description p {
+  margin-bottom: 5px;
+}
+
+.olMapViewport .olControlMaptext .field-name-field-ftritem-date-visited.field-type-date.field-label-above {
+  font-style: italic;
+}
+
+.olMapViewport .olControlMaptext .field-name-node-link.field-type-ds.field-label-hidden .field-items {
+  margin-bottom: 0;
+}
+
+.olMapViewport .olControlMaptext .field-name-more-link.field-type-ds.field-label-hidden ,
+.olMapViewport .olControlMaptext .field-name-node-link.field-type-ds.field-label-hidden {
+  background: url(../images/popup-read-more.png) no-repeat 130px 0px;
+  text-align: right;
+  padding: 5px 10px;
+  clear: both;
+}
+
+.openlayers-geosearch-popup.openlayers-geosearch-popup-name {
+  color: #FFFFFF;
+}
+
+/*=============================== blockswitcher =============================*/
+
+.olMapViewport .olControlMaptext #block-openlayers-plus-blockswitcher {
+  background: none;
+}
+
+.olMapViewport .olControlMaptext .openlayers_plus-blockswitcher {
+  background: none;
+  padding: 5px 10px;
+}
+
+.olMapViewport .olControlMaptext .openlayers_plus-blockswitcher .layers.base h2.layers-title {
+  color: #FFFFFF !important;
+  font-size: 1.2em !important;
+  margin-bottom: 5px;
+  font-weight: normal;
+}
+
+.olMapViewport .olControlMaptext .openlayers_plus-blockswitcher .layers.base .form-option.radio {
+  background: none;
+  padding: 5px 0 5px 40px;
+  height: 30px;
+  margin: 2px 0;
+}
+
+.olMapViewport .olControlMaptext .openlayers_plus-blockswitcher .layers.base .form-option.radio:hover {
+  cursor: pointer;
+}
+
+.olMapViewport .olControlMaptext .openlayers_plus-blockswitcher .layers.base .form-option.radio.OpenLayers_Layer_TMS_4 {
+  background: url(../images/devtrac-maplayer-001.png) no-repeat 5px 50% !important;
+}
+
+.olMapViewport .olControlMaptext .openlayers_plus-blockswitcher .layers.base .form-option.radio.OpenLayers_Layer_TMS_6 {
+  background: url(../images/devtrac-maplayer-002.png) no-repeat 5px 50% !important;
+}
+
+.olMapViewport .olControlMaptext .openlayers_plus-blockswitcher .layers.base .form-option.radio.activated {
+  background: none;
+  opacity: 0.9;
+}
+
+.olMapViewport .olControlMaptext .openlayers_plus-blockswitcher .layers.base .form-option.radio.OpenLayers_Layer_TMS_4.activated {
+  background: #000000 url(../images/devtrac-maplayer-001.png) no-repeat 5px 50%;
+  
+}
+
+.olMapViewport .olControlMaptext .openlayers_plus-blockswitcher .layers.base .form-option.radio.OpenLayers_Layer_TMS_6.activated {
+  background: #000000 url(../images/devtrac-maplayer-002.png) no-repeat 5px 50%;
+}
+
+.olMapViewport .olControlMaptext .openlayers_plus-blockswitcher .layers.data {
+  padding-left: 5px;
+}
+
+.olMapViewport .olControlMaptext .openlayers_plus-blockswitcher .layers.data .form-option.checkbox {
+  margin: 10px 0;
+  padding: 0;
+}
+
+.olMapViewport .olControlMaptext .openlayers_plus-blockswitcher .layers.data .form-option.checkbox input.form-checkbox {
+  margin-right: 5px;
+}
+
+/*================================= geosearch ===============================*/
+
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform--2 {
+  border: 2px solid #151515;
+  margin: 5px 10px;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  width: 270px;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform {
+  border: 2px solid #151515 !important;
+  margin: 5px 10px;
+  background-color: #FFFFFF !important;
+  border-radius: 3px;
+  width: 270px;
+  position: relative;
+  margin-bottom: 40px;
+  padding: 0  !important;
+}
+
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform .form-type-textfield ,
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform--2 .form-type-textfield {
+  margin: 0;
+  display: inline-block;
+}
+
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform .form-type-textfield {
+  padding: 0 !important;
+}
+
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform .form-type-textfield .description {
+  display: none;
+}
+
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform .form-type-textfield label ,
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform--2 .form-type-textfield label {
+  display: none;
+}
+
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform input#edit-openlayers-geosearch-query-block ,
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform--2 input#edit-openlayers-geosearch-query-block--2 {
+  display: inline-block !important;
+  width: 235px !important;
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: 0 0 0 transparent !important;
+}
+
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform input#edit-openlayers-geosearch-button ,
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform--2 input#edit-openlayers-geosearch-button--2 {
+  padding: 3px 8px !important;
+  margin: 0 !important;
+  display: inline-block !important;
+  float: right !important;
+  height: 26px !important;
+  width: 30px !important;
+  background: #151515 url(../images/search-icon.png) no-repeat 50% 50% !important;
+  background-size: 16px 16px !important;
+  color: transparent !important;
+  border-radius: 0 !important;
+}
+
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform input#edit-openlayers-geosearch-button:hover ,
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform--2 input#edit-openlayers-geosearch-button--2:hover {
+  padding: 3px 8px !important;
+  margin: 0 !important;
+  height: 26px !important;
+  width: 30px !important;
+  background: #151515 url(../images/search-icon.png) no-repeat 50% 50% !important;
+  color: transparent !important;
+  border-radius: 0 !important;
+}
+
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform div.ajax-progress.ajax-progress-throbber ,
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform--2 div.ajax-progress.ajax-progress-throbber {
+  width: 30px;
+  position: absolute;
+  top: 3px;
+  right: 30px;
+}
+
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform div.ajax-progress.ajax-progress-throbber .message ,
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform--2 div.ajax-progress.ajax-progress-throbber .message {
+  display: none;
+}
+
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform .form-item-openlayers-geosearch-search-by-boundingbox ,
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform--2 .form-item-openlayers-geosearch-search-by-boundingbox {
+  position: absolute;
+}
+
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform .form-item-openlayers-geosearch-search-by-boundingbox {
+  padding: 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.olMapViewport .olControlMaptext form#openlayers-geosearch-searchform .form-item-openlayers-geosearch-search-by-boundingbox label {
+  color: #FFFFFF;
+  font-size: 11px;
+}
+
+.olMapViewport .olControlMaptext #openlayersgeosearchresults {
+  background: none;
+  border-radius: 0;
+  border: none;
+  color: #FFFFFF;
+}
+
+.olMapViewport .olControlMaptext #openlayersgeosearchresults #openlayersgeosearchpanels {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+}
+
+.olMapViewport .olControlMaptext #openlayersgeosearchresults #openlayersgeosearchpanels > ul.ui-panels-nav {
+  padding: 0px 5px 10px 5px;
+  border-radius: 0;
+  border: none;
+  background: none;
+}
+
+.olMapViewport .olControlMaptext #openlayersgeosearchresults #openlayersgeosearchpanels > ul.ui-panels-nav > li.ui-state-default {
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  background: none;
+  width: 100%;
+  color: #FFFFFF;
+}
+
+.olMapViewport .olControlMaptext #openlayersgeosearchresults div.ui-panels-panel {
+  padding: 5px 5px;
+  color: #FFFFFF;
+  font-size: 0.8em;
+  margin-bottom: 5px;
+  overflow: auto;
+}
+
+.olMapViewport .olControlMaptext #openlayersgeosearchresults h2.openlayersgeosearchpanels-title {
+  font-size: 1.0em;
+  font-weight: normal;
+  height: 26px;
+  margin-bottom: 0;
+  background: #000000 url(../images/collapse-icon.png) no-repeat 95% 50%;
+  opacity: 0.8;
+}
+
+.olMapViewport .olControlMaptext #openlayersgeosearchresults li.ui-tabs-active.ui-state-active h2.openlayersgeosearchpanels-title {
+  font-size: 1.0em;
+  font-weight: normal;
+  height: 26px;
+  margin-bottom: 0;
+  background: #000000 url(../images/collapse-icon-2.png) no-repeat 95% 50%;
+  opacity: 0.8;
+}
+
+.olMapViewport .olControlMaptext #openlayersgeosearchresults h2.openlayersgeosearchpanels-title a {
+  color: #FFFFFF;
+  display: block;
+  padding: 5px;
+  float: none;
+}
+
+.olMapViewport .olControlMaptext #openlayersgeosearchresults .geosearch-tab-description {
+  float: none;
+  display: block;
+  width: 100%;
+  white-space: normal;
+  margin-bottom: 10px;
+}
+
+.olMapViewport .olControlMaptext #openlayersgeosearchresults  ul.openlayers-geosearch-result-struct.panels.openlayers-geosearch-result-struct-processed {
+  margin-bottom: 0;
+  float: none;
+  display: block;
+  max-width: 280px;
+}
+
+.olMapViewport .olControlMaptext #openlayersgeosearchresults  ul.openlayers-geosearch-result-struct.panels.openlayers-geosearch-result-struct-processed li {
+  float: none;
+  display: block;
+  margin: 0;
+  padding: 10px 5px;
+  border-bottom: thin solid #CCCCCC;
+}
+
+.olMapViewport .olControlMaptext #openlayersgeosearchresults  ul.openlayers-geosearch-result-struct.panels.openlayers-geosearch-result-struct-processed li:hover {
+  border: none;
+  border-bottom: thin solid #CCCCCC;
+}
+
+.olMapViewport .olControlMaptext #openlayersgeosearchresults  ul.openlayers-geosearch-result-struct.panels.openlayers-geosearch-result-struct-processed li a {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.olMapViewport .olControlMaptext #openlayersgeosearchresults  ul.openlayers-geosearch-result-struct.panels.openlayers-geosearch-result-struct-processed li a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.olMapViewport .olControlMaptext #openlayersgeosearchresults  ul.openlayers-geosearch-result-struct.panels.openlayers-geosearch-result-struct-processed li div {
+  display: block;
+}
+
+.olMapViewport .olControlMaptext #openlayersgeosearchresults  ul.openlayers-geosearch-result-struct.panels.openlayers-geosearch-result-struct-processed li a ,
+.olMapViewport .olControlMaptext #openlayersgeosearchresults  ul.openlayers-geosearch-result-struct.panels.openlayers-geosearch-result-struct-processed li div {
+  float: none;
+  margin: 0;
+  padding: 2px 0;
+  text-transform: capitalize;
+  max-width: 280px;
+  white-space: normal;
+}
+
+.olMapViewport .olControlMaptext #openlayersgeosearchresults  ul.openlayers-geosearch-result-struct.panels.openlayers-geosearch-result-struct-processed li a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.olMapViewport .olControlMaptext #openlayersgeosearchresults  ul.openlayers-geosearch-result-struct.panels.openlayers-geosearch-result-struct-processed li a:hover {
+  text-decoration: underline;
+}
+
+/*================================= about devtrac ===============================*/
+#pane_front_about_information_content {
+  padding: 5px 10px;
+  font-size: 0.95em;
+}
+
+#pane_front_about_information_content ul {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+#pane_front_about_information_content ul li {
+  list-style: none;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  padding: 7px;
+  padding-left: 30px; 
+}
+
+#pane_front_about_information_content ul li.health {
+  background: url('../images/about-health-icon.png') no-repeat 0% 50%;
+  background-size: 20px 20px;
+}
+
+#pane_front_about_information_content ul li.schools {
+  background: url('../images/about-educ-icon.png') no-repeat 0% 50%;
+  background-size: 20px 20px;
+}
+
+#pane_front_about_information_content ul li.water {
+  background: url('../images/about-water-icon.png') no-repeat 0% 50%;
+  background-size: 20px 20px;
+}
+
+#pane_front_about_information_content h4 {
+  color: #FFFFFF;
+  margin: 0;
+  margin-bottom: 5px;
+  font-weight: normal;
+}
+
+/*============================= Legend Styles ===============================*/
+
+#devtrac7_realms_19dqfDK2pFqdJCRH9C971eH0QN9IVhvV_content {
+  padding: 10px;
+  padding-left: 0;
+}
+
+#devtrac7_realms_19dqfDK2pFqdJCRH9C971eH0QN9IVhvV_content .content ul.facetapi-facetapi-links {
+  width: 290px;
+  overflow: hidden;
+}
+
+#devtrac7_realms_19dqfDK2pFqdJCRH9C971eH0QN9IVhvV_content .content ul.facetapi-facetapi-links li.expanded {
+  width: 135px;
+  margin-left: 10px;
+  float: left;
+}
+
+#devtrac7_realms_19dqfDK2pFqdJCRH9C971eH0QN9IVhvV_content .content ul.facetapi-facetapi-links li.expanded .item-list ul.expanded ,
+#devtrac7_realms_19dqfDK2pFqdJCRH9C971eH0QN9IVhvV_content .content ul.facetapi-facetapi-links li.expanded .item-list ul.expanded li.leaf {
+  width: 100%;
+}
+
+#devtrac7_realms_19dqfDK2pFqdJCRH9C971eH0QN9IVhvV_content .content ul.facetapi-facetapi-links li.expanded .item-list ul.expanded li.leaf {
+  margin-left: 0;
+  margin-bottom: 5px;
+}
+
+#devtrac7_realms_19dqfDK2pFqdJCRH9C971eH0QN9IVhvV_content .content ul.facetapi-facetapi-links li.leaf ,
+#devtrac7_realms_19dqfDK2pFqdJCRH9C971eH0QN9IVhvV_content .content ul.facetapi-facetapi-links li.expanded {
+  display: block;
+}
+
+#devtrac7_realms_19dqfDK2pFqdJCRH9C971eH0QN9IVhvV_content .content ul.facetapi-facetapi-links li.expanded span ,
+#devtrac7_realms_19dqfDK2pFqdJCRH9C971eH0QN9IVhvV_content .content ul.facetapi-facetapi-links li.expanded .item-list ul.expanded li.leaf span {
+  display: inline;
+}
+
+#devtrac7_realms_19dqfDK2pFqdJCRH9C971eH0QN9IVhvV_content .content ul.facetapi-facetapi-links li.expanded span.placetype_match_to_counter_number ,
+#devtrac7_realms_19dqfDK2pFqdJCRH9C971eH0QN9IVhvV_content .content ul.facetapi-facetapi-links li.expanded .item-list ul.expanded li.leaf span.placetype_match_to_counter_number {
+  padding-left: 5px;
+}
+
+/*===================================================================================*\
+ * Add Location Styles
+\*===================================================================================*/
+
+html .modalContent {}
+
+html div.ctools-modal-content {
+  border-radius: 2px;
+  border: thin solid #3E3E3E;
+  box-shadow: 0 0 5px #555555;
+}
+
+html div.ctools-modal-content a {
+  text-decoration: underline;
+}
+
+html div.ctools-modal-content .modal-header {
+  background: #3E3E3E;
+  padding: 5px 10px;
+  color: #FFFFFF;
+  border-bottom: 2px solid #EA0001;
+}
+
+html div.ctools-modal-content .modal-header span.modal-title {
+  color: #FFFFFF;
+  font-weight: normal;
+}
+
+html div.ctools-modal-content .modal-header a.close {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  color: transparent;
+  background: url(../images/closer.png) no-repeat 50% 50%;
+  background-size: 16px 16px;
+  overflow: hidden;
+}
+
+html div.ctools-modal-content .modal-header a.img {
+  display: none;
+}
+
+html div.ctools-modal-content .modal-content {
+  padding: 0 10px;
+}
+
+html div.ctools-modal-content .modal-content form {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  min-height: 500px;
+}
+
+html div.ctools-modal-content .modal-content .item-list ul li{
+  margin: 0;
+}
+html div.ctools-modal-content .helpinject-link{
+  display: none;
+}
+
+html div.ctools-modal-content .modal-content input.form-submit[type=submit] {
+  padding: 5px 10px;
+  margin: 10px 5px;
+  background: #777;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #FFF;
+  text-shadow: none;
+  transition: background-color 0.3s;
+  -webkit-transition: background-color 0.3s;
+}
+
+html div.ctools-modal-content .modal-content input.form-submit[type=submit]:hover {
+  background: #333;
+  padding: 5px 10px !important;
+  color: #FFF;
+}
+
+/*=====================================================================================
+ * Quicktabs Styles
+ * ==================================================================================*/
+
+section.block-quicktabs h2.block-title {
+  display: none;
+}
+
+section.block-quicktabs .quicktabs-wrapper {
+
+}
+
+section.block-quicktabs .quicktabs-wrapper > .item-list {
+  height: 32px;
+}
+
+section.block-quicktabs .quicktabs-wrapper ul.quicktabs-tabs {
+  margin: 0;
+  float: right;
+}
+
+section.block-quicktabs .quicktabs-wrapper ul.quicktabs-tabs li {
+  margin: 0 5px;
+}
+
+section.block-quicktabs .quicktabs-wrapper ul.quicktabs-tabs li a {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #777777;
+  border-radius: 3px 3px 0 0;
+  color: #FFFFFF;
+}
+
+section.block-quicktabs .quicktabs-wrapper ul.quicktabs-tabs li a:hover {
+  text-decoration: none;
+  background-color: #555555;
+}
+
+section.block-quicktabs .quicktabs-wrapper ul.quicktabs-tabs li.active a {
+  background-color: #FAFAFA;
+  border: thin solid #CCCCCC;
+  border-bottom: thin solid #FAFAFA;
+  color: #333333;
+  position: relative;
+  /*z-index: 10;*/
+  margin-bottom: -1px;
+}
+
+section.block-quicktabs .quicktabs-wrapper ul.quicktabs-tabs li.active a:hover {
+  background-color: #FAFAFA;
+  color: #333333;
+}
+
+section.block-quicktabs .quicktabs-wrapper .quicktabs_main {
+  border: thin solid #CCCCCC;
+  border-radius: 3px;
+  min-height: 100px;
+  padding: 20px 10px 20px 10px;
+}
+
+section.block-quicktabs .quicktabs-wrapper .quicktabs_main .quicktabs-tabpage {
+  margin: 20px;
+}
+
+/*============= Quicktabs Double Navigation Link Styles =====================*/
+
+#region-preface-first .quicktabs-tabpage .item-list {
+  height: auto;
+  width: 100%;
+}
+
+#region-preface-first .quicktabs-tabpage ul.quicktabs-tabs {
+  height: auto;
+  width: 100%;
+  margin-bottom: 10px;
+  /*margin-top: -10px;*/
+  border-bottom: thin solid #CCCCCC;
+  padding-bottom: 5px;
+}
+
+#region-preface-first .quicktabs-tabpage ul.quicktabs-tabs li {
+  display: inline-block;
+  padding: 2px 0;
+  margin: 0;
+}
+
+#region-preface-first .quicktabs-tabpage ul.quicktabs-tabs li a {
+  display: inline-block;
+  padding: 0 10px;
+  background-color: transparent;
+  font-size: 0.9em;
+  border-right: thin solid #999999;
+  border-radius: 0px;
+  color: #333333;
+  -webkit-transition: color 0.5s ease-in;
+  -moz-transition: color 0.5s ease-in;
+  -o-transition: color 0.5s ease-in;
+  transition: color 0.5s ease-in;
+}
+
+#region-preface-first .quicktabs-tabpage ul.quicktabs-tabs li a:hover {
+  text-decoration: none;
+  background-color: transparent;
+  color: #A52A2A;
+}
+
+#region-preface-first .quicktabs-tabpage ul.quicktabs-tabs li.active a {
+  background-color: transparent;
+  border: none;
+  border-right: thin solid #777777;
+  color: #A52A2A;
+}
+
+#region-preface-first .quicktabs-tabpage ul.quicktabs-tabs li.last a {
+  border-right: none;
+}
+
+#region-preface-first .quicktabs-tabpage ul.quicktabs-tabs li.active a:hover {
+  background-color: transparent;
+  color: #A52A2A;
+}
+
+
+#region-preface-first .quicktabs-tabpage .quicktabs_main {
+  border: none;
+  padding: 5px;
+  padding-top: 0;
+}
+
+/*====================== Form Page Tab Styles ===============================*/
+
+.tabs {
+  padding: 0 20px;
+}
+
+.tabs ul.tabs.primary.clearfix {
+  margin: 0;
+  float: right;
+  margin-right: 10px;
+  border: none;
+}
+
+.tabs ul.tabs.primary.clearfix li {
+  margin: 0 5px;
+}
+
+.tabs ul.tabs.primary.clearfix li a {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #777777;
+  border: none;
+  border-radius: 3px 3px 0 0;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.tabs ul.tabs.primary.clearfix li a:hover {
+  text-decoration: none;
+  background-color: #555555;
+}
+
+.tabs ul.tabs.primary.clearfix li.active a {
+  background-color: #FAFAFA;
+  border: thin solid #CCCCCC;
+  border-bottom: thin solid #FAFAFA;
+  color: #777777;
+  position: relative;
+  z-index: 10;
+  margin-bottom: -1px;
+}
+
+.tabs ul.tabs.primary.clearfix li.active a:hover {
+  background-color: #FAFAFA;
+  color: #777777;
+}
+
+.grid-12.region-content h1#page-title {
+  color: #989898;
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+.page-node-add .grid-12.region-content h1#page-title {
+  margin: 5px 20px 0px 50px;
+}
+
+.page-user .grid-12.region-content h1#page-title ,
+.page-node-edit .grid-12.region-content h1#page-title {
+  margin: 5px 20px -25px 50px;
+}
+
+.grid-12.region-content h1#page-title em {
+  font-style: normal;
+}
+
+#fieldtrip-node-form,
+#place-node-form ,
+#user-profile-form ,
+#ftritem-node-form ,
+#actionitem-node-form ,
+#iati-organisation-node-form {
+  margin: 20px;
+  margin-top: 0;
+  padding: 20px 10px 10px 10px;
+  border: thin solid #CCCCCC;
+  padding-top: 0;
+}
+
+.page-node-edit #place-node-form ,
+.page-node-edit #fieldtrip-node-form {
+  /*margin-top: 25px;*/
+}
+
+/*=============================New Form Look Temp Styles==============================*/
+
+.page-user-edit .zone-content-wrapper ,
+.page-node-edit .zone-content-wrapper ,
+.page-node-add .zone-content-wrapper {
+  background: #F4F4F4;
+}
+
+.page-user-edit .grid-12.region-content h1#page-title ,
+.page-node-add .grid-12.region-content h1#page-title {
+  font-size: 2.1em;
+}
+
+.page-user-edit .grid-12.region-content h1#page-title ,
+.page-node-edit .grid-12.region-content h1#page-title {
+  width: 450px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.page-user-edit .grid-12.region-content ,
+.page-node-edit .grid-12.region-content ,
+.page-node-add .grid-12.region-content {
+  width: 75%;
+  min-width: 800px;
+  margin: 50px auto !important;
+}
+
+.page-user-edit .grid-12.region-content form ,
+.page-node-edit .grid-12.region-content form ,
+.page-node-add .grid-12.region-content form {
+  background: #fff;
+  border: 7px solid #ddd !important;
+  padding: 50px 30px !important;
+}
+
+.page-user-edit .grid-12.region-content form.node-form .form-item ,
+.page-node-edit .grid-12.region-content form.node-form .form-item ,
+.page-node-add .grid-12.region-content form.node-form .form-item {
+  background: none !important;
+}
+
+#edit-field-user-aboutme, 
+#block-openlayers-plus-blockswitcher, 
+#edit-field-iati-activity-planned-date, 
+#edit-field-iati-activity-actual-date, 
+#edit-field-ftritem-images, 
+#edit-field-ftritem-date-visited, 
+#edit-field-fieldtrip-start-end-date, 
+.node-form .text-format-wrapper, 
+#edit-field-actionitem-due-date, 
+#edit-field-place-lat-long, 
+body.page-node .field-widget-text-textarea.form-wrapper {
+  background: none !important;
+}
+
+.field-type-image span.fieldset-legend ,
+.field-type-date span.fieldset-legend ,
+.page-node-addsubmission .grid-12.region-content form.node-form label ,
+.page-user .grid-12.region-content form.node-form label ,
+.page-node-edit .grid-12.region-content form.node-form label ,
+.page-node-add .grid-12.region-content form.node-form label {
+  font-size: 1.3em;
+  color: #555555;
+}
+
+.page-node-add .grid-12.region-content form.node-form label.option {
+  font-size: 1.0em;
+  color: #FFFFFF;
+}
+
+.field-type-image span.fieldset-legend ,
+.field-type-date span.fieldset-legend {
+  padding-bottom: 8px;
+  display: inline-block;
+}
+
+.field-type-image span.fieldset-legend span.form-required,
+.field-type-date span.fieldset-legend span.form-required ,
+.page-node-addsubmission .grid-12.region-content form.node-form label span.form-required ,
+.page-user .grid-12.region-content form.node-form label span.form-required ,
+.page-node-edit .grid-12.region-content form.node-form label span.form-required ,
+.page-node-add .grid-12.region-content form.node-form label span.form-required {
+  font-size: 1.3em;
+  color: #A52A2A;
+  font-weight: bold;
+}
+
+.page-node-edit .grid-12.region-content form.node-form .olControlZoomPanel.olControlNoSelect ,
+.page-node-add .grid-12.region-content form.node-form .olControlZoomPanel.olControlNoSelect {
+  left: auto;
+  right: 20px;
+  top: 30px;
+}
+
+.page-node-edit .grid-12.region-content form.node-form .Devtrac.sticky-enabled.sticky-table ,
+.page-node-add .grid-12.region-content form.node-form .Devtrac.sticky-enabled.sticky-table {
+  display: none;
+}
+
+
+.page-node-edit .grid-12.region-content form.node-form #cboxOverlay .Devtrac.sticky-enabled.sticky-table ,
+.page-node-add .grid-12.region-content form.node-form #cboxOverlay .Devtrac.sticky-enabled.sticky-table {
+  display: block;
+}
+
+.node-form .form-item .description {
+  font-style: italic;
+}
+
+
+.collapsible .fieldset-wrapper table.field-multiple-table tbody .form-wrapper .form-item {
+  width: 600px;
+}
+
+.collapsible .fieldset-wrapper table.field-multiple-table tbody .form-wrapper td .form-item {
+  width: 570px;
+}
+
+.collapsible .fieldset-wrapper table.field-multiple-table tbody .form-wrapper .form-item .description {
+  white-space: normal;
+  line-height: 20px;
+}
+
+.olControlNoSelect.olControlEditingToolbar {
+  top: 210px;
+  right: 20px;
+  margin: 0;
+  width: 40px;
+}
+
+.olControlNoSelect.olControlEditingToolbar div.olButton {
+  float: none;
+  margin: 5px;
+  width: 30px;
+  height: 30px;
+  background-image: url("../images/map-tools-sprite.png");
+}
+
+.olControlNoSelect.olControlEditingToolbar div.olButton.olControlNavigationItemActive {
+  background-position: -30px -60px;
+}
+
+.olControlNoSelect.olControlEditingToolbar div.olButton.olControlNavigationItemInactive {
+  background-position: 0px -60px;
+}
+
+.olControlNoSelect.olControlEditingToolbar div.olButton.olControlDrawFeaturePointItemActive {
+  background-position: -30px 0px;
+}
+
+.olControlNoSelect.olControlEditingToolbar div.olButton.olControlDrawFeaturePointItemInactive {
+  background-position: 0px 0px;
+}
+
+.olControlNoSelect.olControlEditingToolbar div.olButton.olControlDrupalWMSItemActive {
+  background-position: -30px -30px;
+}
+
+.olControlNoSelect.olControlEditingToolbar div.olButton.olControlDrupalWMSItemInactive {
+  background-position: 0px -30px;
+}
+
+.olControlNoSelect.olControlEditingToolbar div.olButton.olControlModifyFeatureItemActive ,
+.olControlNoSelect.olControlEditingToolbar div.olButton.olControlItemActive {
+  background-position: -30px -30px;
+}
+
+.olControlNoSelect.olControlEditingToolbar div.olButton.olControlModifyFeatureItemInactive ,
+.olControlNoSelect.olControlEditingToolbar div.olButton.olControlItemInactive {
+  background-position: 0px -30px;
+}
+
+
+/*===================================================================================*\
+ * User Login Styles
+\*===================================================================================*/
+
+html .not-logged-in.page-user.context-user {}
+
+html .not-logged-in.page-user.context-user .zone-content .region-content-inner {
+  width: 450px;
+  margin: 20px auto !important;
+  border: thin solid #CCCCCC;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #DDDDDD;
+}
+
+html .not-logged-in.page-user.context-user .zone-content .region-content-inner h1#page-title {
+  /*color: #989898;*/
+  color: #555555;
+  font-size: 2.0em;
+  font-weight: normal;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+html .not-logged-in.page-user.context-user .zone-content .region-content-inner .tabs.primary {
+  margin: 0;
+  border-bottom: none;
+}
+
+html .not-logged-in.page-user.context-user .zone-content .region-content-inner #block-system-main {
+  padding: 10px;
+  background-color: #FAFAFA;
+  border-radius: 3px;
+  border: thin solid #CCCCCC;
+}
+
+html .not-logged-in.page-user.context-user .zone-content .region-content-inner #block-system-main input.form-text {
+  width: 100%;
+}
+
+
+/*=====================================================================================
+ * Temporary Styles
+ * ==================================================================================*/
+
+#block-nice-menus-3 {
+  display: none;
+}
+
+.region-filter ul li{
+  list-style: none;
+  padding: 5px;
+}
+
+.facetapi-facet-field-ftritem-date-visited li{
+  margin: 0;
+  /*margin-left: 0.5em;*/
+  padding-left: 10px;
+}
+
+.openlayers-popupbox .popup-content p {
+  color: #FFFFFF;
+}
+
+#popup_contentDiv.olFramedCloudPopupContent {
+  color: #FFFFFF;
+}
+
+#region-filter .block-facetapi a:link ,
+#region-filter .block-facetapi a:visited {
+  color: #989898;
+}
+
+#region-filter .block-facetapi a:hover {
+  color: #FFFFFF;
+}
+
+.region-map-info.olControlNoSelect.openlayers_plus-themeregion #block-openlayers-plus-blockswitcher {
+  background: #000000;
+}
+
+#colorbox td a:hover { padding: 5px 0;}
+
+#colorbox td a { padding: 5px 0;}
+
+.page-places #colorbox table tr.even{
+  background-color: #ececec; 
+}
+
+.image-not-available img {
+  width: 100%;
+}
+
+/*=============================Vistited Locations ===========================*/
+
+.region-legend.olControlNoSelect.openlayers_plus-themeregion {
+  bottom: 10px;
+  background: #000000;
+  padding: 10px;
+}
+
+/*=============================Map Page Locations ===========================*/
+
+.zone-content.container-12 > .grid-12.region-content ,
+.zone-content.container-12 .grid-12.region-content > .region-content-inner {
+  margin: 0;
+}
+
+/*=============================Global CSS file =============================*/
+/* OpenLayers styling */
+
+/* Never show the ZoomToMax Extend button (at least, not until we fixed the WMS layer to support it */
+
+.olControlZoomToMaxExtentItemInactive {
+  display: none;
+}
+
+/* map-info region that floats on top of the map */
+
+#region-map-info {
+  right: 0px;
+  width: 250px;
+  z-index: 1000;
+}
+
+#region-filter {
+  left:0px;
+  position: absolute;
+  width:250px;
+  z-index:1000;
+}
+
+.openlayers-views-map #region-filter {
+  top: 0px;
+}
+
+#block-menu-menu-footermenu-right h2.block-title {
+  display: none;
+}
+
+#block-menu-menu-footermenu-right li {
+  float: right;
+  padding-right: 10px;
+  list-style: none;
+}
+
+#flot-view-zoomable-0.flot-with-zoom {
+  height: 500px;
+}
+
+#block-menu-menu-footermenu-right li {
+  float: right;
+  padding-right: 10px;
+  list-style: none;
+}
+
+.facetapi-facet-taxonomy-vocabulary-8 li {
+  /*float: left;*/
+  padding-right: 10px;
+  list-style: none;
+  
+}
+
+
+/*===============================facetapi blocks=====================*/
+
+.block-facetapi {}
+
+.block-facetapi.collapsiblock-processed {
+  margin: 0px;
+  margin-bottom: 5px;
+}
+
+.block-facetapi.collapsiblock-processed a {
+  text-decoration: none;
+  color: #CCCCCC;
+  display: block;
+}
+
+.block-facetapi.collapsiblock-processed a:hover {
+  color: #FFFFFF;
+}
+
+.block-facetapi.collapsiblock-processed h2.block-title {
+  font-weight: normal;
+  background: #000000 url(../images/collapse-icon.png) no-repeat 95% 50%;
+  opacity: 0.9;
+  padding: 5px 5px 5px 15px;
+  border-top: thin solid #999;
+  border-bottom: thin solid #999;
+  font-size: 1.2em;
+  color: #EEEEEE;
+}
+
+.block-facetapi.collapsiblock-processed h2.block-title.collapsiblockCollapsed {
+  background: #000000 url(../images/collapse-icon-2.png) no-repeat 95% 50%;
+}
+
+.block-facetapi.collapsiblock-processed a img {
+  padding-right: 5px;
+}
+
+.block-facetapi.collapsiblock-processed .content.clearfix {
+  padding: 5px 5px 5px 0px;
+  font-size: 12px;
+}
+
+.block-facetapi.collapsiblock-processed ul.facetapi-facetapi-links {
+  margin: 0;
+}
+
+ul li.leaf {
+  list-style: none;
+}
+
+.block-facetapi.collapsiblock-processed ul.facetapi-facetapi-links li {
+  border-bottom: thin solid #CCC;
+  list-style: none;
+  padding: 5px 10px 5px 20px;
+  margin: 0;
+  clear: both;
+}
+
+.block-facetapi.collapsiblock-processed ul li.expanded ,
+.block-facetapi.collapsiblock-processed ul li.collapsed {
+  list-style-type: none;
+  list-style-image: none;
+}
+
+.block-facetapi.collapsiblock-processed ul li.collapsed img {
+  padding-right: 5px;
+}
+
+.block-facetapi.collapsiblock-processed ul.facetapi-facetapi-links ul.expanded li {
+
+}
+
+.block-facetapi.collapsiblock-processed .content a.facetapi-limit-link {
+  font-style: italic;
+  margin: 5px;
+  margin-right: 20px;
+  float: right;
+}
+
+.block-facetapi.collapsiblock-processed .content a.facetapi-limit-link:after {
+  content: '>';
+}
+
+/*======================= Expandable Facetapi Styles ========================*/
+
+.block-facetapi.collapsiblock-processed ul li.expanded {
+  padding-right: 0;
+  padding-left: 0;
+  border-bottom: none;
+}
+
+.block-facetapi.collapsiblock-processed ul li.expanded .facetapi-facet {
+  /*padding-left: 20px;*/
+  margin-bottom: 5px;
+}
+
+.block-facetapi.collapsiblock-processed ul li.expanded .item-list ul.expanded li.leaf.first a.facetapi-active {
+  padding-bottom: 20px;
+}
+
+.block-facetapi.collapsiblock-processed ul li.expanded .item-list ul.expanded li .facetapi-active {
+  /*padding-left: 20px;
+  margin-bottom: 10px;*/
+}
+
+
+
+/*======================= Expandable Facetapi Styles ========================*/
+
+.facetapi-facetapi-links .item-list ul ,
+.facetapi-facetapi-links .item-list ul li ,
+.facetapi-search-api-swatches .item-list ul ,
+.facetapi-search-api-swatches .item-list ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item-list ul.facetapi-search-api-swatches li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.item-list ul.facetapi-facetapi-links .facetapi-facet.facetapi-active ,
+.item-list ul.facetapi-search-api-swatches .facetapi-facet.facetapi-active {
+  font-style: italic;
+  padding: 0;
+}
+
+.item-list ul.facetapi-facetapi-links img.facetapi-search-api-swatches-image ,
+.item-list ul.facetapi-search-api-swatches img.facetapi-search-api-swatches-image {
+  padding-right: 5px;
+}
+
+.item-list ul.facetapi-facetapi-links > li.expanded ,
+.item-list ul.facetapi-search-api-swatches > li.expanded {
+  padding-left: 20px;
+  margin-left: 0;
+  border-bottom: thin solid #CCC;
+}
+
+.item-list ul.facetapi-facetapi-links > li.expanded  ul.expanded ,
+.item-list ul.facetapi-search-api-swatches > li.expanded  ul.expanded {
+  padding-left: 20px;
+}
+
+.item-list ul.facetapi-facetapi-links > li.expanded li ,
+.item-list ul.facetapi-search-api-swatches > li.expanded li {
+  border: none;
+}
+
+.item-list ul.facetapi-facetapi-links > li.expanded li.collapsed ,
+.item-list ul.facetapi-search-api-swatches > li.expanded li.collapsed {
+  padding-left: 0;
+}
+
+.item-list ul.facetapi-facetapi-links > li.expanded li.leaf,
+.item-list ul.facetapi-search-api-swatches > li.expanded li.leaf {
+  padding-left: 0;
+}
+
+/*.item-list ul.facetapi-search-api-swatches > li.expanded  ul.expanded  ul.expanded {
+  margin-left: 20px;
+}*/
+
+/*====================================================================
+ *  Maintenance Page Styles
+ ====================================================================*/
+
+.maintenance-page #page {
+  width: 900px;
+  margin: 10px auto;
+}
+
+.maintenance-page #page li {
+  list-style-position: outside;
+}
+
+.maintenance-page #branding {
+  width: 900px;
+  margin: 10px auto;
+  overflow: hidden;
+}
+
+.maintenance-page #branding .logo-wrapper {
+  width: 300px;
+  float: left;
+  display: inline-block;
+}
+
+.maintenance-page #branding .logo-wrapper img {
+  margin: 20px;
+}
+
+.maintenance-page #branding .page-title {
+  display: inline-block;
+  font-weight: normal;
+  margin-left: 25px;
+}
+
+.maintenance-page #sidebar-first {
+  width: 300px;
+  display: inline-block;
+  float: left;
+}
+
+.maintenance-page #sidebar-first .task-list {
+  margin-left: 10px;
+  padding: 0;
+}
+
+.maintenance-page #sidebar-first .task-list li {
+  margin: 0;
+  padding: 10px;
+  padding-left: 40px;
+  background: url(../images/task-list-icon.png) no-repeat 5px 50%;
+  background-size: 25px 25px;
+  list-style: none;
+  list-style-position: inside;
+}
+
+.maintenance-page #sidebar-first .task-list li.done {
+  background: url(../images/task-list-done.png) no-repeat 5px 50%;
+  background-size: 25px 25px;
+  color: #44AA00;
+}
+
+.maintenance-page #sidebar-first .task-list li.active {
+  background: url(../images/task-list-active.png) no-repeat 5px 50%;
+  background-size: 25px 25px;
+  color: #2CA089;
+  font-weight: normal;
+}
+
+.maintenance-page #content {
+  width: 590px;
+  display: inline-block;
+  float: right;
+  padding-bottom: 20px;
+}
+
+.maintenance-page #content #console {
+  margin: 0 20px;
+}
+
+.maintenance-page #content #progress {
+  width: 95%;
+}
+
+.maintenance-page #content form {
+  padding: 0px 20px;
+}
+
+.maintenance-page #content form .form-required {
+  color: #FF0000;
+}
+
+.maintenance-page #content form .item-list li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.maintenance-page #content form fieldset {
+  padding: 20px 0;
+  border: none;
+  margin: 20px 0;
+}
+
+.maintenance-page #content form fieldset legend  {
+  padding: 0;
+  margin: 0;
+}
+
+.maintenance-page #content form fieldset legend .fieldset-legend {
+  margin: 2px;
+  font-size: 1.5em;
+}
+
+.maintenance-page #content form fieldset legend .fieldset-legend a.fieldset-title {
+  font-size: 14px;
+}
+
+.maintenance-page #content table.system-status-report {
+  width: 95%;
+}
+
+.maintenance-page #content form #system-date-types tr {
+  border: none;
+  background-color: transparent;
+}
+
+.maintenance-page #content form #system-date-types th {
+  padding-bottom: 20px;
+  font-weight: normal;
+  font-size: 1.4em;
+}
+
+.maintenance-page #content form #system-date-types td {
+  padding: 10px 5px;
+}
+
+.maintenance-page #content td.status-description {
+  line-height: normal;
+}
+
+.maintenance-page.devtrac-installation-complete #content a {
+  display: inline-block;
+  padding: 10px 20px;
+  padding-right: 60px;
+  color: #FFFFFF;
+  background-color: #44AA00;
+  border-radius: 2px;
+  font-size: 1.5em;
+  margin-top: 20px;
+  background-image: url(/html/dtone/profiles/devtrac/themes/devtrac7_theme/images/go-icon.png);
+  background-repeat: no-repeat;
+  background-position: 90% 50%;
+  background-size: 25px;
+}
+
+
+/*====================================================================
+ *  Media Query Styles
+ ====================================================================*/
+/*
+@media all and (min-width: 1400px) {
+
+  .page-node-addsubmission .grid-12.region-content,
+  .page-user .grid-12.region-content,
+  .page-node-edit .grid-12.region-content,
+  .page-node-add .grid-12.region-content {
+    width: 70%;
+    max-width: 1200px;
+    margin: 50px auto !important;
+  }
+
+}
+
+@media all and (min-width: 1200px) {
+
+  #better-messages-default table {
+    width: 380px !important;
+  }
+
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*====================================================================
+ * old shizi
+ ====================================================================*/
+
+
+
+
+/*=====================================================================================
+ * Kim Styles
+ * 
+ * 
+ * 
+ * ==================================================================================*/
+
+
+#region-sidebar-second .views-field.views-field-title-1.disclaimer {
+  z-index: 9999;
+  padding: 0px 10px;
+  background-color: rgba(0, 0, 0, 0.56);
+  position: relative;
+}
+div.region-sidebar-second-inner #disclaimer {
+    color: #ECECEC;
+    font-size: 0.85em;
+    padding: 5px 0;
+}
+#region-sidebar-second .views-field.views-field-title-1 .views-field .field-content {
+  background-color: transparent;
+  color: #fff;
+}
+
+.region-sidebar-second-inner .liquid{
+    background: none transparent;
+    border: medium none;
+    border-radius: 0px;
+}
+
+/*
+.views-slideshow-cycle-main-frame .views_slideshow_cycle_teaser_section{
+  height: 25%; 
+  opacity: 0.6;
+  filter: alpha(opacity=60); 
+}
+.views_slideshow_cycle_main .views-field-uri{
+  display: block; 
+  position: absolute; 
+  margin: 5px 0 0 362px;
+}
+
+.views_slideshow_cycle_main .views-field-uri span.field-content{
+  background-color: transparent;
+  display: block;
+  height: 13px;
+  width: 13px;
+}*/
+
+.region-filter-inner {
+  padding-left: 0;
+  background: none;
+}
+
+.region-filter-inner{
+    padding: 0 10px; 
+    background-color: #000000; 
+    color: #ECECEC;
+}
+
+/* sidebar on informational page */
+
+
+.book-navigation .page-links{
+  border-top: none;
+  border-bottom: none;
+}
+/* Map Specific */
+
+.region-filter .block-current-search{
+  height: 100%;
+}
+
+.zone-header #region-filter{ 
+  /*position: absolute;
+*/  width: 250px;
+  
+  z-index: 1000;
+  background-color: #000;
+}
+
+.region-filter ul li.leaf{
+  list-style: none;
+}
+
+.facetapi-facet-field-ftritem-date-visited li{
+  margin: 0 0 0.25em 0.5em;
+  padding: 0 0 0 10px;
+}
+
+/* Pop Up */
+.field-name-field-ftritem-date-visited .field-label{
+    display: none;
+}
+.region-content .popup-content .node{margin: 0;}
+
+
+#region-legend {
+    background-color: #000000;
+    bottom: 10px;
+    margin-right: 20px;
+    padding: 15px 0 10px 10px;
+    right: 0;
+    top: inherit;
+    width: 285px;
+}
+
+#region-legend .item-list ul li a{
+    color: #FFFFFF;
+}
+#region-legend .item-list ul li a:hover{
+    color: #ececec;
+}
+
+#region-legend h2.block-title{
+  color: #FFFFFF;
+}
+#region-legend .item-list ul li .facetapi-facet{ display: inline;}
+#region-legend .item-list ul.expanded li{padding-left: 15px;}
+#region-legend .item-list li a:hover{color: #FFFFFF;}
+
+
+
+
+/* display switcher */
+
+#region-display-switcher{
+  background: url("../images/switch_bb.png") 0 0 repeat-x transparent;
+  height: 20px;
+}
+
+
+.region-display-switcher h2.block-title {
+  display: none;
+}
+.region-display-switcher .region-display-switcher-inner a span{
+  display: none;
+}
+
+.section-content table th.views-field-field-actionitem-due-date{
+    width: 75px;
+}
+
+.section-content tbody .views-field-field-ftritem-date-visited {
+  line-height: 1.6em; 
+}
+
+/*region preface content first */
+
+.region-content ul.action-links{
+  display: none;
+}
+
+
+
+span.date-display-end {
+  display: block;
+}
+
+.region-content .views-field-field-oecd-code .views-label-field-oecd-code {
+  color: #000;
+  font-weight: bold;
+}
+.region-content .views-field-field-term-icon .views-label-field-term-icon{
+  display: none;
+}
+
+  
+/*region preface second map */
+
+
+.region-preface-first-inner .view-empty {
+    padding: 8px 10px 0;
+}
+.region-preface-first-inner .view-empty p{
+    margin-bottom: 10px;
+}
+
+
+#region-preface-third .views-field-name,
+#region-preface-third .views-field-field-actionitem-responsible,
+#region-preface-third .views-field-field-actionitem-followuptask{
+  margin: 10px 0 0 0;
+}
+
+#region-preface-third .field-collection-container{
+  margin: 5px 0 0 0;
+}
+#region-preface-third .views-field-field-fieldtrip-fc-purpose{
+   margin: 0;
+   background: none;
+}
+.region-preface-third .view-content thead{
+  display: none;
+}
+.views-field-field-fieldtrip-fc-purpose .field-collection-view{
+  padding: 0;
+}
+.field-name-field-fieldtrip-fc-purpose .section-content th, 
+.field-name-field-fieldtrip-fc-purpose .section-content td{
+  padding: 5px 0 0 5px;
+}
+  
+.field-name-field-fieldtrip-fc-purpose .group-header,
+.field-name-field-fieldtrip-fc-purpose .group-footer{
+  display: none;
+}
+.field-name-field-fieldtrip-fc-purpose .group-left {
+  width: 40%;
+}
+.field-name-field-fieldtrip-fc-purpose .group-right{
+  width: 20%;
+  display: block;
+  float: left;
+}
+.field-name-field-fieldtrip-fc-purpose ul.field-collection-view-links{
+  display: inline;
+  list-style: none;
+  text-decoration: underline;
+}
+.field-name-field-fieldtrip-fc-purpose ul.field-collection-view-links li{
+  display: inline;
+  padding: 0 5px 0 0;
+}
+.region-preface-third .field-collection-view{
+  /*margin: 0;*/
+}
+
+.section-content .field_collection_item tr.even{
+  height: 40px;
+}
+.region-preface-third .field-collection-view .field-label{
+  /*font-weight: normal;*/
+}
+#region-preface-third .field-name-field-fieldtrip-purpose-percent .field-items {
+  color: #989898;
+}
+
+.field-collection-container .action-links-field-collection-add{
+  display: block;
+  float: right;
+  margin-top: -10px;
+}
+.field-collection-container ul.action-links-field-collection-add{
+  list-style: none;
+}
+
+#colorbox table caption{
+    border-bottom: 1px solid #000000;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 12px 8px;
+    text-align: left;
+}
+
+.region-preface-first-inner .view-content ul{
+  /*list-style: square;*/
+}
+
+.region-preface-first-inner .view-content ul li.devtrac7-progress-field-level-0 {
+ /*list-style: square;
+ list-style-position: inside;
+ padding-left: 0px;
+ color: #ea0001;*/
+}
+.region-preface-first-inner .view-content ul li.devtrac7-progress-field-level-1 {
+   /*list-style: square;
+   list-style-position: inside;
+   padding-left: 20px;
+   color: #ea0001;*/
+}
+.region-preface-first-inner .view-content ul li.devtrac7-progress-field-level-2 {
+   /*list-style: square;
+   list-style-position: inside;
+   padding-left: 40px;
+   color: #ea0001;*/
+}
+.region-preface-first-inner .views-label-field-fieldtrip-narrative{
+    padding-top: 5px;
+}
+
+#modalBackdrop{
+  background: none repeat scroll 0 0 #000;
+}
+html #modalContent{
+  margin: 60px 0 0 0;
+}
+html .ctools-modal-content{
+  border: none;
+}
+html div.modal-forms-modal-content .popups-container{
+  border-radius: 0;
+}
+
+/* Forms */
+.grippie{display: none;}
+.page-user-login .grid-12.region-content{ margin-top: 10px;}
+.page-user-login form#user-login .form-item {
+    float: none;
+    margin-top: 2em;
+}
+.page-user-login #page-title{display: none;}
+
+/* display none help inject */
+.form-item .helpinject-link,
+#edit-picture a.helpinject-link,
+#edit-field-user-aboutme a.helpinject-link,
+#edit-contact a.helpinject-link{
+  display: none;
+}
+
+#edit-picture legend{
+  display: none;
+}
+
+
+.form-item .marker, 
+.form-item .form-required{
+  color: #989898;
+}
+
+.form-item .description ul{
+  list-style: inside;
+}
+#edit-account.form-wrapper .form-item-status .form-radios .form-item,
+#edit-account.form-wrapper .form-item-roles .form-type-checkbox .form-item{
+  margin: 0px;
+  padding: 0px;
+}
+#edit-roles.form-checkboxes .form-item{
+  width: 50%;
+  float: left;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.form-type-password-confirm .form-type-password{
+  width: 100%
+}
+.form-type-password-confirm .form-type-password input{
+  width: 50%
+}
+.form-type-password-confirm .form-type-password .password-strength{
+  width: 18em;
+  margin: 1em 0.2em 0 0
+}
+
+#edit-field-ftritem-images-und .tabledrag-toggle-weight-wrapper{
+  display: none;
+}
+#edit-field-ftritem-images-und tr.draggable td{
+  background-color: #ececec;
+}
+#edit-field-ftritem-images-und .form-item-field-ftritem-images-und-0-title label,
+#edit-field-ftritem-images-und .form-item-field-ftritem-images-und-0-title input{
+     clear: left;
+    color: #000000;
+    float: left;
+    font-weight: normal;
+    margin: 10px 0 0;
+}
+
+div.vertical-tabs {
+    border: 1px solid #CCCCCC;
+    margin: 1em 0 1em 15em;
+    position: relative;
+    display: block;
+    float: left;
+    width: 80%;}
+    
+form .vertical-tabs .form-wrapper{
+  float: left;
+  width: 80%;
+}
+
+form .vertical-tabs .vertical-tabs-panes .form-wrapper{
+ background-color: #fff; 
+  float: left;
+  padding: 10px;
+  margin: 5px 5px 5px 0; 
+  width: 90%;
+  clear: none;
+}
+
+/* table add places */
+.field-multiple-table th.field-label{
+background: none;
+border: none;
+}
+
+
+html fieldset.form-wrapper{}
+.form-wrapper ul {
+    padding-left: 20px;
+}
+
+#field-fieldtrip-start-end-date-add-more-wrapper .form-wrapper,
+#field-ftritem-date-visited-add-more-wrapper .form-wrapper,
+#edit-field-ftritem-images-und-ajax-wrapper .form-wrapper{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#edit-field-fieldtrip-start-end-date-und-0-value2 label,
+#edit-field-fieldtrip-start-end-date-und-0-value label,
+#edit-field-ftritem-date-visited-und-0-value label{
+  display: block;
+  color: #989898;
+  font-weight: normal;
+}
+
+.form-item-field-ftritem-date-visited-und-0-value-date .form-item label{
+  display: block;
+  color: #989898;
+  font-weight: normal;
+}
+.date-no-float .container-inline-date > .form-item{
+  margin-bottom: 0px;
+}
+ 
+/* dropdown list for places */
+#autocomplete ul{
+  text-indent: 10px;
+  margin: 5px 0 5px 0;
+}
+
+
+/* button css given by Evy */
+
+html .node-links ul li a:hover,
+html .comment-links ul li a:hover,
+.form-actions button:hover,
+.form-actions input[type="reset"]:hover, 
+.form-actions input[type="submit"]:hover, 
+.form-actions input[type="button"]:hover,
+#questionnaire-question-options-add-more-wrapper input[type="submit"]:hover,
+#edit-field-fieldtrip-fc-purpose-und-0-remove-button a:hover,
+#edit-field-fieldtrip-fc-purpose-und-add-more a:hover,
+#edit-field-actionitem-responsible-und-add-more a:hover,
+#edit-field-ftritem-images-und-0-upload-button a:hover,
+#edit-field-ftritem-images-und-0-upload a:hover,
+#devtrac7-addplaceform input[type="submit"]:hover,
+.action-links a.ctools-use-modal:hover,
+/*a.devtrac7-progress-field-style-button:hover,*/
+.region-preface-first form .form-actions{ padding: 2px 6px;}
+
+
+.page-node .region-content-inner article.node-book nav li a{ color: #FFFFFF;}
+/* the submit button that triggers the background of a normal button */
+html .ctools-content li.devtrac7_progress_field_fieldtrip_submittable-0-7929 a{
+    background-image: none;
+    text-shadow: none;
+}
+html .region-content .ctools-content li.devtrac7_progress_field_fieldtrip_submittable-0-7929 a:hover{
+    border: none medium;
+}
+
+html .region-preface-third-inner span:first-letter{/*text-transform: uppercase;*/}
+
+.region-display-switcher {
+  margin: 0;   
+}
+
+.region-filter-inner{
+    padding: 0 10px; 
+    background-color: #000000; 
+    color: #ECECEC;
+}
+
+
+#region-filter h2.block-title {
+    color: #FFFFFF;
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+    margin-top: 1px;
+    padding: 1px 0 1px 5px;
+}
+html .region-sidebar-first .block-current-search h2.block-title:first-child, 
+#region-filter .block-current-search h2.block-title:first-child {
+  border-bottom: none; background-color: transparent;
+}
+
+
+.zone-content-wrapper .block-navigation h2.block-title,
+.zone-content-wrapper #region-filter h2.block-title{
+    border-bottom: medium none;
+    margin-top: 0;
+}
+.zone-content-wrapper #region-filter h2.block-title{ z-index: 1000;}
+
+.zone-content-wrapper .grid-8.region-filter {
+    margin-left: 20px;
+    opacity: 0.8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+.section.section-content #region-filter, .section-header #region-filter{
+    font-size: 0.9em; 
+}
+.section.section-content #region-filter{ 
+    margin: 0;
+}
+/* filter on create place */
+.section-header #region-filter{   
+    margin-left: 50px;
+    margin-top: 30px;
+}
+.section-header #region-filter .block-addnewplace a:hover{
+    color: #FFF;
+}
+
+.region-content-inner div.tickLabel{
+    margin-right: 5px;
+}
+
+.zone-preface-wrapper .region-preface-third-inner .odd { /*font-size: 1.1em;*/}
+.grid-4.region-content {
+    overflow: hidden;
+}
+
+
+.region-preface-third h3{
+    /*margin-bottom: 10px;
+    padding-top: 10px;*/
+}
+
+.zone-preface-wrapper .region-preface-second .block-devtrac-organisation-block-3 h2.block-title{
+    background-image: url("../images/cate_bkgd.gif");
+    background-repeat: repeat-x;
+    margin: 0;
+    padding: 5px 5px 5px 10px;
+    z-index: 1;
+}
+
+/* the hidden title on user page  .page-user .view-modes-list .grid-4.region-content #page-title*/
+.zone-preface-wrapper .region-content-inner h1#page-title{
+    font-weight: normal;
+    letter-spacing: 0.02em;
+    line-height: 22px;
+    text-transform: capitalize;
+    z-index: 1;
+}
+
+.page-user .view-modes-list .grid-4.region-content #page-title {
+    background-image: none;
+    height: auto;
+}
+/*that extra long title */
+
+/* this is the on only page where both the h5 and h3 show.,,, hence the idea of negative margins */
+.page-user .block-system h5 {
+    background-color: #000;
+    color: #ECECEC;
+    font-family: "Lucida Sans Unicode",Arial,"Lucida Grande",sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.02em;
+    line-height: 24px;
+    padding: 0px 10px 0;
+}
+.page-user .block-system h3 {
+    float: left;
+    margin-left: 75px;
+    margin-top: -42px;
+}
+
+
+/*........dashboard detail block.... */
+.block-system .view-mode-full .field-label.first{ display: none}
+
+.region-content-inner .comment-form #edit-author{display: none;}
+
+.page-user .region-content-inner .field-name-taxonomy-vocabulary-8{/*float: left;*/}
+
+
+#zone-categories .content img {
+    outline: medium none;
+}
+.region-preface-first h3{
+    font-weight: normal;
+}
+
+
+
+.zone-preface-wrapper tr.odd td,
+.zone-preface-wrapper tr.even td,
+.section-content .zone-preface-wrapper .region-inner table tr.even,
+.section-content .zone-preface-wrapper .region-inner table tr.even td,
+.section-content .zone-preface-wrapper .region-inner table tr:hover td,
+.section-content .zone-preface-wrapper .region-inner table tr.odd{ 
+  background: none;
+}
+
+
+html form#user-pass .form-item{
+    float: none;
+}
+form .form-item .form-file {
+    background-color: #FFFFFF;
+}
+form .form-item.form-type-checkboxes{
+    clear: left;
+}
+
+.region-preface-first td.views-field-virtual-field {
+    position: absolute;
+    width: 102px;
+}
+
+
+.region-preface-first th.views-field-virtual-field{
+   width: 120px;
+}
+
+.region-content td.views-field-author{ 
+  width: 130px;
+}
+.region-content td.views-field-taxonomy-vocabulary-7{ 
+  width: 60px;
+}
+
+
+
+/*....progress bar widget... fdb225*/
+
+.region-preface-third .devtrac7progressbar-optional-descr {
+    /*color: #FDB225;*/}
+/*this appears on the action item page only*/
+
+.region-preface-third-inner td, .region-preface-third-inner th {
+    /*padding: 4px 2px;*/
+}
+.region-preface-third .views-field-virtual-field{
+  /*padding: 5px;*/
+}
+
+.region-preface-third .views-field-virtual-field + div {/*background-color: #FAFAFA; color: #000; padding: 5px;*/}
+
+/*.......for informational pages.*/
+.grid-9.region .book-navigation .menu {
+    border-top: medium none;
+}
+.grid-9.region .book-navigation .page-links, .grid-9.region .book-navigation .menu {
+    display: none;
+}
+
+
+
+.zone-content-wrapper .grid-9.region-content article {
+    padding: 0 10px 10px;
+}
+.zone-content-wrapper .grid-9.region-content article .node ul {
+    padding-left: 2.2em;
+}
+html #page{
+    background-color: #FAFAFA; /* not sure if this will stay for long*/
+}
+.page.contextual-links-region .region-sidebar-first-inner .views-label {
+    float: left;
+    font-weight: bold;
+    padding-right: 3px;
+}
+.grid-12.region-content #page-title {/* this is for page that shows forms and dont require a sidebar... temp*/
+    background-color: transparent;
+    background-image: none;
+    color: #989898;
+    font-size: 1.2em;
+}
+
+.region-categories-inner .liquid .previous,
+.region-categories-inner .liquid .next{
+    background-color: #000000; 
+    background-repeat: no-repeat;
+    cursor: pointer;
+    height: 70px;
+    width: 20px;
+}
+
+.region-categories-inner .liquid span.previous {
+    background-image: url("../images/category_arrow_left.png");  background-position: 1px center; float: left; height: 63px;}
+.region-categories-inner .liquid span.next {
+    background-image: url("../images/category_arrow_right.png"); background-position: -1px center; float: right;     height: 63px;
+}
+.region-categories-inner .liquid .previous:hover,
+.region-categories-inner .liquid .next:hover{
+    background-color: #000000;
+    background-repeat: no-repeat;
+}
+.region-categories-inner .liquid .previous:hover{
+    background-image: url("../images/arrow_left.gif");
+} 
+.region-categories-inner .liquid .next:hover{
+    background-image: url("../images/arrow_right.gif");
+}
+
+/* categories Menu */
+
+.section-header .region-categories-inner .liquid {
+  height: 63px;background-image: url("../images/cate_bkgd.gif");background-repeat: repeat-x;border-top: 7px solid  #fff;
+  border-bottom: 7px solid  #fff; border-left: medium none;border-right: medium none;border-radius: 0;-moz-border-radius: 0;padding: 0;
+}
+.section-header .region-categories-inner .liquid ul img {
+    box-shadow: none; margin: 0px 5px; padding: 5px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+
+.section-header .region-categories h2.block-title {
+  display: none;
+}
+.section-header .region-categories-inner .wrapper{
+    background-color: transparent;
+    background-image: url("../images/cate_shadowbkgd.png");
+    background-position: 0 -3px;
+}
+.section-header .region-categories-inner .wrapper li {
+    font-size: 11px;
+    text-align: center;
+}
+
+html form select [disabled] {
+    background-color: #989898;
+    color: white;
+}
+.region-preface-first-inner .comment-form select {
+    background-color: #FFFFFF;
+    margin-bottom: 10px;
+}
+.comment-form .form-item label {
+    display: inline;
+    font-weight: bold;
+}
+.form-type-select.form-item-taxonomy-vocabulary-8-und label{ /* the subject label*/
+  display: block;
+}
+
+.region-content-inner .field-name-comment-body p{float: left; padding-top: 10px;}
+
+#colorbox table .the_geom{display: none;}
+
+#colorbox #getfeatureinfo tbody tr{
+    padding-bottom: 10px;
+    padding-top: 8px;
+}
+.page-places div#popup.olPopup{position: relative;}
+.page-places div#popup.olPopup #popup_contentDiv,
+.page-places div#popup.olPopup #popup_contentDiv div.field-label{
+    color: #FFF;
+}
+.page-places div#popup.olPopup h3{
+    margin-bottom: 10px;
+}
+
+.page-places #popup_contentDiv{ overflow: hidden; padding-bottom: 20px; }
+
+html .page-places .openlayers-views-map .openlayers-popup.openlayers-tooltip-name{position: absolute; bottom: 5px;}
+html .page-places .openlayers-views-map .openlayers-popup.openlayers-tooltip-name a{
+    position: relative;
+    right: auto;
+    top: 0;
+}
+.page-places div#popup.olPopup .ctools-dropbutton{
+    right: auto;
+    position: relative;
+}
+.page-places div#popup.olPopup .olPopupCloseBox{
+    background: url("../images/close_b.png") no-repeat scroll 0 0 transparent;
+}
+
+form #edit-field-ftritem-images-und-table{
+    float: left;
+    top: 11px;
+}
+.region-content-inner .helpinject-link{ float: right;}
+
+
+.view-dvtrc-field-trip th.views-field-label-title{
+    background-color: transparent; 
+    border: 0 none; 
+    font-size: 15px; 
+    font-weight: bold;
+}
+.view-dvtrc-field-trip tr.views-field-row-title{
+     border-bottom: 1px solid #989898;
+}
+
+.view-modes-graphs .grid-9.region-content section{
+  /*padding: 0 20px 20px;*/
+}
+.page-toboggan-denied .grid-12.region-content{
+    min-height: 500px;
+}
+
+.page-statistics-answers .view-modes-graphs h1#page-title{
+    margin-bottom: 0;
+}
+.page-places #block-devtrac7-wms-addnewplace .content a {
+    border: 1px solid #FFFFFF;
+    font-weight: bold;
+}
+.page-statistics-answers .view-devtrac-solr-view-answers h5.field-content{
+    width: 100%;
+    margin: 0;
+}
+
+.page-statistics .grid-9 .region-inner{
+    margin-bottom: 0px;
+    position: relative;
+}
+
+.view-iati-organisations-activities .views-field-title a {
+    display: inline-block;
+    font-weight: bold; 
+    margin-top: 10px;
+}
+.view-iati-organisations-activities .views-row{ border-bottom: 1px solid #ececec;}
+.view-iati-organisations-activities .views-row-last{ border-bottom: none medium;}
+.view-iati-organisations-activities .views-field-field-org-logo{ 
+    float: left;
+    margin: 0 5px 5px 0;
+}
+
+.view-iati-organisations-activities .views-row {
+    display: inline-block;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.view-district .views-field-field-district-geo {
+  display: none;
+}
+
+.page-node-add .vertical-tabs,
+.page-node-edit .vertical-tabs{
+  display: none;
+}
+
+#questionnaire-question-submission-form .form-item {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #ddd;
+  padding-left: 10px;
+}
+
+#questionnaire-question-submission-form .form-item input {
+  width: 40%;
+  border-color: #000;
+}
+
+#questionnaire-question-submission-form label {
+  font-weight: bold;
+}
+
+#questionnaire-question-submission-form label.option {
+  font-weight: normal;
+}
+
+
+#questionnaire-question-submission-form .form-item.form-type-radio {
+  margin-bottom: 0px;
+  width: 40%;
+}
+
+
+.print_pdf {
+  float: right; 
+}
+
+
+/* Front page and map things */
+
+.layers.base {
+  display: none;
+}
+
+.layers.data .layers-title {
+  display: none;
+}
+
+/* Make the areas on the right side of the map scale */
+html #region-map-info,
+html #region-map-info {
+  width: 25%;
+}
+
+.view-modes-graph .view-devtrac-solr-view-actionitems .view-content table, 
+.view-modes-graph .view-devtrac-solr-view-sitevisits .view-content table {
+  display: none
+}
+
+.quicktabs-tabpage .Yes {
+  background-color: green;
+  color: white;
+  padding: 3px;
+}
+  
+.quicktabs-tabpage .No {
+  background-color: red;
+  color: white;
+  padding: 3px;
+}  
+
+/*
+* Yes, section exists! its HTML 5
+* This will make the first two piecharts on the actionitem graph page float left
+*/
+#block-devtrac7-realms-us6gunrpl207ymwhxjzm21rizrpdqqdg,
+#block-devtrac7-realms-zujhud3qvtucwrr2phryjiompks8bqqn {
+  width: 40%;
+  float: left;
+  clear: none;
+}
+
+.user-name-map {
+  color: #EA0001;
+}
+/*
+.content .unicef-logo img {
+  float: none;
+  width: 79%;
+}
+
+.view-empty .unicef-logo {
+  background-color: #019EE1;
+}
+
+.region-preface-second-inner .view-empty .unicef-logo {
+  text-align: center;
+  margin-top: 1px;
+  padding: 0 0;
+}
+*/
+.region-preface-second-inner .view-empty, .region-preface-second-inner tr.odd, .region-preface-second-inner tr.even {
+  padding: 0;
+}
+
+.region-preface-second .view-content .views-field-title td.views-align-left {
+  float: left;
+}
+
+/* These where styles for the charts but they expired! Deletion is an option */
+.context-questions .grid-9.region-content {
+  margin-left: 10px;
+}
+
+ .view-devtrac-solr-view-answers h5.field-content {
+  background-color: #EEE;
+  color: black;
+  font-family: "Lucida Sans Unicode",Arial,"Lucida Grande",sans-serif;
+  font-size: 1.2em;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  line-height: 22px;
+  padding: 8px 5px 5px 10px;
+  margin: 2px 0px 5px -10px;
+}
+
+section.block-devtrac7-realms {
+  padding-left: 10px;
+}
+
+section#block-devtrac7-realms-861l2ty5tekofddwgjgtod51wyysjx1x {
+  padding-left: 10px;
+  clear: both;
+}
+
+section#block-devtrac7-realms-zujhud3qvtucwrr2phryjiompks8bqqn {
+  padding-left: 10px;
+  width: 48%;
+  float: left;
+}
+
+section#block-devtrac7-realms-tagrti6wucpba2fxvimbo6opxdepangs div.tickLabel {
+  margin-top: -10px;
+}
+
+.field-content.legend-icon img {
+  width: 64%;
+}
+
+.legend-icon table tr.even, legend-icon table tr.even td, legend-icon table tr.odd, legend-icon table tr:hover td, legend-icon table tr.even:hover td.active, .legend-icon table tr.odd:hover td.active, legend-icon table tr.odd td.active {
+  background-color: #000;
+}
+
+legend-icon tr:hover td, legend-icon tr.even:hover legend-icon td.active, legend-icon tr.odd:hover legend-icon td.active {
+  background: #000;
+}
+
+.items {
+  display: none;
+}
+
+
+/*=====================================================================================
+ * Forms Styles
+ * ==================================================================================*/
+
+
+/* Makes sure the map is showing ... */
+#edit-field-place-lat-long .form-item.geotaxonomy-latlon-helpmap,
+#edit-field-ftritem-lat-long .form-item.geotaxonomy-latlon-helpmap,
+.geofield-openlayers-map {
+  float: none;
+}
+
+.edit-field-place-lat-long .description,
+#edit-field-ftritem-lat-long .description {
+}
+
+#devtrac7-addplaceform fieldset, #devtrac7-addplaceform .form-item {
+  float: none;
+}
+
+.container-inline-date .date-padding {
+  float: left;
+  padding: 0px;
+}
+
+.field-multiple-table .draggable a.tabledrag-handle {
+  overflow: visible;
+}
+
+.field-multiple-table .form-wrapper {
+  clear: both;
+  padding: 0;
+  width: 100%;
+  background-color: transparent;
+}
+
+#devtrac7-addplaceform .description {
+  width: 100%;
+}
+
+#devtrac7-addplaceform > div > .form-item,
+#devtrac7-addplaceform > div > .form-item .description {
+  padding-bottom: 10px;
+}
+
+#devtrac7-addplaceform .form-item label {
+  width: auto;
+  margin-right: 10px;
+}
+
+form .description ul { 
+  margin-bottom: 0px;
+}
+
+.node-place-form #edit-taxonomy-vocabulary-1 {
+  clear: none;
+}
+
+.node-place-form #edit-field-place-responsible-person,
+.node-place-form #edit-field-place-phone {
+  height: 75px;
+}
+
+/* Overrides/replaces forms.css line 62 */
+.node-ftritem-form .tac_taxonomy_vocabulary_6.form-select {
+  height: auto;
+}
+
+/*=====================================================================================
+ * Button Styles
+ * ==================================================================================*/
+ 
+/*........combo button element.... */
+.field-name-field-fieldtrip-button.clearfix,
+.field-name-field-fieldtrip-button {
+    float: right;
+}
+.region-inner .field-name-field-fieldtrip-button .field-label {
+    display: none;
+}
+
+.region-preface-first-inner .quicktabs-tabpage .view-content ul li.devtrac7-progress-field-style-button { 
+  list-style: none outside none;
+}
+
+.region-preface-first-inner #comments header h3 { 
+  margin-bottom: 0; 
+  background: none;
+}
+
+.region-preface-first-inner #comments .title.comment-form {
+  background: none repeat scroll 0 0 #ECECEC;
+  border-top: 2px groove #FFFFFF;
+  font-size: 1.2em;
+}
+
+.region-preface-first-inner .quicktabs-tabpage .comment-wrapper h2.title {
+  display: none;
+}
+
+.openlayers-popup .ctools-dropbutton {
+  display: none; 
+}
+
+
+.block-views-dvtrc-site-visits-block-6 td.views-field-field-ftritem-place  {
+  padding-right: 50px;
+}
+
+.block-views-dvtrc-site-visits-block-6 td.views-field-field-ftritem-date-visited {
+  padding-right: 50px;
+}

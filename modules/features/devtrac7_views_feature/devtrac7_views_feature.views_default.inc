@@ -2482,11 +2482,11 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['fields']['field_user_title']['field'] = 'field_user_title';
   $handler->display->display_options['fields']['field_user_title']['relationship'] = 'uid';
   $handler->display->display_options['fields']['field_user_title']['element_label_type'] = 'strong';
-  /* Field: Content: Internal ID */
-  $handler->display->display_options['fields']['field_fieldtrip_internal_id']['id'] = 'field_fieldtrip_internal_id';
-  $handler->display->display_options['fields']['field_fieldtrip_internal_id']['table'] = 'field_data_field_fieldtrip_internal_id';
-  $handler->display->display_options['fields']['field_fieldtrip_internal_id']['field'] = 'field_fieldtrip_internal_id';
-  $handler->display->display_options['fields']['field_fieldtrip_internal_id']['element_label_type'] = 'strong';
+  /* Field: Content: TA Number */
+  $handler->display->display_options['fields']['field_fieldtrip_proms_ta_id']['id'] = 'field_fieldtrip_proms_ta_id';
+  $handler->display->display_options['fields']['field_fieldtrip_proms_ta_id']['table'] = 'field_data_field_fieldtrip_proms_ta_id';
+  $handler->display->display_options['fields']['field_fieldtrip_proms_ta_id']['field'] = 'field_fieldtrip_proms_ta_id';
+  $handler->display->display_options['fields']['field_fieldtrip_proms_ta_id']['element_label_type'] = 'strong';
   /* Field: Content: Start and End Date */
   $handler->display->display_options['fields']['field_fieldtrip_start_end_date']['id'] = 'field_fieldtrip_start_end_date';
   $handler->display->display_options['fields']['field_fieldtrip_start_end_date']['table'] = 'field_data_field_fieldtrip_start_end_date';
@@ -2903,7 +2903,7 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  // $handler->display->display_options['style_plugin'] = 'views_two_column_table';
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -3543,6 +3543,7 @@ function devtrac7_views_feature_views_default_views() {
   );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_fieldtrip_user_target_id']['id'] = 'field_fieldtrip_user_target_id';
   $handler->display->display_options['relationships']['field_fieldtrip_user_target_id']['table'] = 'field_data_field_fieldtrip_user';
@@ -3751,6 +3752,10 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['relationships']['field_ftritem_field_trip_target_id']['table'] = 'field_data_field_ftritem_field_trip';
   $handler->display->display_options['relationships']['field_ftritem_field_trip_target_id']['field'] = 'field_ftritem_field_trip_target_id';
   $handler->display->display_options['relationships']['field_ftritem_field_trip_target_id']['label'] = 'sitereport-fieldtrip';
+  /* Relationship: Field: Location Type (taxonomy_vocabulary_1) */
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -3777,6 +3782,34 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Taxonomy term: Term Icon */
+  $handler->display->display_options['fields']['field_term_icon']['id'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['table'] = 'field_data_field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['field'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['relationship'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['fields']['field_term_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_term_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_icon']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_term_icon']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_term_icon']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'map_icon',
+    'image_link' => '',
+  );
+  /* Field: Taxonomy term: Term Icon */
+  $handler->display->display_options['fields']['field_term_icon_1']['id'] = 'field_term_icon_1';
+  $handler->display->display_options['fields']['field_term_icon_1']['table'] = 'field_data_field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon_1']['field'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon_1']['relationship'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['fields']['field_term_icon_1']['label'] = '';
+  $handler->display->display_options['fields']['field_term_icon_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_icon_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_term_icon_1']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_term_icon_1']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'map_icon_bw',
+    'image_link' => '',
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -4534,7 +4567,7 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['label'] = '';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['alter']['text'] = '/profiles/devtrac/themes/devtrack_theme/icons/[taxonomy_vocabulary_1]_c.png';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['alter']['text'] = '/sites/default/themes/devtrack_theme/icons/[taxonomy_vocabulary_1]_c.png';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
@@ -4594,6 +4627,10 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Field: Location Type (taxonomy_vocabulary_1) */
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -4615,10 +4652,38 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['label'] = '';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['alter']['text'] = '/profiles/devtrac/themes/devtrack_theme/icons/[taxonomy_vocabulary_1]_c.png';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['alter']['text'] = '/sites/default/themes/devtrack_theme/icons/[taxonomy_vocabulary_1]_c.png';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Taxonomy term: Term Icon */
+  $handler->display->display_options['fields']['field_term_icon']['id'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['table'] = 'field_data_field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['field'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['relationship'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['fields']['field_term_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_term_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_icon']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_term_icon']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_term_icon']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'map_icon',
+    'image_link' => '',
+  );
+  /* Field: Taxonomy term: Term Icon */
+  $handler->display->display_options['fields']['field_term_icon_1']['id'] = 'field_term_icon_1';
+  $handler->display->display_options['fields']['field_term_icon_1']['table'] = 'field_data_field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon_1']['field'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon_1']['relationship'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['fields']['field_term_icon_1']['label'] = '';
+  $handler->display->display_options['fields']['field_term_icon_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_icon_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_term_icon_1']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_term_icon_1']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'map_icon_bw',
+    'image_link' => '',
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -4686,6 +4751,12 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['relationships']['field_ftritem_place_target_id']['field'] = 'field_ftritem_place_target_id';
   $handler->display->display_options['relationships']['field_ftritem_place_target_id']['relationship'] = 'reverse_field_ftritem_field_trip_node';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Relationship: Field: Location Type (taxonomy_vocabulary_1) */
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['relationship'] = 'field_ftritem_place_target_id';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -4710,10 +4781,38 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['relationship'] = 'field_ftritem_place_target_id';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['label'] = '';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['alter']['text'] = '/profiles/devtrac/themes/devtrack_theme/icons/[taxonomy_vocabulary_1]_c.png';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['alter']['text'] = '/sites/default/themes/devtrack_theme/icons/[taxonomy_vocabulary_1]_c.png';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Taxonomy term: Term Icon */
+  $handler->display->display_options['fields']['field_term_icon']['id'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['table'] = 'field_data_field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['field'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['relationship'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['fields']['field_term_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_term_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_icon']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_term_icon']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_term_icon']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'map_icon',
+    'image_link' => '',
+  );
+  /* Field: Taxonomy term: Term Icon */
+  $handler->display->display_options['fields']['field_term_icon_1']['id'] = 'field_term_icon_1';
+  $handler->display->display_options['fields']['field_term_icon_1']['table'] = 'field_data_field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon_1']['field'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon_1']['relationship'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['fields']['field_term_icon_1']['label'] = '';
+  $handler->display->display_options['fields']['field_term_icon_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_icon_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_term_icon_1']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_term_icon_1']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'map_icon_bw',
+    'image_link' => '',
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -4759,6 +4858,10 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Field: Location Type (taxonomy_vocabulary_1) */
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -4780,10 +4883,38 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['label'] = '';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['alter']['text'] = '/profiles/devtrac/themes/devtrack_theme/icons/[taxonomy_vocabulary_1]_c.png';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['alter']['text'] = '/sites/default/themes/devtrack_theme/icons/[taxonomy_vocabulary_1]_c.png';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Taxonomy term: Term Icon */
+  $handler->display->display_options['fields']['field_term_icon']['id'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['table'] = 'field_data_field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['field'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['relationship'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['fields']['field_term_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_term_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_icon']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_term_icon']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_term_icon']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'map_icon',
+    'image_link' => '',
+  );
+  /* Field: Taxonomy term: Term Icon */
+  $handler->display->display_options['fields']['field_term_icon_1']['id'] = 'field_term_icon_1';
+  $handler->display->display_options['fields']['field_term_icon_1']['table'] = 'field_data_field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon_1']['field'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon_1']['relationship'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['fields']['field_term_icon_1']['label'] = '';
+  $handler->display->display_options['fields']['field_term_icon_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_icon_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_term_icon_1']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_term_icon_1']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'map_icon_bw',
+    'image_link' => '',
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -4838,6 +4969,11 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['relationships']['field_actionitem_resp_place_target_id']['id'] = 'field_actionitem_resp_place_target_id';
   $handler->display->display_options['relationships']['field_actionitem_resp_place_target_id']['table'] = 'field_data_field_actionitem_resp_place';
   $handler->display->display_options['relationships']['field_actionitem_resp_place_target_id']['field'] = 'field_actionitem_resp_place_target_id';
+  /* Relationship: Field: Location Type (taxonomy_vocabulary_1) */
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['relationship'] = 'field_actionitem_resp_place_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -4862,10 +4998,38 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['label'] = '';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['alter']['text'] = '/profiles/devtrac/themes/devtrack_theme/icons/[taxonomy_vocabulary_1]_c.png';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['alter']['text'] = '/sites/default/themes/devtrack_theme/icons/[taxonomy_vocabulary_1]_c.png';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Taxonomy term: Term Icon */
+  $handler->display->display_options['fields']['field_term_icon']['id'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['table'] = 'field_data_field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['field'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['relationship'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['fields']['field_term_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_term_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_icon']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_term_icon']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_term_icon']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'map_icon',
+    'image_link' => '',
+  );
+  /* Field: Taxonomy term: Term Icon */
+  $handler->display->display_options['fields']['field_term_icon_1']['id'] = 'field_term_icon_1';
+  $handler->display->display_options['fields']['field_term_icon_1']['table'] = 'field_data_field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon_1']['field'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon_1']['relationship'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['fields']['field_term_icon_1']['label'] = '';
+  $handler->display->display_options['fields']['field_term_icon_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_icon_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_term_icon_1']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_term_icon_1']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'map_icon_bw',
+    'image_link' => '',
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -4908,6 +5072,10 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Field: Location Type (taxonomy_vocabulary_1) */
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
+  $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -4929,10 +5097,38 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['label'] = '';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['alter']['text'] = '/profiles/devtrac/themes/devtrack_theme/icons/[taxonomy_vocabulary_1]_c.png';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['alter']['text'] = '/sites/default/themes/devtrack_theme/icons/[taxonomy_vocabulary_1]_c.png';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Taxonomy term: Term Icon */
+  $handler->display->display_options['fields']['field_term_icon']['id'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['table'] = 'field_data_field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['field'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['relationship'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['fields']['field_term_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_term_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_icon']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_term_icon']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_term_icon']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'map_icon',
+    'image_link' => '',
+  );
+  /* Field: Taxonomy term: Term Icon */
+  $handler->display->display_options['fields']['field_term_icon_1']['id'] = 'field_term_icon_1';
+  $handler->display->display_options['fields']['field_term_icon_1']['table'] = 'field_data_field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon_1']['field'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon_1']['relationship'] = 'taxonomy_vocabulary_1_tid';
+  $handler->display->display_options['fields']['field_term_icon_1']['label'] = '';
+  $handler->display->display_options['fields']['field_term_icon_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_icon_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_term_icon_1']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_term_icon_1']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'map_icon_bw',
+    'image_link' => '',
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
@@ -5018,10 +5214,38 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['label'] = '';
-  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['alter']['text'] = '/profiles/devtrac/themes/devtrack_theme/icons/[taxonomy_vocabulary_1]_c.png';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_1']['alter']['text'] = '/sites/default/themes/devtrack_theme/icons/[taxonomy_vocabulary_1]_c.png';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Taxonomy term: Term Icon */
+  $handler->display->display_options['fields']['field_term_icon']['id'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['table'] = 'field_data_field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['field'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon']['relationship'] = 'taxonomy_vocabulary_6_tid';
+  $handler->display->display_options['fields']['field_term_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_term_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_icon']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_term_icon']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_term_icon']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'map_icon',
+    'image_link' => '',
+  );
+  /* Field: Taxonomy term: Term Icon */
+  $handler->display->display_options['fields']['field_term_icon_1']['id'] = 'field_term_icon_1';
+  $handler->display->display_options['fields']['field_term_icon_1']['table'] = 'field_data_field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon_1']['field'] = 'field_term_icon';
+  $handler->display->display_options['fields']['field_term_icon_1']['relationship'] = 'taxonomy_vocabulary_6_tid';
+  $handler->display->display_options['fields']['field_term_icon_1']['label'] = '';
+  $handler->display->display_options['fields']['field_term_icon_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_term_icon_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_term_icon_1']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_term_icon_1']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'map_icon_bw',
+    'image_link' => '',
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Field: Admin Unit (taxonomy_vocabulary_6) */
   $handler->display->display_options['arguments']['taxonomy_vocabulary_6_tid']['id'] = 'taxonomy_vocabulary_6_tid';
@@ -7199,11 +7423,11 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['filters']['delta']['field'] = 'delta';
   $handler->display->display_options['filters']['delta']['operator'] = 'not empty';
 
-  /* Display: Latest report By UNICEF */
-  $handler = $view->new_display('block', 'Latest report By UNICEF', 'block_18');
+  /* Display: Latest report */
+  $handler = $view->new_display('block', 'Latest report', 'block_18');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Latest report by UNICEF';
-  $handler->display->display_options['display_description'] = 'Latest report By UNICEF';
+  $handler->display->display_options['title'] = 'Latest report';
+  $handler->display->display_options['display_description'] = 'Latest report';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
@@ -7219,7 +7443,7 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
-  $handler->display->display_options['empty']['area']['content'] = 'No SiteVisits by UNICEF yet';
+  $handler->display->display_options['empty']['area']['content'] = 'No Site Reports yet';
   $handler->display->display_options['empty']['area']['format'] = '1';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -7228,7 +7452,7 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['fields']['field_ftritem_images']['table'] = 'field_data_field_ftritem_images';
   $handler->display->display_options['fields']['field_ftritem_images']['field'] = 'field_ftritem_images';
   $handler->display->display_options['fields']['field_ftritem_images']['label'] = '';
-  $handler->display->display_options['fields']['field_ftritem_images']['element_class'] = 'latest-report-by-UNICEF-image';
+  $handler->display->display_options['fields']['field_ftritem_images']['element_class'] = 'latest-report-image';
   $handler->display->display_options['fields']['field_ftritem_images']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_ftritem_images']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_ftritem_images']['settings'] = array(
@@ -7249,7 +7473,7 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['fields']['field_ftritem_date_visited']['table'] = 'field_data_field_ftritem_date_visited';
   $handler->display->display_options['fields']['field_ftritem_date_visited']['field'] = 'field_ftritem_date_visited';
   $handler->display->display_options['fields']['field_ftritem_date_visited']['label'] = 'Post Date';
-  $handler->display->display_options['fields']['field_ftritem_date_visited']['element_label_class'] = 'field-content.latest-report-by-UNICEF-post-date';
+  $handler->display->display_options['fields']['field_ftritem_date_visited']['element_label_class'] = 'field-content.latest-report-post-date';
   $handler->display->display_options['fields']['field_ftritem_date_visited']['settings'] = array(
     'format_type' => 'devtrac_format',
     'fromto' => 'both',
@@ -7261,13 +7485,13 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['fields']['field_ftritem_public_summary']['id'] = 'field_ftritem_public_summary';
   $handler->display->display_options['fields']['field_ftritem_public_summary']['table'] = 'field_data_field_ftritem_public_summary';
   $handler->display->display_options['fields']['field_ftritem_public_summary']['field'] = 'field_ftritem_public_summary';
-  $handler->display->display_options['fields']['field_ftritem_public_summary']['element_wrapper_class'] = 'field-content.latest-report-by-UNICEF-public-summary';
+  $handler->display->display_options['fields']['field_ftritem_public_summary']['element_wrapper_class'] = 'field-content.latest-report-public-summary';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="dv-seeall">See all Site Reports by UNICEF</div>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="dv-seeall">See all Site Reports</div>';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path'] = 'sitereports?display=default&f[0]=taxonomy_vocabulary_6%3A243';
   $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'dv-seeall';
@@ -7534,7 +7758,7 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="image-not-available"><img src="[site_info]/profiles/devtrac/files/image-not-available.png"></div>';
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="image-not-available"><img src="[site_info]/sites/default/files/image-not-available.png"></div>';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
@@ -8680,7 +8904,7 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<span class="user-name-map">[name]</span> is responsible for monitoring UNICEF programs in these districts';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<span class="user-name-map">[name]</span> is responsible for reporting Site Reports in these districts';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: User: Uid */
@@ -8871,35 +9095,12 @@ function devtrac7_views_feature_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<h3>About [field_user_firstname] [field_user_surname]</h3>';
-  $handler->display->display_options['header']['area']['format'] = '2';
-  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: User: First Name */
-  $handler->display->display_options['fields']['field_user_firstname']['id'] = 'field_user_firstname';
-  $handler->display->display_options['fields']['field_user_firstname']['table'] = 'field_data_field_user_firstname';
-  $handler->display->display_options['fields']['field_user_firstname']['field'] = 'field_user_firstname';
-  $handler->display->display_options['fields']['field_user_firstname']['label'] = '';
-  $handler->display->display_options['fields']['field_user_firstname']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_firstname']['element_label_colon'] = FALSE;
-  /* Field: User: Surname */
-  $handler->display->display_options['fields']['field_user_surname']['id'] = 'field_user_surname';
-  $handler->display->display_options['fields']['field_user_surname']['table'] = 'field_data_field_user_surname';
-  $handler->display->display_options['fields']['field_user_surname']['field'] = 'field_user_surname';
-  $handler->display->display_options['fields']['field_user_surname']['label'] = '';
-  $handler->display->display_options['fields']['field_user_surname']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_surname']['element_label_colon'] = FALSE;
   /* Field: User: About Me */
   $handler->display->display_options['fields']['field_user_aboutme']['id'] = 'field_user_aboutme';
   $handler->display->display_options['fields']['field_user_aboutme']['table'] = 'field_data_field_user_aboutme';
   $handler->display->display_options['fields']['field_user_aboutme']['field'] = 'field_user_aboutme';
-  $handler->display->display_options['fields']['field_user_aboutme']['label'] = '';
+  $handler->display->display_options['fields']['field_user_aboutme']['label'] = 'About this User';
   $handler->display->display_options['fields']['field_user_aboutme']['element_label_type'] = 'h3';
   $handler->display->display_options['fields']['field_user_aboutme']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_aboutme']['element_default_classes'] = FALSE;

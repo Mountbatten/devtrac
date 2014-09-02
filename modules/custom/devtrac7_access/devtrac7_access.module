@@ -701,6 +701,12 @@ function devtrac7_access_node_access_records($node) {
  * @param unknown_type $term
  */
 function devtrac7_access_taxonomy_term_insert($term) {
+  // Skip setting access for Admin Units.
+  $vocabulary = taxonomy_vocabulary_load($term->vid);
+  if ($vocabulary->machine_name == 'taxonomy_vocabulary_6') {
+    return;
+  }
+
   // Initialize some default settings.
   $list = array(
     'view' => 0,
@@ -773,6 +779,12 @@ function devtrac7_access_taxonomy_term_delete($term) {
  *   A term object that belongs to the vocabulary to be updated.
  */
 function _devtrac7_access_tree_update_term_grants($vid) {
+  // Skip setting access for Admin Units.
+  $vocabulary = taxonomy_vocabulary_load($vid);
+  if ($vocabulary->machine_name == 'taxonomy_vocabulary_6') {
+    return;
+  }
+
   // Initialize some default settings.
   $list = array(
     'view' => 0,
@@ -848,7 +860,7 @@ function devtrac7_access_form_taxonomy_overview_terms_alter(&$form, &$form_state
 }
 
 /**
- * 
+ * Implements the new submit function defined in hook_form_alter() above.
  */
 function devtrac7_access_taxonomy_overview_terms_submit($form, &$form_state) {
   _devtrac7_access_tree_update_term_grants($form['#vocabulary']->vid);

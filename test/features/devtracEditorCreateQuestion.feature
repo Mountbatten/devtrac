@@ -6,11 +6,13 @@ Feature: Devtrac Editor creates Question Test
   
   Scenario: Editor User accesses Question Form
     Given I am logged in as a user with the "editor" role
+    And print current URL
     And I am on "/node/add/questionnaire-question"
     Then I should see "Create Question"
 
   Scenario: Editor User adds a Select Question
     Given I am logged in as a user with the "editor" role
+    And print current URL
     And I am on "/node/add/questionnaire-question"
     When I fill in "Question " with "Do you like the standard of primary education in Jinja?"
     # And I fill in "taxonomy_vocabulary_1[und]" with "47"
@@ -25,6 +27,7 @@ Feature: Devtrac Editor creates Question Test
 
   Scenario: Editor User adds a Checkboxes Question
     Given I am logged in as a user with the "editor" role
+    And print current URL
     And I am on "/node/add/questionnaire-question"
     When I fill in "Question " with "Do you like the standard of primary education in Kampala?"
     # And I fill in "taxonomy_vocabulary_1[und]" with "47"
@@ -40,6 +43,7 @@ Feature: Devtrac Editor creates Question Test
 
   Scenario: Editor User adds a Radios Question
     Given I am logged in as a user with the "editor" role
+    And print current URL
     And I am on "/node/add/questionnaire-question"
     When I fill in "Question " with "Do you like the standard of primary education in Rakai?"
     # And I fill in "taxonomy_vocabulary_1[und]" with "47"

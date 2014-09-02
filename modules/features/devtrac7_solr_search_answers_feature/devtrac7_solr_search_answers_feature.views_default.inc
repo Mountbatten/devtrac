@@ -38,7 +38,7 @@ function devtrac7_solr_search_answers_feature_views_default_views() {
   $handler->display->display_options['fields']['id']['table'] = 'search_api_index_answers';
   $handler->display->display_options['fields']['id']['field'] = 'id';
   $handler->display->display_options['fields']['id']['exclude'] = TRUE;
-  /* Field: Indexed Answer: Answer */
+  /* Field: Indexed Answer: Answer All */
   $handler->display->display_options['fields']['answer']['id'] = 'answer';
   $handler->display->display_options['fields']['answer']['table'] = 'search_api_index_answers';
   $handler->display->display_options['fields']['answer']['field'] = 'answer';
@@ -125,27 +125,41 @@ function devtrac7_solr_search_answers_feature_views_default_views() {
   $handler->display->display_options['header']['view_field']['view'] = 'devtrac_solr_view_answers';
   $handler->display->display_options['header']['view_field']['display'] = 'block_1';
   $handler->display->display_options['header']['view_field']['arguments'] = '[!question]';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Indexed Answer: Questionnaire */
+  $handler->display->display_options['relationships']['questionnaire_id']['id'] = 'questionnaire_id';
+  $handler->display->display_options['relationships']['questionnaire_id']['table'] = 'search_api_index_answers';
+  $handler->display->display_options['relationships']['questionnaire_id']['field'] = 'questionnaire_id';
+  /* Relationship: Node: Location */
+  $handler->display->display_options['relationships']['field_ftritem_place']['id'] = 'field_ftritem_place';
+  $handler->display->display_options['relationships']['field_ftritem_place']['table'] = 'entity_node';
+  $handler->display->display_options['relationships']['field_ftritem_place']['field'] = 'field_ftritem_place';
+  $handler->display->display_options['relationships']['field_ftritem_place']['relationship'] = 'questionnaire_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Indexed Answer: Answer */
+  /* Field: Indexed Answer: Answer All */
   $handler->display->display_options['fields']['answer']['id'] = 'answer';
   $handler->display->display_options['fields']['answer']['table'] = 'search_api_index_answers';
   $handler->display->display_options['fields']['answer']['field'] = 'answer';
-  /* Field: Indexed Answer: Context */
-  $handler->display->display_options['fields']['questionnaire_answer_context']['id'] = 'questionnaire_answer_context';
-  $handler->display->display_options['fields']['questionnaire_answer_context']['table'] = 'search_api_index_answers';
-  $handler->display->display_options['fields']['questionnaire_answer_context']['field'] = 'questionnaire_answer_context';
-  $handler->display->display_options['fields']['questionnaire_answer_context']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['questionnaire_answer_context']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['questionnaire_answer_context']['bypass_access'] = 0;
+  $handler->display->display_options['fields']['answer']['label'] = 'Answer';
+  $handler->display->display_options['fields']['answer']['link_to_entity'] = 0;
+  /* Field: Node: Location */
+  $handler->display->display_options['fields']['field_ftritem_place']['id'] = 'field_ftritem_place';
+  $handler->display->display_options['fields']['field_ftritem_place']['table'] = 'entity_node';
+  $handler->display->display_options['fields']['field_ftritem_place']['field'] = 'field_ftritem_place';
+  $handler->display->display_options['fields']['field_ftritem_place']['relationship'] = 'questionnaire_id';
+  $handler->display->display_options['fields']['field_ftritem_place']['label'] = 'Context';
+  $handler->display->display_options['fields']['field_ftritem_place']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_ftritem_place']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_ftritem_place']['bypass_access'] = 0;
   /* Field: Indexed Answer: Questionnaire */
-  $handler->display->display_options['fields']['questionnaire_answer_qnnaire']['id'] = 'questionnaire_answer_qnnaire';
-  $handler->display->display_options['fields']['questionnaire_answer_qnnaire']['table'] = 'search_api_index_answers';
-  $handler->display->display_options['fields']['questionnaire_answer_qnnaire']['field'] = 'questionnaire_answer_qnnaire';
-  $handler->display->display_options['fields']['questionnaire_answer_qnnaire']['label'] = 'Site Visit';
-  $handler->display->display_options['fields']['questionnaire_answer_qnnaire']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['questionnaire_answer_qnnaire']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['questionnaire_answer_qnnaire']['bypass_access'] = 0;
-  /* Field: Indexed Answer: District */
+  $handler->display->display_options['fields']['questionnaire_id']['id'] = 'questionnaire_id';
+  $handler->display->display_options['fields']['questionnaire_id']['table'] = 'search_api_index_answers';
+  $handler->display->display_options['fields']['questionnaire_id']['field'] = 'questionnaire_id';
+  $handler->display->display_options['fields']['questionnaire_id']['label'] = 'Site Visit';
+  $handler->display->display_options['fields']['questionnaire_id']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['questionnaire_id']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['questionnaire_id']['bypass_access'] = 0;
+  /* Field: Indexed Answer: Admin Unit */
   $handler->display->display_options['fields']['taxonomy_vocabulary_6']['id'] = 'taxonomy_vocabulary_6';
   $handler->display->display_options['fields']['taxonomy_vocabulary_6']['table'] = 'search_api_index_answers';
   $handler->display->display_options['fields']['taxonomy_vocabulary_6']['field'] = 'taxonomy_vocabulary_6';
@@ -162,7 +176,6 @@ function devtrac7_solr_search_answers_feature_views_default_views() {
   $handler->display->display_options['fields']['question']['label'] = 'Question ID';
   $handler->display->display_options['fields']['question']['exclude'] = TRUE;
   $handler->display->display_options['fields']['question']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['question']['separator'] = '';
   $handler->display->display_options['fields']['question']['link_to_entity'] = 0;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Indexed Answer: Date created */
@@ -192,15 +205,15 @@ function devtrac7_solr_search_answers_feature_views_default_views() {
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Answer: Question */
-  $handler->display->display_options['fields']['questionnaire_answer_question']['id'] = 'questionnaire_answer_question';
-  $handler->display->display_options['fields']['questionnaire_answer_question']['table'] = 'search_api_index_answers';
-  $handler->display->display_options['fields']['questionnaire_answer_question']['field'] = 'questionnaire_answer_question';
-  $handler->display->display_options['fields']['questionnaire_answer_question']['label'] = '';
-  $handler->display->display_options['fields']['questionnaire_answer_question']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['questionnaire_answer_question']['element_wrapper_type'] = 'h2';
-  $handler->display->display_options['fields']['questionnaire_answer_question']['link_to_entity'] = 0;
-  $handler->display->display_options['fields']['questionnaire_answer_question']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['questionnaire_answer_question']['bypass_access'] = 0;
+  $handler->display->display_options['fields']['question']['id'] = 'question';
+  $handler->display->display_options['fields']['question']['table'] = 'search_api_index_answers';
+  $handler->display->display_options['fields']['question']['field'] = 'question';
+  $handler->display->display_options['fields']['question']['label'] = '';
+  $handler->display->display_options['fields']['question']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['question']['element_wrapper_type'] = 'h2';
+  $handler->display->display_options['fields']['question']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['question']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['question']['bypass_access'] = 0;
   $handler->display->display_options['path'] = 'statistics/answers';
 
   /* Display: CSV */
@@ -225,27 +238,21 @@ function devtrac7_solr_search_answers_feature_views_default_views() {
   $handler->display->display_options['fields']['id']['table'] = 'search_api_index_answers';
   $handler->display->display_options['fields']['id']['field'] = 'id';
   $handler->display->display_options['fields']['id']['exclude'] = TRUE;
-  /* Field: Indexed Answer: Answer */
+  /* Field: Indexed Answer: Answer All */
   $handler->display->display_options['fields']['answer']['id'] = 'answer';
   $handler->display->display_options['fields']['answer']['table'] = 'search_api_index_answers';
   $handler->display->display_options['fields']['answer']['field'] = 'answer';
+  $handler->display->display_options['fields']['answer']['label'] = 'Answer';
+  $handler->display->display_options['fields']['answer']['link_to_entity'] = 0;
   /* Field: Indexed Answer: Questionnaire */
-  $handler->display->display_options['fields']['questionnaire_answer_qnnaire']['id'] = 'questionnaire_answer_qnnaire';
-  $handler->display->display_options['fields']['questionnaire_answer_qnnaire']['table'] = 'search_api_index_answers';
-  $handler->display->display_options['fields']['questionnaire_answer_qnnaire']['field'] = 'questionnaire_answer_qnnaire';
-  $handler->display->display_options['fields']['questionnaire_answer_qnnaire']['label'] = 'Site report';
-  $handler->display->display_options['fields']['questionnaire_answer_qnnaire']['link_to_entity'] = 0;
-  $handler->display->display_options['fields']['questionnaire_answer_qnnaire']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['questionnaire_answer_qnnaire']['bypass_access'] = 0;
-  /* Field: Indexed Answer: Context */
-  $handler->display->display_options['fields']['questionnaire_answer_context']['id'] = 'questionnaire_answer_context';
-  $handler->display->display_options['fields']['questionnaire_answer_context']['table'] = 'search_api_index_answers';
-  $handler->display->display_options['fields']['questionnaire_answer_context']['field'] = 'questionnaire_answer_context';
-  $handler->display->display_options['fields']['questionnaire_answer_context']['label'] = 'Location';
-  $handler->display->display_options['fields']['questionnaire_answer_context']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['questionnaire_answer_context']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['questionnaire_answer_context']['bypass_access'] = 0;
-  /* Field: Indexed Answer: Placetype */
+  $handler->display->display_options['fields']['questionnaire_id']['id'] = 'questionnaire_id';
+  $handler->display->display_options['fields']['questionnaire_id']['table'] = 'search_api_index_answers';
+  $handler->display->display_options['fields']['questionnaire_id']['field'] = 'questionnaire_id';
+  $handler->display->display_options['fields']['questionnaire_id']['label'] = 'Site report';
+  $handler->display->display_options['fields']['questionnaire_id']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['questionnaire_id']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['questionnaire_id']['bypass_access'] = 0;
+  /* Field: Indexed Answer: Location Types */
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['id'] = 'taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'search_api_index_answers';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
@@ -253,7 +260,7 @@ function devtrac7_solr_search_answers_feature_views_default_views() {
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['view_mode'] = 'full';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['bypass_access'] = 0;
-  /* Field: Indexed Answer: District */
+  /* Field: Indexed Answer: Admin Unit */
   $handler->display->display_options['fields']['taxonomy_vocabulary_6']['id'] = 'taxonomy_vocabulary_6';
   $handler->display->display_options['fields']['taxonomy_vocabulary_6']['table'] = 'search_api_index_answers';
   $handler->display->display_options['fields']['taxonomy_vocabulary_6']['field'] = 'taxonomy_vocabulary_6';
@@ -297,7 +304,7 @@ function devtrac7_solr_search_answers_feature_views_default_views() {
   $handler->display->display_options['fields']['id']['table'] = 'search_api_index_answers';
   $handler->display->display_options['fields']['id']['field'] = 'id';
   $handler->display->display_options['fields']['id']['exclude'] = TRUE;
-  /* Field: Indexed Answer: Answer */
+  /* Field: Indexed Answer: Answer All */
   $handler->display->display_options['fields']['answer']['id'] = 'answer';
   $handler->display->display_options['fields']['answer']['table'] = 'search_api_index_answers';
   $handler->display->display_options['fields']['answer']['field'] = 'answer';
@@ -392,18 +399,23 @@ function devtrac7_solr_search_answers_feature_views_default_views() {
     'feed_in_links' => 0,
   );
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Indexed Answer: Context */
-  $handler->display->display_options['relationships']['questionnaire_answer_context']['id'] = 'questionnaire_answer_context';
-  $handler->display->display_options['relationships']['questionnaire_answer_context']['table'] = 'search_api_index_answers';
-  $handler->display->display_options['relationships']['questionnaire_answer_context']['field'] = 'questionnaire_answer_context';
-  $handler->display->display_options['relationships']['questionnaire_answer_context']['label'] = 'Locations';
+  /* Relationship: Indexed Answer: Questionnaire */
+  $handler->display->display_options['relationships']['questionnaire_id']['id'] = 'questionnaire_id';
+  $handler->display->display_options['relationships']['questionnaire_id']['table'] = 'search_api_index_answers';
+  $handler->display->display_options['relationships']['questionnaire_id']['field'] = 'questionnaire_id';
+  /* Relationship: Node: Location */
+  $handler->display->display_options['relationships']['field_ftritem_place']['id'] = 'field_ftritem_place';
+  $handler->display->display_options['relationships']['field_ftritem_place']['table'] = 'entity_node';
+  $handler->display->display_options['relationships']['field_ftritem_place']['field'] = 'field_ftritem_place';
+  $handler->display->display_options['relationships']['field_ftritem_place']['relationship'] = 'questionnaire_id';
+  $handler->display->display_options['relationships']['field_ftritem_place']['label'] = 'Locations';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Answer: Answer ID */
   $handler->display->display_options['fields']['id']['id'] = 'id';
   $handler->display->display_options['fields']['id']['table'] = 'search_api_index_answers';
   $handler->display->display_options['fields']['id']['field'] = 'id';
   $handler->display->display_options['fields']['id']['exclude'] = TRUE;
-  /* Field: Indexed Answer: Answer */
+  /* Field: Indexed Answer: Answer All */
   $handler->display->display_options['fields']['answer']['id'] = 'answer';
   $handler->display->display_options['fields']['answer']['table'] = 'search_api_index_answers';
   $handler->display->display_options['fields']['answer']['field'] = 'answer';
@@ -412,15 +424,15 @@ function devtrac7_solr_search_answers_feature_views_default_views() {
   $handler->display->display_options['fields']['question']['id'] = 'question';
   $handler->display->display_options['fields']['question']['table'] = 'search_api_index_answers';
   $handler->display->display_options['fields']['question']['field'] = 'question';
-  /* Field: Indexed Answer: Context */
-  $handler->display->display_options['fields']['questionnaire_answer_context']['id'] = 'questionnaire_answer_context';
-  $handler->display->display_options['fields']['questionnaire_answer_context']['table'] = 'search_api_index_answers';
-  $handler->display->display_options['fields']['questionnaire_answer_context']['field'] = 'questionnaire_answer_context';
-  $handler->display->display_options['fields']['questionnaire_answer_context']['label'] = 'Location';
-  $handler->display->display_options['fields']['questionnaire_answer_context']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['questionnaire_answer_context']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['questionnaire_answer_context']['bypass_access'] = 0;
-  /* Field: Indexed Answer: District */
+  /* Field: Node: Location */
+  $handler->display->display_options['fields']['field_ftritem_place']['id'] = 'field_ftritem_place';
+  $handler->display->display_options['fields']['field_ftritem_place']['table'] = 'entity_node';
+  $handler->display->display_options['fields']['field_ftritem_place']['field'] = 'field_ftritem_place';
+  $handler->display->display_options['fields']['field_ftritem_place']['relationship'] = 'questionnaire_id';
+  $handler->display->display_options['fields']['field_ftritem_place']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_ftritem_place']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_ftritem_place']['bypass_access'] = 0;
+  /* Field: Indexed Answer: Admin Unit */
   $handler->display->display_options['fields']['taxonomy_vocabulary_6']['id'] = 'taxonomy_vocabulary_6';
   $handler->display->display_options['fields']['taxonomy_vocabulary_6']['table'] = 'search_api_index_answers';
   $handler->display->display_options['fields']['taxonomy_vocabulary_6']['field'] = 'taxonomy_vocabulary_6';
@@ -437,7 +449,7 @@ function devtrac7_solr_search_answers_feature_views_default_views() {
   $handler->display->display_options['fields']['field_place_lat_long']['id'] = 'field_place_lat_long';
   $handler->display->display_options['fields']['field_place_lat_long']['table'] = 'entity_node';
   $handler->display->display_options['fields']['field_place_lat_long']['field'] = 'field_place_lat_long';
-  $handler->display->display_options['fields']['field_place_lat_long']['relationship'] = 'questionnaire_answer_context';
+  $handler->display->display_options['fields']['field_place_lat_long']['relationship'] = 'questionnaire_id';
   $handler->display->display_options['fields']['field_place_lat_long']['label'] = 'Lat-lon';
   $handler->display->display_options['fields']['field_place_lat_long']['click_sort_column'] = 'geom';
   $handler->display->display_options['fields']['field_place_lat_long']['type'] = 'geofield_latlon';
@@ -446,7 +458,7 @@ function devtrac7_solr_search_answers_feature_views_default_views() {
     'format' => 'decimal_degrees',
     'labels' => 1,
   );
-  /* Field: Indexed Answer: Placetype */
+  /* Field: Indexed Answer: Location Types */
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['id'] = 'taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'search_api_index_answers';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
@@ -470,24 +482,23 @@ function devtrac7_solr_search_answers_feature_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Answer: Question */
-  $handler->display->display_options['fields']['questionnaire_answer_question']['id'] = 'questionnaire_answer_question';
-  $handler->display->display_options['fields']['questionnaire_answer_question']['table'] = 'search_api_index_answers';
-  $handler->display->display_options['fields']['questionnaire_answer_question']['field'] = 'questionnaire_answer_question';
-  $handler->display->display_options['fields']['questionnaire_answer_question']['label'] = '';
-  $handler->display->display_options['fields']['questionnaire_answer_question']['element_type'] = 'h2';
-  $handler->display->display_options['fields']['questionnaire_answer_question']['element_class'] = 'views-field views-field-questionnaire-answer-question';
-  $handler->display->display_options['fields']['questionnaire_answer_question']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['questionnaire_answer_question']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['questionnaire_answer_question']['link_to_entity'] = 0;
-  $handler->display->display_options['fields']['questionnaire_answer_question']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['questionnaire_answer_question']['bypass_access'] = 0;
+  $handler->display->display_options['fields']['question_1']['id'] = 'question_1';
+  $handler->display->display_options['fields']['question_1']['table'] = 'search_api_index_answers';
+  $handler->display->display_options['fields']['question_1']['field'] = 'question';
+  $handler->display->display_options['fields']['question_1']['label'] = '';
+  $handler->display->display_options['fields']['question_1']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['question_1']['element_class'] = 'views-field views-field-questionnaire-answer-question';
+  $handler->display->display_options['fields']['question_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['question_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['question_1']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['question_1']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['question_1']['bypass_access'] = 0;
   /* Field: Indexed Answer: Question */
   $handler->display->display_options['fields']['question']['id'] = 'question';
   $handler->display->display_options['fields']['question']['table'] = 'search_api_index_answers';
   $handler->display->display_options['fields']['question']['field'] = 'question';
   $handler->display->display_options['fields']['question']['label'] = 'Question ID';
   $handler->display->display_options['fields']['question']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['question']['separator'] = '';
   $handler->display->display_options['fields']['question']['link_to_entity'] = 0;
   $export['devtrac_solr_view_answers'] = $view;
 

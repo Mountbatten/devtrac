@@ -235,7 +235,7 @@ function devtrac7_admin_feature_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Taxonomy term: UNICEF Category */
+  /* Field: Taxonomy term: Tags */
   $handler->display->display_options['fields']['field_district_category']['id'] = 'field_district_category';
   $handler->display->display_options['fields']['field_district_category']['table'] = 'field_data_field_district_category';
   $handler->display->display_options['fields']['field_district_category']['field'] = 'field_district_category';
@@ -255,14 +255,14 @@ function devtrac7_admin_feature_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'vocabulary_6' => 'vocabulary_6',
   );
-  /* Filter criterion: Taxonomy term: UNICEF Category (field_district_category) */
+  /* Filter criterion: Taxonomy term: Tags (field_district_category) */
   $handler->display->display_options['filters']['field_district_category_tid']['id'] = 'field_district_category_tid';
   $handler->display->display_options['filters']['field_district_category_tid']['table'] = 'field_data_field_district_category';
   $handler->display->display_options['filters']['field_district_category_tid']['field'] = 'field_district_category_tid';
   $handler->display->display_options['filters']['field_district_category_tid']['operator'] = 'and';
   $handler->display->display_options['filters']['field_district_category_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_district_category_tid']['expose']['operator_id'] = 'field_district_category_tid_op';
-  $handler->display->display_options['filters']['field_district_category_tid']['expose']['label'] = 'UNICEF Category';
+  $handler->display->display_options['filters']['field_district_category_tid']['expose']['label'] = 'Tags';
   $handler->display->display_options['filters']['field_district_category_tid']['expose']['use_operator'] = TRUE;
   $handler->display->display_options['filters']['field_district_category_tid']['expose']['operator'] = 'field_district_category_tid_op';
   $handler->display->display_options['filters']['field_district_category_tid']['expose']['identifier'] = 'field_district_category_tid';
@@ -271,7 +271,7 @@ function devtrac7_admin_feature_views_default_views() {
   $handler->display->display_options['path'] = 'admin/devtrac7/dq/edit-districts';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Edit districts';
-  $handler->display->display_options['menu']['description'] = 'This view helps UNICEF Editors to easily locate and edit districts';
+  $handler->display->display_options['menu']['description'] = 'This view helps Editors to easily locate and edit districts';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'management';
   $handler->display->display_options['menu']['context'] = 0;

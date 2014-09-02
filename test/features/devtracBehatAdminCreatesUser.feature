@@ -1,7 +1,8 @@
 Feature: Devtrac Site Behat Admin Test
   In order to login, you must be on the login page
   Background: In order to login, you must be on the login page, to create a demo user, you must have admin rights, in order to log out, you must be logged in
-
+  
+  @api
   Scenario: Devtrac Login Test
     Given Iam on "/user"
     When I fill in name with "admin"
@@ -9,6 +10,7 @@ Feature: Devtrac Site Behat Admin Test
     And I press "Login"
     Then I am at "/users/admin"
 
+  @api
   Scenario: Devtrac Complete Admin registation Test
     Given I am logged in as a user with the "administrator" role
     Given I am on "/admin/people/create"
@@ -25,6 +27,7 @@ Feature: Devtrac Site Behat Admin Test
     Then I should see "About Me" field
     Then I should see "Create new account" button
     
+  @api
   Scenario: Devtrac Admin Fill add the remaining details
     Given I am on "/admin/people/create"
     And I am logged in as a user with the "administrator" role
@@ -43,7 +46,7 @@ Feature: Devtrac Site Behat Admin Test
     Then I should be redirected to "/admin/people/create"
    
   # An admin has the rights to create a demo user
-   
+  @api
   Scenario: Devtrac check if form for creating demo user exists
     Given I am on "/admin/people/create"
     And I am logged in as a user with the "administrator" role
@@ -60,6 +63,7 @@ Feature: Devtrac Site Behat Admin Test
     Then I should see "About Me" field
     Then I should see "Create new account" button
 
+  @api
   Scenario: Devtrac Demo User Creation Test
     Given I am on "/admin/people/create"
     And I am logged in as a user with the "administrator" role
@@ -76,7 +80,7 @@ Feature: Devtrac Site Behat Admin Test
     And I press the "Create new account" button
     Then I am at  "/admin/people/create"
 
-   
+  @api
   Scenario: Devtrac Logout Test
     Given I am logged in as a user with the "administrator" role
     And I press the "Sign Out" button

@@ -10,7 +10,7 @@
 function devtrac7_taxonomy_feature_taxonomy_default_vocabularies() {
   return array(
     'district_category' => array(
-      'name' => 'UNICEF Category',
+      'name' => 'Tags',
       'machine_name' => 'district_category',
       'description' => 'This vocabulary is used on the district terms to differentiate or categorize districts esp focal and non-focus districts',
       'hierarchy' => 0,

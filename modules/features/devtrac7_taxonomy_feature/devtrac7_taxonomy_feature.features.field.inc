@@ -71,7 +71,7 @@ function devtrac7_taxonomy_feature_field_default_fields() {
       ),
       'entity_type' => 'taxonomy_term',
       'field_name' => 'field_district_category',
-      'label' => 'UNICEF Category',
+      'label' => 'Tags',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -494,7 +494,6 @@ function devtrac7_taxonomy_feature_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Code');
-  t('UNICEF Category');
   t('Geo');
   t('Location Type');
   t('Term Icon');

@@ -1,7 +1,7 @@
 name = Devtrac7 Solr Search Answers Feature
 core = 7.x
 package = Devtrac
-version = 7.x-1.0-beta1
+version = 7.x-1.0
 project = devtrac7_solr_search_answers_feature
 dependencies[] = context
 dependencies[] = ctools
@@ -21,6 +21,7 @@ dependencies[] = views_data_export
 dependencies[] = views_infinite_scroll
 dependencies[] = views_modes
 dependencies[] = views_rss
+datestamp = 1408080140
 features[context][] = devtrac7_answers_all
 features[context][] = devtrac7_answers_graphs
 features[ctools][] = context:context:3

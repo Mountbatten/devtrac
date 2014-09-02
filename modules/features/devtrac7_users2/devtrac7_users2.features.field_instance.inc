@@ -50,61 +50,6 @@ function devtrac7_users2_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_organisation'
-  $field_instances['user-user-field_organisation'] = array(
-    'bundle' => 'user',
-    'default_value' => NULL,
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => 1,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 11,
-      ),
-      'full' => array(
-        'label' => 'inline',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => 0,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 9,
-      ),
-    ),
-    'entity_type' => 'user',
-    'field_name' => 'field_organisation',
-    'label' => 'Organisation',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'action' => 'hide',
-          'fallback' => 'none',
-          'skip_perm' => 'access administration menu',
-          'status' => 0,
-        ),
-      ),
-      'user_register_form' => 1,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-        'content_taxonomy_opt_groups' => FALSE,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_select',
-      'weight' => 14,
-    ),
-  );
-
   // Exported field_instance: 'user-user-field_user_aboutme'
   $field_instances['user-user-field_user_aboutme'] = array(
     'bundle' => 'user',
@@ -755,7 +700,6 @@ function devtrac7_users2_field_default_field_instances() {
   t('First Name');
   t('Function');
   t('Manager');
-  t('Organisation');
   t('Select all the districts you are interested in. To select more than 1 district, press the CTRL key and click them 1 by 1.');
   t('Select all the subjects you are interested in. To select more than 1 subject, press the CTRL key and click them 1 by 1.');
   t('Subjects');
