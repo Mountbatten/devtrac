@@ -30,4 +30,39 @@ class FeatureContext extends DrupalContext
     {
         // Initialize your context here
     }
+    
+    
+    
+      /**
+     * Clicks the Welcome Link.
+     *
+     * @When /^(?:|I )click the Welcome Link$/
+     */
+    public function clickTheWelcomeLink()
+    {
+       $link = "Welcome, [current-user:field_user_firstname]";
+       $regionObj = $this->getRegion('userprofile_menu');
+       // Find the link within the region
+       $linkObj = $regionObj->findLink($link);
+       if (empty($linkObj)) {
+          throw new \Exception(sprintf('The link "%s" was not found in the region "%s" on the page %s', $link, 'userprofile_menu', $this->getSession()->getCurrentUrl()));
+        }
+       $linkObj->click();
+    }
+    /**
+     * Filter by current user.
+     *
+     * @When /^(?:|I )filter by current user$/
+     */
+    public function filterByCurrentUser()
+    {
+       $link = $this->user->name . " ";
+       $regionObj = $this->getRegion('first_sidebar');
+       // Find the link within the region
+       $linkObj = $regionObj->findLink($link);
+       if (empty($linkObj)) {
+          throw new \Exception(sprintf('The link "%s" was not found in the region "%s" on the page %s', $link, 'first_sidebar', $this->getSession()->getCurrentUrl()));
+        }
+       $linkObj->click();
+   }
 }
