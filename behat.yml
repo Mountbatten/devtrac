@@ -16,7 +16,6 @@ default:
       drupal:
         drupal_root: "/home/travis/build/TddDoctor/devtrac/build/docroot"
       text:
-        username_field: "Username"
         password_field: "pass"
         log_out: "Sign out"
         log_in: "Log in"
@@ -27,6 +26,7 @@ default:
         left header: "#header-left"
         right header: "#header-right"
         right sidebar: "#column-right"
+        first_sidebar: "#region-sidebar-first"
       selectors:
         message_selector: '.messages'
         error_message_selector: '.messages.messages-error'
