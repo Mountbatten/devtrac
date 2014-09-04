@@ -15,6 +15,7 @@ before_install:
   - sleep 3
 
 before_script:
+  - export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
   # Apache webserver configuration
   - curl -sSL https://raw.githubusercontent.com/moliware/travis-solr/master/travis-solr.sh | SOLR_VERSION=3.5.0 SOLR_PORT=8080 SOLR_CONFS="3.x/schema.xml 3.x/schema_extra_fields.xml 3.x/schema_extra_types.xml 3.x/solrconfig.xml 3.x/elevate.xml 3.x/solrconfig_extra.xml 3.x/solrcore.properties 3.x/protwords.txt 3.x/mapping-ISOLatin1Accent.txt 3.x/synonyms.txt" bash
   - sudo find / -name "conf" -type d -print
