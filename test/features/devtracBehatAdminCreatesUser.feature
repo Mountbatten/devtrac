@@ -1,88 +1,43 @@
-Feature: Devtrac Site Behat Admin Test
+Feature: Devtrac Site Behat Admin Can Create a Field worker account
   In order to login, you must be on the login page
   Background: In order to login, you must be on the login page, to create a demo user, you must have admin rights, in order to log out, you must be logged in
   
   @api
   Scenario: Devtrac Login Test
-    Given Iam on "/user"
-    When I fill in name with "admin"
-    And I fill in password with "admin"
-    And I press "Login"
-    Then I am at "/users/admin"
-
+    Given I go to the homepage
+    And I follow "Sign in"
+    And I fill in "Username" with "admin"
+    And I fill in "Password" with "admin"
+    And I press the "Log in" button
+    Then I am on "user/1/edit"
   @api
-  Scenario: Devtrac Complete Admin registation Test
-    Given I am logged in as a user with the "administrator" role
-    Given I am on "/admin/people/create"
-    Then I should see "People"
-    Then I should see "Username" field
-    Then I should see "E-mail address" field
-    Then I should see "Password" field
-    Then I should see "Confirm Password" field
-    Then I should see "Function" field
-    Then I should see "Manager" field
-    Then I should see "Department" field
-    Then I should see "First Name" field
-    Then I should see "Surname" field
-    Then I should see "About Me" field
-    Then I should see "Create new account" button
-    
-  @api
-  Scenario: Devtrac Admin Fill add the remaining details
-    Given I am on "/admin/people/create"
+  Scenario: Devtrac Admin creates user details
     And I am logged in as a user with the "administrator" role
-    When I fill in "Username" with "user_demo"
-    And I fill in "E-mail address" with "user_demo@mountbatten.net"
-    And I fill in "Password" with "user_demo"
-    And I fill in "Confirm Password" with "user_demo"
-    And I fill in "Function" with "Evaluator"
-    And I fill in "Manager" with "AdminTest AdminTest Sir (admin)"
-    And I fill in "Department" with "Education"
-    And I fill in "First Name" with "User Demo"
-    And I check the box "unicef user "
-    And I fill in "Surname" with "User Demo Demo"
-    And I fill in "About Me" with "Iam a hoax user demo test account"
-    And I press "Create new account"
-    Then I should be redirected to "/admin/people/create"
-   
-  # An admin has the rights to create a demo user
-  @api
-  Scenario: Devtrac check if form for creating demo user exists
-    Given I am on "/admin/people/create"
-    And I am logged in as a user with the "administrator" role
-    Then I should see "People"
-    Then I should see "Username" field
-    Then I should see "E-mail address" field
-    Then I should see "Password" field
-    Then I should see "Confirm Password" field
-    Then I should see "Function" field
-    Then I should see "Manager" field
-    Then I should see "Department" field
-    Then I should see "First Name" field
-    Then I should see "Surname" field
-    Then I should see "About Me" field
-    Then I should see "Create new account" button
-
-  @api
-  Scenario: Devtrac Demo User Creation Test
-    Given I am on "/admin/people/create"
-    And I am logged in as a user with the "administrator" role
-    When I fill in "Username" with "user_demo"
+    #Given I am on "/admin/people/create"
+    And I click the link "Add user" in the dropdown menu
+    And I should see "This web page allows administrators to register new users. Users' e-mail addresses and usernames must be unique."
+    And I fill in "Username" with "user_demo"
     And I fill in "E-mail address" with "user_demo@mountbatten.net"
     And I fill in "Password" with "user_demo"
     And I fill in "Confirm password" with "user_demo"
-    And I fill in "Function" with "Evaluator"
-    And I fill in "Manager" with "AdminTest AdminTest Sir (admin)"
-    And I fill in "Department" with "Education"
+    And I select the radio button "Active"
+    And I check the box "authenticated user"
+    And I check the box "field worker"
+    And I fill in "Function" with "3"
+    And I fill in "Academic Degree(s)" with "Bsc. Quality Assurance"
+    And I fill in "Manager" with "admin (1)"
+    And I fill in "Department" with "6"
     And I fill in "First Name" with "User Demo"
     And I fill in "Surname" with "User Demo Demo"
     And I fill in "About Me" with "Iam a hoax user demo test account"
-    And I press the "Create new account" button
-    Then I am at  "/admin/people/create"
+    And I press "Create new account"
+    And I am at "admin/people/create"
+    And I should see "STATUS"
+    
 
   @api
   Scenario: Devtrac Logout Test
     Given I am logged in as a user with the "administrator" role
-    And I press the "Sign Out" button
-    Then I am at "/"
+    And I follow "Sign out"
+    Then I am on the homepage
 
