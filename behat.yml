@@ -16,7 +16,7 @@ default:
       goutte: ~
       selenium2: 
       default_session: selenium2
-        browser: firefox
+      browser: firefox
       base_url: http://testtest.devtrac.org
     Drupal\DrupalExtension\Extension:
       blackbox: ~
