@@ -17,8 +17,6 @@ default:
     base_url: http://testtest.devtrac.org
     selenium2: 
       browser_name: firefox
-      host: localhost
-      port: 4444
     Drupal\DrupalExtension\Extension:
       blackbox: ~
       drush:
