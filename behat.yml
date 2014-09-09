@@ -15,10 +15,10 @@ default:
     Behat\MinkExtension\Extension:
     base_url: http://testtest.devtrac.org
     default_session: selenium2
-      selenium2: 
-        browser_name: firefox
-        host: localhost
-        port: 4444
+    selenium2: 
+      browser_name: firefox
+      host: localhost
+      port: 4444
     Drupal\DrupalExtension\Extension:
       blackbox: ~
       drush:
