@@ -13,11 +13,12 @@ default:
     features: test/features
   extensions:
     Behat\MinkExtension\Extension:
-      goutte: ~
+    base_url: http://testtest.devtrac.org
+    default_session: selenium2
       selenium2: 
-      default_session: selenium2
-      browser: firefox
-      base_url: http://testtest.devtrac.org
+        browser_name: firefox
+        host: localhost
+        port: 4444
     Drupal\DrupalExtension\Extension:
       blackbox: ~
       drush:
