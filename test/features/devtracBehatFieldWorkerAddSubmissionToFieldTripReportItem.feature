@@ -4,7 +4,6 @@ Feature: Field Worker Add Submission To A Field Trip Report Item Test
   As a 'field worker'
   I need to create a field trip report item with the same Location type as the question.
   
-  @javascript
   Scenario: Field Worker Add Submission To A Field Trip Report Item Test
     Given I am logged in as a user with the "administrator" role
     And I follow "Admin" in the "userprofile_menu" region
