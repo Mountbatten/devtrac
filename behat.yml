@@ -13,7 +13,7 @@ default:
     features: test/features
   extensions:
     Behat\MinkExtension\Extension:
-    base_url: http://testtest.devtrac.org
+    base_url: http://localhost/docroot
     default_session: selenium2
     selenium2: 
       browser_name: firefox
