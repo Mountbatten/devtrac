@@ -13,6 +13,7 @@ default:
     features: test/features
   extensions:
     Behat\MinkExtension\Extension:
+    base_url:  'http://localhost/docroot'
     goutte: ~
     selenium2: ~
     Drupal\DrupalExtension\Extension:
