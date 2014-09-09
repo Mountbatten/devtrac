@@ -13,8 +13,8 @@ default:
     features: test/features
   extensions:
     Behat\MinkExtension\Extension:
-    goutte: ~
-    selenium2: ~
+      goutte: ~
+      selenium2: ~
     base_url: http://localhost/docroot
     Drupal\DrupalExtension\Extension:
       blackbox: ~
