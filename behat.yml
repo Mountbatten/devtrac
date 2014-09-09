@@ -15,7 +15,7 @@ default:
     Behat\MinkExtension\Extension:
       goutte: ~
       selenium2: ~
-    base_url: http://localhost/docroot
+      base_url: http://localhost/docroot
     Drupal\DrupalExtension\Extension:
       blackbox: ~
       drush:
