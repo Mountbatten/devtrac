@@ -6,9 +6,9 @@ Feature: Devtrac Site Behat Admin Can Create a Field worker account
   @api
   Scenario: Devtrac Login Test
     Given I am on "/"
-    And I follow "Sign in"
-    And I fill in "Username" with "admin"
-    And I fill in "Password" with "admin"
+    And I go to "/user"
+    And I fill in "name" with "admin"
+    And I fill in "pass" with "admin"
     And I press the "Log in" button
     Then I am on "user/1/edit"
   @api
@@ -40,5 +40,5 @@ Feature: Devtrac Site Behat Admin Can Create a Field worker account
   Scenario: Devtrac Logout Test
     Given I am logged in as a user with the "administrator" role
     And I follow "Sign out"
-    Then I am on the homepage
+    Then I am on the "/"
 
