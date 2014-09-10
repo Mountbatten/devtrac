@@ -3,7 +3,7 @@ Feature: Field Worker filters fieldtrips
   In order to filter fieldtrips
   As a 'field worker'
   I need to create field trips with different admin units, statuses, dates visited and locations
-
+  @api
   Background:
     Given I am logged in as a user with the "field worker" role
     And I follow "Add Field Trip" in the "userprofile_menu" region
