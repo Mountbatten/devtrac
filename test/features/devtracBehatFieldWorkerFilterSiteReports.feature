@@ -138,7 +138,8 @@ Feature: Field Worker filters site reports
     And I should see the link "Site Visit at behatLocation3"
     And I should see the link "Site Visit at behatLocation4"
     And I should see the link "Site Visit at behatLocation5"
-
+  
+  @javascript
   Scenario: Filter By Report Type
     Given I go to the homepage
     And I follow "Site Reports"
@@ -149,7 +150,8 @@ Feature: Field Worker filters site reports
     And I should not see the link "Site Visit at behatLocation3"
     And I should not see the link "Site Visit at behatLocation4"
     And I should not see the link "Site Visit at behatLocation5"
-
+    
+  @javascript
   Scenario: Filter By User
     Given I go to the homepage
     And I follow "Site Reports"
