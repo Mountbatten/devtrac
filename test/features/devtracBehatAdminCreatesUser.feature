@@ -1,10 +1,11 @@
+@javascript
 Feature: Devtrac Site Behat Admin Can Create a Field worker account
   In order to login, you must be on the login page
   Background: In order to login, you must be on the login page, to create a demo user, you must have admin rights, in order to log out, you must be logged in
   
   @api
   Scenario: Devtrac Login Test
-    Given I go to the homepage
+    Given I am on "/"
     And I follow "Sign in"
     And I fill in "Username" with "admin"
     And I fill in "Password" with "admin"
@@ -13,7 +14,7 @@ Feature: Devtrac Site Behat Admin Can Create a Field worker account
   @api
   Scenario: Devtrac Admin creates user details
     And I am logged in as a user with the "administrator" role
-    #Given I am on "/admin/people/create"
+    Given I am on "/admin/people/create"
     And I click the link "Add user" in the dropdown menu
     And I should see "This web page allows administrators to register new users. Users' e-mail addresses and usernames must be unique."
     And I fill in "Username" with "user_demo"
