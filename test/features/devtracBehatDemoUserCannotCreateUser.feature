@@ -6,11 +6,11 @@ Feature: Devtrac Site Behat Demo User Test
   @api
   Scenario: Devtrac Demo User Login Test
     Given I am on "/"
-    And I follow "Sign in"
-    And I fill in "Username" with "user_demo"
-    And I fill in "Password" with "user_demo"
+    When i go to "/user"
+    And I fill in "name" with "user_demo"
+    And I fill in "pass" with "user_demo"
     And I press the "Log in" button
-    Then I am on "/user/me"
+    Then I should not see "/user/me"
   
   @api 
   Scenario: Devtrac check if form for creating new user exists
