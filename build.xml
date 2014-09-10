@@ -184,7 +184,7 @@
   </target>
 
   <target name="selenium-download" unless="selenium.present">
-    <get src="http://selenium.googlecode.com/2.42/selenium-server-standalone-${selenium.version}.jar" dest="${selenium}"/>
+    <get src="https://selenium-release.storage.googleapis.com/2.42/selenium-server-standalone-${selenium.version}.jar" dest="${selenium}"/>
   </target>
 
   <target name="selenium-start" depends="selenium-download">
