@@ -30,6 +30,7 @@ default:
         log_out: "Sign out"
         log_in: "Log in"
       region_map:
+        userprofile_menu: "#block-nice-menus-2"
         fieldtrip_quicktabs: "#block-quicktabs-fieldtrip-content-first"
         content: "#region-content"
         footer: "#footer"
@@ -38,7 +39,6 @@ default:
         right sidebar: "#column-right"
         region content: "#region-content"
         userprofile_quicktabs: "#block-quicktabs-user-profile"
-        userprofile_menu: "#block-nice-menus-2"
         site_visits: "#block-views-dvtrc-site-visits-block-11"
         first_sidebar: "#region-sidebar-first"
       selectors:
