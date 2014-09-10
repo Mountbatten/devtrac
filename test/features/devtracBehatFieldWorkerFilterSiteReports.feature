@@ -5,7 +5,7 @@ Feature: Field Worker filters site reports
   I need to create site reports with different admin units, types, statuses, dates visited, locations and users
   
   @javascript
-  Background:
+  Scenario: Field Worker filters site reports
     Given I am logged in as a user with the "field worker" role
     And I follow "Add Field Trip" in the "userprofile_menu" region
     And I fill in "Title " with "BehatFieldTrip1"
