@@ -1,10 +1,10 @@
-@api
+@javascript
 Feature: Field Worker filters site reports
   In order to filter site reports
   As a 'field worker'
   I need to create site reports with different admin units, types, statuses, dates visited, locations and users
   
-  @javascript
+  @api
   Scenario: Field Worker filters site reports
     Given I am logged in as a user with the "field worker" role
     And I follow "Add Field Trip" in the "userprofile_menu" region
@@ -94,7 +94,7 @@ Feature: Field Worker filters site reports
     And I select "- - Primary Private School" from "Location Types"
     And I press "Save"
     And I should see "Location behatLocation5 has been created."
-    And I go to the homepage
+    And I go to the "/"
     And I follow "Site Reports"
     And I follow "List" in the "userprofile_menu" region
     And I should see the link "Human Interest Story at behatLocation1"
@@ -105,7 +105,7 @@ Feature: Field Worker filters site reports
     
   @api
   Scenario: Filter By Admin Unit
-    Given I go to the homepage
+    Given I go to the "/"
     And I follow "Site Reports"
     And I follow "List" in the "userprofile_menu" region
     When I follow "(none) " in the "first_sidebar" region
@@ -117,7 +117,7 @@ Feature: Field Worker filters site reports
     
   @api
   Scenario: Filter By Date
-    Given I go to the homepage
+    Given I go to the "/"
     And I follow "Site Reports"
     And I follow "List" in the "userprofile_menu" region
     When I follow "September 2, 2014 " in the "first_sidebar" region
@@ -129,7 +129,7 @@ Feature: Field Worker filters site reports
     
   @api
   Scenario: Filter By Status
-    Given I go to the homepage
+    Given I go to the "/"
     And I follow "Site Reports"
     And I follow "List" in the "userprofile_menu" region
     When I follow "In Progress " in the "first_sidebar" region
@@ -141,7 +141,7 @@ Feature: Field Worker filters site reports
   
   @javascript
   Scenario: Filter By Report Type
-    Given I go to the homepage
+    Given I go to the "/"
     And I follow "Site Reports"
     And I follow "List" in the "userprofile_menu" region
     When I follow "Human Interest Story " in the "first_sidebar" region
@@ -153,7 +153,7 @@ Feature: Field Worker filters site reports
     
   @javascript
   Scenario: Filter By User
-    Given I go to the homepage
+    Given I go to the "/"
     And I follow "Site Reports"
     And I follow "List" in the "userprofile_menu" region
     When I filter by current user
@@ -164,7 +164,7 @@ Feature: Field Worker filters site reports
     And I should see the link "Site Visit at behatLocation5"
 
   Scenario: Filter By Location Types
-    Given I go to the homepage
+    Given I go to the "/"
     And I follow "Site Reports"
     And I follow "List" in the "userprofile_menu" region
     When I follow "Schools " in the "first_sidebar" region
