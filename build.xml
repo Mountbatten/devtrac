@@ -20,7 +20,7 @@
   <property name="drush.args"       value=""/>
   <property name="php"              value="php"/>
   <property name="rsync"            value="rsync"/>
-  <property name="selenium.version" value="2.40.0"/>
+  <property name="selenium.version" value="2.42.2"/>
   <property name="selenium.port"    value="4444"/>
   <property name="site.mail"        value="test@example.com"/>
   <property name="site.name"        value="devtrac"/>
