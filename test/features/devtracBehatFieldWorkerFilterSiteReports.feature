@@ -103,7 +103,7 @@ Feature: Field Worker filters site reports
     And I should see the link "Site Visit at behatLocation4"
     And I should see the link "Site Visit at behatLocation5"
     
-
+  @api
   Scenario: Filter By Admin Unit
     Given I go to the homepage
     And I follow "Site Reports"
@@ -114,7 +114,8 @@ Feature: Field Worker filters site reports
     And I should see the link "Site Visit at behatLocation3"
     And I should see the link "Site Visit at behatLocation4"
     And I should see the link "Site Visit at behatLocation5"
-
+    
+  @api
   Scenario: Filter By Date
     Given I go to the homepage
     And I follow "Site Reports"
@@ -125,7 +126,8 @@ Feature: Field Worker filters site reports
     And I should see the link "Site Visit at behatLocation3"
     And I should not see the link "Site Visit at behatLocation4"
     And I should not see the link "Site Visit at behatLocation5"
-
+    
+  @api
   Scenario: Filter By Status
     Given I go to the homepage
     And I follow "Site Reports"
