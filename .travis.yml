@@ -4,7 +4,8 @@ php:
   - 5.5
   - 5.4
   - 5.3
-  
+addons:
+  firefox: "28.0"  
 matrix:
   - fast_finish: true
     
