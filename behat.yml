@@ -28,7 +28,7 @@ default:
         username_field: "name"
         password_field: "pass"
         log_out: "Sign out"
-        log_in: "Log in"
+        log_in: "Sign in"
       region_map:
         userprofile_menu: "#block-nice-menus-2"
         fieldtrip_quicktabs: "#block-quicktabs-fieldtrip-content-first"
