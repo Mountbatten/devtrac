@@ -38,7 +38,7 @@ Feature: Devtrac Site Behat Admin Can Create a Field worker account
 
   @api
   Scenario: Devtrac Logout Test
-    Given I am logged in as a user with the "administrator" role
+    Given I am logged in as a user with the 7 role
     And I follow "Sign out"
     Then I am on the "/"
 
