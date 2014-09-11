@@ -14,7 +14,7 @@ Feature: Devtrac Site Behat Demo User Test
   
   @api 
   Scenario: Devtrac check if form for creating new user exists
-    Given I am logged in as a user with the "field worker" role
+    Given I am logged in as a user with the 7 role
     And I am on "/admin/people/create"
     Then I should see "Access denied"
     
