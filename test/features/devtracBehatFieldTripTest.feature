@@ -17,7 +17,7 @@ Feature: Devtrac Site Behat Create Field Trip Test
 
   @api
   Scenario: Devtrac Testing for all empty fields cases
-    Given I am logged in as a user with the "field worker" role
+    Given I am logged in as a user with 7 role
     And I follow "Add Field Trip" in the "userprofile_menu" region 
     And I should see "Create Field Trip"
      When I fill in "Title" with ""
