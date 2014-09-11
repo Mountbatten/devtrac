@@ -13,7 +13,7 @@ Feature: Devtrac Site Behat Admin Can Create a Field worker account
     Then I am on "user/1/edit"
   @api
   Scenario: Devtrac Admin creates user details
-    And I am logged in as a user with the "administrator" role
+    And I am logged in as a user with the 7 role
     Given I am on "/admin/people/create"
     And I click the link "Add user" in the dropdown menu
     And I should see "This web page allows administrators to register new users. Users' e-mail addresses and usernames must be unique."
