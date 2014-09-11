@@ -5,7 +5,7 @@ Feature: Administrator edits Question
   I need to edit the question.
 
   Background:
-    Given I am logged in as a user with the "administrator" role
+    Given I am logged in as a user with the 7 role
     And I click "Admin"
     And I click "Devtrac 7"
     And I click "Edit Questions"
@@ -22,7 +22,7 @@ Feature: Administrator edits Question
     And I should see "Question Do you like the standard of primary education in Jinja? has been created."
 
   Scenario: Administrator User edits a question
-    Given I am logged in as a user with the "administrator" role
+    Given I am logged in as a user with the 7 role
     And I click "Admin"
     And I click "Devtrac 7"
     And I click "Edit Questions"
