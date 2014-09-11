@@ -6,7 +6,7 @@ Feature: Field Worker Edit Their Own Submission To A Field Trip Report Item Test
   and I need to make a submission to the field trip report item.
 
   Background:
-    Given I am logged in as a user with the "administrator" role
+    Given I am logged in as a user with the 7 role
     And I follow "Admin" in the "userprofile_menu" region
     And I click "Devtrac 7"
     And I should see the link "Edit Questions"
