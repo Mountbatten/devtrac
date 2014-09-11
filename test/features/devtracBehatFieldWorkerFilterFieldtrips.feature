@@ -5,7 +5,7 @@ Feature: Field Worker filters fieldtrips
   I need to create field trips with different admin units, statuses, dates visited and locations
   
    Scenario: Field Worker filters fieldtrips
-    Given I am logged in as a user with the "field worker" role
+    Given I am logged in as a user with 7 role
     And I follow "Add Field Trip" in the "userprofile_menu" region
     And I fill in "Title " with "BehatFieldTrip1"
     And I select "fieldwork" from "Purpose "
@@ -63,7 +63,7 @@ Feature: Field Worker filters fieldtrips
     
 
   Scenario: Filter By Admin Unit
-    Given I go to the homepage
+    Given I am on "/"
     And I follow "Field trips"
     When I follow "(none) " in the "first_sidebar" region
     Then I should see the link "BehatFieldTrip1"
@@ -73,7 +73,7 @@ Feature: Field Worker filters fieldtrips
     And I should see the link "BehatFieldTrip5"
 
   Scenario: Filter By Date
-    Given I go to the homepage
+    Given I am on "/"
     And I follow "Field trips"
     When I follow "September 2, 2014 " in the "first_sidebar" region
     Then I should not see the link "BehatFieldTrip1"
@@ -83,7 +83,7 @@ Feature: Field Worker filters fieldtrips
     And I should not see the link "BehatFieldTrip5"
 
   Scenario: Filter By Status
-    Given I go to the homepage
+    Given I am on "/"
     And I follow "Field trips"
     When I follow "In Progress " in the "first_sidebar" region
     Then I should see the link "BehatFieldTrip1"
@@ -93,7 +93,7 @@ Feature: Field Worker filters fieldtrips
     And I should see the link "BehatFieldTrip5"
 
   Scenario: Filter By Purpose
-    Given I go to the homepage
+    Given I am on "/"
     And I follow "Field trips"
     When I follow "Leisure " in the "first_sidebar" region
     Then I should not see the link "BehatFieldTrip1"
@@ -103,7 +103,7 @@ Feature: Field Worker filters fieldtrips
     And I should not see the link "BehatFieldTrip5"
 
   Scenario: Filter By User
-    Given I go to the homepage
+    Given I am on "/"
     And I follow "Field trips"
     When I filter by current user
     Then I should not see the link "BehatFieldTrip1"
