@@ -5,7 +5,7 @@ Feature: Administrator creates Question
   I need to create a question.
   
   Background:
-    Given I am logged in as a user with the "administrator" role
+    Given I am logged in as a user with the 7 role
     And I follow "Admin" in the "userprofile_menu" region
     And I click "Devtrac 7"
     And I should see the link "Edit Questions"
