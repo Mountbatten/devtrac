@@ -23,7 +23,7 @@ Feature: Field Worker filters fieldtrips
     And I follow "Add Field Trip" in the "userprofile_menu" region
     And I fill in "Title " with "BehatFieldTrip3"
     And I select "fieldwork" from "Purpose "
-    And I fill in "Percentage " with "100"
+    And I fill in "Percentage" with 100
     And I fill in "Date" with "02/09/2014"
     And I press "Save"
     And I should see "Field Trip BehatFieldTrip3 has been created."
