@@ -7,21 +7,12 @@ Background: In order to login, you must be on the login page, to create a demo u
 
   Scenario: Enter valid username and password // Happy path
     Given I am on the homepage
-    When I fill in "admin" for "Username"
-    And I fill in "admin" for "Password"
+    Given I am on "/"
+    When I fill in "admin" for "name"
+    And I fill in "admin" for "ass"
     And I press "Log in"
     Then I should see "Add content"
   
-  
-  @api
-  Scenario: Devtrac Login Test
-    Given I am on "/"
-    And I go to "/user"
-    And I fill in "name" with "admin"
-    And I fill in "pass" with "admin"
-    And I press the "Log in" button
-    Then I am on "user/1/edit"
-  @api
   Scenario: Devtrac Admin creates user details
     And I am logged in as a user with the 7 role
     Given I am on "/admin/people/create"
@@ -45,8 +36,6 @@ Background: In order to login, you must be on the login page, to create a demo u
     And I am at "admin/people/create"
     And I should see "STATUS"
     
-
-  @api
   Scenario: Devtrac Logout Test
     Given I am logged in as a user with the 7 role
     And I follow "Sign out"
