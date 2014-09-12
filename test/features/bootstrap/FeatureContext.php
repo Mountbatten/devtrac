@@ -118,11 +118,21 @@ class FeatureContext extends DrupalContext
                 break;
         }
     }
+    
+    /**
+     * Fills in question Options field with specified id|name|label|value.
+     *
+     * @When /^(?:|I )fill in question Options field "(?P<field_number>([0-9]+))" with "(?P<value>[^"]*)"$/
+     */
+    public function fillQuestionOptionsField($field_number, $value)
+    {
+        $this->getSession()->getPage()->fillField('questionnaire_question_options[und][' . --$field_number . '][value]', $value);
+    }
     /**
      * @Given /^I am logged in as a user with the (\d+) role$/
      */
       public function iAmLoggedInAsAUserWithTheRole($arg1) {
-        throw new PendingException();
+         throw new PendingException();
       }
     
     /**
@@ -138,14 +148,5 @@ class FeatureContext extends DrupalContext
     public function iGoTo($arg1) {
          throw new PendingException();
      }
-    
-    /**
-     * Fills in question Options field with specified id|name|label|value.
-     *
-     * @When /^(?:|I )fill in question Options field "(?P<field_number>([0-9]+))" with "(?P<value>[^"]*)"$/
-     */
-    public function fillQuestionOptionsField($field_number, $value)
-    {
-        $this->getSession()->getPage()->fillField('questionnaire_question_options[und][' . --$field_number . '][value]', $value);
-    }
+
 }
