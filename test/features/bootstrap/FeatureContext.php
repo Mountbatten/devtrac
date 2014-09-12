@@ -117,6 +117,27 @@ class FeatureContext extends DrupalContext
                 # code...
                 break;
         }
+        
+    /**
+     * @Given /^I am logged in as a user with the (\d+) role$/
+     */
+      public function iAmLoggedInAsAUserWithTheRole($arg1) {
+        throw new PendingException();
+      }
+    
+    /**
+     * @Then /^I am on the "([^"]*)"$/
+     */
+  public function iAmOnThe($arg1) {
+     throw new PendingException();
+    }
+    
+    /**
+     * @When /^i go to "([^"]*)"$/
+     */
+    public function iGoTo($arg1) {
+         throw new PendingException();
+     }
     }
     /**
      * Fills in question Options field with specified id|name|label|value.
