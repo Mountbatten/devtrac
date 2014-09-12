@@ -128,25 +128,7 @@ class FeatureContext extends DrupalContext
     {
         $this->getSession()->getPage()->fillField('questionnaire_question_options[und][' . --$field_number . '][value]', $value);
     }
-    /**
-     * @Given /^I am logged in as a user with the (\d+) role$/
-     */
-      public function iAmLoggedInAsAUserWithTheRole($arg1) {
-         
-      }
-    
-    /**
-     * @Then /^I am on the "([^"]*)"$/
-     */
-  public function iAmOnThe($arg1) {
-     
-    }
-    
-    /**
-     * @When /^i go to "([^"]*)"$/
-     */
-    public function iGoTo($arg1) {
-         
-     }
+  
+   
 
 }
