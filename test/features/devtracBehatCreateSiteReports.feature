@@ -31,7 +31,7 @@ Feature: Devtrac Behat test create different site reports
    
   @api
   Scenario: Create Site Report for Roadsite Observation
-  Given I am logged in as a user with the "field worker" role
+  Given I am logged in as a user with the 5 role
     And I follow "Add Field Trip" in the "userprofile_menu" region 
     And I should see "Create Field Trip"
     And I fill in "Title" with "fieldtripTest"
