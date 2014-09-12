@@ -5,7 +5,7 @@ Feature: Devtrac Admin creates Question
   I need to create a question.
   
   Background:
-    Given I am logged in as a user with the "devtrac admin" role
+    Given I am logged in as a user with the 4 role
     And I follow "Admin" in the "userprofile_menu" region
     And I click "Devtrac 7"
     And I should see the link "Edit Questions"
@@ -32,9 +32,9 @@ Feature: Devtrac Admin creates Question
     And I select "- - Public Government School" from "Location Type"
     # And I fill in "field_question_subject[und]" with "494"
     And I select "Checkboxes" from "The type of question. "
-    And I fill in question Options field "1" with "Yes"
+    And I fill in question Options field 1 with "Yes"
     And I press "Add another item"
-    And I fill in question Options field "2" with "No"
+    And I fill in question Options field 2 with "No"
     And I select "- Primary school" from "Sector"
     And I press "Save"
     Then I should see "Question Do you like the standard of primary education in Kampala? has been created."
@@ -45,9 +45,9 @@ Feature: Devtrac Admin creates Question
     And I select "- - Public Community School" from "Location Type"
     # And I fill in "field_question_subject[und]" with "494"
     And I select "Radios" from "The type of question. "
-    And I fill in question Options field "1" with "Yes"
+    And I fill in question Options field 1 with "Yes"
     And I press "Add another item"
-    And I fill in question Options field "2" with "No"
+    And I fill in question Options field 2 with "No"
     And I select "- Primary school" from "Sector"
     And I press "Save"
     Then I should see "Question Do you like the standard of primary education in Rakai? has been created."
@@ -55,7 +55,7 @@ Feature: Devtrac Admin creates Question
   Scenario: Devtrac Admin User adds a Number Question
     Given I fill in "Question " with "What is the standard number of teachers in a secondary school?"
     And I select "- - Secondary Private School" from "Location Type"
-    # And I fill in "field_question_subject[und]" with "494"
+    # And I fill in "field_question_subject[und]" with 494
     And I select "Number" from "The type of question. "
     And I select "- Primary school" from "Sector"
     And I press "Save"
@@ -64,7 +64,7 @@ Feature: Devtrac Admin creates Question
   Scenario: Devtrac Admin User adds a Message Question
     Given I fill in "Question " with "Thank you for filling this questionnaire."
     And I select "- - Secondary Community School" from "Location Type"
-    # And I fill in "field_question_subject[und]" with "494"
+    # And I fill in "field_question_subject[und]" with 494
     And I select "Message" from "The type of question. "
     And I select "- Primary school" from "Sector"
     And I press "Save"
