@@ -98,7 +98,15 @@
       <arg value="drush/drush:~6.0"/>
     </exec>
   </target>
-
+  
+  <target name="psr-download" depends="prepare,composer-selfupdate,drush-check" unless="drush.present">
+    <exec executable="${php}" taskname="composer">
+      <arg value="${composer}"/>
+      <arg value="--working-dir=${builddir}"/>
+      <arg value="require"/>
+      <arg value="psr/log: 1.0.*@dev"/>
+    </exec>
+  </target>
   <target name="drush-make" depends="drush-download" unless="drush.nomake" description="Run drush make">
     <delete dir="${builddir}/docroot"/>
     <!-- Run drush make into ./build/drupal -->
