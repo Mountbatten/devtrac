@@ -49,6 +49,8 @@ class FeatureContext extends DrupalContext
         }
        $linkObj->click();
     }
+    */
+    
     /**
      * Filter by current user.
      *
