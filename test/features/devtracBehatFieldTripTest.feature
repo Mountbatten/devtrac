@@ -5,7 +5,7 @@ Feature: Devtrac Site Behat Create Field Trip Test
   @api
   Scenario: Devtrac Site Behat Check For Field Trip form Test
     Given I am logged in as a user with 7 role
-    And I follow "Add Field Trip" in the "userprofile_menu" region 
+    And I follow "Add Field Trip" 
     And I should see "Create Field Trip"
     And I fill in "Title" with "fieldtripTest"
     And I fill in "Purpose" with "1"
