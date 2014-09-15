@@ -176,6 +176,7 @@
       <arg value="--working-dir=${builddir}"/>
       <arg value="require"/>
       <arg value="drupal/drupal-extension:*"/>
+      <arg value="psr/log:1.0.*@dev"/>
     </exec>
   </target>
 
