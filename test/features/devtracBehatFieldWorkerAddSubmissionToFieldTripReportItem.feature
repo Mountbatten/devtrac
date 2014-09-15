@@ -53,7 +53,7 @@ Feature: Field Worker Add Submission To A Field Trip Report Item Test
       Given I click the Welcome Link
       And I click "Open FieldTrips"
       And I follow "behatFieldTrip"
-      And I follow "Site Visit at behatLocation" in the "site_visits" region
+      And I follow "Site Visit at behatLocation"
       And I click the link "Add Questionnaire" in the dropdown menu
       When I fill in "Do you like the standard of primary education in Jinja?" with "Yes"
       And I press "Submit"
