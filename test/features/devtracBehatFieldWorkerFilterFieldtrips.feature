@@ -4,7 +4,7 @@ Feature: Field Worker filters fieldtrips
   As a 'field worker'
   I need to create field trips with different admin units, statuses, dates visited and locations
   
-   Scenario: Field Worker filters fieldtrips
+  Background: Field Worker filters fieldtrips
     Given I am logged in as a user with 5 role
     And I follow "Add Field Trip" in the "userprofile_menu" region
     And I fill in "Title " with "BehatFieldTrip1"
