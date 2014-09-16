@@ -41,7 +41,7 @@ Feature: Field Worker Add Submission To A Field Trip Report Item Test
     And I should see "Location behatLocation has been created."
 
     Scenario: Field Worker clicks the Questions Link on a Field Report Item
-      Given I click the Welcome Link
+      Given I click the "Welcome" Link
       And I click "Open FieldTrips"
       And I follow "behatFieldTrip"
       And I follow "Site Visit at behatLocation" in the "site_visits" region
