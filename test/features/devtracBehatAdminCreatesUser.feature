@@ -6,7 +6,7 @@ Feature: Maintain content
 Background: In order to login, you must be on the login page, to create a demo user, you must have admin rights, in order to log out, you must be logged in
 
   Scenario: Enter valid username and password // Happy path
-    Given I am on the "/user"
+    Given I am on the "/user/login"
     When I fill in "admin" for "name"
     And I fill in "admin" for "pass"
     And I press "Log in"
