@@ -133,7 +133,7 @@ class FeatureContext extends DrupalContext
     
     /**
     * @Given /^I am on the "([^"]*)"$/
-    */
+    *
    public function iAmOnThe($element) {
    $element = $this->getSession()->getPage();
     if (empty($element)) {
@@ -207,7 +207,7 @@ class FeatureContext extends DrupalContext
     
     /**
      * @Then /^I should  not See "([^"]*)"$/
-     */
+     *
     public function iShouldNotSee($table) {
         $page = $this->getSession()->getPage();
          $text = 'Welcome to devtrac distro';
@@ -215,5 +215,5 @@ class FeatureContext extends DrupalContext
         throw new Exception("The text '" . $text . "' was not found");
       }
 
-    }
+    }*/
 }
