@@ -6,14 +6,14 @@ Feature: Field Worker filters fieldtrips
   
   Background: Field Worker filters fieldtrips
     Given I am logged in as a user with 5 role
-    And I follow "Add Field Trip" in the "userprofile_menu" region
+    And I follow "Add Field Trip"
     And I fill in "Title " with "BehatFieldTrip1"
     And I select "fieldwork" from "Purpose "
     And I fill in "Percentage " with "100"
     And I fill in "Date" with "01/09/2014"
     And I press "Save"
     And I should see "Field Trip BehatFieldTrip1 has been created."
-    And I follow "Add Field Trip" in the "userprofile_menu" region
+    And I follow "Add Field Trip"
     And I fill in "Title " with "BehatFieldTrip2"
     And I select "Leisure" from "Purpose "
     And I fill in "Percentage " with "100"
@@ -29,14 +29,14 @@ Feature: Field Worker filters fieldtrips
     And I should see "Field Trip BehatFieldTrip3 has been created."
     And I am an anonymous user
     And I am logged in as a user with the "field worker" role
-    And I follow "Add Field Trip" in the "userprofile_menu" region
+    And I follow "Add Field Trip"
     And I fill in "Title " with "BehatFieldTrip4"
     And I select "Leisure" from "Purpose "
     And I fill in "Percentage " with "100"
     And I fill in "Date" with "01/09/2014"
     And I press "Save"
     And I should see "Field Trip BehatFieldTrip4 has been created."
-    And I follow "Add Field Trip" in the "userprofile_menu" region
+    And I follow "Add Field Trip"
     And I fill in "Title " with "BehatFieldTrip5"
     And I select "fieldwork" from "Purpose "
     And I fill in "Percentage " with "100"
