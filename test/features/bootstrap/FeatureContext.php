@@ -184,7 +184,7 @@ class FeatureContext extends DrupalContext
     
     /**
      * @Given /^I click the Welcome Link$/
-     */
+     *
     public function iClickTheWelcomeLink() {
         //$this->getSession()->getPage()->clickLink('Welcome');
   
