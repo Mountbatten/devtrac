@@ -8,7 +8,7 @@ Background: In order to login, you must be on the login page, to create a demo u
   Scenario: Enter valid username and password // Happy path
     Given I am on the "/user"
     When I fill in "admin" for "name"
-    And I fill in "admin" for "ass"
+    And I fill in "admin" for "pass"
     And I press "Log in"
     Then I should see "Add content"
   
