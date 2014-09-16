@@ -143,8 +143,8 @@ class FeatureContext extends DrupalContext
     $this->getSession()->visit($this->locatePath('/user/login'));
 
     // If I see this, I'm not logged in at all so log the user in.
-    $element->fillField('name', $username);
-    $element->fillField('pass', $passwd);
+    $element->fillField('name', 'admin');
+    $element->fillField('pass', 'admin');
     $submit = $element->findButton('Log in');
     if (empty($submit)) {
       throw new Exception('No submit button at ' . $this->getSession()->getCurrentUrl());
