@@ -191,13 +191,11 @@ class FeatureContext extends DrupalContext
     */
     
     /**
-     * @Then /^I should see not "([^"]*)"$/
+     * @Then /^I should  not See "([^"]*)"$/
      */
-    public function iShouldSeeNot(TableNode $table) {
+    public function iShouldNotSee($table) {
         $page = $this->getSession()->getPage();
-        $table = $table->getHash();
-       foreach ($table as $key => $value) {
-      $text = $table[$key]['texts'];
+         $text = 'Welcome to devtrac distro';
       if ($page->hasContent($text) === TRUE) {
         throw new Exception("The text '" . $text . "' was not found");
       }
