@@ -6,7 +6,7 @@ Feature: Field Worker Add Submission To A Field Trip Report Item Test
   
   Scenario: Field Worker Add Submission To A Field Trip Report Item Test
     Given I am logged in as a user with the 5 role
-    And I follow "Admin"
+    And I follow Admin
     And I click "Devtrac 7"
     And I should see the link "Edit Questions"
     And I click "Edit Questions"
