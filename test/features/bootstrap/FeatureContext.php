@@ -130,23 +130,24 @@ class FeatureContext extends DrupalContext
     {
         $this->getSession()->getPage()->fillField('questionnaire_question_options[und][' . --$field_number . '][value]', $value);
     }
+    
     /**
     * @Given /^I am on the "([^"]*)"$/
-    */
+    *
    public function iAmOnThe($arg1) {
 
    }
    
    /**
  * @Given /^I am logged in as a user with the (\d+) role$/
-   */
+   *
     public function iAmLoggedInAsAUserWithTheRole($arg1) {
         
     }
     
    /**
     * @When /^i go to "([^"]*)"$/
-    */
+    *
     
     public function iGoTo($arg1) {
     
@@ -154,14 +155,14 @@ class FeatureContext extends DrupalContext
     
     /**
      * @Given /^I fill in question Options field (\d+) with "([^"]*)"$/
-     */
+     *
     public function iFillInQuestionOptionsFieldWith($arg1, $arg2) {
     
     }
     
     /**
      * @Given /^I am logged in as a user with (\d+) role$/
-     */
+     *
     public function iAmLoggedInAsAUserWithRole($arg1) {
         
         
@@ -169,24 +170,25 @@ class FeatureContext extends DrupalContext
     
     /**
      * @Given /^I click the Welcome Link$/
-     */
+     *
     public function iClickTheWelcomeLink() {
   
     }
     
      /**
       * @Given /^I fill in "([^"]*)" with (\d+)$/
-      */
+      *
     public function iFillInWith($arg1, $arg2) {
     
     }
     
     /**
      * @Given /^I go to the "([^"]*)"$/
-     */
+     *
     public function iGoToThe($arg1) {
    
     }
+    */
     
     /**
      * @Then /^I should see not "([^"]*)"$/
