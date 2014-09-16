@@ -199,7 +199,6 @@ class FeatureContext extends DrupalContext
       if ($page->hasContent($text) === TRUE) {
         throw new Exception("The text '" . $text . "' was not found");
       }
-    }
 
     }
 }
