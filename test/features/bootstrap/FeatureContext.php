@@ -139,6 +139,17 @@ class FeatureContext extends DrupalContext
     if (empty($element)) {
       throw new Exception('Page not found');
     }
+    // Go to the user login page.
+    $this->getSession()->visit($this->locatePath('/user/login'));
+
+    // If I see this, I'm not logged in at all so log the user in.
+    $element->fillField('name', $username);
+    $element->fillField('pass', $passwd);
+    $submit = $element->findButton('Log in');
+    if (empty($submit)) {
+      throw new Exception('No submit button at ' . $this->getSession()->getCurrentUrl());
+    
+    
    }
    
    /**
