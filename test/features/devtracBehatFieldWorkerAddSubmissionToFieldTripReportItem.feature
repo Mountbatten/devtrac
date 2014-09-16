@@ -51,7 +51,7 @@ Feature: Field Worker Add Submission To A Field Trip Report Item Test
 
     Scenario: Field Worker submits a questionnaire on a Field Report Item
       Given I click the Welcome Link
-      And I click "Open FieldTrips"
+      And I click Open FieldTrips
       And I follow "behatFieldTrip"
       And I follow "Site Visit at behatLocation"
       And I click the link "Add Questionnaire" in the dropdown menu
@@ -61,7 +61,7 @@ Feature: Field Worker Add Submission To A Field Trip Report Item Test
   
     Scenario: Field Worker checks for their submission
       Given I click the Welcome Link
-      And I click "Open FieldTrips"
+      And I click Open FieldTrips
       And I follow "behatFieldTrip"
       And I follow "Site Visit at behatLocation" in the "site_visits" region
       And I click the link "Add Questionnaire" in the dropdown menu
