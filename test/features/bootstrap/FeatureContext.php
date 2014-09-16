@@ -151,7 +151,7 @@ class FeatureContext extends DrupalContext
     
     
    }
-   
+   }
    /**
  * @Given /^I am logged in as a user with the (\d+) role$/
    *
