@@ -133,9 +133,12 @@ class FeatureContext extends DrupalContext
     
     /**
     * @Given /^I am on the "([^"]*)"$/
-    *
-   public function iAmOnThe($arg1) {
-
+    */
+   public function iAmOnThe($element) {
+   $element = $this->getSession()->getPage();
+    if (empty($element)) {
+      throw new Exception('Page not found');
+    }
    }
    
    /**
