@@ -4,7 +4,7 @@ Feature: Devtrac Behat Test if the field trip is being created
   @api
   Scenario: Devtrac Behat create Field Trip
     Given I am logged in as a user with 5 role
-    And I follow "Add Field Trip" in the "userprofile_menu" region 
+    And I follow "Add Field Trip"
     And I should see "Create Field Trip"
     And I fill in "Title" with "fieldtripTest"
     And I fill in "Purpose" with "1"
