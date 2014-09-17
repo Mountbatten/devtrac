@@ -189,7 +189,7 @@
     <exec executable="${behat}" taskname="behat">
       <env key="BEHAT_PARAMS" value="${behat.params}"/>
       <env key="BEHAT_PARAMS" value="--ansi"/>
-      <env key="BEHAT_PARAMS" value="-f html --out /home/travis/build/TddDoctor/devtrac/report.html"/>
+      <env key="BEHAT_PARAMS" value="--format progress"/>
     </exec>
     <antcall target="selenium-stop" />
   </target>
