@@ -186,7 +186,7 @@
 
   <target name="behat" depends="build,behat-download">
     <antcall target="selenium-start" />
-    <exec executable="${behat} -f html --out ${buildrep}/report.html -p firefox" taskname="behat">
+    <exec executable="${behat} --ansi" taskname="behat">
       <env key="BEHAT_PARAMS" value="${behat.params}"/>
     </exec>
     <antcall target="selenium-stop" />
