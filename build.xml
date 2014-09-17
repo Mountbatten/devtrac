@@ -182,14 +182,14 @@
 
   <target name="behat" depends="build,behat-download">
     <antcall target="selenium-start" />
-    <exec executable="${behat} -f html --out ${basedir}/build" taskname="behat">
+    <exec executable="${behat} -f html --out /home/travis/build/TddDoctor/devtrac/report.html" taskname="behat">
       <env key="BEHAT_PARAMS" value="${behat.params}"/>
     </exec>
     <antcall target="selenium-stop" />
   </target>
 
   <target name="selenium-check" depends="prepare">
-    <available file="${selenium}"property="selenium.present"/>
+    <available file="${selenium}" property="selenium.present"/>
   </target>
 
   <target name="selenium-download" unless="selenium.present">
