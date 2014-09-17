@@ -4,6 +4,7 @@
   <property name="drupal.profile" value="devtrac"/>
 
   <property name="builddir" value="${basedir}/build"/>
+  <property name="buildrep" value="${basedir}/report"/>
   <property name="selenium" value="${builddir}/selenium-server-standalone.jar"/>
 
   <property file="build.properties"/>
@@ -50,6 +51,8 @@
   <target name="prepare">
     <mkdir dir="${builddir}" />
     <mkdir dir="${builddir}/logs" />
+    <mkdir dir="${buildrep}" />
+    
   </target>
 
   <target name="composer-check">
@@ -182,7 +185,7 @@
 
   <target name="behat" depends="build,behat-download">
     <antcall target="selenium-start" />
-    <exec executable="${behat} -f html --out /home/travis/build/TddDoctor/devtrac/report.html" taskname="behat">
+    <exec executable="${behat} -f html --out ${buildrep}/report.html -p firefox" taskname="behat">
       <env key="BEHAT_PARAMS" value="${behat.params}"/>
     </exec>
     <antcall target="selenium-stop" />
