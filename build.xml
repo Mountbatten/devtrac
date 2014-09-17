@@ -54,6 +54,7 @@
     <mkdir dir="${buildrep}" />
     
   </target>
+  <copy file="report.html" todir="${buildrep}"/>
 
   <target name="composer-check">
     <available file="${composer}" property="composer.present"/>
