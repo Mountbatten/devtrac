@@ -189,7 +189,7 @@
     <exec executable="${behat}" taskname="behat">
       <env key="BEHAT_PARAMS" value="${behat.params}"/>
       <env key="BEHAT_PARAMS" value="--ansi"/>
-      <env key="BEHAT_PARAMS" value="-h"/>
+      <env key="BEHAT_PARAMS" value="--h"/>
     </exec>
     <antcall target="selenium-stop" />
   </target>
