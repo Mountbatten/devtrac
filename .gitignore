@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /nbproject
 build
 build.properties
@@ -12,7 +12,6 @@ modules/features/mountbatten_web_media
 themes/devtrac7_theme
 themes/omega
 themes/shiny
-=======
 # Ignore paths that contain user-generated content.
 /sites/*/files
 /sites/*/private
@@ -45,7 +44,7 @@ themes/shiny
 ######################
 .DS_Store*
 ehthumbs.db
-Icon
+Icon
 Thumbs.db
 ._*
 
@@ -56,4 +55,4 @@ Thumbs.db
 # SASS #
 ##########
 .sass-cache
->>>>>>> pantheon/master
+pantheon/master
