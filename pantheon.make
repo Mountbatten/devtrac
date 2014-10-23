@@ -1,3 +1,6 @@
+; This is intended to upgrade devtrac install to be compatable with pantheon system 
+
+
 projects[drupal][type] = core
 projects[drupal][version] = 7.31
 projects[drupal][download][type] = "git"
