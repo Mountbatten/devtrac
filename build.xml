@@ -11,7 +11,7 @@
 
   <property name="account.name"     value="admin"/>
   <property name="account.pass"     value="admin"/>
-  <property name="install_configure_form.site_default_country" value="Ug"/>
+  <property name="install_configure_form.site_default_country" value="UG"/>
   <property name="account.mail"     value="test@example.com"/>
   <property name="base.url"         value="http://localhost"/>
   <property name="behat.params"     value="extensions[Behat\MinkExtension\Extension][base_url]=${base.url}"/>
