@@ -8,6 +8,7 @@
   <property name="selenium" value="${builddir}/selenium-server-standalone.jar"/>
 
   <property file="build.properties"/>
+  <property name="install_configure_form.site_default_country"     value="UG"/>
   <property name="account.name"     value="admin"/>
   <property name="account.pass"     value="admin"/>
   <property name="account.mail"     value="test@example.com"/>
@@ -142,9 +143,8 @@
       <arg value="--account-pass=${account.pass}"/>
       <arg value="--account-mail=${account.mail}"/>
       <arg value="--account-name=${account.name}"/>
-      <arg value="install_configure_form.site_default_country=UG"/>
-      <arg value="devtrac_install_statistics_select_form.module=none"/>
-      <arg value="install_configure_form.date_default_timezone=Africa/Kampala"/>
+      <arg value="--site_default_country="/>
+      <arg value="--date_default_timezone=Africa/Kampala"/>
       <arg value="--clean-url"/>
       <arg value="--sites-subdir=${sites.subdir}"/>
       <arg value="${drupal.profile}"/>
