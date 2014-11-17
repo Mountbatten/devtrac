@@ -139,7 +139,6 @@
       <arg value="${drupal.profile}"/>
       
       <arg value="--db-url=${db.url}"/>
-      <arg value="install_configure_form.site_default_country=UG"/>
       <arg value="--site-name=${site.name}"/>
       <arg value="--site-mail=${site.mail}"/>
       <arg value="--account-pass=${account.pass}"/>
@@ -147,7 +146,7 @@
       <arg value="--account-name=${account.name}"/>
       <arg value="--sites-subdir=${sites.subdir}"/>
       <arg value="${drupal.profile}"/>
-      <arg value="${drupal.args}"/>
+      <arg value="${drush.args}"/>
     </exec>
   </target>
 
