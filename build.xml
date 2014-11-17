@@ -143,7 +143,7 @@
       <arg value="--account-mail=${account.mail}"/>
       <arg value="--account-name=${account.name} site_default_country=UG"/>
       <arg value="--clean-url"/>
-      <arg value="--strict=0"
+      <arg value="--strict=0"/>
       <arg value="--site_default_country=UG"/>
       <arg value="--date_default_timezone=Africa/Kampala"/>
       <arg value="--sites-subdir=${sites.subdir}"/>
