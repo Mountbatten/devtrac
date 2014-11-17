@@ -142,9 +142,9 @@
       <arg value="--account-pass=${account.pass}"/>
       <arg value="--account-mail=${account.mail}"/>
       <arg value="--account-name=${account.name}"/>
-      <arg value="--install_configure_form.site_default_country=UG"/>
-      <arg value="--devtrac_install_statistics_select_form.module=none"/>
-      <arg value="--install_configure_form.date_default_timezone=Africa/Kampala"/>
+      <arg value="install_configure_form.site_default_country=UG"/>
+      <arg value="devtrac_install_statistics_select_form.module=none"/>
+      <arg value="install_configure_form.date_default_timezone=Africa/Kampala"/>
       <arg value="--clean-url"/>
       <arg value="--sites-subdir=${sites.subdir}"/>
       <arg value="${drupal.profile}"/>
