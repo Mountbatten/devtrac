@@ -8,7 +8,6 @@
   <property name="selenium" value="${builddir}/selenium-server-standalone.jar"/>
 
   <property file="build.properties"/>
-  <property name="install_configure_form.site_default_country"     value="UG"/>
   <property name="account.name"     value="admin"/>
   <property name="account.pass"     value="admin"/>
   <property name="account.mail"     value="test@example.com"/>
@@ -144,6 +143,7 @@
       <arg value="--account-mail=${account.mail}"/>
       <arg value="--account-name=${account.name} site_default_country=UG"/>
       <arg value="--clean-url"/>
+      <arg value="--strict=0"
       <arg value="--site_default_country=UG"/>
       <arg value="--date_default_timezone=Africa/Kampala"/>
       <arg value="--sites-subdir=${sites.subdir}"/>
