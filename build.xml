@@ -8,7 +8,6 @@
   <property name="selenium" value="${builddir}/selenium-server-standalone.jar"/>
 
   <property file="build.properties"/>
-
   <property name="account.name"     value="admin"/>
   <property name="account.pass"     value="admin"/>
   <property name="account.mail"     value="test@example.com"/>
@@ -137,7 +136,7 @@
       <arg value="site-install"/>
       <arg value="-y"/>
       <arg value="${drupal.profile}"/>
-      
+      <arg value="install_configure_form.site_default_country = UG"/>
       <arg value="--db-url=${db.url}"/>
       <arg value="--site-name=${site.name}"/>
       <arg value="--site-mail=${site.mail}"/>
@@ -146,7 +145,7 @@
       <arg value="--account-name=${account.name}"/>
       <arg value="--sites-subdir=${sites.subdir}"/>
       <arg value="${drupal.profile}"/>
-      <arg value="${drush.args}"/>
+      <arg value="${drupal.args}"/>
     </exec>
   </target>
 
