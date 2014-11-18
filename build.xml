@@ -144,6 +144,7 @@
       <arg value="--account-mail=${account.mail}"/>
       <arg value="--account-name=${account.name}"/>
       <arg value="--sites-subdir=${sites.subdir}"/>
+      <arg value="--clean-url"/>
       <arg value="${drupal.args}"/>
     </exec>
   </target>
