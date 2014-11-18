@@ -9,7 +9,7 @@ db.url=mysql://username:password@host/db
 #account.mail=test@example.com
 account-mail=ishmael@mountbatten.net
 site.mail=ishmael@mountbatten.net
-install_configure_form.site_default_country=UG
+drupal.args=install_configure_form.site_default_country=UG
 install_configure_form.date_default_timezone=Africa/Kampala
 devtrac_install_statistics_select_form.module=none
 devtrac_solr_configure_form.host=localhost
