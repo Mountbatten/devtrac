@@ -1,18 +1,12 @@
 
 base.url=http://localhost
 db.url=mysql://username:password@host/db
+drupal.profile=devtrac
 
-#sites.subdir=default
-#site.mail=test@example.com
-#account.name=admin
-#account.pass=admin
-#account.mail=test@example.com
+#sites.subdir=verynotdefault
+site.mail=ishmael@mountbatten.net
+account.name=admin
+account.pass=admin
 account-mail=ishmael@mountbatten.net
 site.mail=ishmael@mountbatten.net
-drupal.args=install_configure_form.site_default_country=UG
-install_configure_form.date_default_timezone=Africa/Kampala
-devtrac_install_statistics_select_form.module=none
-devtrac_solr_configure_form.host=localhost
-devtrac_solr_configure_form.port=8983
-devtrac_solr_configure_form.path=/solr
-devtrac_username_geonames_form.username=devtrac
+drupal.args=install_configure_form.site_default_country=UG devtrac_solr_configure_form.port=8983 devtrac_solr_configure_form.path=/solr install_configure_form.date_default_timezone=Africa/Kampala devtrac_install_statistics_select_form.module=none devtrac_solr_configure_form.host=localhost devtrac_username_geonames_form.username=devtrac
