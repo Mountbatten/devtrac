@@ -8,7 +8,4 @@ site.mail=ishmael@mountbatten.net
 account.name=admin
 account.pass=admin
 account-mail=ishmael@mountbatten.net
-
-
-
-drupal.args=install_configure_form.site_default_country=UG
+drupal.args= --clean-url install_configure_form.site_default_country=UG
