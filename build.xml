@@ -143,10 +143,8 @@
       <arg value="--account-pass=${account.pass}"/>
       <arg value="--account-mail=${account.mail}"/>
       <arg value="--account-name=${account.name}"/>
-      <arg value="install_configure_form.site_default_country=${install_configure_form.site_default_country}"/>
       <arg value="--clean-url"/>
-      <arg value="${drupal.profile}"/>
-      <!-- <arg value="${drupal.args}"/> -->
+      <arg value="${drupal.args}"/>
     </exec>
   </target>
 
