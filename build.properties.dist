@@ -11,4 +11,4 @@ account-mail=ishmael@mountbatten.net
 
 
 
-drupal.args=install_configure_form.site_default_country=UG
+drupal.args=install_configure_form.site_default_country="UG"
