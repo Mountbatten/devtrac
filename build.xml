@@ -137,7 +137,6 @@
       <arg value="site-install"/>
       <arg value="-y"/>
       <arg value="${drupal.profile}"/>
-      
       <arg value="--db-url=${db.url}"/>
       <arg value="--site-name=${site.name}"/>
       <arg value="--site-mail=${site.mail}"/>
@@ -145,7 +144,6 @@
       <arg value="--account-mail=${account.mail}"/>
       <arg value="--account-name=${account.name}"/>
       <arg value="--sites-subdir=${sites.subdir}"/>
-      <arg value="${drupal.profile}"/>
       <arg value="${drupal.args}"/>
     </exec>
   </target>
