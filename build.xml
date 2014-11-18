@@ -11,6 +11,7 @@
   <property name="account.name"     value="admin"/>
   <property name="account.pass"     value="admin"/>
   <property name="account.mail"     value="test@example.com"/>
+  <property name="install_configure_form.site_default_country"     value="UG"/>
   <property name="base.url"         value="http://localhost"/>
   <property name="behat.params"     value="extensions[Behat\MinkExtension\Extension][base_url]=${base.url}"/>
   <property name="composer"         value="${builddir}/composer.phar"/>
@@ -142,9 +143,10 @@
       <arg value="--account-pass=${account.pass}"/>
       <arg value="--account-mail=${account.mail}"/>
       <arg value="--account-name=${account.name}"/>
+      <arg value="install_configure_form.site_default_country=${install_configure_form.site_default_country}"
       <arg value="--clean-url"/>
       <arg value="${drupal.profile}"/>
-      <arg value="${drupal.args}"/>
+      <!-- <arg value="${drupal.args}"/> -->
     </exec>
   </target>
 
