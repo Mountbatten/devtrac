@@ -18,7 +18,7 @@
   <property name="db.url"           value="mysql://username:password@host/db"/>
   <property name="docroot"          value="${basedir}/docroot"/>
   <property name="drush.makefile"   value="build-${drupal.profile}.make"/>
-  <property name="drush.args"       value="UG"/>
+  <property name="drush.args"       value=""/>
   <property name="php"              value="php"/>
   <property name="rsync"            value="rsync"/>
   <property name="selenium.version" value="2.42.2"/>
