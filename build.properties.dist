@@ -9,5 +9,5 @@ account.name=admin
 account.pass=admin
 account-mail=ishmael@mountbatten.net
 site.mail=ishmael@mountbatten.net
-drupal.args=UG 
+drupal.args=install_configure_form.site_default_country=UG
 #devtrac_solr_configure_form.port=8983 devtrac_solr_configure_form.path=/solr install_configure_form.date_default_timezone=Africa/Kampala devtrac_install_statistics_select_form.module=none devtrac_solr_configure_form.host=localhost devtrac_username_geonames_form.username=devtrac
