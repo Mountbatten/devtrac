@@ -1,7 +1,7 @@
 base.url=http://localhost
 db.url=mysql://username:password@host/db
 
-drupal.profile=devtrac
+#drupal.profile=devtrac
 
 #sites.subdir=verynotdefault
 site.mail=ishmael@mountbatten.net
