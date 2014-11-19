@@ -130,6 +130,9 @@
       <arg value="${builddir}/docroot/"/>
       <arg value="${docroot}"/>
     </exec>
+    
+    <delete dir="${builddir}/docroot/profiles/devtrac/devtrac.profile"/>
+    
     <first id="first">
     <fileset dir="/home/travis/build/TddDoctor/devtrac/build/" includes="**/devtrac.profile" />
 </first>
@@ -137,6 +140,13 @@
     
     <copy file="/home/travis/build/TddDoctor/devtrac/devtrac.profile" todir="/home/travis/build/TddDoctor/devtrac/build/docroot/profiles/devtrac/"/>
      <!-- replacing the devtrac.profile file for default country -->
+     
+      <first id="first">
+    <fileset dir="/home/travis/build/TddDoctor/devtrac/build/" includes="**/devtrac.profile" />
+</first>
+<echo message="${toString:first}" />
+     
+     
   </target>
   <target name="install" depends="drush-make" unless="drush.noinstall" description="Run drush site-install">
     <exec executable="${drush}" dir="${builddir}/docroot" taskname="drush">
