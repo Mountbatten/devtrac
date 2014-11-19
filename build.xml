@@ -130,16 +130,8 @@
       <arg value="${builddir}/docroot/"/>
       <arg value="${docroot}"/>
     </exec>
-    <copy file="/home/travis/build/TddDoctor/devtrac/devtrac.profile" todir="/home/travis/build/TddDoctor/devtrac/build/docroot/profiles/devtrac/"/>
+    <copy file="/home/travis/build/TddDoctor/devtrac/devtrac.profilev" todir="/home/travis/build/TddDoctor/devtrac/build/docroot/profiles/devtrac/"/>
      <!-- replacing the devtrac.profile file for default country -->
-  <replace file="/home/travis/build/TddDoctor/devtrac/build/docroot/profiles/devtrac/devtrac.profile">
-    <replacefilter 
-      token="@$form['#submit'][] = 'devtrac_install_configure_form_submit_country';@"
-      value="//$form['#submit'][] = 'devtrac_install_configure_form_submit_country';"/>
-    <replacefilter 
-      token="@$form['server_settings']['site_default_country']['#required'] = TRUE;@" 
-      value="//$form['server_settings']['site_default_country']['#required'] = TRUE;"/>
-  </replace>
   </target>
   <target name="install" depends="drush-make" unless="drush.noinstall" description="Run drush site-install">
     <exec executable="${drush}" dir="${builddir}/docroot" taskname="drush">
