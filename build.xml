@@ -131,19 +131,14 @@
       <arg value="${docroot}"/>
     </exec>
     
-    <delete dir="/home/travis/build/TddDoctor/devtrac/build/docroot/profiles/devtrac/devtrac.profile"/>
-    
-    <first id="first">
+  <first id="first">
     <fileset dir="/home/travis/build/TddDoctor/devtrac/build/" includes="**/devtrac.profile" />
-</first>
-<echo message="${toString:first}" />
+  </first>
+  <echo message="${toString:first}" />
     
-    <copy file="/home/travis/build/TddDoctor/devtrac/devtrac.profile" todir="/home/travis/build/TddDoctor/devtrac/build/docroot/profiles/devtrac/"/>
+  <copy file="/home/travis/build/TddDoctor/devtrac/devtrac.profile" todir="/home/travis/build/TddDoctor/devtrac/build/docroot/profiles/devtrac/devtrac.profile"/>
      <!-- replacing the devtrac.profile file for default country -->
-     
-      <first id="first">
-    <fileset dir="/home/travis/build/TddDoctor/devtrac/build/" includes="**/devtrac.profile" />
-</first>
+
 <echo message="${toString:first}" />
      
      
