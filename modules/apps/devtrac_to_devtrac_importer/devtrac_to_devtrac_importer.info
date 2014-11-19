@@ -1,0 +1,6 @@
+name = "Devtrac to Devtrac Importer Module"
+description = "Adds capability to import data from another devtrac installation."
+core = "7.x"
+package = "Devtrac"
+
+files[] = devtrac_to_devtrac_importer.module

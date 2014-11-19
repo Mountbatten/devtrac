@@ -136,6 +136,13 @@ function devtrac7_theme_feature_quicktabs_default_quicktabs() {
       'weight' => '-98',
       'type' => 'block',
     ),
+    3 => array(
+      'bid' => 'views_delta_dvtrc_locations-block_5',
+      'hide_title' => 1,
+      'title' => 'Action Items',
+      'weight' => '-97',
+      'type' => 'block',
+    ),
   );
   $quicktabs->renderer = 'quicktabs';
   $quicktabs->style = 'nostyle';
@@ -143,6 +150,7 @@ function devtrac7_theme_feature_quicktabs_default_quicktabs() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Action Items');
   t('Contact Information');
   t('Details of this Location ');
   t('SiteVisits');

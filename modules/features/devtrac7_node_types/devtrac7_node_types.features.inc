@@ -42,14 +42,6 @@ function devtrac7_node_types_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'book' => array(
-      'name' => t('Book page'),
-      'base' => 'node_content',
-      'description' => t('A <em>book page</em> is a page of content, organized into a collection of related entries collectively known as a <em>book</em>. A <em>book page</em> automatically displays links to adjacent pages, providing a simple navigation system for organizing and reviewing structured content.'),
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
     'fieldtrip' => array(
       'name' => t('Field Trip'),
       'base' => 'node_content',
@@ -83,5 +75,6 @@ function devtrac7_node_types_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

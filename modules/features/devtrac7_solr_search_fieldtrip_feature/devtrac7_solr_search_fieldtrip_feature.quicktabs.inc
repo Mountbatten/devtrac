@@ -17,7 +17,7 @@ function devtrac7_solr_search_fieldtrip_feature_quicktabs_default_quicktabs() {
   $quicktabs->ajax = 0;
   $quicktabs->hide_empty_tabs = FALSE;
   $quicktabs->default_tab = 2;
-  $quicktabs->title = 'devtrac_fieldtrips_graphs_status_tabs';
+  $quicktabs->title = '';
   $quicktabs->tabs = array(
     0 => array(
       'bid' => 'devtrac7_realms_delta_40GF0FtAEL12iyvcx6YhbDzrsmTW1gM6',
@@ -53,7 +53,7 @@ function devtrac7_solr_search_fieldtrip_feature_quicktabs_default_quicktabs() {
   $quicktabs->ajax = 0;
   $quicktabs->hide_empty_tabs = FALSE;
   $quicktabs->default_tab = 2;
-  $quicktabs->title = 'devtrac_fieldtrips_graphs_tabs';
+  $quicktabs->title = '';
   $quicktabs->tabs = array(
     0 => array(
       'machine_name' => 'devtrac_fieldtrips_graphs_status',

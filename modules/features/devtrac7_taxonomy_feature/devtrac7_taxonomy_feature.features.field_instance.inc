@@ -525,62 +525,6 @@ function devtrac7_taxonomy_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-vocabulary_8-field_oecd_place_type'
-  $field_instances['taxonomy_term-vocabulary_8-field_oecd_place_type'] = array(
-    'bundle' => 'vocabulary_8',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
-      ),
-      'district_profile_view_mode' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
-      ),
-      'map_popup_view_mode' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
-      ),
-      'sector_code_icon' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'taxonomy_term',
-    'field_name' => 'field_oecd_place_type',
-    'label' => 'Location Type',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 3,
-    ),
-  );
-
   // Exported field_instance: 'taxonomy_term-vocabulary_8-field_term_icon'
   $field_instances['taxonomy_term-vocabulary_8-field_term_icon'] = array(
     'bundle' => 'vocabulary_8',
@@ -665,6 +609,7 @@ function devtrac7_taxonomy_feature_field_default_field_instances() {
   t('OSM Relation Id');
   t('OSM Type');
   t('SVG Data');
+  t('Tags');
   t('Term Icon');
   t('Wikipedia');
 

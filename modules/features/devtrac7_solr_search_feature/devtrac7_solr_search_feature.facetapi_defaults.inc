@@ -76,6 +76,8 @@ function devtrac7_solr_search_feature_facetapi_default_facet_settings() {
     'default_true' => '1',
     'facet_search_ids' => array(),
     'exclude' => 0,
+    'individual_parent' => 0,
+    'limit_active_items' => 0,
   );
   $export['search_api@devtrac_solr_site_visits_index::author'] = $facet;
 
@@ -223,6 +225,72 @@ function devtrac7_solr_search_feature_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
+  $facet->name = 'search_api@devtrac_solr_site_visits_index::field_ftritem_status';
+  $facet->searcher = 'search_api@devtrac_solr_site_visits_index';
+  $facet->realm = '';
+  $facet->facet = 'field_ftritem_status';
+  $facet->enabled = FALSE;
+  $facet->settings = array(
+    'operator' => 'and',
+    'hard_limit' => 50,
+    'dependencies' => array(
+      'roles' => array(
+        5 => '5',
+        1 => 0,
+        3 => 0,
+        4 => 0,
+        6 => 0,
+        2 => 0,
+        7 => 0,
+      ),
+      'bundle' => 'none',
+      'bundle_selected' => array(
+        'actionitem' => 0,
+        'article' => 0,
+        'page' => 0,
+        'fieldtrip' => 0,
+        'ftritem' => 0,
+        'place' => 0,
+        'questionnaire_question' => 0,
+        'questionnaire' => 0,
+      ),
+      'facets' => array(
+        'taxonomy_vocabulary_6:field_district_category' => 0,
+        'author:field_user_superior' => 0,
+        'search_api_aggregation_1' => 0,
+        'taxonomy_vocabulary_8' => 0,
+        'author' => 0,
+        'status' => 0,
+        'taxonomy_vocabulary_1' => 0,
+        'taxonomy_vocabulary_6' => 0,
+        'taxonomy_vocabulary_7' => 0,
+        'field_ftritem_date_visited' => 0,
+      ),
+      'force_deactivation' => 1,
+      'regex' => 0,
+      'facet_items_taxonomy_vocabulary_6:field_district_category' => '',
+      'facet_items_author:field_user_superior' => '',
+      'facet_items_search_api_aggregation_1' => '',
+      'facet_items_taxonomy_vocabulary_8' => '',
+      'facet_items_author' => '',
+      'facet_items_status' => '',
+      'facet_items_taxonomy_vocabulary_1' => '',
+      'facet_items_taxonomy_vocabulary_6' => '',
+      'facet_items_taxonomy_vocabulary_7' => '',
+      'facet_items_field_ftritem_date_visited' => '',
+    ),
+    'facet_mincount' => 1,
+    'facet_missing' => 0,
+    'flatten' => 0,
+    'individual_parent' => 0,
+    'query_type' => 'term',
+    'limit_active_items' => 0,
+  );
+  $export['search_api@devtrac_solr_site_visits_index::field_ftritem_status'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
   $facet->name = 'search_api@devtrac_solr_site_visits_index::taxonomy_vocabulary_1';
   $facet->searcher = 'search_api@devtrac_solr_site_visits_index';
   $facet->realm = '';
@@ -246,10 +314,41 @@ function devtrac7_solr_search_feature_facetapi_default_facet_settings() {
     'default_true' => '1',
     'facet_search_ids' => array(),
     'exclude' => 0,
-    'individual_parent' => 0,
+    'individual_parent' => '0',
     'limit_active_items' => 0,
   );
   $export['search_api@devtrac_solr_site_visits_index::taxonomy_vocabulary_1'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
+  $facet->name = 'search_api@devtrac_solr_site_visits_index::taxonomy_vocabulary_1:parents_all';
+  $facet->searcher = 'search_api@devtrac_solr_site_visits_index';
+  $facet->realm = '';
+  $facet->facet = 'taxonomy_vocabulary_1:parents_all';
+  $facet->enabled = FALSE;
+  $facet->settings = array(
+    'operator' => 'and',
+    'hard_limit' => '15',
+    'dependencies' => array(
+      'facets' => array(),
+      'force_deactivation' => TRUE,
+      'regex' => FALSE,
+      'roles' => array(),
+      'bundle' => 'none',
+      'bundle_selected' => array(),
+    ),
+    'facet_mincount' => '1',
+    'facet_missing' => '0',
+    'flatten' => '0',
+    'individual_parent' => '0',
+    'query_type' => 'term',
+    'limit_active_items' => 0,
+    'default_true' => '1',
+    'facet_search_ids' => array(),
+    'exclude' => 0,
+  );
+  $export['search_api@devtrac_solr_site_visits_index::taxonomy_vocabulary_1:parents_all'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -519,7 +618,7 @@ function devtrac7_solr_search_feature_facetapi_default_facet_settings() {
       'natural' => '4',
       'indexed' => '4',
     ),
-    'empty_behavior' => 'text',
+    'empty_behavior' => 'none',
     'soft_limit' => '5',
     'nofollow' => 1,
     'show_expanded' => 0,
@@ -563,6 +662,8 @@ function devtrac7_solr_search_feature_facetapi_default_facet_settings() {
     'swatch_shownoimage' => 1,
     'swatch_imagestyle_select' => 'devtrac_oecd_icons_bw',
     'graphsflot' => 'point',
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
   );
   $export['search_api@devtrac_solr_site_visits_index:block:author'] = $facet;
 
@@ -1154,7 +1255,7 @@ function devtrac7_solr_search_feature_facetapi_default_facet_settings() {
   $facet->searcher = 'search_api@devtrac_solr_site_visits_index';
   $facet->realm = 'block';
   $facet->facet = 'taxonomy_vocabulary_1';
-  $facet->enabled = TRUE;
+  $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'search_api_swatches',
@@ -1168,7 +1269,7 @@ function devtrac7_solr_search_feature_facetapi_default_facet_settings() {
         'weight' => '-49',
       ),
       'exclude_items' => array(
-        'status' => 1,
+        'status' => 0,
         'weight' => '-48',
       ),
       'rewrite_items' => array(
@@ -1257,7 +1358,7 @@ function devtrac7_solr_search_feature_facetapi_default_facet_settings() {
     'swatch_shownoimage' => 1,
     'swatch_imagestyle_select' => 'map_icon',
     'graphsflot' => 'point',
-    'exclude' => 'Other Locations, 49, Pabolo, 235',
+    'exclude' => '',
     'regex' => 0,
     'show_minimum_items' => 2,
     'yfacet' => '',
@@ -1265,6 +1366,71 @@ function devtrac7_solr_search_feature_facetapi_default_facet_settings() {
     'facet_fewer_text' => 'Show fewer',
   );
   $export['search_api@devtrac_solr_site_visits_index:block:taxonomy_vocabulary_1'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
+  $facet->name = 'search_api@devtrac_solr_site_visits_index:block:taxonomy_vocabulary_1:parents_all';
+  $facet->searcher = 'search_api@devtrac_solr_site_visits_index';
+  $facet->realm = 'block';
+  $facet->facet = 'taxonomy_vocabulary_1:parents_all';
+  $facet->enabled = TRUE;
+  $facet->settings = array(
+    'weight' => 0,
+    'widget' => 'search_api_swatches',
+    'filters' => array(),
+    'active_sorts' => array(
+      'active' => 'active',
+      'count' => 'count',
+      'display' => 'display',
+      'natural' => 0,
+      'indexed' => 0,
+    ),
+    'sort_weight' => array(
+      'active' => '-50',
+      'count' => '-49',
+      'display' => '-48',
+      'natural' => '0',
+      'indexed' => '0',
+    ),
+    'sort_order' => array(
+      'active' => '3',
+      'count' => '3',
+      'display' => '4',
+      'natural' => '4',
+      'indexed' => '4',
+    ),
+    'empty_behavior' => 'none',
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'soft_limit' => '0',
+    'nofollow' => 1,
+    'show_expanded' => 0,
+    'graphs_combotitle' => NULL,
+    'graphs_comboshowzoom' => 0,
+    'graphs_comboengine' => 'flot',
+    'graphs_combonofollow' => 1,
+    'graphs_combowidth' => '500',
+    'graphs_comboheight' => '400',
+    'graphs_comboy_min' => NULL,
+    'graphs_comboy_max' => NULL,
+    'graphs_comboy_step' => NULL,
+    'graphs_comboy_legend' => NULL,
+    'graphs_combobackground_colour' => '#fff',
+    'graphs_comboseries_colours' => NULL,
+    'graphs_comboshowlegend' => 1,
+    'tagcloud_levels' => '6',
+    'swatch_field' => 'field_term_icon',
+    'swatch_imagestyle' => 'map_icon_bw',
+    'swatch_showtext' => 1,
+    'swatch_shownoimage' => 1,
+    'swatch_imagestyle_select' => 'map_icon',
+    'empty_text' => array(
+      'value' => 'som\'hin\'',
+      'format' => '1',
+    ),
+  );
+  $export['search_api@devtrac_solr_site_visits_index:block:taxonomy_vocabulary_1:parents_all'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -2406,7 +2572,7 @@ function devtrac7_solr_search_feature_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_links',
+    'widget' => 'search_api_swatches',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
@@ -2460,17 +2626,19 @@ function devtrac7_solr_search_feature_facetapi_default_facet_settings() {
     'graphsseries_colours' => '',
     'graphsshowlegend' => 1,
     'tagcloud_levels' => '6',
-    'swatch_field' => '',
-    'swatch_imagestyle' => 'devtrac_oecd_icons_bw',
-    'swatch_showtext' => 0,
+    'swatch_field' => 'field_term_icon',
+    'swatch_imagestyle' => 'devtrac_oecd_icons_color_small',
+    'swatch_showtext' => 1,
     'swatch_shownoimage' => 1,
-    'swatch_imagestyle_select' => 'devtrac_oecd_icons_bw',
+    'swatch_imagestyle_select' => 'devtrac_oecd_icons_bw_small',
     'graphsflot' => 'point',
     'empty_text' => array(
       'value' => '',
       'format' => '1',
     ),
     'submit_realm' => 'Save and go back to realm settings',
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
   );
   $export['search_api@devtrac_solr_site_visits_index:devtrac7_graph_combo_2:taxonomy_vocabulary_1'] = $facet;
 

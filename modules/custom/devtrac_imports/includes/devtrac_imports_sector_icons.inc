@@ -21,13 +21,13 @@ class DevtracImportsSectorIcons extends XMLMigration {
       'code' => t('sector code'),
       'filename' => t('Image filename, relative to the source directory'),
       'description' => t('Description of the image'),
+      'name' => t('Name of Sector Code'),
     );
 
     // Our test data is in an XML file
-    $xml_folder = drupal_get_path('module', 'devtrac_imports');
-    $items_url = $xml_folder . '/data/sectors.xml';
-    $item_xpath = '/sectors//sector';
-    $item_ID_xpath = '@code';
+    $items_url = 'http://codelists103.archive.iatistandard.org/data/codelist/Sector/version/1.0/lang/en.xml';
+    $item_xpath = '/codelist/Sector';
+    $item_ID_xpath = 'code';
     $items_class = new MigrateItemsXML($items_url, $item_xpath, $item_ID_xpath);
     $this->source = new MigrateSourceMultiItems($items_class, $fields);
 
@@ -36,19 +36,19 @@ class DevtracImportsSectorIcons extends XMLMigration {
 
     // The source images are in a local directory - specify the parent.
     $this->addFieldMapping('source_dir')
-         ->defaultValue(drupal_get_path('theme', 'devtrac7_theme') . '/icons/sectors');    // The 'value' of the media destination is mapped to the source field
+         ->defaultValue(path_to_theme() . '/icons/sectors');    // The 'value' of the media destination is mapped to the source field
     // representing the media itself - in this case, a filename relative to
     // source_dir.
     $this->addFieldMapping('value', 'filename');
          //->xpath('code');
     // Fields on the entity can be mapped in the usual way.
-    $this->addFieldMapping('field_image_description', 'description')
-         ->xpath('description');
+//    $this->addFieldMapping('field_image_description', 'description')
+//         ->xpath('description');
 
     $this->addFieldMapping('uid')
          ->defaultValue(1);
-    $this->addFieldMapping('field_migrate_example_image:alt', 'code');
-    $this->addFieldMapping('field_migrate_example_image:title', 'code');
+    $this->addFieldMapping('field_file_image_title_text', 'name');
+    $this->addFieldMapping('field_file_image_alt_text', 'name');
     
     $this->addUnmigratedDestinations(array('field_image_description:format',
       'field_image_description:language', 'destination_dir', 'destination_file',

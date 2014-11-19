@@ -9,64 +9,54 @@ version = '1.x'
 ;Stylesheets
 stylesheets[all][] = css/newstyles.css
 
+;Scripts
+scripts[]=js/menuResize.js
 
+regions[branding] = 'Branding'
+regions[menu] = 'Menu'
+regions[featured] = 'Featured'
+regions[highlighted] = 'Highlighted'
+regions[sidebar_first] = 'Sidebar First'
+regions[content] = 'Content'
+regions[sidebar_second] = 'Sidebar Second'
+regions[postscript_first] = 'Postscript First'
+regions[postscript_second] = 'Postscript Second'
+regions[footer_first] = 'Footer First'
+regions[footer_second] = 'Footer Second'
 
 regions[page_top] = 'Page Top'
 regions[page_bottom] = 'Page Bottom'
-; Changed this
-regions[content] = 'Content First'
 regions[help] = 'Help'
-regions[user_first] = 'User Bar First'
-regions[user_second] = 'User Bar Second'
-
-; Changed this
-regions[branding] = 'Logo & slogan'
-regions[menu] = 'Menu'
-regions[sidebar_first] = 'Sidebar First'
-; Changed this
-regions[sidebar_second] = 'Content Second'
-; Changed this
-regions[header_first] = 'Dashboard'
+regions[user_first] = 'User First'
+regions[user_second] = 'User Second'
+regions[header_first] = 'Header First'
 regions[header_second] = 'Header Second'
 regions[preface_first] = 'Preface First'
 regions[preface_second] = 'Preface Second'
 regions[preface_third] = 'Preface Third'
-regions[postscript_first] = 'Postscript First'
-regions[postscript_second] = 'Postscript Second'
 regions[postscript_third] = 'Postscript Third'
 regions[postscript_fourth] = 'Postscript Fourth'
-regions[footer_first] = 'Footer First'
-regions[footer_second] = 'Footer Second'
-; Added this
-regions[my_items_menu] = 'My Items Menu'
 
-
-; Added this
-regions[my_tool_menu] = 'My Tool menu'
-; Added this
+; Added these
 regions[categories] = 'Categories'
-; Added this
 regions[breadcrumb] = 'Breadcrumb'
-; Added this
 regions[filter] = 'Filter'
-; Added this
-regions[questions] = 'Questions'
-; Added this
+regions[questions] = 'Questions
 regions[map_toolbar] = 'Map Toolbar'
-; Changed this
-zones[header] = 'Dashboard'
+
+zones[branding] = 'Branding'
+zones[featured] = 'Featured'
+zones[highlighted] = 'Highlighted'
 zones[content] = 'Content'
+zones[media] = 'Media'
 zones[footer] = 'Footer'
 zones[user] = 'User'
 ; Added these
 zones[categories] = 'Categories'
 zones[filter_and_switcher] = 'Filter + Display Switcher'
-zones[breadcrumbsx] = 'Breadcrumbs'
-zones[branding] = 'Logo and Menu'
-zones[menu] = 'Menu'
+zones[breadcrumbs] = 'Breadcrumbs'
 zones[preface] = 'Preface'
 zones[postscript] = 'Postscript'
-
 
 breakpoints[narrow] = (min-width: 740px) and (min-device-width: 740px)
 breakpoints[narrow_landscape] = (max-device-width: 800px) and (min-width: 740px)

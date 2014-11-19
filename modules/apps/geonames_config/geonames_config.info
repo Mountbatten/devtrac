@@ -1,0 +1,6 @@
+name = "Geonames Configuration"
+description = "App for configuring geo-names"
+core = "7.x"
+package = "Devtrac"
+files[] = geonames_config.module
+dependencies[] = "geonames"

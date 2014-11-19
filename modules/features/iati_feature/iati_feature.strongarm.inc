@@ -343,7 +343,6 @@ function iati_feature_strongarm() {
     1 => 'management',
     2 => 'user-menu',
     3 => 'main-menu',
-    4 => 'menu-footermenu-right',
     6 => 'menu-my-dashboard-menu',
     7 => 'menu-my-profile',
   );

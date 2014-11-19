@@ -29,6 +29,7 @@ function devtrac7_views_feature_image_default_styles() {
   // Exported image style: gallery.
   $styles['gallery'] = array(
     'name' => 'gallery',
+    'label' => 'gallery',
     'effects' => array(
       1 => array(
         'label' => 'Adaptive',
@@ -58,13 +59,12 @@ function devtrac7_views_feature_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 380,
-          'height' => 280,
+          'width' => 200,
+          'height' => 200,
         ),
         'weight' => -9,
       ),
     ),
-    'label' => 'gallery',
   );
 
   // Exported image style: gallery_popup_images.

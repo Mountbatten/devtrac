@@ -17,7 +17,7 @@ function devtrac7_solr_search_questions_feature_quicktabs_default_quicktabs() {
   $quicktabs->ajax = 0;
   $quicktabs->hide_empty_tabs = TRUE;
   $quicktabs->default_tab = 2;
-  $quicktabs->title = 'devtrac_statistics_graphs_tabs';
+  $quicktabs->title = '';
   $quicktabs->tabs = array(
     0 => array(
       'bid' => 'devtrac7_realms_delta_pbHVdNjxfe0qBll3FVL2bDPrWgnHHpgq',

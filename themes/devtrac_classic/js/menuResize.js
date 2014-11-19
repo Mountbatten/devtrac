@@ -2,6 +2,12 @@
   Drupal.behaviors.menuResize = {
     attach: function(context, settings) {
     	
+        //dropdownArrow();
+
+        dropdownArrow('li.menuparent > a');
+        dropdownArrow('html.js fieldset.collapsible .fieldset-legend .fieldset-title');
+
+        
     	sizeMenuDiv();
     	menuResize();
     	$(window).resize(function() {
@@ -62,6 +68,21 @@
 				});
 			}
     	}
+
+
+
+
+        function dropdownArrow(item) {
+            if ($( item + ' .drop-arrow').length < 1) {
+                $(item).append('<span class="drop-arrow"></span>');
+            }           
+        }
+
     }
   };
 })(jQuery);
+
+
+
+
+

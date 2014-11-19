@@ -96,19 +96,19 @@ function devtrac7_solr_search_org_feature_context_default_contexts() {
         'current_search-devtrac7_organisations_standard' => array(
           'module' => 'current_search',
           'delta' => 'devtrac7_organisations_standard',
-          'region' => 'my_items_menu',
+          'region' => 'featured',
           'weight' => '-10',
         ),
         'views_modes-modes' => array(
           'module' => 'views_modes',
           'delta' => 'modes',
-          'region' => 'my_tool_menu',
+          'region' => 'featured',
           'weight' => '-10',
         ),
         'pane-organisations_info' => array(
           'module' => 'pane',
           'delta' => 'organisations_info',
-          'region' => 'my_tool_menu',
+          'region' => 'featured',
           'weight' => '-72',
         ),
       ),

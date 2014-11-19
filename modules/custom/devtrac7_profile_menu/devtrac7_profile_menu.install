@@ -4,7 +4,6 @@
  * Implements hook_install().
  */
 function devtrac7_profile_menu_install() {
-watchdog('profile_menu_install', 'Stage 1');
   // Create a menu if it does not exist yet.
   $menus = devtrac7_profile_menu_menu_default_menu_custom();
   // Save menu group into menu_custom table
@@ -16,7 +15,6 @@ watchdog('profile_menu_install', 'Stage 1');
       menu_save($menu);
     }
   }
-watchdog('profile_menu_install', 'Stage 2');
   // Add some links to the menu if they do not exist yet.
   $links = devtrac7_profile_menu_menu_default_menu_links();
   foreach ($links as $identifier => $link){
@@ -27,7 +25,6 @@ watchdog('profile_menu_install', 'Stage 2');
       menu_link_save($link);
     }
   }
-watchdog('profile_menu_install', 'Stage 3');
   // Make the "Edit My Profile" link the child of the "Welcome, ???" link.
   $menu_link = db_select('menu_links', 'ml')
     ->fields('ml')
@@ -65,7 +62,12 @@ watchdog('profile_menu_install', 'Stage 3');
     ->condition('menu_name', 'menu-my-profile')
     ->condition('router_path', 'node/add/fieldtrip')
     ->execute();
-watchdog('profile_menu_install', 'Stage 4');
+  db_update('menu_links')
+    ->expression('p1', 'plid')
+    ->expression('p2', 'mlid')
+    ->condition('menu_name', 'menu-my-profile')
+    ->condition('router_path', 'node/add/fieldtrip')
+    ->execute();
   // Let's do the view modes.
   $links = devtrac7_profile_menu_views_modes_menu_links();
   foreach ($links as $identifier => $link){
@@ -76,7 +78,6 @@ watchdog('profile_menu_install', 'Stage 4');
       menu_link_save($link);
     }
   }
-watchdog('profile_menu_install', 'Stage 5');
   // Now do the file exports.
   $links = devtrac7_profile_menu_file_exports_menu_links($mlid);
   foreach ($links as $identifier => $link){
@@ -87,25 +88,28 @@ watchdog('profile_menu_install', 'Stage 5');
       menu_link_save($link);
     }
   }
-watchdog('profile_menu_install', 'Stage 6');
   // Update the hierarchy of all file exports menu items.
-/*
   $menu_link = db_select('menu_links', 'ml')
     ->fields('ml')
     ->condition('menu_name', 'menu-my-profile')
     ->condition('router_path', '<nolink>')
     ->execute()
     ->fetchAssoc();
-  $mlid = $menu_link['mlid'];
+  if ($mlid = $menu_link['mlid']) {
+    $fields['plid'] = $mlid;
+  }
+  $fields['depth'] = 2;
   db_update('menu_links')
-    ->fields(array(
-      'depth' => 2,
-      'plid' => $mlid,
-    ))
+    ->fields($fields)
     ->condition('menu_name', 'menu-my-profile')
-    ->condition('router_path', '%analyse%', LIKE)
+    ->condition('router_path', '%analyse%', 'LIKE')
     ->execute();
-*/
+  db_update('menu_links')
+    ->expression('p1', 'plid')
+    ->expression('p2', 'mlid')
+    ->condition('menu_name', 'menu-my-profile')
+    ->condition('router_path', '%analyse%', 'LIKE')
+    ->execute();
 
   // Assign menu menu-my-profile to the second nice menu.
   variable_set('nice_menus_menu_2', 'menu-my-profile:0');
@@ -128,7 +132,6 @@ function devtrac7_profile_menu_uninstall() {
  * Implements hook_menu_default_menu_custom().
  */
 function devtrac7_profile_menu_menu_default_menu_custom() {
-watchdog('profile_menu_install', 'default menu custom');
   $menus = array();
 
   $menus['menu-my-profile'] = array(
@@ -144,7 +147,6 @@ watchdog('profile_menu_install', 'default menu custom');
  * Implements hook_menu_default_menu_links().
  */
 function devtrac7_profile_menu_menu_default_menu_links() {
-watchdog('profile_menu_install', 'default menu links');
   $menu_links = array();
 
   $menu_links['menu-my-profile_edit-my-profile:user/%/edit'] = array(
@@ -257,7 +259,6 @@ watchdog('profile_menu_install', 'default menu links');
 }
 
 function devtrac7_profile_menu_views_modes_menu_links() {
-watchdog('profile_menu_install', 'views modes menu links');
   // Set the title. We want to reuse it and add something.
   $title = 'Shows reports of Devtrac reporters from the field ';
 
@@ -958,7 +959,6 @@ watchdog('profile_menu_install', 'views modes menu links');
 }
 
 function devtrac7_profile_menu_file_exports_menu_links($mlid) {
-watchdog('profile_menu_install', 'file exports menu links');
   // Set the title. We want to reuse it and add something.
   $title = 'Export ';
 
@@ -1008,7 +1008,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -39,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1034,7 +1034,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -38,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1060,7 +1060,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -37,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1086,7 +1086,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -39,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1112,16 +1112,16 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -38,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
   );
 
-  $menu_items['menu-my-profile_action-items-analyse-rss:actionitemsanalyserss'] = array(
+  $menu_items['menu-my-profile_action-items-analyse-feed:actionitemsanalysefeed'] = array(
     'menu_name' => 'menu-my-profile',
-    'link_path' => 'actionitems/analyse/rss',
-    'router_path' => 'actionitems/analyse/rss',
+    'link_path' => 'actionitems/analyse/feed',
+    'router_path' => 'actionitems/analyse/feed',
     'link_title' => 'Subscribe to RSS Feed',
     'options' => array(
       'attributes' => array(
@@ -1131,14 +1131,14 @@ watchdog('profile_menu_install', 'file exports menu links');
       ),
       'alter' => 1,
       'customized' => 1,
-      'identifier' => 'menu-my-profile_action-items-analyse-rss:actionitemsanalyserss',
+      'identifier' => 'menu-my-profile_action-items-analyse-feed:actionitemsanalysefeed',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
     'weight' => -37,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1164,7 +1164,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -39,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1190,7 +1190,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -38,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1216,7 +1216,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -37,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1242,7 +1242,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -39,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1268,7 +1268,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -37,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1294,7 +1294,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -39,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1320,7 +1320,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -38,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1346,7 +1346,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -37,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1372,7 +1372,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -39,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1398,7 +1398,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -38,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1424,7 +1424,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -37,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1450,7 +1450,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -39,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1476,7 +1476,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -38,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1502,7 +1502,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -37,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1528,7 +1528,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -39,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1554,7 +1554,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -38,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',
@@ -1580,7 +1580,7 @@ watchdog('profile_menu_install', 'file exports menu links');
     'external' => 0,
     'weight' => -37,
     'has_children' => 0,
-    'depth' => 2,
+    'depth' => 1,
     'expanded' => 0,
     'customized' => 0,
     'parent_identifier' => 'menu-my-profile_export:export',

@@ -16,12 +16,6 @@ function devtrac7_menu_menu_default_menu_custom() {
     'title' => 'Main menu',
     'description' => 'Primary links are often used at the theme layer to show the major sections of a site. A typical representation for primary links would be tabs along the top.',
   );
-  // Exported menu: menu-footermenu-right.
-  $menus['menu-footermenu-right'] = array(
-    'menu_name' => 'menu-footermenu-right',
-    'title' => 'Footer Menu Right',
-    'description' => 'The right-most footer menu',
-  );
   // Exported menu: menu-my-dashboard-menu.
   $menus['menu-my-dashboard-menu'] = array(
     'menu_name' => 'menu-my-dashboard-menu',

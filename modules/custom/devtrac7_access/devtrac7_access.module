@@ -462,6 +462,10 @@ function devtrac7_access_node_access_records($node) {
   if ($node->type == 'fieldtrip') {
     $fieldtrip = $node;
     if (isset($fieldtrip->field_fieldtrip_status['und'][0]['value'])) {
+     if ((!isset($fieldtrip->field_fieldtrip_user)) || (!isset($fieldtrip->field_fieldtrip_user['und']))) {
+       // This may happen when field trips are anonymously imported using feeds
+       return;
+     }
       $localuser = user_load($fieldtrip->field_fieldtrip_user['und'][0]['target_id']);
       switch ($fieldtrip->field_fieldtrip_status['und'][0]['value']) {
         case 'In Progress':

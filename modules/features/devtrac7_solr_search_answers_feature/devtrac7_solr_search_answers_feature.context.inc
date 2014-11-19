@@ -53,7 +53,7 @@ function devtrac7_solr_search_answers_feature_context_default_contexts() {
         'current_search-devtrac7_answers_standard' => array(
           'module' => 'current_search',
           'delta' => 'devtrac7_answers_standard',
-          'region' => 'my_items_menu',
+          'region' => 'featured',
           'weight' => '-10',
         ),
       ),
@@ -101,7 +101,7 @@ function devtrac7_solr_search_answers_feature_context_default_contexts() {
         'pane-statistics_info' => array(
           'module' => 'pane',
           'delta' => 'statistics_info',
-          'region' => 'my_tool_menu',
+          'region' => 'featured',
           'weight' => '-72',
         ),
       ),

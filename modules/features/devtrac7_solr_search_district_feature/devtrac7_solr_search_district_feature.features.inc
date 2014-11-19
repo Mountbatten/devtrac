@@ -65,7 +65,7 @@ function devtrac7_solr_search_district_feature_default_search_api_index() {
     "server" : "devtrac_solr_server",
     "item_type" : "taxonomy_term",
     "options" : {
-      "index_directly" : 1,
+      "index_directly" : 0,
       "cron_limit" : "50",
       "fields" : {
         "description" : { "type" : "text" },

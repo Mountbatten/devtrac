@@ -26,23 +26,31 @@ function devtrac_imports_migrate_api() {
 /**
  * Implement hook_menu().
  */
+/*
 function devtrac_imports_menu(){
- $items['admin/config/devtrac_imports'] = array(
+  $items = array();
+
+ $items['admin/devtrac7/devtrac_imports'] = array(
  		'title' => 'Devtrac Imports',
  		'description' => t('Import iati code lists'),
  		'page callback' => 'devtrac_imports_import_terms',
  		'access callback' => TRUE,
+    'type' => 'MENU_CALLBACK',
   );
-  $items['admin/config/devtrac_imports_imported'] = array(
+
+
+  $items['admin/devtrac7/devtrac_imports_imported'] = array(
 		'title' => 'Importation Done',
 		'description' => t('Devtrac code lists Importation Completed'),
 		'page callback' => 'devtrac_imports_complete',
 		'access callback' => TRUE,
+    'type' => 'MENU_CALLBACK',
   );
+
   return $items;
 
 }
-
+ */
 function devtrac_imports_import_terms()
 {
 

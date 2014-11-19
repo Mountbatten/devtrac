@@ -176,7 +176,7 @@ function devtrac7_site_configuration_feature_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mapit_vocabulary';
-  $strongarm->value = 'iati_custom_admin_unit';
+  $strongarm->value = 'vocabulary_6';
   $export['mapit_vocabulary'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1011,14 +1011,14 @@ user/*/*';
     6 => 0,
   );
   $export['piwik_roles'] = $strongarm;
-
+/*
   $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially *//*
   $strongarm->api_version = 1;
   $strongarm->name = 'piwik_site_id';
   $strongarm->value = '11';
   $export['piwik_site_id'] = $strongarm;
-
+*/
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
@@ -1039,21 +1039,21 @@ user/*/*';
   $strongarm->name = 'piwik_trackfiles_extensions';
   $strongarm->value = '7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip';
   $export['piwik_trackfiles_extensions'] = $strongarm;
-
+/*
   $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->disabled = TRUE; /* Edit this to true to make a default strongarm disabled initially *//*
   $strongarm->api_version = 1;
   $strongarm->name = 'piwik_url_http';
   $strongarm->value = 'http://piwik.mountbatten.net/';
   $export['piwik_url_http'] = $strongarm;
-
+*//*
   $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially *//*
   $strongarm->api_version = 1;
   $strongarm->name = 'piwik_url_https';
   $strongarm->value = '';
   $export['piwik_url_https'] = $strongarm;
-
+*/
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
@@ -1067,20 +1067,6 @@ user/*/*';
   $strongarm->name = 'piwik_visibility_roles';
   $strongarm->value = '0';
   $export['piwik_visibility_roles'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'preprocess_css';
-  $strongarm->value = 1;
-  $export['preprocess_css'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'preprocess_js';
-  $strongarm->value = 0;
-  $export['preprocess_js'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

@@ -148,7 +148,7 @@ function devtrac7_maps_strongarm() {
   $strongarm->name = 'openlayers_geosearch_geocoders';
   $strongarm->value = array(
     'mapquest_nominatim' => 'mapquest_nominatim',
-    'geonames' => 'geonames',
+    'geonames' => 0,
     'bing' => 0,
     'google' => 0,
     'yahoo' => 0,

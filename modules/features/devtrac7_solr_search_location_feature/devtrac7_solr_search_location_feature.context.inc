@@ -87,9 +87,9 @@ function devtrac7_solr_search_location_feature_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-8',
         ),
-        'facetapi-yrHGqhyXRYKXSWKKKaoMRC02tJ2YJUjb' => array(
+        'facetapi-F1uLPOlCDXrjeUarLsG1atIlmE6kphRD' => array(
           'module' => 'facetapi',
-          'delta' => 'yrHGqhyXRYKXSWKKKaoMRC02tJ2YJUjb',
+          'delta' => 'F1uLPOlCDXrjeUarLsG1atIlmE6kphRD',
           'region' => 'sidebar_first',
           'weight' => '-7',
         ),
@@ -102,13 +102,13 @@ function devtrac7_solr_search_location_feature_context_default_contexts() {
         'current_search-devtrac7_locations_standard' => array(
           'module' => 'current_search',
           'delta' => 'devtrac7_locations_standard',
-          'region' => 'my_items_menu',
+          'region' => 'featured',
           'weight' => '-10',
         ),
         'pane-locations_info' => array(
           'module' => 'pane',
           'delta' => 'locations_info',
-          'region' => 'my_tool_menu',
+          'region' => 'featured',
           'weight' => '-72',
         ),
       ),
@@ -148,7 +148,7 @@ function devtrac7_solr_search_location_feature_context_default_contexts() {
         'current_search-devtrac7_locations_standard' => array(
           'module' => 'current_search',
           'delta' => 'devtrac7_locations_standard',
-          'region' => 'my_items_menu',
+          'region' => 'featured',
           'weight' => '-10',
         ),
         'openlayers_plus-blockswitcher' => array(
@@ -193,9 +193,9 @@ function devtrac7_solr_search_location_feature_context_default_contexts() {
           'region' => 'olblockpanel',
           'weight' => '-7',
         ),
-        'facetapi-yrHGqhyXRYKXSWKKKaoMRC02tJ2YJUjb' => array(
+        'facetapi-F1uLPOlCDXrjeUarLsG1atIlmE6kphRD' => array(
           'module' => 'facetapi',
-          'delta' => 'yrHGqhyXRYKXSWKKKaoMRC02tJ2YJUjb',
+          'delta' => 'F1uLPOlCDXrjeUarLsG1atIlmE6kphRD',
           'region' => 'olblockpanel',
           'weight' => '-6',
         ),

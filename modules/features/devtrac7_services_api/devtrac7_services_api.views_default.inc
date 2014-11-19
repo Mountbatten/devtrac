@@ -652,19 +652,35 @@ function devtrac7_services_api_views_default_views() {
   $handler->display->display_options['relationships']['parent']['table'] = 'taxonomy_term_hierarchy';
   $handler->display->display_options['relationships']['parent']['field'] = 'parent';
   $handler->display->display_options['relationships']['parent']['required'] = TRUE;
+  /* Field: Taxonomy term: Term ID */
+  $handler->display->display_options['fields']['tid']['id'] = 'tid';
+  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid']['separator'] = '';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: Taxonomy term: Weight */
+  $handler->display->display_options['fields']['weight']['id'] = 'weight';
+  $handler->display->display_options['fields']['weight']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['weight']['field'] = 'weight';
+  $handler->display->display_options['fields']['weight']['separator'] = '';
+  /* Field: Taxonomy term: Term ID */
+  $handler->display->display_options['fields']['tid_1']['id'] = 'tid_1';
+  $handler->display->display_options['fields']['tid_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid_1']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid_1']['relationship'] = 'parent';
+  $handler->display->display_options['fields']['tid_1']['label'] = 'Parent Term ID';
+  $handler->display->display_options['fields']['tid_1']['separator'] = '';
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
   $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name_1']['field'] = 'name';
   $handler->display->display_options['fields']['name_1']['relationship'] = 'parent';
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  $handler->display->display_options['fields']['name_1']['label'] = 'Parent Name';
   /* Filter criterion: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
@@ -681,12 +697,21 @@ function devtrac7_services_api_views_default_views() {
 
   /* Display: OECD Codes */
   $handler = $view->new_display('page', 'OECD Codes', 'oecd');
+  $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'OECD Codes';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'vocabulary_8' => 'vocabulary_8',
+  );
   $handler->display->display_options['path'] = 'api/views/vocabulary/oecd';
 
-  /* Display: placetypes */
-  $handler = $view->new_display('page', 'placetypes', 'placetypes');
-  $handler->display->display_options['title'] = 'Place Types';
+  /* Display: Place Types */
+  $handler = $view->new_display('page', 'Place Types', 'placetypes');
   $handler->display->display_options['display_description'] = 'Shows a list of PlaceTypes';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -697,19 +722,27 @@ function devtrac7_services_api_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'vocabulary_1' => 'vocabulary_1',
   );
-  /* Filter criterion: Taxonomy term: Code (field_oecd_code) */
-  $handler->display->display_options['filters']['field_oecd_code_value']['id'] = 'field_oecd_code_value';
-  $handler->display->display_options['filters']['field_oecd_code_value']['table'] = 'field_data_field_oecd_code';
-  $handler->display->display_options['filters']['field_oecd_code_value']['field'] = 'field_oecd_code_value';
-  $handler->display->display_options['filters']['field_oecd_code_value']['relationship'] = 'parent';
-  $handler->display->display_options['filters']['field_oecd_code_value']['operator'] = 'empty';
   $handler->display->display_options['path'] = 'api/views/vocabulary/placetypes';
-  $export['api_vocabularies'] = $view;
 
   /* Display: Report Types */
-  $handler = $view->new_display('page', 'Report Types', 'page_1');
+  $handler = $view->new_display('page', 'Report Types', 'sitereporttypes');
+  $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Report Types';
   $handler->display->display_options['display_description'] = 'Displays the list of reports generated';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Taxonomy term: Parent term */
+  $handler->display->display_options['relationships']['parent']['id'] = 'parent';
+  $handler->display->display_options['relationships']['parent']['table'] = 'taxonomy_term_hierarchy';
+  $handler->display->display_options['relationships']['parent']['field'] = 'parent';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'vocabulary_7' => 'vocabulary_7',
+  );
   $handler->display->display_options['path'] = 'api/views/vocabulary/reporttypes';
   $export['api_vocabularies'] = $view;
 

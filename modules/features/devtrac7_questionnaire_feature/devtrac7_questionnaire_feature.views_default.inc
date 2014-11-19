@@ -595,7 +595,7 @@ function devtrac7_questionnaire_feature_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
   $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['value'] = array(
-    'question_subject' => 'question_subject',
+    'vocabulary_8' => 'vocabulary_8',
   );
 
   /* Display: Siteviisit Answer Sector Block */
@@ -766,15 +766,6 @@ function devtrac7_questionnaire_feature_views_default_views() {
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['date_format'] = 'custom';
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'U';
-  /* Contextual filter: Content: Sub-Category (field_question_subject) */
-  $handler->display->display_options['arguments']['field_question_subject_tid']['id'] = 'field_question_subject_tid';
-  $handler->display->display_options['arguments']['field_question_subject_tid']['table'] = 'field_data_field_question_subject';
-  $handler->display->display_options['arguments']['field_question_subject_tid']['field'] = 'field_question_subject_tid';
-  $handler->display->display_options['arguments']['field_question_subject_tid']['relationship'] = 'question';
-  $handler->display->display_options['arguments']['field_question_subject_tid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['field_question_subject_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_question_subject_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_question_subject_tid']['summary_options']['items_per_page'] = '25';
   /* Contextual filter: Answer: Context_id */
   $handler->display->display_options['arguments']['context_id']['id'] = 'context_id';
   $handler->display->display_options['arguments']['context_id']['table'] = 'questionnaire_answer';
@@ -1407,6 +1398,7 @@ function devtrac7_questionnaire_feature_views_default_views() {
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
+    7 => '7',
     3 => '3',
     4 => '4',
   );
@@ -1451,12 +1443,12 @@ function devtrac7_questionnaire_feature_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Relationship: Field: Location Types (taxonomy_vocabulary_1) */
+  /* Relationship: Field: Location Type (taxonomy_vocabulary_1) */
   $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
   $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
   $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
   $handler->display->display_options['relationships']['taxonomy_vocabulary_1_tid']['label'] = 'Location Type';
-  /* Field: Field: Location Types */
+  /* Field: Field: Location Type */
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['id'] = 'taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['table'] = 'field_data_taxonomy_vocabulary_1';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['field'] = 'taxonomy_vocabulary_1';
@@ -1475,12 +1467,6 @@ function devtrac7_questionnaire_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Sub-Category */
-  $handler->display->display_options['fields']['field_question_subject']['id'] = 'field_question_subject';
-  $handler->display->display_options['fields']['field_question_subject']['table'] = 'field_data_field_question_subject';
-  $handler->display->display_options['fields']['field_question_subject']['field'] = 'field_question_subject';
-  $handler->display->display_options['fields']['field_question_subject']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_question_subject']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Published */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'node';
@@ -1530,7 +1516,7 @@ function devtrac7_questionnaire_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'questionnaire_question' => 'questionnaire_question',
   );
-  /* Filter criterion: Field: Location Types (taxonomy_vocabulary_1) */
+  /* Filter criterion: Field: Location Type (taxonomy_vocabulary_1) */
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['id'] = 'taxonomy_vocabulary_1_tid';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['table'] = 'field_data_taxonomy_vocabulary_1';
   $handler->display->display_options['filters']['taxonomy_vocabulary_1_tid']['field'] = 'taxonomy_vocabulary_1_tid';
@@ -1548,13 +1534,14 @@ function devtrac7_questionnaire_feature_views_default_views() {
   $handler = $view->new_display('page', 'Edit Questions Page', 'edit_questions_page');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Edit Questions';
-  $handler->display->display_options['path'] = 'admin/devtrac7/edit_questions';
+  $handler->display->display_options['path'] = 'admin/devtrac7/questions/edit';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Edit Questions';
   $handler->display->display_options['menu']['description'] = 'Allows you to edit, add, order and (un)publish questions';
-  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['weight'] = '-100';
   $handler->display->display_options['menu']['name'] = 'management';
   $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['edit_questions'] = $view;
 
   return $export;

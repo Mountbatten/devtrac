@@ -53,13 +53,13 @@ function devtrac7_solr_search_questions_feature_context_default_contexts() {
         'current_search-devtrac7_questions_standard' => array(
           'module' => 'current_search',
           'delta' => 'devtrac7_questions_standard',
-          'region' => 'my_items_menu',
+          'region' => 'featured',
           'weight' => '-10',
         ),
         'pane-statistics_info' => array(
           'module' => 'pane',
           'delta' => 'statistics_info',
-          'region' => 'my_tool_menu',
+          'region' => 'featured',
           'weight' => '-72',
         ),
       ),

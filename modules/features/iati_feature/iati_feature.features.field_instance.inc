@@ -983,7 +983,7 @@ function iati_feature_field_default_field_instances() {
     'bundle' => 'iati_activity',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Select the appropriate Sectors to match this Activity. Press "Ctrl" on your keyboard then click on more sectors in the list to add more than one. You can read more about the codes we use on the <a href="/node/6184">OECD Sector Codes</a> page.',
+    'description' => 'Select the appropriate Sectors to match this Activity. Press "Ctrl" on your keyboard then click on more sectors in the list to add more than one. You can read more about the codes we use on the <a href="http://www.devtrac.org/node/51">OECD Sector Codes</a> page.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1959,7 +1959,7 @@ function iati_feature_field_default_field_instances() {
         'prepopulate' => array(
           'action' => 'hide',
           'fallback' => 'none',
-          'skip_perm' => 'access administration menu',
+          'skip_perm' => 'create field_organisation',
           'status' => 0,
         ),
       ),
@@ -2014,7 +2014,7 @@ function iati_feature_field_default_field_instances() {
   t('Provide the Planned date for this Activity');
   t('Reference to owner of the data');
   t('Sector');
-  t('Select the appropriate Sectors to match this Activity. Press "Ctrl" on your keyboard then click on more sectors in the list to add more than one. You can read more about the codes we use on the <a href="/node/6184">OECD Sector Codes</a> page.');
+  t('Select the appropriate Sectors to match this Activity. Press "Ctrl" on your keyboard then click on more sectors in the list to add more than one. You can read more about the codes we use on the <a href="http://www.devtrac.org/node/51">OECD Sector Codes</a> page.');
   t('Start dates reflect either the commencement of funding, planning or physical activity. End dates should, wherever possible, reflect the ending of physical activity.');
   t('Status');
   t('The current status of the project (e.g. "planned"), using a list defined by IATI. <a href="http://iatistandard.org/codelists/activity_status/" target="_blank" >Read more</a>');

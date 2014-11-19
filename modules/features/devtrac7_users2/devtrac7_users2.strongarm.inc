@@ -209,7 +209,7 @@ Your account on [site:name] has been deleted.';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_picture_default';
-  $strongarm->value = 'profiles/devtrac/themes/devtrac7_theme/images/profile.gif';
+  $strongarm->value = 'profiles/devtrac/themes/devtrac_classic/images/profile.gif';
   $export['user_picture_default'] = $strongarm;
 
   $strongarm = new stdClass();

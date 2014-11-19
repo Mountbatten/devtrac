@@ -56,7 +56,7 @@ function iati_feature_context_default_contexts() {
         'pane-activities_info' => array(
           'module' => 'pane',
           'delta' => 'activities_info',
-          'region' => 'my_tool_menu',
+          'region' => 'featured',
           'weight' => '-80',
         ),
         'delta_blocks-messages' => array(
@@ -185,7 +185,7 @@ function iati_feature_context_default_contexts() {
         'pane-organisations_info' => array(
           'module' => 'pane',
           'delta' => 'organisations_info',
-          'region' => 'my_tool_menu',
+          'region' => 'featured',
           'weight' => '-80',
         ),
         'delta_blocks-breadcrumb' => array(

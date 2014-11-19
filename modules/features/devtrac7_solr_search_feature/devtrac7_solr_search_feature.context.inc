@@ -13,69 +13,6 @@ function devtrac7_solr_search_feature_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'all_solr_pages';
-  $context->description = 'Blocks and Delta that go on all the solr pages';
-  $context->tag = 'Solr';
-  $context->conditions = array(
-    'path' => array(
-      'values' => array(
-        '*/analyse/csv' => '*/analyse/csv',
-      ),
-    ),
-    'views' => array(
-      'values' => array(
-        'devtrac7_solr_user_view' => 'devtrac7_solr_user_view',
-        'devtrac7_solr_user_view:page' => 'devtrac7_solr_user_view:page',
-        'devtrac_solr_organisations_view' => 'devtrac_solr_organisations_view',
-        'devtrac_solr_view_actionitems' => 'devtrac_solr_view_actionitems',
-        'devtrac_solr_view_activity' => 'devtrac_solr_view_activity',
-        'devtrac_solr_view_answers' => 'devtrac_solr_view_answers',
-        'devtrac_solr_view_districts' => 'devtrac_solr_view_districts',
-        'devtrac_solr_view_fieldtrips' => 'devtrac_solr_view_fieldtrips',
-        'devtrac_solr_view_locations' => 'devtrac_solr_view_locations',
-        'devtrac_solr_view_questions' => 'devtrac_solr_view_questions',
-        'devtrac_solr_view_sitevisits' => 'devtrac_solr_view_sitevisits',
-        'devtrac_solr_view_sitevisits:map' => 'devtrac_solr_view_sitevisits:map',
-      ),
-    ),
-    'views_modes' => array(
-      'values' => array(
-        'default' => 'default',
-        'graphs' => 'graphs',
-        'list' => 'list',
-        'tagcloud' => 'tagcloud',
-      ),
-    ),
-  );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'delta_blocks-feed-icons' => array(
-          'module' => 'delta_blocks',
-          'delta' => 'feed-icons',
-          'region' => 'my_tool_menu',
-          'weight' => '-9',
-        ),
-        'views_modes-modes' => array(
-          'module' => 'views_modes',
-          'delta' => 'modes',
-          'region' => 'my_tool_menu',
-          'weight' => '-8',
-        ),
-      ),
-    ),
-  );
-  $context->condition_mode = 0;
-
-  // Translatables
-  // Included for use with string extractors like potx.
-  t('Blocks and Delta that go on all the solr pages');
-  t('Solr');
-  $export['all_solr_pages'] = $context;
-
-  $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
-  $context->api_version = 3;
   $context->name = 'devtrac_solr_not_map_views_admin';
   $context->description = 'Context that manages things that happen on the Lists and Graphs';
   $context->tag = 'Solr';
@@ -180,7 +117,7 @@ function devtrac7_solr_search_feature_context_default_contexts() {
         'current_search-devtrac7_sitevisits_standard' => array(
           'module' => 'current_search',
           'delta' => 'devtrac7_sitevisits_standard',
-          'region' => 'my_items_menu',
+          'region' => 'featured',
           'weight' => '-10',
         ),
         'openlayers_plus-blockswitcher' => array(
@@ -194,12 +131,6 @@ function devtrac7_solr_search_feature_context_default_contexts() {
           'delta' => 'search-form-results',
           'region' => 'olmaptext_rightuppercorner',
           'weight' => '-8',
-        ),
-        'pane-front_about_information' => array(
-          'module' => 'pane',
-          'delta' => 'front_about_information',
-          'region' => 'olmaptext_rightuppercorner',
-          'weight' => '-7',
         ),
         'devtrac7_realms-19dqfDK2pFqdJCRH9C971eH0QN9IVhvV' => array(
           'module' => 'devtrac7_realms',
@@ -255,9 +186,9 @@ function devtrac7_solr_search_feature_context_default_contexts() {
           'region' => 'olblockpanel',
           'weight' => '-3',
         ),
-        'facetapi-CapJ7ohC1KCLvZLvQxMeCEVOgyztMPff' => array(
+        'facetapi-1MOwyanJkNRdOpBtS0C089qkom59uMzK' => array(
           'module' => 'facetapi',
-          'delta' => 'CapJ7ohC1KCLvZLvQxMeCEVOgyztMPff',
+          'delta' => '1MOwyanJkNRdOpBtS0C089qkom59uMzK',
           'region' => 'olblockpanel',
           'weight' => '-2',
         ),
@@ -358,9 +289,9 @@ function devtrac7_solr_search_feature_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-3',
         ),
-        'facetapi-CapJ7ohC1KCLvZLvQxMeCEVOgyztMPff' => array(
+        'facetapi-1MOwyanJkNRdOpBtS0C089qkom59uMzK' => array(
           'module' => 'facetapi',
-          'delta' => 'CapJ7ohC1KCLvZLvQxMeCEVOgyztMPff',
+          'delta' => '1MOwyanJkNRdOpBtS0C089qkom59uMzK',
           'region' => 'sidebar_first',
           'weight' => '-2',
         ),
@@ -379,14 +310,8 @@ function devtrac7_solr_search_feature_context_default_contexts() {
         'current_search-devtrac7_sitevisits_standard' => array(
           'module' => 'current_search',
           'delta' => 'devtrac7_sitevisits_standard',
-          'region' => 'my_items_menu',
+          'region' => 'featured',
           'weight' => '-10',
-        ),
-        'pane-front_about_information' => array(
-          'module' => 'pane',
-          'delta' => 'front_about_information',
-          'region' => 'my_tool_menu',
-          'weight' => '-72',
         ),
       ),
     ),

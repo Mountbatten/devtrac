@@ -10,57 +10,10 @@
 function devtrac7_questionnaire_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-questionnaire_question-field_question_subject'
-  $field_instances['node-questionnaire_question-field_question_subject'] = array(
-    'bundle' => 'questionnaire_question',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Used to group Questions. Select the most appropriate one.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 13,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_question_subject',
-    'label' => 'Sub-Category',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
-      'type' => 'options_select',
-      'weight' => 4,
-    ),
-  );
-
   // Exported field_instance: 'node-questionnaire_question-questionnaire_question_options'
   $field_instances['node-questionnaire_question-questionnaire_question_options'] = array(
     'bundle' => 'questionnaire_question',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => 'The different Options of the Question (Note; Mind about the type of Question you selected).',
     'display' => array(
@@ -100,7 +53,7 @@ function devtrac7_questionnaire_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
@@ -109,7 +62,7 @@ function devtrac7_questionnaire_feature_field_default_field_instances() {
     'bundle' => 'questionnaire_question',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Choose the type of the Question. This is going to determin how this Question will look like.',
+    'description' => 'Choose the type of the Question. This is going to determine how this Question will look like.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -146,7 +99,7 @@ function devtrac7_questionnaire_feature_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 3,
     ),
   );
 
@@ -202,7 +155,7 @@ function devtrac7_questionnaire_feature_field_default_field_instances() {
     'bundle' => 'questionnaire_question',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Provide the correct sector. You may select more than one sector. You can read more about the codes we use on the <a href="/node/6184">OECD Sector Codes</a> page.',
+    'description' => 'Provide the correct sector. You may select more than one sector. You can read more about the codes we use on the <a href="http://www.devtrac.org/node/51">OECD Sector Codes</a> page.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -228,7 +181,7 @@ function devtrac7_questionnaire_feature_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'taxonomy_vocabulary_8',
     'label' => 'Sector',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -237,25 +190,24 @@ function devtrac7_questionnaire_feature_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(
         'apply_chosen' => 0,
-        'content_taxonomy_opt_groups' => FALSE,
+        'content_taxonomy_opt_groups' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 2,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Choose the type of the Question. This is going to determin how this Question will look like.');
+  t('Choose the type of the Question. This is going to determine how this Question will look like.');
   t('Location Type');
   t('Options');
-  t('Provide the correct sector. You may select more than one sector. You can read more about the codes we use on the <a href="/node/6184">OECD Sector Codes</a> page.');
+  t('Provide the correct sector. You may select more than one sector. You can read more about the codes we use on the <a href="http://www.devtrac.org/node/51">OECD Sector Codes</a> page.');
   t('Sector');
   t('Select the appropriate Location Type.');
-  t('Sub-Category');
   t('The different Options of the Question (Note; Mind about the type of Question you selected).');
   t('The type of question.');
-  t('Used to group Questions. Select the most appropriate one.');
 
   return $field_instances;
 }

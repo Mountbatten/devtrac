@@ -21,11 +21,8 @@ datestamp = 1408080140
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
-features[field_base][] = field_question_subject
 features[field_base][] = questionnaire_question_options
 features[field_base][] = questionnaire_question_type
-features[field_base][] = taxonomy_vocabulary_1
-features[field_instance][] = node-questionnaire_question-field_question_subject
 features[field_instance][] = node-questionnaire_question-questionnaire_question_options
 features[field_instance][] = node-questionnaire_question-questionnaire_question_type
 features[field_instance][] = node-questionnaire_question-taxonomy_vocabulary_1
@@ -39,6 +36,7 @@ features[variable][] = comment_form_location_questionnaire_question
 features[variable][] = comment_preview_questionnaire_question
 features[variable][] = comment_questionnaire_question
 features[variable][] = comment_subject_field_questionnaire_question
+features[variable][] = field_bundle_settings_node__questionnaire_question
 features[variable][] = menu_options_questionnaire_question
 features[variable][] = menu_parent_questionnaire_question
 features[variable][] = node_options_questionnaire_question
@@ -54,3 +52,11 @@ features[views_view][] = devtrac_sitevisit_answer_subjects
 features[views_view][] = devtrac_sitevisit_answers
 features[views_view][] = edit_questions
 features_exclude[dependencies][iati_feature] = iati_feature
+
+
+; Information added by drush on 2014-11-10
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "devtrac"
+datestamp = "1415634071"
+

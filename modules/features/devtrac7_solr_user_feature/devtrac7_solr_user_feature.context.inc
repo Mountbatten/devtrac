@@ -95,13 +95,13 @@ function devtrac7_solr_user_feature_context_default_contexts() {
         'current_search-devtrac7_users_standard' => array(
           'module' => 'current_search',
           'delta' => 'devtrac7_users_standard',
-          'region' => 'my_items_menu',
+          'region' => 'featured',
           'weight' => '-10',
         ),
         'pane-user_info' => array(
           'module' => 'pane',
           'delta' => 'user_info',
-          'region' => 'my_tool_menu',
+          'region' => 'featured',
           'weight' => '-72',
         ),
       ),
@@ -148,7 +148,7 @@ function devtrac7_solr_user_feature_context_default_contexts() {
         'current_search-devtrac7_users_standard' => array(
           'module' => 'current_search',
           'delta' => 'devtrac7_users_standard',
-          'region' => 'my_items_menu',
+          'region' => 'featured',
           'weight' => '-10',
         ),
       ),

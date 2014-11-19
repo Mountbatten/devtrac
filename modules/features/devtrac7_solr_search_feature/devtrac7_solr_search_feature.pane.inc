@@ -22,30 +22,3 @@ function devtrac7_solr_search_feature_default_pane_container() {
 
   return $export;
 }
-
-/**
- * Implements hook_default_pane_data().
- */
-function devtrac7_solr_search_feature_default_pane_data() {
-  $export = array();
-
-  $template = new stdClass();
-  $template->disabled = FALSE; /* Edit this to true to make a default template disabled initially */
-  $template->api_version = 2;
-  $template->name = 'front_about_information_und';
-  $template->container = 'front_about_information';
-  $template->lang = 'und';
-  $template->data = array(
-    'value' => '<ul>
-<li class="health"><span class="counter-number">956</span> Health</li>
-<li class="schools"><span class="counter-number">787</span> Schools</li>
-<li class="water"><span class="counter-number">271</span> Water</li></ul>
-<h4>Summary</h4>
-<p>These are reports that are filled in at a visited Location. It includes all details about the visit. These include a narrative report, the sector of intervention at the location, the date visited and a descriptive title that can be understood clearly.</p>',
-    'format' => '2',
-    'title' => '',
-  );
-  $export['front_about_information_und'] = $template;
-
-  return $export;
-}

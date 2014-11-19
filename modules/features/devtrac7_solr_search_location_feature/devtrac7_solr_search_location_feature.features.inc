@@ -77,10 +77,10 @@ function devtrac7_solr_search_location_feature_default_search_api_index() {
         "search_api_aggregation_1" : { "type" : "text" },
         "search_api_language" : { "type" : "string" },
         "status" : { "type" : "boolean" },
-        "taxonomy_vocabulary_1" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "taxonomy_vocabulary_1" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "taxonomy_vocabulary_1:parents_all" : { "type" : "list\u003Cinteger\u003E", "entity_type" : "taxonomy_term" },
         "taxonomy_vocabulary_6" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "taxonomy_vocabulary_6:field_district_category" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "taxonomy_vocabulary_6:field_oecd_place_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "title" : { "type" : "text" },
         "type" : { "type" : "string" }
       },
@@ -99,8 +99,7 @@ function devtrac7_solr_search_location_feature_default_search_api_index() {
               "taxonomy_vocabulary_6:parents_all" : "taxonomy_vocabulary_6:parents_all",
               "taxonomy_vocabulary_6:field_district_category" : "taxonomy_vocabulary_6:field_district_category",
               "taxonomy_vocabulary_8:parent" : "taxonomy_vocabulary_8:parent",
-              "taxonomy_vocabulary_8:parents_all" : "taxonomy_vocabulary_8:parents_all",
-              "taxonomy_vocabulary_1:parent" : "taxonomy_vocabulary_1:parent"
+              "taxonomy_vocabulary_8:parents_all" : "taxonomy_vocabulary_8:parents_all"
             }
           }
         },

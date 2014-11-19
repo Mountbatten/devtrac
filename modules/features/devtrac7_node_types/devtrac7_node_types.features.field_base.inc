@@ -163,12 +163,7 @@ function devtrac7_node_types_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 2,
     ),
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-        ),
-      ),
-    ),
+    'foreign keys' => array(),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -263,12 +258,7 @@ function devtrac7_node_types_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 2,
     ),
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-        ),
-      ),
-    ),
+    'foreign keys' => array(),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -309,12 +299,7 @@ function devtrac7_node_types_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 2,
     ),
-    'foreign keys' => array(
-      'users' => array(
-        'columns' => array(
-        ),
-      ),
-    ),
+    'foreign keys' => array(),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -621,12 +606,7 @@ function devtrac7_node_types_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 2,
     ),
-    'foreign keys' => array(
-      'users' => array(
-        'columns' => array(
-        ),
-      ),
-    ),
+    'foreign keys' => array(),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -755,6 +735,43 @@ function devtrac7_node_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
+  // Exported field_base: 'field_fieldtrip_internal_id'
+  $field_bases['field_fieldtrip_internal_id'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_fieldtrip_internal_id',
+    'field_permissions' => array(
+      'type' => 2,
+    ),
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'allowed_values' => '',
+      'allowed_values_php' => '',
+      'max_length' => 24,
+      'profile2_private' => FALSE,
+      'text_processing' => 0,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+    'type_name' => 'fieldtrip',
+  );
+
   // Exported field_base: 'field_fieldtrip_narrative'
   $field_bases['field_fieldtrip_narrative'] = array(
     'active' => 1,
@@ -802,12 +819,7 @@ function devtrac7_node_types_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-        ),
-      ),
-    ),
+    'foreign keys' => array(),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -839,43 +851,6 @@ function devtrac7_node_types_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'entityreference',
-  );
-
-  // Exported field_base: 'field_fieldtrip_internal_id'
-  $field_bases['field_fieldtrip_internal_id'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_fieldtrip_internal_id',
-    'field_permissions' => array(
-      'type' => 2,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'allowed_values' => '',
-      'allowed_values_php' => '',
-      'max_length' => 24,
-      'profile2_private' => FALSE,
-      'text_processing' => 0,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-    'type_name' => 'fieldtrip',
   );
 
   // Exported field_base: 'field_fieldtrip_public_summary'
@@ -1059,12 +1034,7 @@ function devtrac7_node_types_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 2,
     ),
-    'foreign keys' => array(
-      'users' => array(
-        'columns' => array(
-        ),
-      ),
-    ),
+   'foreign keys' => array(),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -1180,12 +1150,7 @@ function devtrac7_node_types_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 2,
     ),
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-        ),
-      ),
-    ),
+    'foreign keys' => array(),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -1364,12 +1329,7 @@ function devtrac7_node_types_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 2,
     ),
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-        ),
-      ),
-    ),
+    'foreign keys' => array(),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -1857,6 +1817,46 @@ function devtrac7_node_types_field_default_field_bases() {
     'type' => 'devtrac7_progress_field',
   );
 
+  // Exported field_base: 'taxonomy_vocabulary_1'
+  $field_bases['taxonomy_vocabulary_1'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'taxonomy_vocabulary_1',
+    'field_permissions' => array(
+      'type' => 2,
+    ),
+    'foreign keys' => array(
+      'tid' => array(
+        'columns' => array(
+          'tid' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'vocabulary_1',
+          'parent' => 0,
+          'depth' => '',
+        ),
+      ),
+      'options_list_callback' => 'content_taxonomy_allowed_values',
+      'required' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
   // Exported field_base: 'taxonomy_vocabulary_6'
   $field_bases['taxonomy_vocabulary_6'] = array(
     'active' => 1,
@@ -1938,7 +1938,7 @@ function devtrac7_node_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-    // Exported field_base: 'taxonomy_vocabulary_8'
+  // Exported field_base: 'taxonomy_vocabulary_8'
   $field_bases['taxonomy_vocabulary_8'] = array(
     'active' => 1,
     'cardinality' => -1,

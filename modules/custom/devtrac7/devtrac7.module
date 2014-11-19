@@ -7,8 +7,8 @@ function devtrac7_menu() {
   // This is the mother of all Devtrac7 admin items
   // It just navigates to a page with other Devtrac admin options (eg. Edit Questions)
   $items['admin/devtrac7'] = array(
-    'title' => 'Devtrac 7',
-    'description' => 'Configure Devtrac specific settings. (eg. Edit Questions)',
+    'title' => 'Devtrac',
+    'description' => 'Configure Devtrac specific settings.',
     'page callback' => 'system_admin_menu_block_page',
     'access callback' => TRUE,
     'access arguments' => array('Use the administration pages and help'), // This is the highest level an Editor has
@@ -16,8 +16,48 @@ function devtrac7_menu() {
     'file path' => drupal_get_path('module', 'system'),
     'weight' => -3,
   );
+   $items['admin/devtrac7/quality'] = array(
+    'title' => t('Quality'),
+    'description' => t("Reports that show data consistency checks on your Devtrac database"),
+    'position' => 'right',
+    'weight' => -7,
+    'access arguments' => array('Use the administration pages and help'),
+    'page callback' => 'system_admin_menu_block_page',
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+  );
+  $items['admin/devtrac7/statistics'] = array(
+    'title' => t('Statistics'),
+    'description' => t("Site Statistics"),
+    'position' => 'right',
+    'weight' => -6,
+    'access arguments' => array('Use the administration pages and help'),
+    'page callback' => 'system_admin_menu_block_page',
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+  );
+  $items['admin/devtrac7/taxonomy'] = array(
+    'title' => t('Lists'),
+    'description' => t("Management of Lists"),
+    'position' => 'left',
+    'weight' => -5,
+    'access arguments' => array('Use the administration pages and help'),
+    'page callback' => 'system_admin_menu_block_page',
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+  );
+  $items['admin/devtrac7/questions'] = array(
+    'title' => t('Questionnaire'),
+    'description' => t("Management of the Questionnaire module."),
+    'position' => 'left',
+    'weight' => -4,
+    'access arguments' => array('Use the administration pages and help'),
+    'page callback' => 'system_admin_menu_block_page',
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+  );
   // Menu item on the Question order page to add Questions.
-  $items['admin/devtrac7/edit_questions/add'] = array (
+  $items['admin/devtrac7/questions/edit/add'] = array (
     'title' => t('Add New Question'),
     'title callback' => 'check_plain',
     'page callback' => 'node_add',
@@ -31,8 +71,18 @@ function devtrac7_menu() {
     'context' => MENU_CONTEXT_PAGE | MENU_CONTEXT_INLINE,
     'weight' => 4,
   );
+  $items['admin/devtrac7/solr'] = array(
+    'title' => "Solr Settings",
+    'description' => t("This is the page for various Solr settings"),
+    'position' => 'right',
+    'weight' => -3,
+    'access arguments' => array('administer site configuration'),
+    'page callback' => 'system_admin_menu_block_page',
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+  );
   // Menu item for setting solr search access settings.
-  $items['admin/devtrac7/solr_search_access_settings'] = array (
+  $items['admin/devtrac7/solr/solr_search_access_settings'] = array (
     'title' => t('Solr search access settings'),
     'title callback' => 'check_plain',
     'page callback' => 'drupal_get_form',
@@ -164,6 +214,48 @@ function devtrac7_menu_alter(&$items) {
   // The weight of the item in the menu_router table
   // overrides the weight in the menu_link table.
   $items['user']['weight'] = -30;
+  // Change the title of user profile pages to 'Welcome, <the user's name>.
+  $items['user/%user']['title callback'] = 'devtrac7_user_page_title';
+  $items['user']['title callback'] = 'devtrac7_user_page_title';
+  // Create a new access callback to disallow all roles access to
+  // specific configuration pages, except the administrator role.
+  $items['admin/config/people/accounts']['access callback'] = 'devtrac7_limit_user_configuration_access';
+  // The following two restrictions are needed because the "devtrac admin" role
+  // needs access to the roles field on the user registration/edit form. That
+  // can only be achieved by granting that role the "administer permissions"
+  // permission. For the why? see line 1140 of user.module.
+  // So these are added to disallow role devtrac admin access
+  // to the taxonomy access and the user permissions pages.
+  $items['admin/config/people/taxonomy_access']['access callback'] = 'devtrac7_limit_user_configuration_access';
+  $items['admin/people/permissions']['access callback'] = 'devtrac7_limit_user_configuration_access';
+}
+
+/**
+ * Implements the new title callback defined in hook_menu_alter().
+ */
+function devtrac7_user_page_title($account = NULL) {
+  if (!user_is_logged_in()) {
+    return t('Welcome');
+  }
+  global $user;
+  $user = user_load($user->uid);
+  $name = empty($user->field_user_firstname) ? $user->name : $user->field_user_firstname[LANGUAGE_NONE][0]['safe_value'];
+  return t('Welcome, ') . $name;
+}
+
+/**
+ * Implements the new access callback defined in hook_menu_alter().
+ */
+function devtrac7_limit_user_configuration_access($permission) {
+  global $user;
+  // Only allow user #1 and users with role administrator.
+  if (($user->uid == 1) || (in_array('administrator', $user->roles))) {
+    // Perform original user access check so user
+    // configured permission settings don't fail.
+    return user_access($permission);
+  }
+  // Disallow access for all other users.
+  return FALSE;
 }
 
 /**
@@ -172,20 +264,8 @@ function devtrac7_menu_alter(&$items) {
 function devtrac7_menu_link_alter(&$item) {
   if ($item['link_path'] == 'user') {
     $item['menu_name'] = 'menu-my-profile';
-    $item['link_title'] = 'Welcome, [current-user:field_user_firstname]';
     $item['hidden'] = 0;
     $options = array(
-      'menu_token_link_path' => 'user',
-      'menu_token_data' => array(
-        'user' => array(
-          'type' => 'user',
-          'plugin' => 'user_context',
-          'options' => array(),
-        ),
-      ),
-      'menu_token_options' => array(
-        'clear' => 0,
-      ),
       'attributes' => array(
         'title' => '',
       ),
@@ -370,18 +450,19 @@ function devtrac7_addactionitem_access($nid) {
  */
 function devtrac7_update_fieldtrip_access($nid = NULL) {
   global $user;
+  $result = FALSE;
   $fieldtrip = node_load($nid);
-  if (isset($fieldtrip)) {
-  $result = ($fieldtrip->type == "fieldtrip");
-  $result = $result && isset($fieldtrip->field_fieldtrip_status[$fieldtrip->language][0]['value']);
-  $result = $result && ($fieldtrip->field_fieldtrip_status[$fieldtrip->language][0]['value'] != 'Approved');
-  $result = $result && isset($fieldtrip->field_fieldtrip_user[$fieldtrip->language][0]['target_id']);
-  // $result = $result && ($fieldtrip->field_fieldtrip_user[$fieldtrip->language][0]['target_id'] == $user->uid);
-  $result = $result && node_access("update", $fieldtrip);
+//  if (isset($fieldtrip)) {
+  if ($fieldtrip) {
+    $result = ($fieldtrip->type == "fieldtrip");
+    $result = $result && isset($fieldtrip->field_fieldtrip_status[$fieldtrip->language][0]['value']);
+    $result = $result && ($fieldtrip->field_fieldtrip_status[$fieldtrip->language][0]['value'] != 'Approved');
+    $result = $result && isset($fieldtrip->field_fieldtrip_user[$fieldtrip->language][0]['target_id']);
+    // $result = $result && ($fieldtrip->field_fieldtrip_user[$fieldtrip->language][0]['target_id'] == $user->uid);
+    $result = $result && node_access("update", $fieldtrip);
   }
   return $result;
 }
-
 
 /**
  * @todo Please document this function.
@@ -1392,7 +1473,7 @@ function devtrac7_block_view_alter(&$data, $block) {
          * This is to cater for the collapsiblock + background icon in the user toolbar
          * for info panes and search_api_saved_searches
          */
-        if ($block->region == "my_tool_menu") {
+        if ($block->region == "featured") {
           $data['subject'] = ' ';
         }
         break;
@@ -1502,7 +1583,8 @@ function devtrac7_block_view_alter(&$data, $block) {
           case 'Filter by district category:':
           case 'Filter by unicef category:':
           case 'Filter by admin unit » unicef category:':
-            $data['subject'] = 'UNICEF Categories';
+          case 'Filter by admin unit » tags:':  
+            $data['subject'] = 'Tags';
             break;
           case 'Filter by node (target endpoint):':
             $data['subject'] = 'Organisations';
@@ -2124,7 +2206,7 @@ function devtrac7_js_alter(&$javascript) {
     if (module_exists('context')) {
       $reaction = context_get_plugin('reaction', 'block');
       $panelblocks = $reaction->block_list("olblockpanel");
-      $toolbarblocks = $reaction->block_list("my_tool_menu");
+      $toolbarblocks = $reaction->block_list("featured");
       foreach($toolbarblocks as $block) {
         if (($block->module != 'pane') && ($block->module != 'search_api_saved_searches')) {
           // Only replace the first occurance of - which is the seperator between module name and block id
@@ -2258,7 +2340,7 @@ function devtrac7_resave_geolayer_attributes() {
     'Admin Units' => 'devtrac_solr_view_districts_json',
     'Locations' => 'devtrac_solr_view_locations_json',
     'Site Reports' => 'devtrac_solr_view_sitevisits_json',
-    // 'Images'=> 'devtrac_solr_view_images_json',
+    'Images'=> 'devtrac_solr_view_images_json',
   );
   foreach ($layers as $title => $layername) {
     $layer = openlayers_layer_load($layername);
@@ -2340,26 +2422,21 @@ function devtrac7_date_format_types() {
 }
 
 /**
- * Get the tid of the given term in vocabulary site repot
- * @param $term Term whose tid is required
- * @return int tid
+ * Get the tid of the given term in vocabulary site report.
+ * @param $termname Name of the term whose tid is required
+ * @return $tid The tid of the named term
  */
-function _devtrac7_site_report_tid($term) {
-	//variables are devtrac7_site_visit, devtrac7_human_interest_story, devtrac7_roadside_observation
-	$return = 0;
-	$varname = 'devtrac7_'.str_replace(' ', '_', strtolower($term));
-	$termvar = variable_get($varname,0);
-		
-	if(empty($termvar)) {
-		$vocabulary = 'vocabulary_7';
-		$termarray = taxonomy_get_term_by_name($term , $vocabulary);
-		if(!empty($termarray)) {
-			$termarray = array_keys($termarray); 			
-			
-			$return = $termarray[0];
-			variable_set($varname, $return);
-		}
-	}
-	return	$return ;
+function _devtrac7_site_report_tid($termname) {
+  //variables are devtrac7_site_visit, devtrac7_human_interest_story, devtrac7_roadside_observation
+  $varname = 'devtrac7_' . str_replace(' ', '_', strtolower($termname));
+  $tid = variable_get($varname, 0);
+  if(empty($tid)) {
+    $vocabulary = 'vocabulary_7';
+    $terms = taxonomy_get_term_by_name($termname , $vocabulary);
+    if(!empty($terms)) {
+      $term = array_shift($terms);
+      variable_set($varname, $term->tid);
+    }
+  }
+  return $tid;
 }
-

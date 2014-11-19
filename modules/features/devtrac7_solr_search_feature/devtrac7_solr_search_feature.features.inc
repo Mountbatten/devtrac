@@ -95,7 +95,8 @@ function devtrac7_solr_search_feature_default_search_api_index() {
         "search_api_aggregation_1" : { "type" : "text" },
         "search_api_language" : { "type" : "string" },
         "status" : { "type" : "integer" },
-        "taxonomy_vocabulary_1" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "taxonomy_vocabulary_1" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "taxonomy_vocabulary_1:parents_all" : { "type" : "list\u003Cinteger\u003E", "entity_type" : "taxonomy_term" },
         "taxonomy_vocabulary_6" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "taxonomy_vocabulary_6:field_district_category" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "taxonomy_vocabulary_7" : { "type" : "integer", "entity_type" : "taxonomy_term" },
@@ -120,7 +121,6 @@ function devtrac7_solr_search_feature_default_search_api_index() {
           "settings" : { "fields" : {
               "taxonomy_vocabulary_6:parents_all" : "taxonomy_vocabulary_6:parents_all",
               "taxonomy_vocabulary_6:field_district_category" : "taxonomy_vocabulary_6:field_district_category",
-              "taxonomy_vocabulary_1:parent" : "taxonomy_vocabulary_1:parent",
               "taxonomy_vocabulary_8:parent" : "taxonomy_vocabulary_8:parent",
               "taxonomy_vocabulary_8:parents_all" : "taxonomy_vocabulary_8:parents_all"
             }

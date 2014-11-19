@@ -127,19 +127,19 @@ function devtrac7_solr_search_fieldtrip_feature_context_default_contexts() {
         'current_search-devtrac7_fieldtrips_standard' => array(
           'module' => 'current_search',
           'delta' => 'devtrac7_fieldtrips_standard',
-          'region' => 'my_items_menu',
+          'region' => 'featured',
           'weight' => '-9',
         ),
         'search_api_saved_searches-devtrac_solr_field_trip_index' => array(
           'module' => 'search_api_saved_searches',
           'delta' => 'devtrac_solr_field_trip_index',
-          'region' => 'my_tool_menu',
+          'region' => 'featured',
           'weight' => '-10',
         ),
         'pane-field_trips_info' => array(
           'module' => 'pane',
           'delta' => 'field_trips_info',
-          'region' => 'my_tool_menu',
+          'region' => 'featured',
           'weight' => '-72',
         ),
       ),

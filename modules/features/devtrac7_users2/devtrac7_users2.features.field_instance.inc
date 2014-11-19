@@ -319,7 +319,7 @@ function devtrac7_users2_field_default_field_instances() {
         'prepopulate' => array(
           'action' => 'hide',
           'fallback' => 'none',
-          'skip_perm' => 'access administration menu',
+          'skip_perm' => 'create field_user_superior',
           'status' => 0,
         ),
       ),

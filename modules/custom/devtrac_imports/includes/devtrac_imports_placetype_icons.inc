@@ -36,20 +36,20 @@ class DevtracImportsPlacetypeIcons extends XMLMigration   {
 
     // The source images are in a local directory - specify the parent.
     $this->addFieldMapping('source_dir')
-         ->defaultValue(drupal_get_path('theme', 'devtrac7_theme') . '/icons/locationtypes');
+         ->defaultValue(path_to_theme() . '/icons/locationtypes');
     // The 'value' of the media destination is mapped to the source field
     // representing the media itself - in this case, a filename relative to
     // source_dir.
     $this->addFieldMapping('value', 'filename');
          //->xpath('code');
     // Fields on the entity can be mapped in the usual way.
-    $this->addFieldMapping('field_image_description', 'description')
-         ->xpath('description');
+//    $this->addFieldMapping('field_image_description', 'description')
+//         ->xpath('description');
 
     $this->addFieldMapping('uid')
          ->defaultValue(1);
-    $this->addFieldMapping('field_migrate_example_image:alt', 'name');
-    $this->addFieldMapping('field_migrate_example_image:title', 'name');
+    $this->addFieldMapping('field_file_image_title_text', 'name');
+    $this->addFieldMapping('field_file_image_alt_text', 'name');
 
     $this->addUnmigratedDestinations(array('field_image_description:format',
       'field_image_description:language', 'destination_dir', 'destination_file',

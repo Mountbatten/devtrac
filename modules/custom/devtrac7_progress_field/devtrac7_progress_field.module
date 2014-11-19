@@ -351,7 +351,7 @@ function devtrac7_progress_field_field_formatter_view($entity_type, $entity, $fi
           unset($items['links'][$key]);
         }
       }
-      $element['links'] = array('#markup' => theme('links__ctools_dropbutton', $items)); // here delta is the key of the array (links in this case)
+      $element['links'] = array('#markup' => '<div class="ctools-wrapper">' . theme('links__ctools_dropbutton', $items) . '</div>'); // here delta is the key of the array (links in this case)
       break;
     case 'devtrac7_progress_field_field_formatter_bar': // Progress bar
       // Remove undesired links from display

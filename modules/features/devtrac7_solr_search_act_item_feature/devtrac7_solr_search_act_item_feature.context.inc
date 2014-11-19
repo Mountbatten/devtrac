@@ -154,19 +154,19 @@ function devtrac7_solr_search_act_item_feature_context_default_contexts() {
         'current_search-devtrac7_actionitems_standard' => array(
           'module' => 'current_search',
           'delta' => 'devtrac7_actionitems_standard',
-          'region' => 'my_items_menu',
+          'region' => 'featured',
           'weight' => '-10',
         ),
         'search_api_saved_searches-devtrac_solr_action_items_index' => array(
           'module' => 'search_api_saved_searches',
           'delta' => 'devtrac_solr_action_items_index',
-          'region' => 'my_tool_menu',
+          'region' => 'featured',
           'weight' => '-10',
         ),
         'pane-action_items_info' => array(
           'module' => 'pane',
           'delta' => 'action_items_info',
-          'region' => 'my_tool_menu',
+          'region' => 'featured',
           'weight' => '-72',
         ),
       ),

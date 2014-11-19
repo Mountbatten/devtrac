@@ -117,12 +117,13 @@ function devtrac7_node_types_field_group_info() {
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'ID',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'collapsed',
     ),
   );
   $export['group_place_id|node|place|form'] = $field_group;

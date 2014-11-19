@@ -2,7 +2,7 @@
   Drupal.behaviors.tabs_behavior_apply = {
     attach : function(context, settings) {
         
-        $("#region-preface-third", context).mCustomScrollbar({
+        $("#block-views-dvtrc-action-items-block-2 .content", context).mCustomScrollbar({
             scrollButtons:{ enable:true },
             theme: "dark-thick",
             advanced:{ updateOnContentResize: true }
@@ -32,11 +32,9 @@
             advanced:{ updateOnContentResize: true }
         });
  
-        /*$("#Extruderolblockpanel .extruder-content div.text", context).mCustomScrollbar({
-            scrollButtons:{ enable:true },
-            theme: "light-thick",
-            advanced:{ updateOnContentResize: true }
-        });*/
+
+ 
+
 
     }
   };

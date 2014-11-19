@@ -164,45 +164,6 @@ function devtrac7_taxonomy_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_oecd_place_type'
-  $field_bases['field_oecd_place_type'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_oecd_place_type',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'vocabulary_1',
-          'parent' => 0,
-          'depth' => '',
-        ),
-      ),
-      'options_list_callback' => '_taxonomy_access_term_options',
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
-  );
-
   // Exported field_base: 'field_osm_id'
   $field_bases['field_osm_id'] = array(
     'active' => 1,

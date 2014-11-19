@@ -36,7 +36,7 @@ function devtrac7_solr_search_questions_feature_views_default_views() {
       'rendered_strip' => 0,
     ),
     1 => array(
-      'field' => 'field_question_subject',
+      'field' => 'taxonomy_vocabulary_8',
       'rendered' => 1,
       'rendered_strip' => 0,
     ),
@@ -84,14 +84,13 @@ function devtrac7_solr_search_questions_feature_views_default_views() {
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['label'] = 'Questions on';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['element_label_colon'] = FALSE;
-  /* Field: Indexed Node: Sub-Category */
-  $handler->display->display_options['fields']['field_question_subject']['id'] = 'field_question_subject';
-  $handler->display->display_options['fields']['field_question_subject']['table'] = 'search_api_index_questions';
-  $handler->display->display_options['fields']['field_question_subject']['field'] = 'field_question_subject';
-  $handler->display->display_options['fields']['field_question_subject']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_question_subject']['link_to_entity'] = 0;
-  $handler->display->display_options['fields']['field_question_subject']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_question_subject']['bypass_access'] = 0;
+  /* Field: Indexed Node: Sector */
+  $handler->display->display_options['fields']['taxonomy_vocabulary_8']['id'] = 'taxonomy_vocabulary_8';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_8']['table'] = 'search_api_index_questions';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_8']['field'] = 'taxonomy_vocabulary_8';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_8']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_8']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_8']['bypass_access'] = 0;
   /* Field: Indexed Node: Node ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_questions';
@@ -129,17 +128,16 @@ function devtrac7_solr_search_questions_feature_views_default_views() {
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['view_mode'] = 'full';
   $handler->display->display_options['fields']['taxonomy_vocabulary_1']['bypass_access'] = 0;
-  /* Field: Indexed Node: Sub-Category */
-  $handler->display->display_options['fields']['field_question_subject']['id'] = 'field_question_subject';
-  $handler->display->display_options['fields']['field_question_subject']['table'] = 'search_api_index_questions';
-  $handler->display->display_options['fields']['field_question_subject']['field'] = 'field_question_subject';
-  $handler->display->display_options['fields']['field_question_subject']['label'] = '';
-  $handler->display->display_options['fields']['field_question_subject']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_question_subject']['element_type'] = 'h3';
-  $handler->display->display_options['fields']['field_question_subject']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_question_subject']['link_to_entity'] = 0;
-  $handler->display->display_options['fields']['field_question_subject']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_question_subject']['bypass_access'] = 0;
+  /* Field: Indexed Node: Sector */
+  $handler->display->display_options['fields']['taxonomy_vocabulary_8']['id'] = 'taxonomy_vocabulary_8';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_8']['table'] = 'search_api_index_questions';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_8']['field'] = 'taxonomy_vocabulary_8';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_8']['label'] = '';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_8']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_8']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['taxonomy_vocabulary_8']['display'] = 'view';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_8']['view_mode'] = 'sector_code_icon';
+  $handler->display->display_options['fields']['taxonomy_vocabulary_8']['bypass_access'] = 0;
   /* Field: Indexed Node: Node ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_questions';

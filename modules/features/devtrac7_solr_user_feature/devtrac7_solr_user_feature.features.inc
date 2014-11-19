@@ -54,7 +54,7 @@ function devtrac7_solr_user_feature_default_search_api_autocomplete_search() {
 function devtrac7_solr_user_feature_default_search_api_index() {
   $items = array();
   $items['devtrac7_user_index'] = entity_import('search_api_index', '{
-    "name" : "Devtrac User Index",
+    "name" : "Devtrac Solr User Index",
     "machine_name" : "devtrac7_user_index",
     "description" : null,
     "server" : "devtrac_solr_server",

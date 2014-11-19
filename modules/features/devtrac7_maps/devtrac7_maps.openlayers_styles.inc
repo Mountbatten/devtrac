@@ -155,7 +155,6 @@ function devtrac7_maps_openlayers_styles() {
   $openlayers_styles->title = 'Devtrac Plain Active Style';
   $openlayers_styles->description = 'Default style for selected locations on the map';
   $openlayers_styles->data = array(
-    'externalGraphic' => 'sites/default/files/styles/map_icon/public/mapicons/Place_c.png',
     'pointRadius' => 5,
     'fillColor' => '#E14D41',
     'strokeColor' => '#E14D41',
@@ -176,7 +175,6 @@ function devtrac7_maps_openlayers_styles() {
   $openlayers_styles->title = 'Devtrac Plain Default Style';
   $openlayers_styles->description = 'Devtrac Plain Default Style.';
   $openlayers_styles->data = array(
-    'externalGraphic' => 'sites/default/files/styles/map_icon/public/Place_c.png',
     'pointRadius' => 10,
     'fillColor' => '#FFCC66',
     'strokeColor' => '#FF9933',
@@ -197,7 +195,6 @@ function devtrac7_maps_openlayers_styles() {
   $openlayers_styles->title = 'Devtrac Plain Selected Style';
   $openlayers_styles->description = 'Default style for selecting locations on the map';
   $openlayers_styles->data = array(
-    'externalGraphic' => 'sites/default/files/styles/map_icon/public/mapicons/Place_c.png',
     'pointRadius' => 15,
     'fillColor' => '#9D48A1',
     'strokeColor' => '#9D48A1',

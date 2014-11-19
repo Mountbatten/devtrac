@@ -134,20 +134,6 @@ function devtrac7_theme_feature_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'colorbox_login';
-  $strongarm->value = 1;
-  $export['colorbox_login'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'colorbox_login_links';
-  $strongarm->value = '1';
-  $export['colorbox_login_links'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'colorbox_maxheight';
   $strongarm->value = '100%';
   $export['colorbox_maxheight'] = $strongarm;
@@ -463,8 +449,15 @@ system/ajax/*';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'modal_forms_login';
+  $strongarm->value = 1;
+  $export['modal_forms_login'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_admin_theme';
-  $strongarm->value = 0;
+  $strongarm->value = '0';
   $export['node_admin_theme'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -75,6 +75,37 @@ function devtrac7_solr_search_location_feature_facetapi_default_facet_settings()
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
+  $facet->name = 'search_api@devtrac_solr_locations_index::taxonomy_vocabulary_1:parents_all';
+  $facet->searcher = 'search_api@devtrac_solr_locations_index';
+  $facet->realm = '';
+  $facet->facet = 'taxonomy_vocabulary_1:parents_all';
+  $facet->enabled = FALSE;
+  $facet->settings = array(
+    'operator' => 'and',
+    'hard_limit' => '50',
+    'dependencies' => array(
+      'facets' => array(),
+      'force_deactivation' => TRUE,
+      'regex' => FALSE,
+      'roles' => array(),
+      'bundle' => 'none',
+      'bundle_selected' => array(),
+    ),
+    'facet_mincount' => '1',
+    'facet_missing' => '0',
+    'flatten' => '0',
+    'individual_parent' => '0',
+    'query_type' => 'term',
+    'limit_active_items' => 0,
+    'default_true' => '1',
+    'facet_search_ids' => array(),
+    'exclude' => 0,
+  );
+  $export['search_api@devtrac_solr_locations_index::taxonomy_vocabulary_1:parents_all'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
   $facet->name = 'search_api@devtrac_solr_locations_index::taxonomy_vocabulary_6';
   $facet->searcher = 'search_api@devtrac_solr_locations_index';
   $facet->realm = '';
@@ -377,7 +408,7 @@ function devtrac7_solr_search_location_feature_facetapi_default_facet_settings()
   $facet->searcher = 'search_api@devtrac_solr_locations_index';
   $facet->realm = 'block';
   $facet->facet = 'taxonomy_vocabulary_1';
-  $facet->enabled = TRUE;
+  $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'search_api_swatches',
@@ -449,6 +480,71 @@ function devtrac7_solr_search_location_feature_facetapi_default_facet_settings()
     'facet_fewer_text' => 'Show fewer',
   );
   $export['search_api@devtrac_solr_locations_index:block:taxonomy_vocabulary_1'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
+  $facet->name = 'search_api@devtrac_solr_locations_index:block:taxonomy_vocabulary_1:parents_all';
+  $facet->searcher = 'search_api@devtrac_solr_locations_index';
+  $facet->realm = 'block';
+  $facet->facet = 'taxonomy_vocabulary_1:parents_all';
+  $facet->enabled = TRUE;
+  $facet->settings = array(
+    'weight' => 0,
+    'widget' => 'search_api_swatches',
+    'filters' => array(),
+    'active_sorts' => array(
+      'active' => 'active',
+      'count' => 'count',
+      'display' => 'display',
+      'natural' => 0,
+      'indexed' => 0,
+    ),
+    'sort_weight' => array(
+      'active' => '-50',
+      'count' => '-49',
+      'display' => '-48',
+      'natural' => '0',
+      'indexed' => '0',
+    ),
+    'sort_order' => array(
+      'active' => '3',
+      'count' => '3',
+      'display' => '4',
+      'natural' => '4',
+      'indexed' => '4',
+    ),
+    'empty_behavior' => 'none',
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'soft_limit' => '5',
+    'nofollow' => 1,
+    'show_expanded' => 0,
+    'graphs_combotitle' => NULL,
+    'graphs_comboshowzoom' => 0,
+    'graphs_comboengine' => 'flot',
+    'graphs_combonofollow' => 1,
+    'graphs_combowidth' => '500',
+    'graphs_comboheight' => '400',
+    'graphs_comboy_min' => NULL,
+    'graphs_comboy_max' => NULL,
+    'graphs_comboy_step' => NULL,
+    'graphs_comboy_legend' => NULL,
+    'graphs_combobackground_colour' => '#fff',
+    'graphs_comboseries_colours' => NULL,
+    'graphs_comboshowlegend' => 1,
+    'tagcloud_levels' => '6',
+    'swatch_field' => 'field_term_icon',
+    'swatch_imagestyle' => 'map_icon_bw',
+    'swatch_showtext' => 1,
+    'swatch_shownoimage' => 1,
+    'swatch_imagestyle_select' => 'map_icon',
+    'empty_text' => array(
+      'value' => '',
+      'format' => '1',
+    ),
+  );
+  $export['search_api@devtrac_solr_locations_index:block:taxonomy_vocabulary_1:parents_all'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */

@@ -237,26 +237,6 @@ function devtrac7_menu_menu_default_menu_links() {
     'weight' => -42,
     'customized' => 1,
   );
-  // Exported menu link: menu-footermenu-right_contact-us:contact
-  $menu_links['menu-footermenu-right_contact-us:contact'] = array(
-    'menu_name' => 'menu-footermenu-right',
-    'link_path' => 'contact',
-    'router_path' => 'contact',
-    'link_title' => 'Contact Us',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'menu-footermenu-right_contact-us:contact',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -50,
-    'customized' => 1,
-  );
 
   // Translatables
   // Included for use with string extractors like potx.

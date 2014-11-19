@@ -240,6 +240,12 @@ function devtrac7_solr_search_location_feature_views_default_views() {
   $handler->display->display_options['fields']['taxonomy_vocabulary_6']['field'] = 'taxonomy_vocabulary_6';
   $handler->display->display_options['fields']['taxonomy_vocabulary_6']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['taxonomy_vocabulary_6']['view_mode'] = 'full';
+  /* Field: Virtual Field: virtual_field */
+  $handler->display->display_options['fields']['virtual_field']['id'] = 'virtual_field';
+  $handler->display->display_options['fields']['virtual_field']['table'] = 'virtual_field';
+  $handler->display->display_options['fields']['virtual_field']['field'] = 'virtual_field';
+  $handler->display->display_options['fields']['virtual_field']['label'] = '';
+  $handler->display->display_options['fields']['virtual_field']['virtual_field'] = 'field_fieldtrip_button';
   $handler->display->display_options['displays'] = array(
     'map' => 'map',
     'json' => 0,

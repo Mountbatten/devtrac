@@ -22,7 +22,8 @@ function devtrac7_users2_field_default_field_bases() {
     ),
     'foreign keys' => array(
       'node' => array(
-        'columns' => array(),
+        'columns' => array(
+        ),
       ),
     ),
     'indexes' => array(
@@ -180,7 +181,8 @@ function devtrac7_users2_field_default_field_bases() {
     ),
     'foreign keys' => array(
       'users' => array(
-        'columns' => array(),
+        'columns' => array(
+        ),
       ),
     ),
     'indexes' => array(

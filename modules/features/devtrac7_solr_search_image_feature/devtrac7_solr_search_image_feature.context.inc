@@ -75,13 +75,13 @@ function devtrac7_solr_search_image_feature_context_default_contexts() {
         'current_search-devtrac7_images_standard' => array(
           'module' => 'current_search',
           'delta' => 'devtrac7_images_standard',
-          'region' => 'my_items_menu',
+          'region' => 'featured',
           'weight' => '-10',
         ),
         'blockify-blockify-feed-icons' => array(
           'module' => 'blockify',
           'delta' => 'blockify-feed-icons',
-          'region' => 'my_tool_menu',
+          'region' => 'featured',
           'weight' => '-10',
         ),
         'openlayers_plus-blockswitcher' => array(
@@ -232,7 +232,7 @@ function devtrac7_solr_search_image_feature_context_default_contexts() {
         'current_search-devtrac7_images_standard' => array(
           'module' => 'current_search',
           'delta' => 'devtrac7_images_standard',
-          'region' => 'my_items_menu',
+          'region' => 'featured',
           'weight' => '-10',
         ),
       ),

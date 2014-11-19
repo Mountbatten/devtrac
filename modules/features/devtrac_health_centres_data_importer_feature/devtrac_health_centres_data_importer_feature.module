@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Devtrac Health Centres Data Importer Feature feature.
+ */
+
+include_once 'devtrac_health_centres_data_importer_feature.features.inc';

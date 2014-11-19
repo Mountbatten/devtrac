@@ -35,7 +35,7 @@ function devtrac7_solr_search_answers_feature_views_api($module = NULL, $api = N
 function devtrac7_solr_search_answers_feature_default_search_api_index() {
   $items = array();
   $items['answers'] = entity_import('search_api_index', '{
-    "name" : "answers",
+    "name" : "Devtrac Solr Answers Index",
     "machine_name" : "answers",
     "description" : null,
     "server" : "devtrac_solr_server",

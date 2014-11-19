@@ -5,7 +5,7 @@ api = 2
 ; Mountbatten defaults
 includes[mountbatten_web_analytics] = https://raw.githubusercontent.com/benjaminug/mountbatten_makefiles/master/mountbatten_web_analytics.make
 includes[mountbatten_seo] = https://raw.githubusercontent.com/benjaminug/mountbatten_makefiles/master/mountbatten_seo.make
-includes[mountbatten_spam_protection] = https://raw.githubusercontent.com/benjaminug/mountbatten_makefiles/master/mountbatten_spam_protection.make
+; includes[mountbatten_spam_protection] = https://raw.githubusercontent.com/benjaminug/mountbatten_makefiles/master/mountbatten_spam_protection.make
 includes[mountbatten_web_media] = https://raw.githubusercontent.com/benjaminug/mountbatten_makefiles/master/mountbatten_web_media.make
 includes[mountbatten_sitewide] = https://raw.githubusercontent.com/benjaminug/mountbatten_makefiles/master/mountbatten_sitewide.make
 
@@ -49,7 +49,7 @@ projects[collapsiblock][version] = "1.0"
 projects[collapsiblock][type] = "module"
 projects[collapsiblock][subdir] = "contrib"
 
-projects[colorbox][version] = "1.6"
+projects[colorbox][version] = "2.8"
 projects[colorbox][type] = "module"
 projects[colorbox][subdir] = "contrib"
 
@@ -123,6 +123,22 @@ projects[features_override][version] = "2.0-rc2"
 projects[features_override][type] = "module"
 projects[features_override][subdir] = "contrib"
 
+projects[feeds][version] = "2.0-alpha8"
+projects[feeds][type] = "module"
+projects[feeds][subdir] = "contrib"
+
+projects[feeds_entityreference][version] = "1.x-dev"
+projects[feeds_entityreference][type] = "module"
+projects[feeds_entityreference][subdir] = "contrib"
+
+projects[feeds_tamper][version] = "1.0"
+projects[feeds_tamper][type] = "module"
+projects[feeds_tamper][subdir] = "contrib"
+
+projects[field_collection_feeds][version] = "1.0-alpha3"
+projects[field_collection_feeds][type] = "module"
+projects[field_collection_feeds][subdir] = "contrib"
+
 projects[field_collection][version] = "1.0-beta7"
 projects[field_collection][type] = "module"
 projects[field_collection][subdir] = "contrib"
@@ -134,6 +150,7 @@ projects[field_collection_table][subdir] = "contrib"
 projects[field_extrawidgets][version] = "1.1"
 projects[field_extrawidgets][type] = "module"
 projects[field_extrawidgets][subdir] = "contrib"
+projects[field_extrawidgets][patch][] = "https://www.drupal.org/files/issues/field_extrawidgets_notice_string_offset_cast-2097901-3.patch"
 
 projects[field_group][version] = "1.4"
 projects[field_group][type] = "module"
@@ -155,13 +172,13 @@ projects[flot][version] = "1.x-dev"
 projects[flot][type] = "module"
 projects[flot][subdir] = "contrib"
 projects[flot][patch][] = "https://www.drupal.org/files/flot-pie_options-2088021-3.patch"
-projects[flot][patch][] = "https://www.drupal.org/files/issues/flot-default_objects_fix-2264691-0.patch"
+projects[flot][patch][] = "https://www.drupal.org/files/issues/flot-default_objects-2264691-4.patch"
 
 projects[fontyourface][version] = "2.8"
 projects[fontyourface][type] = "module"
 projects[fontyourface][subdir] = "contrib"
 
-projects[footable][version] = "1.0-beta3"
+projects[footable][version] = "1.0-rc1"
 projects[footable][type] = "module"
 projects[footable][subdir] = "contrib"
 
@@ -174,12 +191,12 @@ projects[geocoder_wfs][version] = "1.0"
 projects[geocoder_wfs][type] = "module"
 projects[geocoder_wfs][subdir] = "contrib"
 
-projects[geofield][version] = "2.1"
+projects[geofield][version] = "2.3"
 projects[geofield][type] = "module"
 projects[geofield][subdir] = "contrib"
 projects[geofield][patch][] = "https://www.drupal.org/files/issues/geofield-merge-openlayers-layers.patch"
 projects[geofield][patch][] = "https://www.drupal.org/files/issues/geofield-sql-error-1965484-18.patch"
-projects[geofield][patch][] = "https://www.drupal.org/files/issues/geofield-wkb-exception-1924206-11.patch"
+; projects[geofield][patch][] = "https://www.drupal.org/files/issues/geofield-wkb-exception-1924206-11.patch"
 
 projects[geonames][version] = "1.1"
 projects[geonames][type] = "module"
@@ -204,6 +221,10 @@ projects[hurricane][subdir] = "contrib"
 projects[image_url_formatter][version] = "1.4"
 projects[image_url_formatter][type] = "module"
 projects[image_url_formatter][subdir] = "contrib"
+
+projects[job_scheduler][version] = "2.0-alpha3"
+projects[job_scheduler][type] = "module"
+projects[job_scheduler][subdir] = "contrib"
 
 projects[jquery_update][version] = "2.x-dev"
 projects[jquery_update][type] = "module"
@@ -251,14 +272,20 @@ projects[nice_menus][version] = "2.5"
 projects[nice_menus][type] = "module"
 projects[nice_menus][subdir] = "contrib"
 
+projects[modal_forms][version] = "1.2"
+projects[modal_forms][type] = "module"
+projects[modal_forms][subdir] = "contrib"
+
 projects[openlayers][version] = "2.0-beta9"
 projects[openlayers][type] = "module"
 projects[openlayers][subdir] = "contrib"
 projects[openlayers][patch][] = "https://www.drupal.org/files/2060451-bbox_geojson_anydisplay_4.patch"
 ; projects[openlayers][patch][] = "http://cgit.drupalcode.org/openlayers/patch/openlayers.make?id=66ca5d62bee0601902ca3dbda171d6a8fea8993d"
 projects[openlayers][patch][] = "https://www.drupal.org/files/issues/openlayers-7.x-2.0-beta9_makefile_release_patch-2257461-5.patch"
+projects[openlayers][patch][] = "https://www.drupal.org/files/issues/zoomtolayer-only-when-there-are-features-%232344127-1.patch"
+projects[openlayers][patch][] = "https://www.drupal.org/files/issues/fix_facetapi.patch"
 
-projects[openlayers_geosearch][version] = "1.0-beta1"
+projects[openlayers_geosearch][version] = "1.0-beta3"
 projects[openlayers_geosearch][type] = "module"
 projects[openlayers_geosearch][subdir] = "contrib"
 
@@ -304,10 +331,11 @@ projects[questionnaire][subdir] = "contrib"
 ;projects[questionnaire][download][url] = "http://git.drupal.org/project/questionnaire.git"
 ;projects[questionnaire][download][branch] = "7.x-1.x"
 
-projects[quicktabs][version] = "3.6"
+projects[quicktabs][version] = "3.x-dev"
 projects[quicktabs][type] = "module"
 projects[quicktabs][subdir] = "contrib"
-projects[quicktabs][patch][] = "https://www.drupal.org/files/quicktabs.user-interface.2108935-3.patch"
+;projects[quicktabs][patch][] = "https://www.drupal.org/files/quicktabs.user-interface.2108935-3.patch"
+projects[quicktabs][patch][] = "https://www.drupal.org/files/quicktabs--machine_name-7.x-3.6.patch"
 
 projects[realname][version] = "1.2"
 projects[realname][type] = "module"
@@ -350,11 +378,13 @@ projects[search_api_file_usage][version] = "1.x-dev"
 projects[search_api_file_usage][type] = "module"
 projects[search_api_file_usage][subdir] = "contrib"
 
-projects[search_api_saved_searches][version] = "1.3"
+projects[search_api_saved_searches][version] = "1.x-dev"
 projects[search_api_saved_searches][type] = "module"
 projects[search_api_saved_searches][subdir] = "contrib"
 projects[search_api_saved_searches][patch][] = "https://www.drupal.org/files/issues/search_api_saved_searches-7.x-1.2-reminders-3.patch"
-projects[search_api_saved_searches][patch][] = "https://www.drupal.org/files/issues/search_api_saved_searches-last_excuted-field-7.x-1.x-2142063_9.patch"
+; projects[search_api_saved_searches][patch][] = "https://www.drupal.org/files/issues/search_api_saved_searches-last_excuted-field-7.x-1.x-2142063_9.patch"
+projects[search_api_saved_searches][patch][] = "https://www.drupal.org/files/issues/2346679-3--expose_search_status.patch"
+projects[search_api_saved_searches][patch][] = "https://www.drupal.org/files/issues/2346677-5--user_ban_disable_searches.patch"
 
 projects[search_api_solr][version] = "1.5"
 projects[search_api_solr][type] = "module"
@@ -376,7 +406,7 @@ projects[search_api_swatches][version] = "1.x-dev"
 projects[search_api_swatches][type] = "module"
 projects[search_api_swatches][subdir] = "contrib"
 
-projects[services][version] = "3.7"
+projects[services][version] = "3.x-dev"
 projects[services][type] = "module"
 projects[services][subdir] = "contrib"
 
@@ -428,9 +458,13 @@ projects[views_flipped_table][type] = "module"
 projects[views_flipped_table][subdir] = "contrib"
 projects[views_flipped_table][patch][] = "https://www.drupal.org/files/issues/flipping_rows_undefined_index-2277369-6.patch"
 
-projects[views_geojson][version] = "1.x-dev"
+; projects[views_geojson][version] = "1.x-dev"
 projects[views_geojson][type] = "module"
 projects[views_geojson][subdir] = "contrib"
+projects[views_geojson][download][type] = "git"
+projects[views_geojson][download][url] = "git://git.drupal.org/project/views_geojson.git"
+projects[views_geojson][download][branch] = "7.x-1.x"
+projects[views_geojson][download][revision] = "cc2bc0b97743404b793f954c19c52e22931223ff"
 projects[views_geojson][patch][] = "https://www.drupal.org/files/issues/1839554_views_geojson_bbox_argument_handler_fixes_15.patch"
 projects[views_geojson][patch][] = "https://drupal.org/files/bbox_on_all_views.patch"
 projects[views_geojson][patch][] = "https://www.drupal.org/files/views_geojson-description_property-2082143-1.patch"
@@ -463,6 +497,22 @@ projects[virtual_field][patch][] = "https://www.drupal.org/files/issues/virtual_
 projects[wms][version] = "2.x-dev"
 projects[wms][type] = "module"
 projects[wms][subdir] = "contrib"
+
+projects[addressfield][version] = "1.0-beta5"
+projects[addressfield][type] = "module"
+projects[addressfield][subdir] = "contrib"
+
+projects[elements][version] = "1.4"
+projects[elements][type] = "module"
+projects[elements][subdir] = "contrib"
+
+projects[link_favicon_formatter][version] = "1.6"
+projects[link_favicon_formatter][type] = "module"
+projects[link_favicon_formatter][subdir] = "contrib"
+
+projects[telephone][version] = "1.0-alpha1"
+projects[telephone][type] = "module"
+projects[telephone][subdir] = "contrib"
 
 ; Sandbox projects
 projects[cancel_button][type] = "module"
@@ -498,14 +548,21 @@ projects[geocoder_geonames][download][branch] = "7.x-1.x"
 projects[geocoder_geonames][download][revision] = "57417b6bab16585f8d06a06e460e5096d3ba25b0"
 projects[geocoder_geonames][subdir] = "contrib"
 
+projects[apps][version] = "1.0-beta18"
+projects[apps][type] = "module"
+projects[apps][subdir] = "contrib"
+
 ; Themes
 projects[omega][version] = "3.1"
 projects[omega][patch][] = "https://www.drupal.org/files/omega-mini-pager-1828552-49.patch"
 
 projects[shiny][version] = "1.6"
 
-projects[devtrac7_theme][version] = "1.x-dev"
+; projects[devtrac7_theme][version] = "1.x-dev"
 projects[devtrac7_theme][type] = "theme"
+projects[devtrac7_theme][download][type] = "git"
+projects[devtrac7_theme][download][url] = "git://git.drupal.org/project/devtrac7_theme.git"
+projects[devtrac7_theme][download][branch] = "7.x-1.x"
 
 ; Libraries
 libraries[autopager][download][type] = "file"
@@ -514,7 +571,7 @@ libraries[autopager][directory_name] = "autopager"
 libraries[autopager][type] = "library"
 
 libraries[colorbox][download][type] = "file"
-libraries[colorbox][download][url] = "http://github.com/jackmoore/colorbox/zipball/1.5.9/jackmoore-colorbox-1.5.9-0-g124ec40.zip"
+libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/archive/1.5.14.zip"
 libraries[colorbox][directory_name] = "colorbox"
 libraries[colorbox][type] = "library"
 
