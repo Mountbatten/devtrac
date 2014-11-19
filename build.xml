@@ -130,6 +130,15 @@
       <arg value="${builddir}/docroot/"/>
       <arg value="${docroot}"/>
     </exec>
+     <!-- replacing the devtrac.profile file for default country -->
+  <replace file="{builddir}/docroot/devtrac.profile">
+    <replacefilter 
+      token="@$form['#submit'][] = 'devtrac_install_configure_form_submit_country';@"
+      value="//$form['#submit'][] = 'devtrac_install_configure_form_submit_country';"/>
+    <replacefilter 
+      token="@$form['server_settings']['site_default_country']['#required'] = TRUE;@" 
+      value="//$form['server_settings']['site_default_country']['#required'] = TRUE;"/>
+  </replace>
   </target>
   <target name="install" depends="drush-make" unless="drush.noinstall" description="Run drush site-install">
     <exec executable="${drush}" dir="${builddir}/docroot" taskname="drush">
