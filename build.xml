@@ -136,7 +136,7 @@
   </first>
   <echo message="${toString:first}" />
     
-  <copy overwrite="true" file="/home/travis/build/TddDoctor/devtrac/devtrac.profile" todir="/home/travis/build/TddDoctor/devtrac/build/docroot/profiles/devtrac/">
+  <copy overwrite="true" file="/home/travis/build/TddDoctor/devtrac/devtrac.profile" todir="/home/travis/build/TddDoctor/devtrac/build/docroot/profiles/devtrac/" />
      <!-- replacing the devtrac.profile file for default country -->
 
 <echo message="${toString:first}" />
