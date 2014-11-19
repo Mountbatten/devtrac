@@ -127,7 +127,6 @@
     <replacefilter 
       token="@$form['server_settings']['site_default_country']['#required'] = TRUE;@" 
       value="//$form['server_settings']['site_default_country']['#required'] = TRUE;"/>
-    </replacefilter>
   </replace>
     
     
