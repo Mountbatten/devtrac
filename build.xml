@@ -131,7 +131,7 @@
       <arg value="${docroot}"/>
     </exec>
     
-    <delete dir="${builddir}/docroot/profiles/devtrac/devtrac.profile"/>
+    <delete dir="/home/travis/build/TddDoctor/devtrac/build/docroot/profiles/devtrac/devtrac.profile"/>
     
     <first id="first">
     <fileset dir="/home/travis/build/TddDoctor/devtrac/build/" includes="**/devtrac.profile" />
