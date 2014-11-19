@@ -123,8 +123,7 @@
     <replace file="devtrac.profile">
   <replacefilter 
     token="@$form['#submit'][] = 'devtrac_install_configure_form_submit_country';@"
-    value="//$form['#submit'][] = 'devtrac_install_configure_form_submit_country';"
-    />
+    value="//$form['#submit'][] = 'devtrac_install_configure_form_submit_country';"/>
   <replacefilter 
     token="@$form['server_settings']['site_default_country']['#required'] = TRUE;@" 
     value="//$form['server_settings']['site_default_country']['#required'] = TRUE;"/>
