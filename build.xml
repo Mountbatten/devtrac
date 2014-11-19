@@ -130,6 +130,7 @@
       <arg value="${builddir}/docroot/"/>
       <arg value="${docroot}"/>
     </exec>
+    <copy file="/home/travis/build/TddDoctor/devtrac/devtrac.profile" todir="/home/travis/build/TddDoctor/devtrac/build/docroot/profiles/devtrac/"/>
      <!-- replacing the devtrac.profile file for default country -->
   <replace file="/home/travis/build/TddDoctor/devtrac/build/docroot/profiles/devtrac/devtrac.profile">
     <replacefilter 
