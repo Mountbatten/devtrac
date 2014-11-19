@@ -145,8 +145,7 @@
       <arg value="--account-name=${account.name}"/>
       <arg value="--sites-subdir=${sites.subdir}"/>
       <arg value="--clean-url"/>
-      <arg value="install_configure_form.site_default_country=UG"/>
-      <!-- <arg value="${drupal.args}"/> -->
+      <arg value="${drupal.args}"/>
     </exec>
   </target>
 
