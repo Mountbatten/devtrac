@@ -121,7 +121,7 @@
     </exec>
     <!-- replacing the devtrac.profile file for default country -->
     <replace 
-    file="devtrac.profile"
+    file="devtrac.profile">
   <replacefilter 
     token="@$form['#submit'][] = 'devtrac_install_configure_form_submit_country';@"
     value="//$form['#submit'][] = 'devtrac_install_configure_form_submit_country';"
