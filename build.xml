@@ -120,7 +120,7 @@
       <arg value="${builddir}/docroot"/>
     </exec>
     <!-- replacing the devtrac.profile file for default country -->
-  <replace file="devtrac.profile">
+  <replace file="${builddir}/docroot/devtrac.profile">
     <replacefilter 
       token="@$form['#submit'][] = 'devtrac_install_configure_form_submit_country';@"
       value="//$form['#submit'][] = 'devtrac_install_configure_form_submit_country';"/>
