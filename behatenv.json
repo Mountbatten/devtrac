@@ -1,0 +1,1 @@
+'{"suites":{"default":{"contexts":[{"MyAwesomeContext":{"outputFolder":"/devtrac","baseUrl":"http://localhost:8080"}}]}}}' bin/behat -s default
