@@ -146,8 +146,8 @@
       <env key="DRUSH_PHP" value="${php}"/>
       <arg value="site-install"/>
       <arg value="-y"/>
+      <arg value="-v"/>
       <arg value="${drupal.profile}"/>
-      
       <arg value="--db-url=${db.url}"/>
       <arg value="--site-name=${site.name}"/>
       <arg value="--site-mail=${site.mail}"/>
