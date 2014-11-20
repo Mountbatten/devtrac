@@ -197,7 +197,7 @@
   <target name="behat" depends="build,behat-download">
     <antcall target="selenium-start" />
     <exec executable="${behat}" taskname="behat">
-    <env key="BEHAT_PARAMS" value="\'{"suites":{"default":{"contexts":[{"MyAwesomeContext":{"outputFolder":"/devtrac","baseUrl":"http://localhost:8080"}}]}}}' bin/behat -s default"/>
+    <env key="BEHAT_PARAMS" value="'{"suites":{"default":{"contexts":[{"MyAwesomeContext":{"outputFolder":"/devtrac","baseUrl":"http://localhost:8080"}}]}}}' bin/behat -s default"/>
     </exec>
     <antcall target="selenium-stop" />
   </target>
