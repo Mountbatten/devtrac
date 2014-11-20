@@ -1,16 +1,10 @@
 default:
-  formatter:
-    name: pretty
-    parameters:
-      passed: [ white, green ]
-      passed_param: [ white, green, [ bold ]]
-      failed: [ white, red ]
-      decorated: true
-      verbose: true
-      time: true
-      language: eng
-  paths:
-    features: test/features
+  autoload:
+    '': %paths.base%/test/features/bootstrap
+  suites:
+    default:
+      paths:
+        - %paths.base%/tests/features
   extensions:
     Behat\MinkExtension:
       goutte: ~
