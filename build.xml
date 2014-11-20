@@ -13,7 +13,7 @@
   <property name="account.pass"     value="admin"/>
   <property name="account.mail"     value="test@example.com"/>
   <property name="base.url"         value="http://localhost"/>
-  <property name="behat.params"     value="extensions[Behat\MinkExtension\Extension][base_url]=${base.url}"/>
+  <property name="behat.params"     value="{"suites":{"default":{"contexts":[{"MyAwesomeContext":{"outputFolder":"/devtrac","baseUrl":"http://localhost:8080"}}]}}}"/>
   <property name="composer"         value="${builddir}/composer.phar"/>
   <property name="db.url"           value="mysql://username:password@host/db"/>
   <property name="docroot"          value="${basedir}/docroot"/>
@@ -197,7 +197,7 @@
   <target name="behat" depends="build,behat-download">
     <antcall target="selenium-start" />
     <exec executable="${behat}" taskname="behat">
-    <env key="BEHAT_PARAMS" value="{"suites":{"default":{"contexts":[{"MyAwesomeContext":{"outputFolder":"/devtrac","baseUrl":"http://localhost:8080"}}]}}} bin/behat -s default"/>
+    <env key="BEHAT_PARAMS" value="${behat.params}"/>
     </exec>
     <antcall target="selenium-stop" />
   </target>
