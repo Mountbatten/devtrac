@@ -1,11 +1,11 @@
 default:
-  context:
-    parameters:
-      base_url: http://localhost:8080
   autoload:
     '': %paths.base%/test/features/bootstrap
   suites:
     default:
+      context:
+        parameters:
+          base_url: http://localhost:8080
       paths:
         - %paths.base%/test/features
   extensions:
