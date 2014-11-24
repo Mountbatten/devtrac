@@ -1,9 +1,9 @@
 <?php
 
-//use Behat\Behat\Context\ClosuredContextInterface;
-//use Behat\Behat\Context\TranslatedContextInterface;
-//use Behat\Behat\Context\BehatContext;
-//use Behat\Behat\Exception\PendingException;/
+use Behat\Behat\Context\ClosuredContextInterface;
+use Behat\Behat\Context\TranslatedContextInterface;
+use Behat\Behat\Context\BehatContext;
+use Behat\Behat\Exception\PendingException;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 use Drupal\DrupalExtension\Context\DrupalContext;
@@ -20,6 +20,7 @@ use Drupal\DrupalExtension\Context\DrupalContext;
  */
 class FeatureContext extends DrupalContext
 {
+    public $parameters = array();
     /**
      * Initializes context.
      * Every scenario gets its own context object.
@@ -28,7 +29,7 @@ class FeatureContext extends DrupalContext
      */
     public function __construct(array $parameters)
     {
-        // Initialize your context here
+        $this->parameters = $parameters;
     }
     
     
