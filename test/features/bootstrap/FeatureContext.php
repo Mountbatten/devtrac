@@ -37,7 +37,7 @@ class FeatureContext extends DrupalContext
      * Clicks the Welcome Link.
      *
      * @When /^(?:|I )click the Welcome Link$/
-     *
+     */
     public function clickTheWelcomeLink()
     {
        $link = "Welcome, [current-user:field_user_firstname]";
@@ -49,7 +49,7 @@ class FeatureContext extends DrupalContext
         }
        $linkObj->click();
     }
-    */
+    
     
     /**
      * Filter by current user.
