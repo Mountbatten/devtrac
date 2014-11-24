@@ -13,7 +13,7 @@
   <property name="account.pass"     value="admin"/>
   <property name="account.mail"     value="test@example.com"/>
   <property name="base.url"         value="http://localhost"/>
-  <property name="behat.params"     value='{"extensions": {"Behat/MinkExtension": {"base_url": "localhost:8080"}}}'/>
+  <property name="behat.params"     value='{"default":{"extensions": {"Behat/MinkExtension/": {"base_url": "localhost:8080"}}}}'/>
   <property name="composer"         value="${builddir}/composer.phar"/>
   <property name="db.url"           value="mysql://username:password@host/db"/>
   <property name="docroot"          value="${basedir}/docroot"/>
