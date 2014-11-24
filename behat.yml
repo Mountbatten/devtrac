@@ -1,6 +1,10 @@
 default:
-  paths:
-    features: test/features
+  autoload:
+    '': %paths.base%/test/features/bootstrap
+  suites:
+    default:
+      paths:
+        - %paths.base%/test/features
   extensions:
     Behat\MinkExtension:
       goutte: ~
