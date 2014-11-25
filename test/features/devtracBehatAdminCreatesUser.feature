@@ -1,4 +1,4 @@
-@api
+@javascript
 Feature: Maintain content
   In order to maintain site content
   As an editor
