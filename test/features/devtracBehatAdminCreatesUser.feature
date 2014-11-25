@@ -3,7 +3,6 @@ Feature: Maintain content
   In order to maintain site content
   As an editor
   I need to log in
-Background: In order to login, you must be on the login page, to create a demo user, you must have admin rights, in order to log out, you must be logged in
 
   Scenario: Enter valid username and password // Happy path
     Given I am on the "/user/login"
