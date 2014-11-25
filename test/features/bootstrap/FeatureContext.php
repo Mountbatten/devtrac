@@ -29,10 +29,9 @@ class FeatureContext extends DrupalContext
      */
     public function __construct(array $parameters)
     {
-        $this->$base_url = $parameters;
-        $this->base_url += array(
-      'user_account' => 'My Account',
-    );
+       $this->useContext('panels', new PanelsSubContext());
+       $this->useContext('wysiwyg', new WysiwygSubContext());
+       $this->useContext('media', new MediaSubContext());
     }
     
     
