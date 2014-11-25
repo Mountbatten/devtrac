@@ -10,12 +10,12 @@ default:
       paths:
         - %paths.base%/test/features
   extensions:
-    Behat\MinkExtension:
+    Behat\MinkExtension\Extension:
       goutte: ~
       default_session: 'selenium2'
       selenium2: ~
       base_url: http://localhost/docroot
-    Drupal\DrupalExtension:
+    Drupal\DrupalExtension\Extension:
       blackbox: ~
       drush:
         alias: self
