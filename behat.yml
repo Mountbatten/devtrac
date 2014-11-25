@@ -4,7 +4,7 @@ default:
   suites:
     default:
       context:
-        FeatureContext:
+        class: "FeatureContext"
           baseUrl: http://localhost:8080
           tempPath: /var/tmp
         parameters:
