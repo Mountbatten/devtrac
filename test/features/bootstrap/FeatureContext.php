@@ -20,7 +20,7 @@ use Drupal\DrupalExtension\Context\DrupalContext;
  */
 class FeatureContext extends DrupalContext
 {
-    public $parameters = array();
+    public $base_url;
     /**
      * Initializes context.
      * Every scenario gets its own context object.
@@ -29,7 +29,10 @@ class FeatureContext extends DrupalContext
      */
     public function __construct(array $parameters)
     {
-        $this->parameters = $parameters;
+        $this->$base_url = $parameters;
+        $this->base_url += array(
+      'user_account' => 'My Account',
+    );
     }
     
     
