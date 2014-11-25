@@ -16,7 +16,6 @@ use Behat\Behat\Event\ScenarioEvent;
 use Behat\Behat\Event\StepEvent;
 use Behat\Mink\Exception\ElementNotFoundException;
 
-require 'vendor/autoload.php';
 
 //
 // Require 3rd-party libraries here:
