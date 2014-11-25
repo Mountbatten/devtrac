@@ -4,9 +4,11 @@ default:
   suites:
     default:
       context:
-        FeatureContext:
-          parameters:
-            base_url: http://localhost:8080
+        - FeatureContext:
+            baseUrl: http://localhost:8080
+            tempPath: /var/tmp
+        parameters:
+          base_url: http://localhost:8080
       paths:
         - %paths.base%/test/features
   extensions:
