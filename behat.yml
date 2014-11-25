@@ -5,8 +5,8 @@ default:
     default:
       context:
         class: "FeatureContext"
-        parameters:
-          base_url: http://localhost:8080
+          parameters:
+            base_url: http://localhost
       paths:
         - %paths.base%/test/features
   extensions:
