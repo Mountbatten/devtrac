@@ -189,7 +189,8 @@
       <arg value="${composer}"/>
       <arg value="--working-dir=${builddir}"/>
       <arg value="require"/>
-      <arg value="drupal/drupal-extension:*"/>
+      <arg value="drupal/drupal-extension:1.0.0"/>
+      <arg value="symfony/css-selector: 2.4.2"/>
       <arg value="psr/log:1.0.*@dev"/>
     </exec>
   </target>
