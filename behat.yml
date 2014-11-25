@@ -1,14 +1,6 @@
 default:
-  autoload:
-    '': %paths.base%/test/features/bootstrap
-  suites:
-    default:
-      context:
-        class: "FeatureContext"
-        parameters:
-          base_url: http://localhost
-      paths:
-        - %paths.base%/test/features
+  paths:
+    features: test/features
   extensions:
     Behat\MinkExtension\Extension:
       goutte: ~
