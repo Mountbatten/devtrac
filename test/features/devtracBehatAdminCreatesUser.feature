@@ -36,6 +36,6 @@ Feature: Maintain content
     
   Scenario: Devtrac Logout Test
     Given I am logged in as a user with the 7 role
-    And I follow "Sign out"
-    Then I am on the "/"
+    When I follow "Sign out"
+    Then I should see "Site Reports"
 
