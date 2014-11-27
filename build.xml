@@ -186,7 +186,7 @@
       <arg value="${composer}"/>
       <arg value="--working-dir=${builddir}"/>
       <arg value="require"/>
-      <arg value="drupal/drupal-extension:*"/>
+      <arg value="drupal/drupal-extension:3.0"/>
       <arg value="psr/log:1.0.*@dev"/>
     </exec>
   </target>
