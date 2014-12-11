@@ -4,7 +4,7 @@ Feature: Maintain content
   As an editor
   I need to log in
 
-  Scenario: Enter valid username and password // Happy path
+  Scenario: Enter valid username and password
     Given I am on the "/user/login"
     When I fill in "admin" for "name"
     And I fill in "admin" for "pass"
