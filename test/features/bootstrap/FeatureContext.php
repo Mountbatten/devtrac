@@ -160,61 +160,80 @@ class FeatureContext extends DrupalContext
    }
    }
    /**
- * @Given /^I am logged in as a user with the (\d+) role$/
-   *
+     * @Given /^I am on the "([^"]*)"$/
+     */
+    public function iAmOnThe($arg1) {
+      throw new PendingException();
+     }
+     
+    /**
+     * @Given /^I am logged in as a user with the (\d+) role$/
+     */
     public function iAmLoggedInAsAUserWithTheRole($arg1) {
-        
-    }
+      throw new PendingException();
+      }
     
-   /**
-    * @When /^i go to "([^"]*)"$/
-    *
-    
+    /**
+     * @When /^i go to "([^"]*)"$/
+     */
     public function iGoTo($arg1) {
-    
+      throw new PendingException();
     }
     
     /**
      * @Given /^I fill in question Options field (\d+) with "([^"]*)"$/
-     *
+     */
     public function iFillInQuestionOptionsFieldWith($arg1, $arg2) {
-    
+      throw new PendingException();
     }
-    
+   
     /**
      * @Given /^I am logged in as a user with (\d+) role$/
-     *
+     */
     public function iAmLoggedInAsAUserWithRole($arg1) {
-        
-        
+      throw new PendingException();
     }
-    
+ 
     /**
-     * @Given /^I click the Welcome Link$/
-     *
-    public function iClickTheWelcomeLink() {
-        //$this->getSession()->getPage()->clickLink('Welcome');
-  
+     * @Given /^I follow Admin$/
+     */
+    public function iFollowAdmin() {
+      throw new PendingException();
     }
+    /**
+     * @Given /^I click the "([^"]*)" Link$/
+     */
+    public function iClickTheLink($arg1) {
+      throw new PendingException();
+    }
+
+    /**
+     * @Given /^I click Open FieldTrips$/
+     */
+    public function iClickOpenFieldtrips() {
+    $this->getSession()->getPage()->clickLink('Quick edit');
     
-     /**
-      * @Given /^I fill in "([^"]*)" with (\d+)$/
-      *
+      throw new PendingException();
+    }
+
+    /**
+     * @Given /^I fill in "([^"]*)" with (\d+)$/
+    */
     public function iFillInWith($arg1, $arg2) {
-    
+      throw new PendingException();
     }
-    
+ 
     /**
      * @Given /^I go to the "([^"]*)"$/
-     *
+     */
     public function iGoToThe($arg1) {
-   
+      throw new PendingException();
     }
-    */
+
     
     /**
      * @Then /^I should  not See "([^"]*)"$/
-     *
+     */
     public function iShouldNotSee($table) {
         $page = $this->getSession()->getPage();
          $text = 'Welcome to devtrac distro';
@@ -222,5 +241,5 @@ class FeatureContext extends DrupalContext
         throw new Exception("The text '" . $text . "' was not found");
       }
 
-    }*/
+    }
 }
