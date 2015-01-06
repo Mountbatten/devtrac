@@ -140,7 +140,7 @@ class FeatureContext extends DrupalContext
     
     /**
     * @Given /^I am on the "([^"]*)"$/
-    *
+    */
    public function iAmOnThe($element) {
    $element = $this->getSession()->getPage();
     if (empty($element)) {
@@ -159,12 +159,6 @@ class FeatureContext extends DrupalContext
     
    }
    }
-   /**
-     * @Given /^I am on the "([^"]*)"$/
-     */
-    public function iAmOnThe($arg1) {
-      throw new PendingException();
-     }
      
     /**
      * @Given /^I am logged in as a user with the (\d+) role$/
