@@ -1,3 +1,4 @@
+@javascript
 Feature: Login Devtrac Distribution
   In order to start using additional features of the site
   As an anonymous user
@@ -13,8 +14,9 @@ Feature: Login Devtrac Distribution
 
   Scenario Outline: Username validation: Invalid username
     When I go to "/user/login"
-      And I fill in "Username" with "<name>"
-      And I fill in "Password" with random text
+    Then print current URL 
+      And I fill in "name" with "<name>"
+      And I fill in "pass" with random text
       And I press "Log in"
     Then I should see "Sorry, unrecognized username or password."
       And the field "Username" should be outlined in red
