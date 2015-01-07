@@ -37,8 +37,6 @@ class FeatureContext extends DrupalContext
      */
     public function __construct(array $parameters){
     }
-  
-}
 
   /**
    * @Given /^I (?:should |)see the following <texts>$/
@@ -52,7 +50,7 @@ class FeatureContext extends DrupalContext
         throw new Exception("The text '" . $text . "' was not found");
       }
     }
-    
+    }
       protected function randomString($number = 10) {
     return 'abcdefghijk';
   }
