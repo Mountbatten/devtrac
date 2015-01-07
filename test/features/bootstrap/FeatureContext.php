@@ -37,203 +37,64 @@ class FeatureContext extends DrupalContext
      */
     public function __construct(array $parameters){
     }
-    
-    
-    
-      /**
-     * Clicks the Welcome Link.
-     *
-     * @When /^(?:|I )click the Welcome Link$/
-     */
-    public function clickTheWelcomeLink()
-    {
-       $link = "Welcome, [current-user:field_user_firstname]";
-       $regionObj = $this->getRegion('userprofile_menu');
-       // Find the link within the region
-       $linkObj = $regionObj->findLink($link);
-       if (empty($linkObj)) {
-          throw new \Exception(sprintf('The link "%s" was not found in the region "%s" on the page %s', $link, 'userprofile_menu', $this->getSession()->getCurrentUrl()));
-        }
-       $linkObj->click();
-    }
-    
-    
-    /**
-     * Filter by current user.
-     *
-     * @When /^(?:|I )filter by current user$/
-     */
-    public function filterByCurrentUser()
-    {
-       $link = $this->user->name . " ";
-       $regionObj = $this->getRegion('first_sidebar');
-       // Find the link within the region
-       $linkObj = $regionObj->findLink($link);
-       if (empty($linkObj)) {
-          throw new \Exception(sprintf('The link "%s" was not found in the region "%s" on the page %s', $link, 'first_sidebar', $this->getSession()->getCurrentUrl()));
-        }
-       $linkObj->click();
-   }
-   
-     /**
-     * Fills in hidden latitude and longitude values that are normally filled by clicking on the map.
-     *
-     * @Given /^I fill hidden longitude and latitude field with "(?P<arg1>([0-9]+\.[0-9]+))" and "(?P<arg2>([0-9]+\.[0-9]+))" for the "(?P<type>[^"]*)"$/
-     */
-    public function iFillHiddenLongitudeAndLatitudeFieldWithPoint($arg1, $arg2, $type)
-    {
-        switch ($type) {
-            case 'Site Visit':
-                # code...                
-                $this->getSession()->getPage()->find('css','input[name="field_place_lat_long[und][0][geom]"]')->setValue("POINT(" . $arg1 . " " . $arg2 . ")");
-                break;
-            case 'Human Interest Story':
-                # code...                
-                $this->getSession()->getPage()->find('css','input[name="field_place_lat_long[und][0][geom]"]')->setValue("POINT(" . $arg1 . " " . $arg2 . ")");
-                break;
-            case 'Roadside Observation':
-                # code...                
-                $this->getSession()->getPage()->find('css','input[name="field_ftritem_lat_long[und][0][geom]"]')->setValue("POINT(" . $arg1 . " " . $arg2 . ")");
-                break;
-            default:
-                # code...
-                break;
-        }
-    }
-    /**
-     * Clicks a link in a drop down menu
-     *
-     * @Given /^I click the link "(?P<name>[^"]*)" in the dropdown menu$/
-     */
-    public function iClickTheLinkInTheDropDown($name)
-    {
-        $this->getSession()->getPage()->clickLink($name);
-    }
-    /**
-     * Clicks a Quick Tab
-     *
-     * @Given /^I click the tab "(?P<name>[^"]*)"$/
-     */
-    public function iClickTheTab($name)
-    {
-        switch ($name) {
-            case 'Site Reports':
-                $link = $this->getSession()->getPage()->find('css', 'quicktabs-tab-fieldtrip_content_first-3');
-                $this->getSession()->getPage()->clickLink($link);
-                break;
-            
-            default:
-                # code...
-                break;
-        }
-    }
-    
-    /**
-     * Fills in question Options field with specified id|name|label|value.
-     *
-     * @When /^(?:|I )fill in question Options field "(?P<field_number>([0-9]+))" with "(?P<value>[^"]*)"$/
-     */
-    public function fillQuestionOptionsField($field_number, $value)
-    {
-        $this->getSession()->getPage()->fillField('questionnaire_question_options[und][' . --$field_number . '][value]', $value);
-    }
-    
-    /**
-    * @Given /^I am on the "([^"]*)"$/
-    */
-   public function iAmOnThe($element) {
-   $element = $this->getSession()->getPage();
-    if (empty($element)) {
-      throw new Exception('Page not found');
-    }
-    // Go to the user login page.
-    $this->getSession()->visit($this->locatePath('/user/login'));
+  
+}
 
-    // If I see this, I'm not logged in at all so log the user in.
-    $element->fillField('name', 'admin');
-    $element->fillField('pass', 'admin');
-    $submit = $element->findButton('Log in');
-    if (empty($submit)) {
-      throw new Exception('No submit button at ' . $this->getSession()->getCurrentUrl());
-    
-    
-   }
-   }
-     
-    /**
-     * @Given /^I am logged in as a user with the (\d+) role$/
-     */
-    public function iAmLoggedInAsAUserWithTheRole($arg1) {
-      throw new PendingException();
-      }
-    
-    /**
-     * @When /^i go to "([^"]*)"$/
-     */
-    public function iGoTo($arg1) {
-      throw new PendingException();
-    }
-    
-    /**
-     * @Given /^I fill in question Options field (\d+) with "([^"]*)"$/
-     */
-    public function iFillInQuestionOptionsFieldWith($arg1, $arg2) {
-      throw new PendingException();
-    }
-   
-    /**
-     * @Given /^I am logged in as a user with (\d+) role$/
-     */
-    public function iAmLoggedInAsAUserWithRole($arg1) {
-      throw new PendingException();
-    }
- 
-    /**
-     * @Given /^I follow Admin$/
-     */
-    public function iFollowAdmin() {
-      throw new PendingException();
-    }
-    /**
-     * @Given /^I click the "([^"]*)" Link$/
-     */
-    public function iClickTheLink($arg1) {
-      throw new PendingException();
-    }
-
-    /**
-     * @Given /^I click Open FieldTrips$/
-     */
-    public function iClickOpenFieldtrips() {
-    $this->getSession()->getPage()->clickLink('Quick edit');
-    
-      throw new PendingException();
-    }
-
-    /**
-     * @Given /^I fill in "([^"]*)" with (\d+)$/
-    */
-    public function iFillInWith($arg1, $arg2) {
-      throw new PendingException();
-    }
- 
-    /**
-     * @Given /^I go to the "([^"]*)"$/
-     */
-    public function iGoToThe($arg1) {
-      throw new PendingException();
-    }
-
-    
-    /**
-     * @Then /^I should  not See "([^"]*)"$/
-     */
-    public function iShouldNotSee($table) {
-        $page = $this->getSession()->getPage();
-         $text = 'Welcome to devtrac distro';
-      if ($page->hasContent($text) === TRUE) {
+  /**
+   * @Given /^I (?:should |)see the following <texts>$/
+   */
+  public function iShouldSeeTheFollowingTexts(TableNode $table) {
+    $page = $this->getSession()->getPage();
+    $table = $table->getHash();
+    foreach ($table as $key => $value) {
+      $text = $table[$key]['texts'];
+      if ($page->hasContent($text) === FALSE) {
         throw new Exception("The text '" . $text . "' was not found");
       }
-
     }
-}
+    
+      protected function randomString($number = 10) {
+    return 'abcdefghijk';
+  }
+
+    
+    /**
+   * Function to check if the field specified is outlined in red or not
+   *
+   * @Given /^the field "([^"]*)" should be outlined in red$/
+   *
+   * @param string $field
+   *   The form field label to be checked.
+   */
+  public function theFieldShouldBeOutlinedInRed($field) {
+    $page = $this->getSession()->getPage();
+    // get the object of the field
+    $formField = $page->findField($field);
+    if (empty($formField)) {
+      throw new Exception('The page does not have the field with label "' . $field . '"');
+    }
+    // get the 'class' attribute of the field
+    $class = $formField->getAttribute("class");
+    // we get one or more classes with space separated. Split them using space
+    $class = explode(" ", $class);
+    // if the field has 'error' class, then the field will be outlined with red
+    if (!in_array("error", $class)) {
+      throw new Exception('The field "' . $field . '" is not outlined with red');
+    }
+  }
+
+  /**
+   * @Given /^I fill in "([^"]*)" with random text$/
+   */
+  public function iFillInWithRandomText($label) {
+    // A @Tranform would be more elegant.
+    $randomString = $this->randomString(10);
+
+    $step = "I fill in \"$label\" with \"$randomString\"";
+    return new Then($step);
+  }
+    
+    
+  }
+
+
