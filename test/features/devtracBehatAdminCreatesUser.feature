@@ -6,8 +6,8 @@ Feature: Maintain content
 
   Scenario: Enter valid username and password
     When I go to "/user/login"
-    Add I fill in "admin" for "name"
-    And I fill in "admin" for "pass"
+    Add I fill in "Username" with "admin"
+    And I fill in "Password" with "admin"
     And I press "Log in"
     Then I should see "Add content"
   
