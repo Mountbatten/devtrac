@@ -3,16 +3,18 @@ Feature: Maintain content
   In order to maintain site content
   As an editor
   I should be able to Login
-
+  
+  @api @javascript
   Scenario: Enter valid username and password
     When I go to "/user/login"
     And I fill in "Username" with "admin"
     And I fill in "Password" with "admin"
     And I press "Log in"
     Then I should see "Add content"
-  
+    
+  @api @javascript
   Scenario: Devtrac Admin creates user details
-    When I am logged in as a user with the 7 role
+    When I am logged in as a user with the "devtrac admin" role
     And I am on "/admin/people/create"
     When I click the link "Add user" in the dropdown menu
     Then I should see "This web page allows administrators to register new users. Users' e-mail addresses and usernames must be unique."
