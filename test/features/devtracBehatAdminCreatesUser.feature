@@ -6,16 +6,16 @@ Feature: Maintain content
 
   Scenario: Enter valid username and password
     When I go to "/user/login"
-      Add I fill in "admin" for "name"
-      And I fill in "admin" for "pass"
-      And I press "Log in"
-      Then I should see "Add content"
+    Add I fill in "admin" for "name"
+    And I fill in "admin" for "pass"
+    And I press "Log in"
+    Then I should see "Add content"
   
   Scenario: Devtrac Admin creates user details
     When I am logged in as a user with the 7 role
-      Add I am on "/admin/people/create"
+    Add I am on "/admin/people/create"
     When I click the link "Add user" in the dropdown menu
-      Then I should see "This web page allows administrators to register new users. Users' e-mail addresses and usernames must be unique."
+    Then I should see "This web page allows administrators to register new users. Users' e-mail addresses and usernames must be unique."
     And I fill in "Username" with "user_demo"
     And I fill in "E-mail address" with "user_demo@mountbatten.net"
     And I fill in "Password" with "user_demo"
