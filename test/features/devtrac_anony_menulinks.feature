@@ -1,5 +1,5 @@
 Feature: Menu links for the anonymous user
-  In order to handle the bought products
+  In order to view all the menulinks
   As an anonymous user
   I should be able to see menu links
 
