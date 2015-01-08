@@ -55,18 +55,6 @@ class FeatureContext extends DrupalContext
     return 'abcdefghijk';
   }
   
-    public function iShouldSeeTheFollowingLinks(TableNode $table) {
-    $page = $this->getSession()->getPage();
-    $table = $table->getHash();
-    foreach ($table as $key => $value) {
-      $link = $table[$key]['links'];
-      $result = $page->findLink($link);
-      if(empty($result)) {
-        throw new Exception("The link '" . $link . "' was not found");
-      }
-    }
-  }
-  
   /**
    * @Given /^I (?:should |)see the following <links>$/
    */
