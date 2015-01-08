@@ -7,6 +7,7 @@ Feature: Frontpage
     Given I am on the homepage
 
   Scenario: I should be able to click site reports
+    When I am on the homepage
     Then I should see the link "Site Reports"
     When I click "Site Reports"
     Then I should get a "200" HTTP response
@@ -21,12 +22,12 @@ Feature: Frontpage
     When I click "Action Items"
     Then I should get a "200" HTTP response
 
-    Scenario: User should be able to click statistics
+  Scenario: User should be able to click statistics
     Then I should see the link "Statistics"
     When I click "Statistics"
     Then I should get a "200" HTTP response  
     
-      Scenario: User should be able to click admin units
+  Scenario: User should be able to click admin units
     Then I should see the link "Admin Units"
     When I click "Admin Units"
     Then I should get a "200" HTTP response
