@@ -7,8 +7,8 @@ Feature: Menu links for the anonymous user
   Scenario:
     When I am logged in as a user with the "field worker" role
       And I go to "/statistics"
-    When I click on Site Reports link
-    Then I should see not the following <texts>
+    When I click "Site Reports"
+    Then I should not see the following <texts>
       | texts           |
       | Title           |
       | Add new comment |
