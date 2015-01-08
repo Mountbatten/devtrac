@@ -1,4 +1,4 @@
-@api @javascript
+@insulated @api @javascript
 Feature: Login Devtrac Distribution
   In order to start using additional features of the site
   As an anonymous user

@@ -169,6 +169,51 @@ class FeatureContext extends DrupalContext
     // Successfully logged in.
     return;
   }
+  
+  
+  /**
+   * Private function for the whoami step.
+   */
+  private function whoami() {
+    $element = $this->getSession()->getPage();
+    // Go to the user page.
+    $this->getSession()->visit($this->locatePath('/user'));
+    if ($find = $element->find('css', 'h1')) {
+      $page_title = $find->getText();
+      if ($page_title) {
+        return str_replace('hello, ', '', strtolower($page_title));
+      }
+    }
+    return FALSE;
+  }
+
+  /**
+   * @When /^(?:|I )click on Quick Edit link$/
+   *
+   * Click on Quick edit.
+   */
+  public function clickOnQuickEdit() {
+    $this->getSession()->getPage()->clickLink('Quick edit');
+    $this->getSession()->wait(5000, 'jQuery(".entity-commerce-order").length > 0');
+  }
+
+  /**
+   * @Given /^(?:|I )wait for AJAX loading to finish$/
+   *
+   * Wait for the jQuery AJAX loading to finish. ONLY USE FOR DEBUGGING!
+   */
+  public function iWaitForAJAX() {
+    $this->getSession()->wait(5000, 'jQuery.active === 0');
+  }
+
+  /**
+   * @Given /^(?:|I )wait(?:| for) (\d+) seconds?$/
+   *
+   * Wait for the given number of seconds. ONLY USE FOR DEBUGGING!
+   */
+  public function iWaitForSeconds($arg1) {
+    sleep($arg1);
+  }
     
     
   }
