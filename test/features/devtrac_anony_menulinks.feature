@@ -15,9 +15,9 @@ Feature: Menu links for the anonymous user
    Then I should see the following <links>
    
 Scenario:
-    Given I login with an "authenticated" user
-      And I go to the "/statistics"
-    Then I should not see the following <texts>
+  When I login with an "authenticated" user
+    And I go to the "/statistics"
+  Then I should not see the following <texts>
       | texts           |
       | Title           |
       | Add new comment |
