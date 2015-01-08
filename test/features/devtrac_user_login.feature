@@ -1,4 +1,4 @@
-@insulated @api @javascript
+
 Feature: Login Devtrac Distribution
   In order to start using additional features of the site
   As an anonymous user
@@ -27,7 +27,7 @@ Feature: Login Devtrac Distribution
     | randomname     |
     | 123453         |
     | mail@mail.com  |
-    
+@javascript    
   Scenario: User should be able to login and see the user profile
     When I go to "/user/login"
     And I fill in "Password *" with "admin"
