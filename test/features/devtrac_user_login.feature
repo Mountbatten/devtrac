@@ -16,8 +16,8 @@ Feature: Login Devtrac Distribution
   Scenario Outline: Username validation: Invalid username
     When I go to "/user/login"
     Then print current URL 
-      And I fill in "Usename " with "<name>"
-      And I fill in "pass" with random text
+      And I fill in "Username" with "<name>"
+      And I fill in "Password" with random text
       And I press "Log in"
     Then I should see "Sorry, unrecognized username or password."
       And the field "Username " should be outlined in red
@@ -29,7 +29,7 @@ Feature: Login Devtrac Distribution
     
   Scenario: User should be able to login and see the user profile
     When I go to "/user/login"
-    And I fill in "Password " with "admin"
+    And I fill in "Password *" with "admin"
     And I fill in "Username *" with "admin"
     And I press "Log in"
     Then I should not see "HELLO, admin"
