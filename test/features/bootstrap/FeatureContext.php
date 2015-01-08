@@ -54,7 +54,35 @@ class FeatureContext extends DrupalContext
       protected function randomString($number = 10) {
     return 'abcdefghijk';
   }
-/**
+  
+    public function iShouldSeeTheFollowingLinks(TableNode $table) {
+    $page = $this->getSession()->getPage();
+    $table = $table->getHash();
+    foreach ($table as $key => $value) {
+      $link = $table[$key]['links'];
+      $result = $page->findLink($link);
+      if(empty($result)) {
+        throw new Exception("The link '" . $link . "' was not found");
+      }
+    }
+  }
+  
+  /**
+   * @Given /^I (?:should |)see the following <links>$/
+   */
+  public function iShouldSeeTheFollowingLinks(TableNode $table) {
+    $page = $this->getSession()->getPage();
+    $table = $table->getHash();
+    foreach ($table as $key => $value) {
+      $link = $table[$key]['links'];
+      $result = $page->findLink($link);
+      if(empty($result)) {
+        throw new Exception("The link '" . $link . "' was not found");
+      }
+    }
+  }
+  
+  /**
    * @Given /^I should not see the following <links>$/
    */
   public function iShouldNotSeeTheFollowingLinks(TableNode $table) {
@@ -103,6 +131,69 @@ class FeatureContext extends DrupalContext
 
     $step = "I fill in \"$label\" with \"$randomString\"";
     return new Then($step);
+  }
+  
+  /**
+   * Helper function to fetch user details stored in behat.local.yml.
+   *
+   * @param string $type
+   *   The user type, e.g. drupal.
+   *
+   * @param string $name
+   *   The username to fetch the password for.
+   *
+   * @return string
+   *   The matching password or FALSE on error.
+   */
+  public function fetchUserDetails($type, $name) {
+    $property_name = $type . '_users';
+    try {
+      $property = $this->$property_name;
+      $details = $property[$name];
+      return $details;
+    } catch (Exception $e) {
+      throw new Exception("Non-existant user/password for $property_name:$name please check behat.local.yml.");
+    }
+  }
+
+  /**
+   * Authenticates a user.
+   *
+   * @Given /^I am logged in as "([^"]*)" with the password "([^"]*)"$/
+   */
+  public function iAmLoggedInAsWithThePassword($username, $passwd) {
+    $user = $this->whoami();
+
+    if (strtolower($user) == strtolower($username)) {
+      // Already logged in.
+      return;
+    }
+
+    $element = $this->getSession()->getPage();
+    if (empty($element)) {
+      throw new Exception('Page not found');
+    }
+
+    // Go to the user login page.
+    $this->getSession()->visit($this->locatePath('/user/login'));
+
+    // If I see this, I'm not logged in at all so log the user in.
+    $element->fillField('name', $username);
+    $element->fillField('Pass', $passwd);
+    $submit = $element->findButton('Log in');
+    if (empty($submit)) {
+      throw new Exception('No submit button at ' . $this->getSession()->getCurrentUrl());
+    }
+
+    // Log in.
+    $submit->click();
+    $user = $this->whoami();
+    if (strtolower($user) != strtolower($username)) {
+      throw new Exception('Could not log user in.');
+    }
+
+    // Successfully logged in.
+    return;
   }
     
     
