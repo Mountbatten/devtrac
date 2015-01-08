@@ -15,7 +15,7 @@ default:
       drupal:
         drupal_root: "/home/travis/build/TddDoctor/devtrac/build/docroot"
       text:
-       username_field: "Username"
+        username_field: "Username"
         password_field: "password"
         log_out: "Sign out"
         log_in: "Sign in"
