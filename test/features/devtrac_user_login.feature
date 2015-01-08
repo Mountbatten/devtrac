@@ -6,7 +6,9 @@ Feature: Login Devtrac Distribution
 
   Scenario: View the Login page
     When I go to "/user/login"
-    Then I should see "Login"
+    Then I should not see "Login"
+    Then I should see "Enter your"
+    Then i shoul see "Enter the password that accompanies your username"
       And I should see the following <links>
         | links                    |
         | Forgot your password?    |
