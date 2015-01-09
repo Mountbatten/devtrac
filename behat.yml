@@ -6,7 +6,7 @@ default:
       goutte: ~
       default_session: goutte
       selenium2: ~
-      base_url: 'http://127.0.0.1:80'
+      base_url: 'http://dev.devtrac.org'
     Drupal\DrupalExtension\Extension:
       blackbox: ~
       drush:
