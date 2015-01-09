@@ -6,7 +6,7 @@ default:
       goutte: ~
       default_session: goutte
       selenium2: ~
-      base_url: http://localhost/docroot
+      base_url: http://localhost/devtrac
     Drupal\DrupalExtension\Extension:
       blackbox: ~
       drush:
