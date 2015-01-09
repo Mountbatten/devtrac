@@ -4,9 +4,9 @@ default:
   extensions:
     Behat\MinkExtension\Extension:
       goutte: ~
-      default_session: 'selenium2'
+      default_session: goutte
       selenium2: ~
-      base_url: http://127.0.0.1:8888
+      base_url: http://localhost/docroot
     Drupal\DrupalExtension\Extension:
       blackbox: ~
       drush:
