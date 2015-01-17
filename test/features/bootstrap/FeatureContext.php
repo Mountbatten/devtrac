@@ -38,6 +38,22 @@ class FeatureContext extends DrupalContext
     public function __construct(array $parameters){
     }
 
+    /**
+     * @Then /^I should not see the following <texts>$/
+     */
+  public function iShouldNotSeeTheFollowingTexts(TableNode $table) {
+    $page = $this->getSession()->getPage();
+    $table = $table->getHash();
+    foreach ($table as $key => $value) {
+      $text = $table[$key]['texts'];
+      if ($page->hasContent($text) === TRUE) {
+        throw new Exception("The text '" . $text . "' was found");
+      }
+    }
+  }
+  
+    
+    
   /**
    * @Given /^I (?:should |)see the following <texts>$/
    */

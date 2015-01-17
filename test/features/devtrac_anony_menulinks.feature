@@ -3,6 +3,42 @@ Feature: Menu links for the anonymous user
   As an anonymous user
   I should be able to see menu links
 
+  Feature: Frontpage
+  To have people being interested in devtrac
+  As any user
+  I should be able to find a homepage
+
+  Background:
+    Given I am on the homepage
+
+  Scenario: I should be able to view site reports
+    Then I should see the link "Site Reports"
+    When I click "Site Reports"
+    Then I should get a "200" HTTP response
+
+  Scenario: User should be able to login
+    Then I should see the link "Sign in"
+    When I click "Sign in"
+    Then I should get a "200" HTTP response
+
+  Scenario: User should be able to create account
+    Then I should see the link "Locations"
+    When I click "Locations"
+    Then I should get a "200" HTTP response
+    Then I should see the following <links>
+      | Admin Unit           |
+      | Location           |
+
+  
+  Scenario:
+  When I am logged in as a user with the "anonymous user" role
+    And I go to the "/statistics"
+  Then I should not see the following <texts>
+      | texts           |
+      | Title           |
+      | Add new comment |
+   Then I should see the following <links>
+   
   @api @javascript
   Scenario:
     When I am logged in as a user with the "field worker" role
@@ -12,14 +48,13 @@ Feature: Menu links for the anonymous user
       | texts           |
       | Title           |
       | Add new comment |
-   Then I should see the following <links>
+    Then I should see the following <links>
+      | links                   |
+      | Site Reports            |
+      | Action Items            |
+      | Field Trips             |
+      | Images                  |
+      | Statistics              |
+      | Admin Units             |  
    
-Scenario:
-  When I login with an "authenticated" user
-    And I go to the "/statistics"
-  Then I should not see the following <texts>
-      | texts           |
-      | Title           |
-      | Add new comment |
-   Then I should see the following <links>
-   
+ 
