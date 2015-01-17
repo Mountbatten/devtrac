@@ -24,6 +24,7 @@ Feature: Menu links for the anonymous user
       | Admin Unit           |
       | Location           |
 
+  @api @javascript    
   Scenario:
   When I am logged in as a user with the "anonymous user" role
    And I go to the "/statistics"
