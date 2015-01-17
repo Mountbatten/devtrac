@@ -3,11 +3,6 @@ Feature: Menu links for the anonymous user
   As an anonymous user
   I should be able to see menu links
 
-  Feature: Frontpage
-  To have people being interested in devtrac
-  As any user
-  I should be able to find a homepage
-
   Background:
     Given I am on the homepage
 
