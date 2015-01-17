@@ -3,20 +3,20 @@ Feature: Menu links for the anonymous user
   As an anonymous user
   I should be able to see menu links
 
-  Background:
-    Given I am on the homepage
-
   Scenario: I should be able to view site reports
+    When I go to the "/"
     Then I should see the link "Site Reports"
     When I click "Site Reports"
     Then I should get a "200" HTTP response
 
   Scenario: User should be able to login
+    When I go to the "/"
     Then I should see the link "Sign in"
     When I click "Sign in"
     Then I should get a "200" HTTP response
 
-  Scenario: User should be able to create account
+  Scenario: User should be able to view locations menu link
+    When I go to the "/"
     Then I should see the link "Locations"
     When I click "Locations"
     Then I should get a "200" HTTP response
@@ -24,10 +24,9 @@ Feature: Menu links for the anonymous user
       | Admin Unit           |
       | Location           |
 
-  
   Scenario:
   When I am logged in as a user with the "anonymous user" role
-    And I go to the "/statistics"
+   And I go to the "/statistics"
   Then I should not see the following <texts>
       | texts           |
       | Title           |
