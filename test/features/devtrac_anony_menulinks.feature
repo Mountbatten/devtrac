@@ -14,8 +14,9 @@ Feature: Menu links for the anonymous user
   Scenario:
   When I go to "/"
   Then I should see the following <links>
+      | links           |
       | Statistics      |
-  When I  click "Statistics"
+  When I go to "/statistics"
   Then I should not see the following <texts>
       | texts           |
       | Title           |
