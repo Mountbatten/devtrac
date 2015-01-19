@@ -4,19 +4,19 @@ Feature: Menu links for the anonymous user
   I should be able to see menu links
 
   Scenario: I should be able to view site reports
-    When I go to the "/"
+    When I go to "/"
     Then I should see the link "Site Reports"
     When I click "Site Reports"
     Then I should get a "200" HTTP response
 
   Scenario: User should be able to login
-    When I go to the "/"
+    When I go to "/"
     Then I should see the link "Sign in"
     When I click "Sign in"
     Then I should get a "200" HTTP response
 
   Scenario: User should be able to view locations menu link
-    When I go to the "/"
+    When I go to "/"
     Then I should see the link "Locations"
     When I click "Locations"
     Then I should get a "200" HTTP response
@@ -29,7 +29,7 @@ Feature: Menu links for the anonymous user
   When I go to "/"
   Then I should see the following <links>
       | Statistics      |
-  When I  click "/statistics"
+  When I  click "Statistics"
   Then I should not see the following <texts>
       | texts           |
       | Title           |

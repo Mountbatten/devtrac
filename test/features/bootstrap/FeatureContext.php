@@ -202,6 +202,17 @@ class FeatureContext extends DrupalContext
     }
     return FALSE;
   }
+  
+  /**
+    * @When /^I  click "([^"]*)"$/
+    */
+    public function iClick($arg1) {
+    $this->getSession()->getPage()->clickLink('Quick edit');
+    $this->getSession()->wait(5000, 'jQuery.active === 0');
+         
+  }
+  
+  
 
   /**
    * @When /^(?:|I )click on Quick Edit link$/
