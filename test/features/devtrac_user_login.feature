@@ -11,8 +11,11 @@ Feature: Login Devtrac Distribution
       And I should see the following <links>
         | links                    |
         | Request new password     |
-        | Create an account        |
         | Log in                   |
+      And I should not see the following <links>
+        | links                    |
+        | Create an account        |
+        
 
   Scenario Outline: Username validation: Invalid username
     When I go to "/user/login"
