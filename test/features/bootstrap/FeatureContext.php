@@ -80,7 +80,7 @@ class FeatureContext extends DrupalContext
     foreach ($table as $key => $value) {
       $link = $table[$key]['links'];
       $result = $page->findLink($link);
-      if(!empty($result)) {
+      if(empty($result)) {
         throw new Exception("The link '" . $link . "' was found");
       }
     }
