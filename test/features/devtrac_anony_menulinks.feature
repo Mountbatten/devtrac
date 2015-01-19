@@ -26,8 +26,10 @@ Feature: Menu links for the anonymous user
 
   @api @javascript    
   Scenario:
-  When I go to the "/"
-   And I  click "/statistics"
+  When I go to "/"
+  Then I should see the following <links>
+      | Statistics      |
+  When I  click "/statistics"
   Then I should not see the following <texts>
       | texts           |
       | Title           |
