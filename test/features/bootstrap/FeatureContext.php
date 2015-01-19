@@ -72,6 +72,21 @@ class FeatureContext extends DrupalContext
   }
   
   /**
+    * @Given /^I should not see the following <links>$/
+    */
+    public function iShouldNotSeeTheFollowingLinks(TableNode $table) {
+    $page = $this->getSession()->getPage();
+    $table = $table->getHash();
+    foreach ($table as $key => $value) {
+      $link = $table[$key]['links'];
+      $result = $page->findLink($link);
+      if(!empty($result)) {
+        throw new Exception("The link '" . $link . "' was found");
+      }
+    }
+  }
+  
+  /**
    * @Given /^I (?:should |)see the following <links>$/
    */
   public function iShouldSeeTheFollowingLinks(TableNode $table) {
