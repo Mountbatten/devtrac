@@ -207,7 +207,7 @@ class FeatureContext extends DrupalContext
     * @When /^I  click "([^"]*)"$/
     */
     public function iClick($arg1) {
-    $this->getSession()->getPage()->clickLink('Quick edit');
+    $this->getSession()->getPage()->clickLink('Site reports');
     $this->getSession()->wait(5000, 'jQuery.active === 0');
          
   }
