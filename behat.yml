@@ -11,7 +11,7 @@ default:
       blackbox: ~
       drush:
         alias: self
-      api_driver: "drupal"
+      api_driver: drupal
       drupal:
         drupal_root: "/home/travis/build/TddDoctor/devtrac/build/docroot"
       text:

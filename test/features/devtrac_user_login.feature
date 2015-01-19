@@ -10,8 +10,9 @@ Feature: Login Devtrac Distribution
     Then I should see "Enter the password that accompanies your username"
       And I should see the following <links>
         | links                    |
-        | Forgot your password?    |
+        | Request new password     |
         | Create an account        |
+        | Log in                   |
 
   Scenario Outline: Username validation: Invalid username
     When I go to "/user/login"
