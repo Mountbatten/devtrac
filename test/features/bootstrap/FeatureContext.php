@@ -89,14 +89,14 @@ class FeatureContext extends DrupalContext
   }
 
     
-    /**
-   * Function to check if the field specified is outlined in red or not
-   *
-   * @Given /^the field "([^"]*)" should be outlined in red$/
-   *
-   * @param string $field
-   *   The form field label to be checked.
-   */
+   /**
+    * Function to check if the field specified is outlined in red or not
+    *
+    * @Given /^the field "([^"]*)" should be outlined in red$/
+    *
+    * @param string $field
+    *   The form field label to be checked.
+    */
   public function theFieldShouldBeOutlinedInRed($field) {
     $page = $this->getSession()->getPage();
     // get the object of the field
