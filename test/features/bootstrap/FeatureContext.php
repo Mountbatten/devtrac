@@ -70,24 +70,6 @@ class FeatureContext extends DrupalContext
       protected function randomString($number = 10) {
     return 'abcdefghijk';
   }
-  
- 
-  
-  /**
-   * @Given /^I (?:should |)see the following <links>$/
-   */
-  public function iShouldSeeTheFollowingLinks(TableNode $table) {
-    $page = $this->getSession()->getPage();
-    $table = $table->getHash();
-    foreach ($table as $key => $value) {
-      $link = $table[$key]['links'];
-      $result = $page->findLink($link);
-      if(empty($result)) {
-        throw new Exception("The link '" . $link . "' was not found");
-      }
-    }
-  }
-
     
    /**
     * Function to check if the field specified is outlined in red or not
