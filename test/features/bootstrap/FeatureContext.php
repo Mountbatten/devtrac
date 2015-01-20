@@ -206,8 +206,8 @@ class FeatureContext extends DrupalContext
   }
   
   /**
-    * @When /^I  click "([^"]*)"$/
-    */
+   * @When /^I  click "([^"]*)"$/
+   */
     public function iClick($arg1) {
     $this->getSession()->getPage()->clickLink('Site reports');
     $this->getSession()->wait(5000, 'jQuery.active === 0');
@@ -243,7 +243,20 @@ class FeatureContext extends DrupalContext
   public function iWaitForSeconds($arg1) {
     sleep($arg1);
   }
-    
+    /**
+     * @Given /^I should not see the following <links>$/
+     */
+    public function iShouldNotSeeTheFollowingLinks(TableNode $table) {
+    $page = $this->getSession()->getPage();
+    $table = $table->getHash();
+    foreach ($table as $key => $value) {
+      $link = $table[$key]['links'];
+      $result = $page->findLink($link);
+      if(!empty($result)) {
+        throw new Exception("The link '" . $link . "' was found");
+      }
+    }
+  }
     
   }
 
