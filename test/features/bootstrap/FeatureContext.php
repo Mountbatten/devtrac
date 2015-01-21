@@ -171,7 +171,7 @@ class FeatureContext extends DrupalContext
   }
   
   /**
-   * @Given /^I (?:should |)see the following <links>$/
+   * @Then /^I (?:should |)see the following <links>$/
    */
   public function iShouldSeeTheFollowingLinks(TableNode $table) {
     $page = $this->getSession()->getPage();
