@@ -170,6 +170,20 @@ class FeatureContext extends DrupalContext
     return;
   }
   
+  /**
+   * @Given /^I (?:should |)see the following <links>$/
+   */
+  public function iShouldSeeTheFollowingLinks(TableNode $table) {
+    $page = $this->getSession()->getPage();
+    $table = $table->getHash();
+    foreach ($table as $key => $value) {
+      $link = $table[$key]['links'];
+      $result = $page->findLink($link);
+      if(empty($result)) {
+        throw new Exception("The link '" . $link . "' was not found");
+      }
+    }
+  }
   
   /**
    * Private function for the whoami step.

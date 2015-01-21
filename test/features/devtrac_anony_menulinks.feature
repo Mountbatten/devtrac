@@ -5,7 +5,8 @@ Feature: Menu links for the anonymous user
 
   Scenario: I should be able to view site reports
     When I go to "/"
-    Then I should see the link "Site Reports"
+    Then I should see the following <link> 
+      | Site Reports    |
     When I click "Site Reports"
     Then I should get a "200" HTTP response
 
