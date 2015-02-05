@@ -8,11 +8,12 @@
   <property name="selenium" value="${builddir}/selenium-server-standalone.jar"/>
 
   <property file="build.properties"/>
+
   <property name="account.name"     value="admin"/>
   <property name="account.pass"     value="admin"/>
   <property name="account.mail"     value="test@example.com"/>
   <property name="base.url"         value="http://localhost"/>
-  <property name="behat.params"     value='{"extensions": {"Behat\\MinkExtension": [{"base_url": "localhost"}]}}'/>
+  <property name="behat.params"     value='{"extensions": {"Behat/MinkExtension/Extension": {"base_url": "http://localhost"}}}'/>
   <property name="composer"         value="${builddir}/composer.phar"/>
   <property name="db.url"           value="mysql://username:password@host/db"/>
   <property name="docroot"          value="${basedir}/docroot"/>
@@ -116,20 +117,10 @@
     <exec executable="${drush}" taskname="drush">
       <env key="DRUSH_PHP" value="${php}"/>
       <arg value="make"/>
+     
       <arg value="${basedir}/${drush.makefile}"/>
       <arg value="${builddir}/docroot"/>
     </exec>
-    <!-- replacing the devtrac.profile file for default country -->
-  <replace file="/home/travis/build/TddDoctor/devtrac/devtrac.profile">
-    <replacefilter 
-      token="@$form['#submit'][] = 'devtrac_install_configure_form_submit_country';@"
-      value="//$form['#submit'][] = 'devtrac_install_configure_form_submit_country';"/>
-    <replacefilter 
-      token="@$form['server_settings']['site_default_country']['#required'] = TRUE;@" 
-      value="//$form['server_settings']['site_default_country']['#required'] = TRUE;"/>
-  </replace>
-    
-    
     <!-- Rsync the build into ./docroot -->
     <exec executable="${rsync}" taskname="rsync">
       <arg value="-aqc"/>
@@ -139,12 +130,23 @@
       <arg value="${builddir}/docroot/"/>
       <arg value="${docroot}"/>
     </exec>
+    
+  <first id="first">
+    <fileset dir="/home/travis/build/Mountbatten/devtrac/build/" includes="**/devtrac.profile" />
+  </first>
+  <echo message="${toString:first}" />
+    
+  <!-- <copy overwrite="true" file="/home/travis/build/TddDoctor/devtrac/devtrac.profile" todir="/home/travis/build/TddDoctor/devtrac/build/docroot/profiles/devtrac/" />
+     replacing the devtrac.profile file for default country -->
+     
+     
   </target>
   <target name="install" depends="drush-make" unless="drush.noinstall" description="Run drush site-install">
     <exec executable="${drush}" dir="${builddir}/docroot" taskname="drush">
       <env key="DRUSH_PHP" value="${php}"/>
       <arg value="site-install"/>
       <arg value="-y"/>
+      <arg value="-v"/>
       <arg value="${drupal.profile}"/>
       <arg value="--db-url=${db.url}"/>
       <arg value="--site-name=${site.name}"/>
@@ -152,7 +154,8 @@
       <arg value="--account-pass=${account.pass}"/>
       <arg value="--account-mail=${account.mail}"/>
       <arg value="--account-name=${account.name}"/>
-      <arg value="--clean-url"/>
+      <arg value="--sites-subdir=${sites.subdir}"/>
+      <arg value="${drupal.profile}"/>
       <arg value="${drupal.args}"/>
     </exec>
   </target>
@@ -186,7 +189,8 @@
       <arg value="${composer}"/>
       <arg value="--working-dir=${builddir}"/>
       <arg value="require"/>
-      <arg value="drupal/drupal-extension:3.0"/>
+      <arg value="drupal/drupal-extension:1.0.0"/>
+      <arg value="symfony/css-selector: 2.4.2"/>
       <arg value="psr/log:1.0.*@dev"/>
     </exec>
   </target>
@@ -194,7 +198,6 @@
   <target name="behat" depends="build,behat-download">
     <antcall target="selenium-start" />
     <exec executable="${behat}" taskname="behat">
-    <env key="BEHAT_PARAMS" value="${behat.params}"/>
     </exec>
     <antcall target="selenium-stop" />
   </target>

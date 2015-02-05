@@ -1,32 +1,22 @@
 default:
-  formatter:
-    name: pretty
-    parameters:
-      passed: [ white, green ]
-      passed_param: [ white, green, [ bold ]]
-      failed: [ white, red ]
-      decorated: true
-      verbose: true
-      time: true
-      language: eng
   paths:
     features: test/features
   extensions:
-    Behat\MinkExtension:
+    Behat\MinkExtension\Extension:
       goutte: ~
-      default_session: 'selenium2'
+      default_session: goutte
       selenium2: ~
-      base_url: http://localhost/docroot
-    Drupal\DrupalExtension:
+      base_url: 'http://dev-first-mb-test-site.pantheon.io'
+    Drupal\DrupalExtension\Extension:
       blackbox: ~
       drush:
         alias: self
-      api_driver: "drupal"
+      api_driver: drupal
       drupal:
-        drupal_root: "/home/travis/build/TddDoctor/devtrac/build/docroot"
+        drupal_root: "/home/travis/build/Mountbatten/devtrac/build/docroot"
       text:
-        username_field: "name"
-        password_field: "pass"
+        username_field: "Username "
+        password_field: "Password "
         log_out: "Sign out"
         log_in: "Sign in"
       region_map:
