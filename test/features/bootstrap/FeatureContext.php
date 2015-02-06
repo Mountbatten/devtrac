@@ -1,12 +1,21 @@
 <?php
 
-//use Behat\Behat\Context\ClosuredContextInterface;
-//use Behat\Behat\Context\TranslatedContextInterface;
-//use Behat\Behat\Context\BehatContext;
-//use Behat\Behat\Exception\PendingException;/
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
+use Behat\Behat\Context\ClosuredContextInterface,
+  Behat\Behat\Context\TranslatedContextInterface,
+  Behat\Behat\Context\BehatContext,
+  Behat\Behat\Exception\PendingException;
+use Behat\Gherkin\Node\PyStringNode,
+  Behat\Gherkin\Node\TableNode;
 use Drupal\DrupalExtension\Context\DrupalContext;
+
+use Symfony\Component\Process\Process;
+use Behat\Behat\Context\Step\Given;
+use Behat\Behat\Context\Step\When;
+use Behat\Behat\Context\Step\Then;
+use Behat\Behat\Event\ScenarioEvent;
+use Behat\Behat\Event\StepEvent;
+use Behat\Mink\Exception\ElementNotFoundException;
+
 
 //
 // Require 3rd-party libraries here:
@@ -26,194 +35,225 @@ class FeatureContext extends DrupalContext
      *
      * @param array $parameters context parameters (set them up through behat.yml)
      */
-    public function __construct(array $parameters)
-    {
-        // Initialize your context here
+    public function __construct(array $parameters){
     }
-    
-    
-    
-      /**
-     * Clicks the Welcome Link.
-     *
-     * @When /^(?:|I )click the Welcome Link$/
-     *
-    public function clickTheWelcomeLink()
-    {
-       $link = "Welcome, [current-user:field_user_firstname]";
-       $regionObj = $this->getRegion('userprofile_menu');
-       // Find the link within the region
-       $linkObj = $regionObj->findLink($link);
-       if (empty($linkObj)) {
-          throw new \Exception(sprintf('The link "%s" was not found in the region "%s" on the page %s', $link, 'userprofile_menu', $this->getSession()->getCurrentUrl()));
-        }
-       $linkObj->click();
-    }
-    */
-    
+
     /**
-     * Filter by current user.
-     *
-     * @When /^(?:|I )filter by current user$/
+     * @Then /^I should not see the following <texts>$/
      */
-    public function filterByCurrentUser()
-    {
-       $link = $this->user->name . " ";
-       $regionObj = $this->getRegion('first_sidebar');
-       // Find the link within the region
-       $linkObj = $regionObj->findLink($link);
-       if (empty($linkObj)) {
-          throw new \Exception(sprintf('The link "%s" was not found in the region "%s" on the page %s', $link, 'first_sidebar', $this->getSession()->getCurrentUrl()));
-        }
-       $linkObj->click();
-   }
-   
-     /**
-     * Fills in hidden latitude and longitude values that are normally filled by clicking on the map.
-     *
-     * @Given /^I fill hidden longitude and latitude field with "(?P<arg1>([0-9]+\.[0-9]+))" and "(?P<arg2>([0-9]+\.[0-9]+))" for the "(?P<type>[^"]*)"$/
-     */
-    public function iFillHiddenLongitudeAndLatitudeFieldWithPoint($arg1, $arg2, $type)
-    {
-        switch ($type) {
-            case 'Site Visit':
-                # code...                
-                $this->getSession()->getPage()->find('css','input[name="field_place_lat_long[und][0][geom]"]')->setValue("POINT(" . $arg1 . " " . $arg2 . ")");
-                break;
-            case 'Human Interest Story':
-                # code...                
-                $this->getSession()->getPage()->find('css','input[name="field_place_lat_long[und][0][geom]"]')->setValue("POINT(" . $arg1 . " " . $arg2 . ")");
-                break;
-            case 'Roadside Observation':
-                # code...                
-                $this->getSession()->getPage()->find('css','input[name="field_ftritem_lat_long[und][0][geom]"]')->setValue("POINT(" . $arg1 . " " . $arg2 . ")");
-                break;
-            default:
-                # code...
-                break;
-        }
+  public function iShouldNotSeeTheFollowingTexts(TableNode $table) {
+    $page = $this->getSession()->getPage();
+    $table = $table->getHash();
+    foreach ($table as $key => $value) {
+      $text = $table[$key]['texts'];
+      if ($page->hasContent($text) === TRUE) {
+        throw new Exception("The text '" . $text . "' was found");
+      }
     }
-    /**
-     * Clicks a link in a drop down menu
-     *
-     * @Given /^I click the link "(?P<name>[^"]*)" in the dropdown menu$/
-     */
-    public function iClickTheLinkInTheDropDown($name)
-    {
-        $this->getSession()->getPage()->clickLink($name);
-    }
-    /**
-     * Clicks a Quick Tab
-     *
-     * @Given /^I click the tab "(?P<name>[^"]*)"$/
-     */
-    public function iClickTheTab($name)
-    {
-        switch ($name) {
-            case 'Site Reports':
-                $link = $this->getSession()->getPage()->find('css', 'quicktabs-tab-fieldtrip_content_first-3');
-                $this->getSession()->getPage()->clickLink($link);
-                break;
-            
-            default:
-                # code...
-                break;
-        }
-    }
+  }
+  
     
-    /**
-     * Fills in question Options field with specified id|name|label|value.
-     *
-     * @When /^(?:|I )fill in question Options field "(?P<field_number>([0-9]+))" with "(?P<value>[^"]*)"$/
-     */
-    public function fillQuestionOptionsField($field_number, $value)
-    {
-        $this->getSession()->getPage()->fillField('questionnaire_question_options[und][' . --$field_number . '][value]', $value);
-    }
     
-    /**
-    * @Given /^I am on the "([^"]*)"$/
+  /**
+   * @Given /^I (?:should |)see the following <texts>$/
+   */
+  public function iShouldSeeTheFollowingTexts(TableNode $table) {
+    $page = $this->getSession()->getPage();
+    $table = $table->getHash();
+    foreach ($table as $key => $value) {
+      $text = $table[$key]['texts'];
+      if ($page->hasContent($text) === FALSE) {
+        throw new Exception("The text '" . $text . "' was not found");
+      }
+    }
+    }
+      protected function randomString($number = 10) {
+    return 'abcdefghijk';
+  }
+    
+   /**
+    * Function to check if the field specified is outlined in red or not
     *
-   public function iAmOnThe($element) {
-   $element = $this->getSession()->getPage();
+    * @Given /^the field "([^"]*)" should be outlined in red$/
+    *
+    * @param string $field
+    *   The form field label to be checked.
+    */
+  public function theFieldShouldBeOutlinedInRed($field) {
+    $page = $this->getSession()->getPage();
+    // get the object of the field
+    $formField = $page->findField($field);
+    if (empty($formField)) {
+      throw new Exception('The page does not have the field with label "' . $field . '"');
+    }
+    // get the 'class' attribute of the field
+    $class = $formField->getAttribute("class");
+    // we get one or more classes with space separated. Split them using space
+    $class = explode(" ", $class);
+    // if the field has 'error' class, then the field will be outlined with red
+    if (!in_array("error", $class)) {
+      throw new Exception('The field "' . $field . '" is not outlined with red');
+    }
+  }
+
+  /**
+   * @Given /^I fill in "([^"]*)" with random text$/
+   */
+  public function iFillInWithRandomText($label) {
+    // A @Tranform would be more elegant.
+    $randomString = $this->randomString(10);
+
+    $step = "I fill in \"$label\" with \"$randomString\"";
+    return new Then($step);
+  }
+  
+  /**
+   * Helper function to fetch user details stored in behat.local.yml.
+   *
+   * @param string $type
+   *   The user type, e.g. drupal.
+   *
+   * @param string $name
+   *   The username to fetch the password for.
+   *
+   * @return string
+   *   The matching password or FALSE on error.
+   */
+  public function fetchUserDetails($type, $name) {
+    $property_name = $type . '_users';
+    try {
+      $property = $this->$property_name;
+      $details = $property[$name];
+      return $details;
+    } catch (Exception $e) {
+      throw new Exception("Non-existant user/password for $property_name:$name please check behat.local.yml.");
+    }
+  }
+
+  /**
+   * Authenticates a user.
+   *
+   * @Given /^I am logged in as "([^"]*)" with the password "([^"]*)"$/
+   */
+  public function iAmLoggedInAsWithThePassword($username, $passwd) {
+    $user = $this->whoami();
+
+    if (strtolower($user) == strtolower($username)) {
+      // Already logged in.
+      return;
+    }
+
+    $element = $this->getSession()->getPage();
     if (empty($element)) {
       throw new Exception('Page not found');
     }
+
     // Go to the user login page.
     $this->getSession()->visit($this->locatePath('/user/login'));
 
     // If I see this, I'm not logged in at all so log the user in.
-    $element->fillField('name', 'admin');
-    $element->fillField('pass', 'admin');
+    $element->fillField('name', $username);
+    $element->fillField('Pass', $passwd);
     $submit = $element->findButton('Log in');
     if (empty($submit)) {
       throw new Exception('No submit button at ' . $this->getSession()->getCurrentUrl());
-    
-    
-   }
-   }
-   /**
- * @Given /^I am logged in as a user with the (\d+) role$/
-   *
-    public function iAmLoggedInAsAUserWithTheRole($arg1) {
-        
     }
-    
-   /**
-    * @When /^i go to "([^"]*)"$/
-    *
-    
-    public function iGoTo($arg1) {
-    
-    }
-    
-    /**
-     * @Given /^I fill in question Options field (\d+) with "([^"]*)"$/
-     *
-    public function iFillInQuestionOptionsFieldWith($arg1, $arg2) {
-    
-    }
-    
-    /**
-     * @Given /^I am logged in as a user with (\d+) role$/
-     *
-    public function iAmLoggedInAsAUserWithRole($arg1) {
-        
-        
-    }
-    
-    /**
-     * @Given /^I click the Welcome Link$/
-     *
-    public function iClickTheWelcomeLink() {
-        //$this->getSession()->getPage()->clickLink('Welcome');
-  
-    }
-    
-     /**
-      * @Given /^I fill in "([^"]*)" with (\d+)$/
-      *
-    public function iFillInWith($arg1, $arg2) {
-    
-    }
-    
-    /**
-     * @Given /^I go to the "([^"]*)"$/
-     *
-    public function iGoToThe($arg1) {
-   
-    }
-    */
-    
-    /**
-     * @Then /^I should  not See "([^"]*)"$/
-     *
-    public function iShouldNotSee($table) {
-        $page = $this->getSession()->getPage();
-         $text = 'Welcome to devtrac distro';
-      if ($page->hasContent($text) === TRUE) {
-        throw new Exception("The text '" . $text . "' was not found");
-      }
 
-    }*/
-}
+    // Log in.
+    $submit->click();
+    $user = $this->whoami();
+    if (strtolower($user) != strtolower($username)) {
+      throw new Exception('Could not log user in.');
+    }
+
+    // Successfully logged in.
+    return;
+  }
+  
+  /**
+   * @Then /^I (?:should |)see the following <links>$/
+   */
+  public function iShouldSeeTheFollowingLinks(TableNode $table) {
+    $page = $this->getSession()->getPage();
+    $table = $table->getHash();
+    foreach ($table as $key => $value) {
+      $link = $table[$key]['links'];
+      $result = $page->findLink($link);
+      if(empty($result)) {
+        throw new Exception("The link '" . $link . "' was not found");
+      }
+    }
+  }
+  
+  /**
+   * Private function for the whoami step.
+   */
+  private function whoami() {
+    $element = $this->getSession()->getPage();
+    // Go to the user page.
+    $this->getSession()->visit($this->locatePath('/user'));
+    if ($find = $element->find('css', 'h1')) {
+      $page_title = $find->getText();
+      if ($page_title) {
+        return str_replace('hello, ', '', strtolower($page_title));
+      }
+    }
+    return FALSE;
+  }
+  
+  /**
+   * @When /^I  click "([^"]*)"$/
+   */
+    public function iClick($arg1) {
+    $this->getSession()->getPage()->clickLink('Site reports');
+    $this->getSession()->wait(5000, 'jQuery.active === 0');
+         
+  }
+  
+  
+
+  /**
+   * @When /^(?:|I )click on Quick Edit link$/
+   *
+   * Click on Quick edit.
+   */
+  public function clickOnQuickEdit() {
+    $this->getSession()->getPage()->clickLink('Quick edit');
+    $this->getSession()->wait(5000, 'jQuery(".entity-commerce-order").length > 0');
+  }
+
+  /**
+   * @Given /^(?:|I )wait for AJAX loading to finish$/
+   *
+   * Wait for the jQuery AJAX loading to finish. ONLY USE FOR DEBUGGING!
+   */
+  public function iWaitForAJAX() {
+    $this->getSession()->wait(5000, 'jQuery.active === 0');
+  }
+
+  /**
+   * @Given /^(?:|I )wait(?:| for) (\d+) seconds?$/
+   *
+   * Wait for the given number of seconds. ONLY USE FOR DEBUGGING!
+   */
+  public function iWaitForSeconds($arg1) {
+    sleep($arg1);
+  }
+    /**
+     * @Given /^I should not see the following <links>$/
+     */
+    public function iShouldNotSeeTheFollowingLinks(TableNode $table) {
+    $page = $this->getSession()->getPage();
+    $table = $table->getHash();
+    foreach ($table as $key => $value) {
+      $link = $table[$key]['links'];
+      $result = $page->findLink($link);
+      if(!empty($result)) {
+        throw new Exception("The link '" . $link . "' was found");
+      }
+    }
+  }
+    
+  }
+
+
