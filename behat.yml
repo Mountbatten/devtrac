@@ -6,7 +6,7 @@ default:
       goutte: ~
       default_session: goutte
       selenium2: ~
-      base_url: 'http://dev-first-mb-test-site.pantheon.io'
+      base_url: 'http://dev-devtrac.pantheon.io'
     Drupal\DrupalExtension\Extension:
       blackbox: ~
       drush:
