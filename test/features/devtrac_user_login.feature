@@ -46,6 +46,9 @@ Feature: Login Devtrac Distribution
       | Images                  |
       | Statistics              |
       | Admin Units             |
-    And I should see the following <texts>
-      | texts      |
-      | Welcome, admin     |
+    Then I should not see the following <texts>
+      | texts                   |
+      | Welcome, admin          |
+    Then I should see the following <texts>
+      | Osman                   |
+      | Overview                |
