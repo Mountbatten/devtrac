@@ -50,5 +50,6 @@ Feature: Login Devtrac Distribution
       | texts                   |
       | Welcome, admin          |
     Then I should see the following <texts>
+      | texts                   |
       | Osman                   |
       | Overview                |
