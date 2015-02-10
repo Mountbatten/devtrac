@@ -34,8 +34,8 @@ Feature: Login Devtrac Distribution
 @javascript    
   Scenario: User should be able to login and see the user profile
     When I go to "/user/login"
-    And I fill in "Password *" with "admin"
-    And I fill in "Username *" with "admin"
+    And I fill in "Password *" with "tdddoctor"
+    And I fill in "Username *" with "osman"
     And I press "Log in"
     Then I should not see "HELLO, admin"
     Then I should see the following <links>
