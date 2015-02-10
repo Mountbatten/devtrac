@@ -23,6 +23,12 @@ Feature: Menu links for the anonymous user
       | texts           |
       | Shop or Market  |
   Then I should see the following <links>
+      | links           |
+      | Admin Unit      |
+      | Log in          |
+      | Unicef Uganda   |
+      | Mountbatten Ltd |
+      | www.devtrac.org |
    
   @api @javascript
   Scenario: I should be able to view attributions on admin units page
