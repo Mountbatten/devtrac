@@ -19,7 +19,7 @@ Feature: Menu links for the anonymous user
       | links           |
       | Statistics      |
   When I click "Statistics"
-  Then I should see following <texts>
+  Then I should see the following <texts>
       | texts           |
       | Shop or Market  |
   Then I should see the following <links>
