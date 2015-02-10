@@ -6,6 +6,7 @@ Feature: Menu links for the anonymous user
   Scenario: I should be able to view site reports
     When I go to "/"
     Then I should see the following <links> 
+      | links           |
       | Site Reports    |
     When I click "Site Reports"
     Then I should get a "200" HTTP response
@@ -18,10 +19,9 @@ Feature: Menu links for the anonymous user
       | links           |
       | Statistics      |
   When I click "Statistics"
-  Then I should not see the following <texts>
+  Then I should see following <texts>
       | texts           |
-      | Title           |
-      | Add new comment |
+      | Shop or Market  |
   Then I should see the following <links>
    
   @api @javascript
