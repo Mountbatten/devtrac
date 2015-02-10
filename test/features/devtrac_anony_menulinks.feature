@@ -13,7 +13,7 @@ Feature: Menu links for the anonymous user
 
 
   @api @javascript    
-  Scenario:
+  Scenario: I should be able to access index/home page
   When I go to "/"
   Then I should see the following <links>
       | links           |
@@ -25,9 +25,19 @@ Feature: Menu links for the anonymous user
   Then I should see the following <links>
    
   @api @javascript
-  Scenario:
-    When I am logged in as a user with the "field worker" role
-      And I go to "/statistics"
+  Scenario: I should be able to view attributions on admin units page
+    When I go to "/adminunits"
+    Then I should see the following <links>
+      | links           |
+      | Admin Unit      |
+      | Log in          |
+      | Unicef Uganda   |
+      | Mountbatten Ltd |
+      | www.devtrac.org |
+    Then I should see the following <texts>
+      | texts           |  
+      | Originally developed for  |
+      | Built by        |
     When I click "Site Reports"
     Then I should not see the following <texts>
       | texts           |
