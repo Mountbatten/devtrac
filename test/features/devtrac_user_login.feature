@@ -37,6 +37,7 @@ Feature: Login Devtrac Distribution
     And I fill in "Password *" with "tdddoctor"
     And I fill in "Username *" with "osman"
     And I press "Log in"
+    Then I should get a "200" HTTP response
     Then I should not see "HELLO, admin"
     Then I should see the following <links>
       | links                   |
