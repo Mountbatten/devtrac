@@ -53,12 +53,12 @@ Feature: Menu links for the anonymous user
     Then I should see the following <links>
       | links                   |
       | Site Reports            |
-      | Field Trips             |
+      | Locations               |
       | Images                  |
       | Statistics              |
       | Admin Units             |  
     Then I should not see the following <links>
       | links                   |
       | Action Items            |  
-   
+      | Field Trips             |
  
