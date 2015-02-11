@@ -50,11 +50,6 @@ Feature: Devtrac fieldtrip creation
       | links           |
       | Log in          |
 
-Feature: Create a fieldtrip
-  In order to create a fieldtrip
-  As an administrator user
-  I should be able to create a fieldtrip
-
   @api
   Scenario: Create a fieldtrip
     When I go to "/user/login"
