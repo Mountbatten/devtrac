@@ -54,3 +54,10 @@ Feature: Create a fieldtrip
   In order to create a fieldtrip
   As an administrator user
   I should be able to create a fieldtrip
+
+  @api
+  Scenario: Create a fieldtrip
+    When I go to "/user/login"
+    And I fill in "Password *" with "tdddoctor"
+    And I fill in "Username *" with "osman"
+    And I press "Log in"
