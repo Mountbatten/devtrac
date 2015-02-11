@@ -47,8 +47,9 @@ Feature: Menu links for the anonymous user
     When I click "Site Reports"
     Then I should not see the following <texts>
       | texts           |
-      | Title           |
       | Add new comment |
+    Then I should not see the following <texts>
+      | Title           |
     Then I should see the following <links>
       | links                   |
       | Site Reports            |
