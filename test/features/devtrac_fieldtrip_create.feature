@@ -46,6 +46,11 @@ Feature: Devtrac fieldtrip creation
       | Edit My Profile |
       | Users           |
       | Add Field Trip  |
-    Then I should not the following <links>
+    Then I should not see the following <links>
       | links           |
       | Log in          |
+
+Feature: Create a fieldtrip
+  In order to create a fieldtrip
+  As an administrator user
+  I should be able to create a fieldtrip
