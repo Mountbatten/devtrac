@@ -18,11 +18,13 @@ Feature: Devtrac fieldtrip creation
     Then I should see the following <links>
       | links           |
       | Admin Unit      |
-      | Log in          |
       | Unicef Uganda   |
       | Mountbatten Ltd |
       | www.devtrac.org |
       | Add Field Trip  |
+    Then I should not see the following <links>
+      | links           |
+      | Log in          |
 @javascript    
   Scenario: User should be able to login and see menu links
     When I go to "/user/login"
