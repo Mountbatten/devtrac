@@ -52,7 +52,7 @@ Feature: Devtrac fieldtrip creation
       | links           |
       | Log in          |
 
-  @api
+  @javascript
   Scenario: Clickng the add fieldtrip
     When I go to "/user/login"
     And I fill in "Password *" with "tdddoctor"
@@ -64,7 +64,7 @@ Feature: Devtrac fieldtrip creation
       | Create Field Trip    |
       | Purpose(s) of the Fieldtrip    |
 
-  @api
+  @javascript
   Scenario: Creating a fieldtrip
     When I go to "/user/login"
     And I fill in "Password *" with "tdddoctor"
