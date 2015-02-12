@@ -278,6 +278,10 @@ class FeatureContext extends DrupalContext
     public function iFillWith2($arg1, $arg2) {
     // Go to the user fieldtrip page.
     $this->getSession()->visit($this->locatePath('/node/add/fieldtrip'));
+    $element = $this->getSession()->getPage();
+    if (empty($element)) {
+      throw new Exception('Page not found');
+    }
 
     // If I see this, I'm not logged in at all so log the user in.
     $element->fillField('Purpose', $arg1);
