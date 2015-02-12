@@ -257,9 +257,34 @@ class FeatureContext extends DrupalContext
      * @Given /^I fill "([^"]*)" with "([^"]*)"$/
      */
     public function iFillWith($arg1, $arg2) {
-    throw new PendingException();
-    }
+    // Go to the user fieldtrip page.
+    $this->getSession()->visit($this->locatePath('/node/add/fieldtrip'));
 
+    // If I see this, I'm not logged in at all so log the user in.
+    $element->fillField('title', $arg1);
+    $element->fillField('Internal ID', $arg2);
+    $submit = $element->findButton('Save');
+    if (empty($submit)) {
+      throw new Exception('No submit button at ' . $this->getSession()->getCurrentUrl());
+    }
+    }
+    
+    /**
+    * @Given /^I fill "([^"]*)" with (\d+)$/
+    */
+    public function iFillWith2($arg1, $arg2) {
+    // Go to the user fieldtrip page.
+    $this->getSession()->visit($this->locatePath('/node/add/fieldtrip'));
+
+    // If I see this, I'm not logged in at all so log the user in.
+    $element->fillField('Purpose', $arg1);
+    $element->fillField('Percentage', $arg2);
+    $submit = $element->findButton('Save');
+    if (empty($submit)) {
+      throw new Exception('No submit button at ' . $this->getSession()->getCurrentUrl());
+    }
+    throw new PendingException();
+   }
     
   }
 
