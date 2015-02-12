@@ -259,13 +259,7 @@ class FeatureContext extends DrupalContext
     public function iFillWith($arg1, $arg2) {
     throw new PendingException();
     }
-    
-    /**
-    * @Given /^I fill "([^"]*)" with (\d+)$/
-    */
-    public function iFillWith2($arg1, $arg2) {
-    throw new PendingException();
-   }
+
     
   }
 
