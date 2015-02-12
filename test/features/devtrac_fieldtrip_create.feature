@@ -58,7 +58,7 @@ Feature: Devtrac fieldtrip creation
     And I fill in "Password *" with "tdddoctor"
     And I fill in "Username *" with "osman"
     And I press "Log in"
-    When I click "Add Field Trip"
+    When I go to "/node/add/fieldtrip"
     Then I should see the following <texts>
       | texts           |
       | Create Field Trip    |
@@ -70,7 +70,11 @@ Feature: Devtrac fieldtrip creation
     And I fill in "Password *" with "tdddoctor"
     And I fill in "Username *" with "osman"
     And I press "Log in"
-    When I click "Add Field Trip"
+    When I go to "/node/add/fieldtrip"
+    Then I should see the following <texts>
+      | texts           |
+      | Create Field Trip    |
+      | Purpose(s) of the Fieldtrip    |        
     And I fill "title" with "first get pantheon fieldtrip"
     And I fill "Internal ID" with "fgpf123"
     And I select "Fieldwork" from "Purpose "
