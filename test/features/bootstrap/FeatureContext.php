@@ -253,6 +253,19 @@ class FeatureContext extends DrupalContext
       }
     }
   }
+    /**
+     * @Given /^I fill "([^"]*)" with "([^"]*)"$/
+     */
+    public function iFillWith($arg1, $arg2) {
+    throw new PendingException();
+    }
+    
+    /**
+    * @Given /^I fill "([^"]*)" with (\d+)$/
+    */
+    public function iFillWith2($arg1, $arg2) {
+    throw new PendingException();
+   }
     
   }
 
