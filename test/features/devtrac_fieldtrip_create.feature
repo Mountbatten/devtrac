@@ -77,7 +77,7 @@ Feature: Devtrac fieldtrip creation
       | Purpose(s) of the Fieldtrip    |        
     And I fill "title" with "first get pantheon fieldtrip"
     And I fill "Internal ID" with "fgpf123"
-    And I select "Fieldwork" from "Purpose "
+    And I select "Fieldwork" from "Purpose"
     And I fill "Percentage" with "100"
     And I press "Save"
     Then print last response
