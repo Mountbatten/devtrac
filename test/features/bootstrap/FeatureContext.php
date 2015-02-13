@@ -275,7 +275,7 @@ class FeatureContext extends DrupalContext
     /**
     * @Given /^I fill "([^"]*)" with (\d+)$/
     */
-    public function iFillWith2($arg1, $arg2) {
+    public function iFillWith2($Purpose, $Percentage) {
     // Go to the user fieldtrip page.
     $this->getSession()->visit($this->locatePath('/node/add/fieldtrip'));
     $element = $this->getSession()->getPage();
@@ -284,8 +284,8 @@ class FeatureContext extends DrupalContext
     }
 
     // If I see this, I'm not logged in at all so log the user in.
-    $element->fillField('Purpose', $arg1);
-    $element->fillField('Percentage', $arg2);
+    $element->fillField('Purpose', $Purpose);
+    $element->fillField('Percentage', $Percentage);
     $submit = $element->findButton('Save');
     if (empty($submit)) {
       throw new Exception('No submit button at ' . $this->getSession()->getCurrentUrl());
