@@ -292,7 +292,27 @@ class FeatureContext extends DrupalContext
     }
     throw new PendingException();
    }
-    
+   
+
+       /**
+    * @Given /^I fill "([^"]*)" with (\d+)$/
+    */
+    public function iFillWith3($Pur) {
+    // Go to the user fieldtrip page.
+    $this->getSession()->visit($this->locatePath('/node/add/fieldtrip'));
+    $element = $this->getSession()->getPage();
+    if (empty($element)) {
+      throw new Exception('Page not found');
+    }
+
+    // If I see this, I'm not logged in at all so log the user in.
+    $element->fillField('Percentage', $P);
+    $submit = $element->findButton('Save');
+    if (empty($submit)) {
+      throw new Exception('No submit button at ' . $this->getSession()->getCurrentUrl());
+    }
+    throw new PendingException();
+   } 
   }
 
 
