@@ -80,3 +80,12 @@ Feature: Devtrac fieldtrip creation
     And I select "Fieldwork" from "Purpose "
     And I fill "Percentage" with "100"
     And I press "Save"
+    Then I should see the following <texts>
+      | texts         |
+      | Field Trip first get pantheon fieldtrip has been created.   |
+      | In Progress   |
+      | Purpose(s) of the Fieldtrip   |
+    Then I should see the following <links>
+      | links                         |
+      | Add Site Report               |
+      | Add a Site Report to the Field Trip.               |
