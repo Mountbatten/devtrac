@@ -80,7 +80,7 @@ Feature: Devtrac fieldtrip creation
     And I select "Fieldwork" from "Purpose"
     And I fill "Percentage" with "100"
     And I press "Save"
-    Then I should not see the following <texts>
+    Then I should see the following <texts>
       | texts         |
       | In Progress   |
       | Purpose(s) of the Fieldtrip   |
