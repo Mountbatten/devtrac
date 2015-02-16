@@ -80,6 +80,7 @@ Feature: Devtrac fieldtrip creation
     And I select "Fieldwork" from "field_fieldtrip_fc_purpose[und][0][field_fieldtrip_fc_purpose_purps][und]"
     And I fill "field_fieldtrip_fc_purpose[und][0][field_fieldtrip_purpose_percent][und][0][value]" with "100"
     And I press "Save"
+    Then print last response
     Then I should see the following <texts>
       | texts         |
       | Purpose(s) of the Fieldtrip   |
