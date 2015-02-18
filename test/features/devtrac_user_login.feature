@@ -20,7 +20,6 @@ Feature: Login Devtrac Distribution
   Scenario Outline: Username validation: Invalid username
     When I go to "/user/login"
     Then print current URL 
-    Then print last response
       And I fill in "Username" with "<name>"
       And I fill in "Password" with random text
       And I press "Log in"
