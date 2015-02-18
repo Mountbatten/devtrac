@@ -6,8 +6,8 @@ Feature: Devtrac fieldtrip creation
   @javascript    
   Scenario: User should be able to login and see attributions
     When I go to "/user/login"
-    And I fill in "Password *" with "tdddoctor"
-    And I fill in "Username *" with "osman"
+    And I fill in "Password" with "tdddoctor"
+    And I fill in "Username" with "osman"
     And I press "Log in"
     Then I should not see "HELLO, admin"
     Then I should see the following <texts>
@@ -28,8 +28,8 @@ Feature: Devtrac fieldtrip creation
 @javascript    
   Scenario: User should be able to login and see menu links
     When I go to "/user/login"
-    And I fill in "Password *" with "tdddoctor"
-    And I fill in "Username *" with "osman"
+    And I fill in "Password" with "tdddoctor"
+    And I fill in "Username" with "osman"
     And I press "Log in"
     Then I should not see "HELLO, admin"
     Then I should see the following <texts>
@@ -55,8 +55,8 @@ Feature: Devtrac fieldtrip creation
   @api @javascript
   Scenario: Clickng the add fieldtrip
     When I go to "/user/login"
-    And I fill in "Password *" with "tdddoctor"
-    And I fill in "Username *" with "osman"
+    And I fill in "Password" with "tdddoctor"
+    And I fill in "Username" with "osman"
     And I press "Log in"
     When I go to "/node/add/fieldtrip"
     Then I should see the following <texts>
@@ -67,8 +67,8 @@ Feature: Devtrac fieldtrip creation
   @api @javascript
   Scenario: Creating a fieldtrip
     When I go to "/user/login"
-    And I fill in "Password *" with "tdddoctor"
-    And I fill in "Username *" with "osman"
+    And I fill in "Password" with "tdddoctor"
+    And I fill in "Username" with "osman"
     And I press "Log in"
     When I go to "/node/add/fieldtrip"
     Then I should see the following <texts>
