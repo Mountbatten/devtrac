@@ -73,9 +73,8 @@ Feature: Menu links for the anonymous user
       | 0 Site Reports          |
 
   @javascript
-  scenario: i should be able to do a map search
+  Scenario: i should be able to do a map search
     When I go to "/sitereports"
     And I fill "edit-openlayers-geosearch-query-block--2" with "paris"
     And I press "openlayers_geosearch_search-form-results_close"
     And I press "edit-openlayers-geosearch-button--2"
-    
