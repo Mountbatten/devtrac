@@ -6,7 +6,7 @@ default:
       goutte: ~
       default_session: goutte
       selenium2: ~
-      base_url: 'http://dev-devtrac.pantheon.io'
+      base_url: 'http://test.devtrac.org'
     Drupal\DrupalExtension\Extension:
       blackbox: ~
       drush:
@@ -17,8 +17,6 @@ default:
       text:
         username_field: "Username "
         password_field: "Password "
-        log_out: "Sign out"
-        log_in: "Sign in"
       region_map:
         userprofile_menu: "#block-nice-menus-2"
         fieldtrip_quicktabs: "#block-quicktabs-fieldtrip-content-first"
