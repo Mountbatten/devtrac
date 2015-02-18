@@ -14,7 +14,7 @@ Feature: Menu links for the anonymous user
 
   @api @javascript    
   Scenario: I should be able to access index/home page
-  When I go to "/"
+  When I go to "/statistics"
   Then I should see the following <links>
       | links           |
       | Statistics      |
@@ -61,4 +61,21 @@ Feature: Menu links for the anonymous user
       | links                   |
       | Action Items            |  
       | Field Trips             |
+
  
+  @api @javascript
+  Scenario: I should be able to do full text search
+    When I go to "/"
+    And I fill "search_api_aggregation_1" with "site report"
+    And I press "Search"
+    Then I should see the following <texts>
+      | texts                   |
+      | 0 Site Reports          |
+
+  @javascript
+  scenario: i should be able to do a map search
+    When I go to "/sitereports"
+    And I fill "edit-openlayers-geosearch-query-block--2" with "paris"
+    And I press "openlayers_geosearch_search-form-results_close"
+    And I press "edit-openlayers-geosearch-button--2"
+    
