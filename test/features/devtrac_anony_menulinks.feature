@@ -65,6 +65,7 @@ Feature: Menu links for the anonymous user
  
   @api @javascript
   Scenario: I should be able to do full text search
+  # this is intended for the full text search but there is no solution for this now
     When I go to "/"
     Then I should see the following <links>
       | links           |
@@ -76,6 +77,7 @@ Feature: Menu links for the anonymous user
 
   @javascript
   Scenario: i should be able to do a map search
+  # this is intended for the map search but there is no solution for this now
     When I go to "/sitereports"
     Then I should see the following <links>
       | links           |
