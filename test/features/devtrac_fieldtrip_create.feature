@@ -64,7 +64,7 @@ Feature: Devtrac fieldtrip creation
       | Create Field Trip    |
       | Purpose(s) of the Fieldtrip    |
 
-  @api @javascript
+  @api
   Scenario: Creating a fieldtrip
     When I go to "/user/login"
     And I fill in "Password" with "tdddoctor"
@@ -75,7 +75,7 @@ Feature: Devtrac fieldtrip creation
       | texts           |
       | Create Field Trip    |
       | Purpose(s) of the Fieldtrip    |  
-    And  I fill in the following:
+    When I fill in the following:
       | Title             | pantheon fieldtrip                           |
       | Internal ID  | pan124                  |
       | Percentage               | 100                      |
