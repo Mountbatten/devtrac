@@ -18,8 +18,8 @@ Feature: Menu links for the anonymous user
   Then I should see the following <links>
       | links           |
       | Statistics      |
-  When I click "Statistics"
-  Then I should see the following <texts>
+  When I go to "Statistics"
+  Then I should not see the following <texts>
       | texts           |
       | Shop or Market  |
   Then I should see the following <links>
