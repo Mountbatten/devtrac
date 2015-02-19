@@ -74,11 +74,12 @@ Feature: Devtrac fieldtrip creation
     Then I should see the following <texts>
       | texts           |
       | Create Field Trip    |
-      | Purpose(s) of the Fieldtrip    |        
-    And I fill "title" with "first get pantheon fieldtrip"
-    And I fill "Internal ID" with "fgpf123"
+      | Purpose(s) of the Fieldtrip    |  
+    And  I fill in the following:
+      | Title             | pantheon fieldtrip                           |
+      | Internal ID  | pan124                  |
+      | Percentage               | 100                      |
     And I select "Fieldwork" from "field_fieldtrip_fc_purpose[und][0][field_fieldtrip_fc_purpose_purps][und]"
-    And I fill "Percentage" with 100
     And I press "Save"
     Then I should see the following <texts>
       | texts         |
