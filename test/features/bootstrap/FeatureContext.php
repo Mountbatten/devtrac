@@ -253,7 +253,15 @@ class FeatureContext extends DrupalContext
       }
     }
   }
-    
+    /**
+      * @Given /^I fill "([^"]*)" with "([^"]*)"$/
+      */
+      public function iFillWith($arg1, $arg2) {
+        $this->getSession()->visit($this->locatePath('/node/add/fieldtrip'));
+        {
+         $this->getMink()->getPage()->find('Percentage', $arg1)->setValue($arg2);
+        }
+     }
   }
 
 
