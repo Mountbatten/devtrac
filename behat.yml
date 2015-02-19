@@ -17,6 +17,7 @@ default:
       text:
         username_field: "Username "
         password_field: "Password "
+        field_fieldtrip_fc_purpose[und][0][field_fieldtrip_purpose_percent][und][0][value]: "Percentage"
       region_map:
         userprofile_menu: "#block-nice-menus-2"
         fieldtrip_quicktabs: "#block-quicktabs-fieldtrip-content-first"
