@@ -96,6 +96,8 @@ Feature: Devtrac fieldtrip creation
       | links                         |
       | Comments                      |
       | Add a Site Report to the Field Trip.               |
+    Then I should not see the following <links>
+      | links                         |
       | Add Site Report               |
       
       
