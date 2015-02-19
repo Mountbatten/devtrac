@@ -257,7 +257,7 @@ class FeatureContext extends DrupalContext
       * @Given /^I fill "([^"]*)" with "([^"]*)"$/
       */
       public function iFillWith($field, $value) {
-       $this->getSession->getPage()->fillField($field, $value);
+       $this->getSession()->getPage()->fillField($field, $value);
      }
   }
 

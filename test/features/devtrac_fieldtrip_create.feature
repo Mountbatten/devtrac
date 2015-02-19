@@ -84,10 +84,10 @@ Feature: Devtrac fieldtrip creation
     Then I should see the following <texts>
       | texts         |
       | Purpose(s) of the Fieldtrip   |
+      | In Progress   |
       
     Then I should not see the following <texts>
       | texts         |
-      | In Progress   |
       | first get pantheon fieldtrip  |
     Then I should not see the following <texts>
       | texts                         |
