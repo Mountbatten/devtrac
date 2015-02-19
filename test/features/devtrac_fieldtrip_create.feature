@@ -85,6 +85,7 @@ Feature: Devtrac fieldtrip creation
       | texts         |
       | Purpose(s) of the Fieldtrip   |
       | In Progress   |
+      | pantheon fieldtrip            |
       
     Then I should not see the following <texts>
       | texts         |
