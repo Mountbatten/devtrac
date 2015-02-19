@@ -278,7 +278,7 @@ class FeatureContext extends DrupalContext
     public function iFillWith2($Purpose, $Percentage) {
     // Go to the user fieldtrip page.
     $this->getSession()->visit($this->locatePath('/node/add/fieldtrip'));
-    $element = $this->getSession()->getPage();
+    $element = $this->getSession()->getPage()->find('css', '.file-entity-admin-file-form table tbody tr:first-child td:first-child input[type=checkbox]'))
     if (empty($element)) {
       throw new Exception('Page not found');
     }
